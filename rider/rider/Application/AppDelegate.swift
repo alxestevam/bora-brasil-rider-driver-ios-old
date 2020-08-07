@@ -7,11 +7,11 @@
 
 import UIKit
 import Stripe
-import Firebase
+@_exported import Firebase
 import Kingfisher
 import Crashlytics
 import Fabric
-import FirebaseUI
+@_exported import FirebaseUI
 import Braintree
 import SocketIO
 

@@ -248,9 +248,6 @@
 		547353F424ACED4700EDDDD3 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/TransactionsCollectionViewCell.strings"; sourceTree = "<group>"; };
 		54E4B67F2481D4F200EC43D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6207A45521971E1B00688852 /* TripHistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripHistoryCollectionViewCell.swift; path = ../common/Controllers/TripHistory/TripHistoryCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		621000C122F192AB0014DBEE /* RiderShotsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderShotsUITests.swift; sourceTree = "<group>"; };
-		621000C322F192AB0014DBEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		621000C922F193AA0014DBEE /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = ../fastlane/SnapshotHelper.swift; sourceTree = "<group>"; };
 		622CCBB9219D734F003A4CCE /* CouponsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponsCollectionViewController.swift; sourceTree = "<group>"; };
 		622CCBBE219DC0B8003A4CCE /* Promotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promotion.swift; sourceTree = "<group>"; };
 		62490E4C2099BD9B007F668D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
@@ -480,16 +477,6 @@
 			path = Promotions;
 			sourceTree = "<group>";
 		};
-		621000C022F192AB0014DBEE /* RiderShotsUITests */ = {
-			isa = PBXGroup;
-			children = (
-				621000C922F193AA0014DBEE /* SnapshotHelper.swift */,
-				621000C122F192AB0014DBEE /* RiderShotsUITests.swift */,
-				621000C322F192AB0014DBEE /* Info.plist */,
-			);
-			path = RiderShotsUITests;
-			sourceTree = "<group>";
-		};
 		622BBD351F32236D00E14667 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -620,7 +607,6 @@
 			children = (
 				62CF116121BF0CEE0020C561 /* rider.entitlements */,
 				62C774201F08EBC700E70C8B /* Rider */,
-				621000C022F192AB0014DBEE /* RiderShotsUITests */,
 				62C7741F1F08EBC700E70C8B /* Products */,
 				EA914EE38186F69D003C17C4 /* Pods */,
 				096D46D6BD2EBFDFA0E86258 /* Frameworks */,
@@ -1120,7 +1106,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 6CLNFB744W;
+				DEVELOPMENT_TEAM = 92364YLT5P;
 				INFOPLIST_FILE = "$(SRCROOT)/rider/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1205,7 +1191,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 6CLNFB744W;
+				DEVELOPMENT_TEAM = 92364YLT5P;
 				INFOPLIST_FILE = "$(SRCROOT)/rider/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

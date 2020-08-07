@@ -2,10 +2,12 @@ use_frameworks!
 platform :ios, '11.0'
 workspace 'taxi'
 def common_pods
+  pod 'Firebase/Core'
   pod 'FirebaseUI/Phone'
   pod 'Firebase/Analytics'
   pod 'Firebase/Messaging'
   pod 'Eureka'
+  #pod 'Eureka', :git => 'https://github.com/xmartlabs/Eureka.git', :branch => 'xcode12'
   pod 'ImageRow'
   pod 'Fabric'
   pod 'Crashlytics'
@@ -30,3 +32,5 @@ target 'driver' do
   pod 'iCarousel'
   pod 'Charts'
 end
+
+

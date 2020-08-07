@@ -166,6 +166,7 @@ DEPENDENCIES:
   - Eureka
   - Fabric
   - Firebase/Analytics
+  - Firebase/Core
   - Firebase/Messaging
   - FirebaseUI/Phone
   - iCarousel
@@ -257,6 +258,6 @@ SPEC CHECKSUMS:
   StatusAlert: a18ec3c33d36a06d4479c1f2b15ffac67aaf7ab1
   Stripe: d481c2dab9a892fd923f097f854661217f70dc7f
 
-PODFILE CHECKSUM: ec943e0f3c3ea39018b5a8d7fb0adf398bc291f9
+PODFILE CHECKSUM: 6e7e95d47c7097cc65bf55fb70b1997b35be0409
 
 COCOAPODS: 1.9.1

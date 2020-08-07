@@ -9,7 +9,7 @@
 import Foundation
 
 class Config {
-    static var Backend: String = "http://191.252.38.123:8080/"
+    static var Backend: String = "http://35.247.213.217:8080/"
     
     static var Version: String {
         get {

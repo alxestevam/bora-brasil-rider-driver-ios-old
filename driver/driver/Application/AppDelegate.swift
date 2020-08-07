@@ -6,10 +6,10 @@
 //
 
 import UIKit
-import Firebase
+@_exported import Firebase
+@_exported import FirebaseUI
 import Fabric
 import Crashlytics
-import FirebaseUI
 import Stripe
 import Braintree
 

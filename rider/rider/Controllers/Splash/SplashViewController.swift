@@ -8,8 +8,6 @@
 import UIKit
 import Firebase
 
-import FirebaseUI
-
 class SplashViewController: UIViewController {
     let defaults:UserDefaults = UserDefaults.standard
     @IBOutlet weak var indicatorLoading: UIActivityIndicatorView!
