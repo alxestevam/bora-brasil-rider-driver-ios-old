@@ -1,0 +1,42 @@
+
+/* Class = "UILabel"; text = "Distance"; ObjectID = "5Zo-Ta-vkE"; */
+"5Zo-Ta-vkE.text" = "Distância";
+
+/* Class = "UISegmentedControl"; 8qf-4k-0bV.segmentTitles[0] = "Daily"; ObjectID = "8qf-4k-0bV"; */
+"8qf-4k-0bV.segmentTitles[0]" = "Diário";
+
+/* Class = "UISegmentedControl"; 8qf-4k-0bV.segmentTitles[1] = "Weekly"; ObjectID = "8qf-4k-0bV"; */
+"8qf-4k-0bV.segmentTitles[1]" = "Semanal";
+
+/* Class = "UISegmentedControl"; 8qf-4k-0bV.segmentTitles[2] = "Monthly"; ObjectID = "8qf-4k-0bV"; */
+"8qf-4k-0bV.segmentTitles[2]" = "Mensal";
+
+/* Class = "UILabel"; text = "Time Spent"; ObjectID = "9Ln-OJ-tiY"; */
+"9Ln-OJ-tiY.text" = "Tempo Gasto";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "9yi-lJ-EZS"; */
+"9yi-lJ-EZS.text" = "-";
+
+/* Class = "UILabel"; text = "Services"; ObjectID = "Mid-A3-TDt"; */
+"Mid-A3-TDt.text" = "Serviços";
+
+/* Class = "UILabel"; text = "Earning"; ObjectID = "S0Z-ep-UPP"; */
+"S0Z-ep-UPP.text" = "Ganho";
+
+/* Class = "UILabel"; text = "Time Spent"; ObjectID = "Smc-Gj-hSN"; */
+"Smc-Gj-hSN.text" = "Tempo Gasto";
+
+/* Class = "UILabel"; text = "Distance Traveled"; ObjectID = "ei7-iG-381"; */
+"ei7-iG-381.text" = "Distância percorrida";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "lzz-ym-q41"; */
+"lzz-ym-q41.text" = "-";
+
+/* Class = "UIViewController"; title = "Statistics"; ObjectID = "shS-Ah-hF9"; */
+"shS-Ah-hF9.title" = "Estatisticas";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "wis-w1-zGh"; */
+"wis-w1-zGh.text" = "-";
+
+/* Class = "UILabel"; text = "Earnings"; ObjectID = "xUG-qe-XdD"; */
+"xUG-qe-XdD.text" = "Ganhos";

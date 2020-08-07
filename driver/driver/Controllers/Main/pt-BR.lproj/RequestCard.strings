@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "2D0-Q3-x7C"; */
+"2D0-Q3-x7C.text" = "Localização";
+
+/* Class = "UILabel"; text = "Start Location"; ObjectID = "HTz-bW-Mru"; */
+"HTz-bW-Mru.text" = "Iniciar Localização";
+
+/* Class = "UIButton"; normalTitle = "Accept"; ObjectID = "Wmu-7y-cR5"; */
+"Wmu-7y-cR5.normalTitle" = "Aceitar";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "Wpq-2s-43y"; */
+"Wpq-2s-43y.text" = "-";
+
+/* Class = "UILabel"; text = "Cost"; ObjectID = "YmK-gC-FGq"; */
+"YmK-gC-FGq.text" = "Custo";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "g83-bp-XKF"; */
+"g83-bp-XKF.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "xld-4H-csj"; */
+"xld-4H-csj.text" = "-";

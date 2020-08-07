@@ -1,0 +1,84 @@
+
+/* Class = "UIViewController"; title = "Edit Profile"; ObjectID = "22e-2D-wxO"; */
+"22e-2D-wxO.title" = "Edit Profile";
+
+/* Class = "UINavigationItem"; title = "Profile"; ObjectID = "2jw-sT-WYs"; */
+"2jw-sT-WYs.title" = "Profile";
+
+/* Class = "UILabel"; text = "Loading..."; ObjectID = "3Ds-I9-j3d"; */
+"3Ds-I9-j3d.text" = "Loading...";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "8Fk-Ku-hHO"; */
+"8Fk-Ku-hHO.text" = "-";
+
+/* Class = "UIButton"; normalTitle = "Start"; ObjectID = "8em-1R-9VD"; */
+"8em-1R-9VD.normalTitle" = "Start";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "BTE-FM-mrX"; */
+"BTE-FM-mrX.normalTitle" = "Logout";
+
+/* Class = "UIViewController"; title = "Travel"; ObjectID = "EBP-GH-WBd"; */
+"EBP-GH-WBd.title" = "Travel";
+
+/* Class = "UIButton"; normalTitle = "Call"; ObjectID = "FFL-WX-AdK"; */
+"FFL-WX-AdK.normalTitle" = "Call";
+
+/* Class = "UICollectionViewController"; title = "Transactions"; ObjectID = "HSB-L0-kaa"; */
+"HSB-L0-kaa.title" = "Transactions";
+
+/* Class = "UILabel"; text = "ETA"; ObjectID = "Lm5-FL-fgX"; */
+"Lm5-FL-fgX.text" = "ETA";
+
+/* Class = "UINavigationItem"; title = "Wallet"; ObjectID = "OHm-yx-c2N"; */
+"OHm-yx-c2N.title" = "Wallet";
+
+/* Class = "UILabel"; text = "Cost"; ObjectID = "PHt-ka-JNh"; */
+"PHt-ka-JNh.text" = "Cost";
+
+/* Class = "UIButton"; normalTitle = "Finish"; ObjectID = "Q6N-Ku-5ZY"; */
+"Q6N-Ku-5ZY.normalTitle" = "Finish";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "SoJ-pY-kyj"; */
+"SoJ-pY-kyj.text" = "-";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "Yuw-2l-tJc"; */
+"Yuw-2l-tJc.normalTitle" = "Login";
+
+/* Class = "UIViewController"; title = "About"; ObjectID = "aV0-zB-Hmr"; */
+"aV0-zB-Hmr.title" = "About";
+
+/* Class = "UINavigationItem"; title = "Travel"; ObjectID = "aYR-cA-j0K"; */
+"aYR-cA-j0K.title" = "Travel";
+
+/* Class = "UIButton"; normalTitle = "Statistics"; ObjectID = "adL-TS-mQI"; */
+"adL-TS-mQI.normalTitle" = "Statistics";
+
+/* Class = "UIButton"; normalTitle = "Message"; ObjectID = "adY-Jp-izU"; */
+"adY-Jp-izU.normalTitle" = "Message";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "b7K-Zz-Sfb"; */
+"b7K-Zz-Sfb.text" = "-";
+
+/* Class = "UIButton"; normalTitle = "About"; ObjectID = "ez4-Jd-Aai"; */
+"ez4-Jd-Aai.normalTitle" = "About";
+
+/* Class = "UIButton"; normalTitle = "Trips History"; ObjectID = "f2W-QB-dI4"; */
+"f2W-QB-dI4.normalTitle" = "Trips History";
+
+/* Class = "UIButton"; normalTitle = "Arrived"; ObjectID = "g76-hX-IDo"; */
+"g76-hX-IDo.normalTitle" = "Arrived";
+
+/* Class = "UILabel"; text = "Balance: -"; ObjectID = "kDL-hz-0jI"; */
+"kDL-hz-0jI.text" = "Balance: -";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "lCi-0B-KI1"; */
+"lCi-0B-KI1.normalTitle" = "Cancel";
+
+/* Class = "UICollectionViewController"; title = "Trip History"; ObjectID = "qHH-mm-GjK"; */
+"qHH-mm-GjK.title" = "Trip History";
+
+/* Class = "UIButton"; normalTitle = "Transactions"; ObjectID = "qeK-ls-gXH"; */
+"qeK-ls-gXH.normalTitle" = "Transactions";
+
+/* Class = "UIButton"; normalTitle = "Wallet"; ObjectID = "zOs-ar-MU8"; */
+"zOs-ar-MU8.normalTitle" = "Wallet";

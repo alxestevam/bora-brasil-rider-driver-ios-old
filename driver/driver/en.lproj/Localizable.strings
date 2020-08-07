@@ -1,0 +1,128 @@
+"notification_new_request_title" = "New Request";
+"notification_new_request_body" = "New Request Came";
+"notification_new_message_title" = "New Message";
+"notification_paid_title" = "Paid!";
+"notification_paid_body" = "Trip has been paid";
+
+
+"Cancel" = "Cancel";
+"Title" = "Title";
+"Content" = "Content";
+"Options" = "Options";
+"Status" = "Status";
+"Services" = "Services";
+"Confirmation" = "Confirmation";
+"Error" = "Error";
+"Unkown_Status" = "Unkown Status";
+"Error_Happened" = "Error Happened";
+
+/*
+ EarningViewController
+ */
+"Earnings" = "Earnings";
+"Distance" = "Distance";
+"Time" = "Time";
+"No Data to show." = "No Data to show.";
+
+
+/*
+ ChatViewController
+ */
+"Chat" = "Chat";
+"Sending" =  "Sending";
+
+
+/*
+ WalletViewController
+ */
+"Empty_Wallet_Error" = "You need to do at least one trip so wallet would be enabled for you.";
+"No_Payment_Method_On" = "No Payment Method is enabled.";
+"Wallet_Footnote" = "You can charge your wallet for an amount more than your \"Service Fee\" and your future Service Fees will be deducted automatically from your in-app wallet.";
+"Service_Fee" = "Service Fee";
+"Credit" = "Credit";
+"Current_Credit" = "Current Credit";
+"Add_Credit" = "Add credit";
+"Amount" = "Amount";
+"Pay" = "Pay";
+"Amount_Missing" = "Amount Missing";
+"Card_Info_Missing" = "Card Info Missing";
+"User_Canceled" = "User Canceled";
+"Card_Info_Missing" = "Card Info Missing";
+"Payment_Successful" = "Payment Successful";
+"Verification" = "Verification";
+"Alert_Enter_OTP_Code" = "Please Enter OTP code sent to your mobile number";
+"Alert_Enter_PIN_Code" = "Please Enter PIN code";
+
+
+/*
+TripHistoryCollectionViewController
+*/
+"Title_Write_Complaint" = "Write Complaint";
+"Complaint" = "Complaint";
+"Message_Write_Complaint" = "You can write a complaint on service provided and it will be reviewed As soon as possible.";
+"Complaint_Sent." = "Complaint Sent.";
+"Hide_Item" = "Hide Item";
+
+
+/*
+EditProfileViewController
+*/
+"Profile_Image" = "Profile Image";
+"Personal_Info" = "Personal Info";
+"Mobile_Number" = "Mobile Number";
+"Note" = "Note";
+"Images" = "Images";
+"Email" = "E-Mail";
+"Name" = "Name";
+"First_Name" = "First Name";
+"Last_Name" = "Last Name";
+
+"Gender" = "Gender";
+"Select_Gender" = "Select Your Gender";
+"Male" = "Male";
+"Female" = "Female";
+"Unspecified" = "Unspecified";
+
+"Address" = "Address";
+"Bank_Account_Number" = "Bank Account Number";
+"Car_Plate" = "Car Plate";
+"Certificate_Number" = "Certificate Number";
+"Services" = "Services";
+"Select_Services" = "You can select services you can provide. Provider might change those and select other services for you accordingly.";
+"Documents" = "Documents";
+"After_Approval" =  "After approval all your documents will be removed.";
+"Driver_License" = "Driver License";
+"Picture_of_Vehicle" = "Picture of Vehicle";
+"Registration_Successful"= "Registration was done successfully. You can exit the app now and check back later to see your approval status.";
+
+
+/*
+DriverTravelViewController
+*/
+"Alert_Finish_Service" = "Finishing this service needs confirmation code delivered to user. Please enter it in following field:";
+"Message" = "Message";
+"Payment_Successful" = "Payment has been settled and credit has been added to your wallet.";
+"Success" = "Success";
+"Services_Canceled" = "Service Has Been Canceled.";
+"Allright" = "Allright";
+"Paid" = "Paid";
+"Navigation" = "Navigation";
+"Select_App_Navigation" = "Select App to navigate with";
+"Soon" = "Soon";
+
+
+/*
+AboutViewController
+*/
+"Info" = "Info";
+"Application_Name" = "Application Name";
+"Version" = "Version";
+"Website" = "Website";
+"Phone_Number" = "Phone Number";
+
+
+/*
+SplashViewController
+*/
+" Alert_User_Info_Not_Found" = "User Info not found. Do you want to register again?";
+"Register" = "Register";

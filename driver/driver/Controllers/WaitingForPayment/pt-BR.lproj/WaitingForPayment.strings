@@ -1,0 +1,6 @@
+
+/* Class = "UILabel"; text = "Waiting For Payment..."; ObjectID = "ROE-d7-abD"; */
+"ROE-d7-abD.text" = "Aguardando pagamento...";
+
+/* Class = "UIButton"; normalTitle = "Cash Payment Received"; ObjectID = "gbd-f1-6eL"; */
+"gbd-f1-6eL.normalTitle" = "Pagamento em dinheiro recebido";

@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "-"; ObjectID = "5Mi-z1-o5Q"; */
+"5Mi-z1-o5Q.text" = "-";
+
+/* Class = "UILabel"; text = "Cost:"; ObjectID = "GJJ-AA-ih0"; */
+"GJJ-AA-ih0.text" = "Custo:";
+
+/* Class = "UILabel"; text = " $0.00"; ObjectID = "IKH-kT-vPB"; */
+"IKH-kT-vPB.text" = " R$0,00";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "ebO-GE-Pio"; */
+"ebO-GE-Pio.text" = "-";
+
+/* Class = "UILabel"; text = "Status:"; ObjectID = "k99-SS-dOs"; */
+"k99-SS-dOs.text" = "Status:";
+
+/* Class = "UILabel"; text = "Origin"; ObjectID = "kla-Fe-gLW"; */
+"kla-Fe-gLW.text" = "Origem";
+
+/* Class = "UILabel"; text = "Destination"; ObjectID = "mag-1p-NrY"; */
+"mag-1p-NrY.text" = "Destino";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "pK0-ai-Tw3"; */
+"pK0-ai-Tw3.text" = "-";

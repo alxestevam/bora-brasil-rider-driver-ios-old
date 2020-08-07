@@ -1,0 +1,192 @@
+
+/* Class = "UIViewController"; title = "Travel"; ObjectID = "0Iz-QF-vFS"; */
+"0Iz-QF-vFS.title" = "Viagem";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "0UA-oP-bwg"; */
+"0UA-oP-bwg.text" = "-";
+
+/* Class = "UIButton"; normalTitle = "-"; ObjectID = "24j-cD-dup"; */
+"24j-cD-dup.normalTitle" = "-";
+
+/* Class = "UIButton"; normalTitle = "Locations"; ObjectID = "2TL-AE-6i9"; */
+"2TL-AE-6i9.normalTitle" = "Locais";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "2se-Hv-S1o"; */
+"2se-Hv-S1o.text" = "Subtítulo";
+
+/* Class = "UISegmentedControl"; 3Fo-Yx-gKc.segmentTitles[0] = "Driver Info"; ObjectID = "3Fo-Yx-gKc"; */
+"3Fo-Yx-gKc.segmentTitles[0]" = "Informações do Motorista";
+
+/* Class = "UISegmentedControl"; 3Fo-Yx-gKc.segmentTitles[1] = "Request Info"; ObjectID = "3Fo-Yx-gKc"; */
+"3Fo-Yx-gKc.segmentTitles[1]" = "Solicite informações";
+
+/* Class = "UIButton"; normalTitle = "Final Destination"; ObjectID = "4gk-mA-be8"; */
+"4gk-mA-be8.normalTitle" = "Destino final";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "4qI-LT-UqT"; */
+"4qI-LT-UqT.normalTitle" = "Cancelar";
+
+/* Class = "UIButton"; normalTitle = "Add Destination"; ObjectID = "4xf-B2-cPM"; */
+"4xf-B2-cPM.normalTitle" = "Adicionar destino";
+
+/* Class = "UICollectionViewController"; title = "Favorites"; ObjectID = "55n-U1-7of"; */
+"55n-U1-7of.title" = "Favoritos";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "72h-cA-rRW"; */
+"72h-cA-rRW.text" = "Nome";
+
+/* Class = "UIViewController"; title = "Finished"; ObjectID = "7Oz-xP-CXJ"; */
+"7Oz-xP-CXJ.title" = "Encerrado";
+
+/* Class = "UIBarButtonItem"; title = "View All"; ObjectID = "8st-qR-PVg"; */
+"8st-qR-PVg.title" = "Ver Todos";
+
+/* Class = "UILabel"; text = "Balance: -$"; ObjectID = "9XL-MV-6VE"; */
+"9XL-MV-6VE.text" = "Saldo: -$";
+
+/* Class = "UIViewController"; title = "About"; ObjectID = "BH5-mw-fUk"; */
+"BH5-mw-fUk.title" = "Sobre";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "CC6-7V-eow"; */
+"CC6-7V-eow.text" = "Label";
+
+/* Class = "UILabel"; text = "Loading..."; ObjectID = "Da5-io-2Ql"; */
+"Da5-io-2Ql.text" = "Carregando...";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "Dkd-x6-rVg"; */
+"Dkd-x6-rVg.text" = "-";
+
+/* Class = "UILabel"; text = "Plate Number"; ObjectID = "FIn-9i-Vmt"; */
+"FIn-9i-Vmt.text" = "Número da placa";
+
+/* Class = "UILabel"; text = "Car Model"; ObjectID = "K1k-vC-o1f"; */
+"K1k-vC-o1f.text" = "Modelo do carro";
+
+/* Class = "UIButton"; normalTitle = "Promotions"; ObjectID = "K3k-A6-wG5"; */
+"K3k-A6-wG5.normalTitle" = "Promoções";
+
+/* Class = "UILabel"; text = "Unknown"; ObjectID = "NHr-4h-7Ue"; */
+"NHr-4h-7Ue.text" = "Desconhecido";
+
+/* Class = "UIButton"; normalTitle = "Apply Coupon"; ObjectID = "O3k-hU-9yw"; */
+"O3k-hU-9yw.normalTitle" = "Aplicar cupom";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "PIV-S5-aUQ"; */
+"PIV-S5-aUQ.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "PnH-Jr-AwG"; */
+"PnH-Jr-AwG.text" = "-";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "QdI-kU-395"; */
+"QdI-kU-395.text" = "Título";
+
+/* Class = "UIButton"; normalTitle = "Coupons"; ObjectID = "R5o-6b-HKZ"; */
+"R5o-6b-HKZ.normalTitle" = "Coupons";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "SMM-KV-eXo"; */
+"SMM-KV-eXo.normalTitle" = "Sair";
+
+/* Class = "UICollectionViewController"; title = "Transactions"; ObjectID = "Sq5-WZ-Mz0"; */
+"Sq5-WZ-Mz0.title" = "Transações";
+
+/* Class = "UIButton"; normalTitle = "Confirm Location"; ObjectID = "TGw-TV-i4G"; */
+"TGw-TV-i4G.normalTitle" = "Confirmar localização";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "UEa-fe-hJR"; */
+"UEa-fe-hJR.normalTitle" = "Entrar/Cadastrar";
+
+/* Class = "UILabel"; text = "cost"; ObjectID = "Ui8-Ju-y2t"; */
+"Ui8-Ju-y2t.text" = "custo";
+
+/* Class = "UILabel"; text = "ETA"; ObjectID = "W9y-W9-Pdi"; */
+"W9y-W9-Pdi.text" = "ETA";
+
+/* Class = "UINavigationItem"; title = "Ridy"; ObjectID = "WKC-Mu-F9o"; */
+"WKC-Mu-F9o.title" = "Ridy";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "YnQ-Yl-MeU"; */
+"YnQ-Yl-MeU.normalTitle" = "Cancelar";
+
+/* Class = "UIViewController"; title = "Edit Profile"; ObjectID = "Z2R-XF-e5Z"; */
+"Z2R-XF-e5Z.title" = "Editar Perfil";
+
+/* Class = "UIButton"; normalTitle = "Call"; ObjectID = "ZAI-5h-uDN"; */
+"ZAI-5h-uDN.normalTitle" = "Ligar";
+
+/* Class = "UIButton"; normalTitle = "Transactions"; ObjectID = "ZQM-YS-pNa"; */
+"ZQM-YS-pNa.normalTitle" = "Transações";
+
+/* Class = "UINavigationItem"; title = "Map Search"; ObjectID = "ZlI-bL-Y51"; */
+"ZlI-bL-Y51.title" = "Busca no Mapa";
+
+/* Class = "UICollectionViewController"; title = "Promotions"; ObjectID = "atc-sE-38y"; */
+"atc-sE-38y.title" = "Promoções";
+
+/* Class = "UINavigationItem"; title = "Favorites"; ObjectID = "b3X-JJ-fLF"; */
+"b3X-JJ-fLF.title" = "Favoritos";
+
+/* Class = "UIButton"; normalTitle = "Ride Now"; ObjectID = "bs0-ma-Cfy"; */
+"bs0-ma-Cfy.normalTitle" = "Dirigir Agora";
+
+/* Class = "UINavigationItem"; title = "Coupons"; ObjectID = "cc2-5Y-uBa"; */
+"cc2-5Y-uBa.title" = "Coupons";
+
+/* Class = "UIButton"; normalTitle = "Message"; ObjectID = "dLp-wh-UaX"; */
+"dLp-wh-UaX.normalTitle" = "Mensagem";
+
+/* Class = "UIButton"; normalTitle = "Your Profile"; ObjectID = "dcx-6b-be9"; */
+"dcx-6b-be9.normalTitle" = "Seu Perfil";
+
+/* Class = "UISegmentedControl"; eID-mT-jGo.segmentTitles[0] = "First"; ObjectID = "eID-mT-jGo"; */
+"eID-mT-jGo.segmentTitles[0]" = "Primeiro";
+
+/* Class = "UISegmentedControl"; eID-mT-jGo.segmentTitles[1] = "Second"; ObjectID = "eID-mT-jGo"; */
+"eID-mT-jGo.segmentTitles[1]" = "Segundo";
+
+/* Class = "UIButton"; normalTitle = "About"; ObjectID = "efs-jA-z6j"; */
+"efs-jA-z6j.normalTitle" = "Sobre";
+
+/* Class = "UICollectionViewController"; title = "Coupons"; ObjectID = "g48-4N-XvH"; */
+"g48-4N-XvH.title" = "Coupons";
+
+/* Class = "UIButton"; normalTitle = "Wallet"; ObjectID = "gEM-5h-WdU"; */
+"gEM-5h-WdU.normalTitle" = "Carteira";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "giN-60-q4q"; */
+"giN-60-q4q.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Done"; ObjectID = "lMW-jo-Nzv"; */
+"lMW-jo-Nzv.title" = "Pronto";
+
+/* Class = "UICollectionViewController"; title = "Trip History"; ObjectID = "p2I-iQ-HlV"; */
+"p2I-iQ-HlV.title" = "Histórico de Viagem";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "pDd-Fg-lrS"; */
+"pDd-Fg-lrS.text" = "-";
+
+/* Class = "UINavigationItem"; title = "Profile"; ObjectID = "ptF-U0-3Gn"; */
+"ptF-U0-3Gn.title" = "Profile";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "qnW-bA-i56"; */
+"qnW-bA-i56.text" = "-";
+
+/* Class = "UIButton"; normalTitle = "Trip History"; ObjectID = "s6C-9y-Zn1"; */
+"s6C-9y-Zn1.normalTitle" = "Histórico de Viagem";
+
+/* Class = "UIButton"; normalTitle = "Book for Later"; ObjectID = "vd8-M7-5It"; */
+"vd8-M7-5It.normalTitle" = "Reserve Para Mais Tarde";
+
+/* Class = "UINavigationItem"; title = "Wallet"; ObjectID = "vfs-fb-0uH"; */
+"vfs-fb-0uH.title" = "Carteira";
+
+/* Class = "UIButton"; normalTitle = "Pay"; ObjectID = "w6Z-5H-pYJ"; */
+"w6Z-5H-pYJ.normalTitle" = "Pagar";
+
+/* Class = "UIButton"; normalTitle = "+"; ObjectID = "xBy-ag-iuO"; */
+"xBy-ag-iuO.normalTitle" = "+";
+
+/* Class = "UINavigationItem"; title = "Travel"; ObjectID = "zDK-Gl-uq4"; */
+"zDK-Gl-uq4.title" = "Viagem";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "zd5-TF-1Lf"; */
+"zd5-TF-1Lf.title" = "Ítem";

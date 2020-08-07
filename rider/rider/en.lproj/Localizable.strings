@@ -1,0 +1,156 @@
+"notification_new_message_title" = "New Message";
+"notification_arrived_title" = "Arrived!";
+"notification_arrived_body" = "Driver has arrived";
+"notification_started_title" = "Started";
+"notification_started_body" = "Trip has been started";
+"notification_waiting_for_pay_title" = "Finished";
+"notification_waiting_for_pay_body" = "Trip was finished. Waiting for payment.";
+"notification_finished_title" = "Done!";
+"notification_finished_body" = "Trip has been finished and payment was settled.";
+
+
+"Error" = "Error";
+"Save" = "Save";
+"Message" = "Message";
+"Cancel" = "Cancel";
+"Done" = "Done";
+"Success" = "Success";
+"Unknown_Status" = "Unknown Status";
+"Allright" = "Allright";
+"Error_Happened" = "Error Happened";
+
+/*
+FinishedServiceViewController
+*/
+"Info" = "Info";
+"Final_Fee" = "Final fee";
+"Review" = "Review";
+"Score" = "Score";
+"Your_Review" = "Your review";
+"Enter_Review" = "Enter your review here";
+"Alert_Select_Score" = "You haven't selected any score point.";
+"Review_Sent." = "Review sent.";
+
+
+/*
+ ChatViewController
+ */
+"Chat" = "Chat";
+"Sending" =  "Sending";
+
+
+/*
+LookingViewController
+*/
+"Looking_Drivers"= "Looking for drivers";
+"Travel_Booked_For" = "Travel Booked for";
+"Travel_Booked" = "Travel Booked";
+"Alert_Expired" = "Sadly your request wasn't accepted in appropriate time and it is expired now.";
+
+
+/*
+CouponsCollectionViewController
+*/
+"Add_Coupon" = "Add Coupon";
+"Enter_Cupon_Code" = "Enter your coupon code";
+"Coupon_Code" = "Coupon Code";
+
+
+/*
+FavoritesViewController
+*/
+"Favorite_Address" = "Favorite Address";
+"Enter_Location" = "You need to enter a title for the location.";
+
+
+/*
+TravelViewController
+*/
+"Not_Provided" = "Not Provided";
+"Arrived" = "Arrived";
+"Soon" = "Soon";
+"Alert_Service_Canceled" = "Service Has Been Canceled.";
+"Driver_Arrived" = "Driver Arrived";
+"Alert_Confirmation" = "Confirmation code service is enabled. Driver will need to enter  %@ to finish service.";
+
+
+/*
+AboutViewController
+*/
+"Application_Name" = "Application Name";
+"Version" = "Version";
+"Website" = "Website";
+"Phone Number" = "Phone Number";
+
+
+/*
+ WalletViewController
+ */
+"Empty_Wallet_Error" = "You need to do at least one trip so wallet would be enabled for you.";
+"No_Payment_Method_On" = "No Payment Method is enabled.";
+"Wallet_Footnote" = "You can charge your wallet for an amount more than your \"Service Fee\" and your future Service Fees will be deducted automatically from your in-app wallet.";
+"Service_Fee" = "Service Fee";
+"Credit" = "Credit";
+"Current_Credit" = "Current Credit";
+"Add_Credit" = "Add credit";
+"Amount" = "Amount";
+"Pay" = "Pay";
+"Amount_Missing" = "Amount Missing";
+"Card_Info_Missing" = "Card Info Missing";
+"User_Canceled" = "User Canceled";
+"Card_Info_Missing" = "Card Info Missing";
+"Payment_Successful" = "Payment Successful";
+"Verification" = "Verification";
+"Alert_Enter_OTP_Code" = "Please Enter OTP code sent to your mobile number";
+"Alert_Enter_PIN_Code" = "Please Enter PIN code";
+
+
+/*
+WalletViewController
+*/
+"Images" = "Images";
+"Profile_Image" = "Profile Image";
+"Uploading_Wait" = "Uploading, Please wait...";
+"Uploading_Successful" = "Uploading Profile Image was successful.";
+"Basic_Info" = "Basic Info";
+"Mobile_Number" = "Mobile Number";
+
+"Email" = "E-Mail";
+"Name" = "Name";
+"First_Name" = "First Name";
+"Last_Name" = "Last Name";
+
+"Additional_Info" = "Additional Info";
+
+"Gender" = "Gender";
+"Select_Gender" = "Select Your Gender";
+"Male" = "Male";
+"Female" = "Female";
+"Unspecified" = "Unspecified";
+
+"Address" = "Address";
+
+
+/*
+SplashViewController
+*/
+"Register" = "Register";
+
+
+/*
+MainViewController
+*/
+"Alert_Error_Get_Current_Location" = "Couldn't get current location. use search to find your current place on map.";
+"Favorite_Addresses" = "Favorite Addresses";
+"Choose_Location" = "Chose the location from below picker";
+"No_Favorite_Address_Found." = "No Favorite Address found.";
+
+
+/*
+ServicesParentViewController
+*/
+"Request_Service" = "Request %@ Now";
+"Select Time" = "Select Time";
+"Absolute_Hours_Acceptable" = "Only absolute hours are accepted for this service";
+"Problem" = "Problem";
+"Alert_Error_Passed_Time" = "Time selected seems to be for past. Select a future time or now!";

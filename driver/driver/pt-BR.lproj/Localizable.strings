@@ -1,0 +1,128 @@
+"notification_new_request_title" = "Nova Requisição";
+"notification_new_request_body" = "Chegou Nova Requisição";
+"notification_new_message_title" = "Nova mensagem";
+"notification_paid_title" = "Pago!";
+"notification_paid_body" = "A viagem foi paga";
+
+
+"Cancel" = "Cancelar";
+"Title" = "Título";
+"Content" = "Conteúdo";
+"Options" = "Opções";
+"Status" = "Status";
+"Services" = "Serviços";
+"Confirmation" = "Confirmação";
+"Error" = "Erro";
+"Unkown_Status" = "Status Desconhecido";
+"Done" = "Pronto";
+"Error_Happened" = "Ocorreu um erro";
+
+/*
+ EarningViewController
+ */
+"Earnings" = "Ganhos";
+"Distance" = "Distância";
+"Time" = "Tempo";
+"No Data to show." = "Não há dados para mostrar.";
+
+
+/*
+ ChatViewController
+ */
+"Chat" = "Conversa";
+"Sending" = "Enviando";
+
+
+/*
+ WalletViewController
+ */
+"Empty_Wallet_Error" = "Você precisa fazer pelo menos uma viagem para que a carteira seja ativada para você.";
+"No_Payment_Method_On" = "Nenhum método de pagamento está ativado.";
+"Wallet_Footnote" = "Você pode cobrar da sua carteira um valor superior à sua \"Taxa de Serviço\" e suas futuras Taxas de Serviço serão deduzidas automaticamente da sua carteira no aplicativo.";
+"Service_Fee" = "Taxa de serviço";
+"Credit" = "Crédito";
+"Current_Credit" = "Crédito Atual";
+"Add_Credit" = "Adicionar crédito";
+"Amount" = "Quantia";
+"Pay" = "Pagar";
+"Amount_Missing" = "Quantia ausente";
+"Card_Info_Missing" = "Informações do cartão ausentes";
+"User_Canceled" = "Usuário cancelado";
+"Card_Info_Missing" = "Informações do cartão ausentes";
+"Payment_Successful" = "Pagamento bem sucedido";
+"Verification" = "Verificação";
+"Alert_Enter_OTP_Code" = "Favor digitar o código OTP enviado ao seu número de celular";
+"Alert_Enter_PIN_Code" = "Favor digitar o código PIN";
+
+
+/*
+TripHistoryCollectionViewController
+*/
+"Title_Write_Complaint" = "Escrever Reclamação";
+"Complaint" = "Reclamação";
+"Message_Write_Complaint" = "Você pode escrever uma reclamação sobre o serviço prestado e ela será analisada o mais rápido possível.";
+"Complaint_Sent." = "Reclamação Enviada.";
+"Hide_Item" = "Esconder Ítem";
+
+
+/*
+EditProfileViewController
+*/
+"Profile_Image" = "Imagem de Perfil";
+"Personal_Info" = "Informações Pessoais";
+"Mobile_Number" = "Telefone";
+"Note" = "Nota";
+"Images" = "Fotos";
+"Email" = "E-Mail";
+"Name" = "Nome";
+"First_Name" = "Primeiro Nome";
+"Last_Name" = "Sobrenome";
+
+"Gender" = "Gênero";
+"Select_Gender" = "Selecione seu Gênero";
+"Male" = "Masculino";
+"Female" = "Feminino";
+"Unspecified" = "Não especificado";
+
+"Address" = "Endereço";
+"Bank_Account_Number" = "Número da Conta";
+"Car_Plate" = "Placa do Carro";
+"Certificate_Number" = "Número do certificado";
+"Select_Services" = "Você pode selecionar os serviços que você pode fornecer. O provedor pode alterá-los e selecionar outros serviços para você de acordo.";
+"Documents" = "Documentos";
+"After_Approval" =  "Após a aprovação, todos os seus documentos serão removidos.";
+"Driver_License" = "Carteira de motorista";
+"Picture_of_Vehicle" = "Foto do veículo";
+"Registration_Successful"= "O registro foi realizado com sucesso. Você pode sair do aplicativo agora e voltar mais tarde para ver seu status de aprovação.";
+
+
+/*
+DriverTravelViewController
+*/
+"Alert_Finish_Service" = "A conclusão deste serviço precisa do código de confirmação entregue ao usuário. Digite-o no seguinte campo:";
+"Message" = "Menagem";
+"Payment_Successful" = "O pagamento foi liquidado e o crédito foi adicionado à sua carteira.";
+"Success" = "Sucesso";
+"Services_Canceled" = "O serviço foi cancelado.";
+"Allright" = "Tudo certo";
+"Paid" = "Pago";
+"Navigation" = "Navegação";
+"Select_App_Navigation" = "Selecione App para navegar com:";
+"Soon" = "Em breve";
+
+
+/*
+AboutViewController
+*/
+"Info" = "Informação";
+"Application_Name" = "Nome do App";
+"Version" = "Versão";
+"Website" = "Website";
+"Phone_Number" = "Telefone";
+
+
+/*
+SplashViewController
+*/
+" Alert_User_Info_Not_Found" = "Informações do usuário não encontradas. Deseja se registrar novamente?";
+"Register" = "Cadastrar";
