@@ -83,7 +83,6 @@
 		4CB8C43223D4DB2C00F4BF90 /* EarningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB8C43123D4DB2C00F4BF90 /* EarningViewController.swift */; };
 		4CB8C43623D5FEA900F4BF90 /* GetStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB8C43523D5FEA900F4BF90 /* GetStats.swift */; };
 		4CE9844521A81C3600900570 /* TransactionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE9844321A81C3600900570 /* TransactionsCollectionViewCell.swift */; };
-		546DFCE824A39E000046691F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 546DFCE724A39DFF0046691F /* GoogleService-Info.plist */; };
 		5473539D24AAC91200EDDDD3 /* EarningScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5473539F24AAC91200EDDDD3 /* EarningScreen.xib */; };
 		547353A424AAC98600EDDDD3 /* WaitingForPayment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547353A624AAC98600EDDDD3 /* WaitingForPayment.xib */; };
 		547353AB24AACA3200EDDDD3 /* TransactionsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547353AD24AACA3200EDDDD3 /* TransactionsCollectionViewCell.xib */; };
@@ -106,6 +105,7 @@
 		62B6FE111F71682200F66611 /* DriverMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6FE101F71682200F66611 /* DriverMainViewController.swift */; };
 		62F12DCF22EDD96700434A05 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F12DCE22EDD96700434A05 /* ChatViewController.swift */; };
 		680C1AEE169A1469633B3949 /* Pods_driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A40C6906CC2298EF2B9CC43 /* Pods_driver.framework */; };
+		85712C0824DDAC0200C839B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85712C0724DDAC0200C839B3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -188,7 +188,6 @@
 		4CB8C43523D5FEA900F4BF90 /* GetStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStats.swift; sourceTree = "<group>"; };
 		4CC42433238824AD00EE7E0E /* shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE9844321A81C3600900570 /* TransactionsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionsCollectionViewCell.swift; sourceTree = "<group>"; };
-		546DFCE724A39DFF0046691F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5473539924AAC5EF00EDDDD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		5473539A24AAC68000EDDDD3 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		5473539E24AAC91200EDDDD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EarningScreen.xib; sourceTree = "<group>"; };
@@ -216,7 +215,7 @@
 		625661561F7264A3003F70A4 /* DriverNavigationMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverNavigationMenuViewController.swift; sourceTree = "<group>"; };
 		627B16F721A9D49500FF0953 /* driver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = driver.entitlements; path = driver/driver.entitlements; sourceTree = "<group>"; };
 		62A08DFD1F73CDED003A4F1A /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		62B6FDB41F71059900F66611 /* Mobiler Drive Motorista.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobiler Drive Motorista.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		62B6FDB41F71059900F66611 /* Bora Brasil Motorista.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bora Brasil Motorista.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B6FDB71F71059900F66611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62B6FDBC1F71059900F66611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		62B6FDC31F71059900F66611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -229,6 +228,7 @@
 		62F12DCE22EDD96700434A05 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		73B2394A3DC335EC45D326D4 /* Pods-driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-driver.release.xcconfig"; path = "Target Support Files/Pods-driver/Pods-driver.release.xcconfig"; sourceTree = "<group>"; };
 		7A40C6906CC2298EF2B9CC43 /* Pods_driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85712C0724DDAC0200C839B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,7 +445,7 @@
 		62B6FDB51F71059900F66611 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				62B6FDB41F71059900F66611 /* Mobiler Drive Motorista.app */,
+				62B6FDB41F71059900F66611 /* Bora Brasil Motorista.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -461,8 +461,8 @@
 				62B6FDFD1F715D2100F66611 /* Controllers */,
 				62B6FDBB1F71059900F66611 /* Main.storyboard */,
 				62A08DFD1F73CDED003A4F1A /* background.jpg */,
-				546DFCE724A39DFF0046691F /* GoogleService-Info.plist */,
 				54E4B67D2481D4DC00EC43D8 /* Assets.xcassets */,
+				85712C0724DDAC0200C839B3 /* GoogleService-Info.plist */,
 				62B6FDC31F71059900F66611 /* Info.plist */,
 				547353C224AACC7200EDDDD3 /* Localizable.strings */,
 			);
@@ -612,7 +612,7 @@
 			);
 			name = driver;
 			productName = driver;
-			productReference = 62B6FDB41F71059900F66611 /* Mobiler Drive Motorista.app */;
+			productReference = 62B6FDB41F71059900F66611 /* Bora Brasil Motorista.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -669,9 +669,9 @@
 				547353B924AACBE700EDDDD3 /* RequestCard.xib in Resources */,
 				62A08DFE1F73CDED003A4F1A /* background.jpg in Resources */,
 				62B6FDBD1F71059900F66611 /* Main.storyboard in Resources */,
-				546DFCE824A39E000046691F /* GoogleService-Info.plist in Resources */,
 				5473539D24AAC91200EDDDD3 /* EarningScreen.xib in Resources */,
 				547353A424AAC98600EDDDD3 /* WaitingForPayment.xib in Resources */,
+				85712C0824DDAC0200C839B3 /* GoogleService-Info.plist in Resources */,
 				4C6AB3E123BD1A9700FAF6FE /* cash.json in Resources */,
 				547353AB24AACA3200EDDDD3 /* TransactionsCollectionViewCell.xib in Resources */,
 			);
@@ -1043,18 +1043,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = driver/driver.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 6CLNFB744W;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = driver/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobiler.driver.app;
-				PRODUCT_NAME = "Mobiler Drive Motorista";
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.motorista;
+				PRODUCT_NAME = "Bora Brasil Motorista";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1066,17 +1066,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = driver/driver.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 4;
-				DEVELOPMENT_TEAM = 6CLNFB744W;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = driver/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobiler.driver.app;
-				PRODUCT_NAME = "Mobiler Drive Motorista";
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.motorista;
+				PRODUCT_NAME = "Bora Brasil Motorista";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

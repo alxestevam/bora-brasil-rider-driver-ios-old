@@ -87,7 +87,6 @@
 		4CE8E9D7237ED9710094B672 /* RequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE8E9D6237ED9710094B672 /* RequestDTO.swift */; };
 		4CE9844B21A8244D00900570 /* PromotionsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE9844A21A8244D00900570 /* PromotionsCollectionViewController.swift */; };
 		4CE9844E21A824CB00900570 /* PromotionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE9844C21A824CB00900570 /* PromotionsCollectionViewCell.swift */; };
-		546DFCE624A39DF00046691F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 546DFCE524A39DEF0046691F /* GoogleService-Info.plist */; };
 		547353C424AACE3100EDDDD3 /* PromotionsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547353C624AACE3100EDDDD3 /* PromotionsCollectionViewCell.xib */; };
 		547353CB24AACE7C00EDDDD3 /* CouponsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547353CD24AACE7C00EDDDD3 /* CouponsCollectionViewCell.xib */; };
 		547353D224AACEAB00EDDDD3 /* FavoriteAddressDialogViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547353D424AACEAB00EDDDD3 /* FavoriteAddressDialogViewController.xib */; };
@@ -122,6 +121,7 @@
 		62D714D1209C4F5D0043ABFB /* FavoriteAddressDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D714CF209C4F5D0043ABFB /* FavoriteAddressDialogViewController.swift */; };
 		62DB4577232A438700B7722E /* FinishedServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DB4576232A438700B7722E /* FinishedServiceViewController.swift */; };
 		62E2A253230A72D4000848CE /* SuggestionsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E2A252230A72D4000848CE /* SuggestionsTableTableViewController.swift */; };
+		85712C0624DDABB800C839B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85712C0524DDABB800C839B3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -227,7 +227,6 @@
 		4CE9844A21A8244D00900570 /* PromotionsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsCollectionViewController.swift; sourceTree = "<group>"; };
 		4CE9844C21A824CB00900570 /* PromotionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		512ABDAA5C939C66CB2308D5 /* Pods_rider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		546DFCE524A39DEF0046691F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5473539B24AAC73200EDDDD3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		5473539C24AAC73E00EDDDD3 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		547353C524AACE3100EDDDD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PromotionsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -276,11 +275,12 @@
 		62B6FD9C1F70F70A00F66611 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = rider/Info.plist; sourceTree = SOURCE_ROOT; };
 		62B6FD9F1F70F8FD00F66611 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = rider/background.jpg; sourceTree = SOURCE_ROOT; };
 		62B6FDA81F70FF2200F66611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = rider/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
-		62C7741E1F08EBC700E70C8B /* Mobiler Drive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobiler Drive.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		62C7741E1F08EBC700E70C8B /* Bora Brasil Passageiro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bora Brasil Passageiro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62CF116121BF0CEE0020C561 /* rider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = rider.entitlements; path = rider/rider.entitlements; sourceTree = "<group>"; };
 		62D714CF209C4F5D0043ABFB /* FavoriteAddressDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAddressDialogViewController.swift; sourceTree = "<group>"; };
 		62DB4576232A438700B7722E /* FinishedServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedServiceViewController.swift; sourceTree = "<group>"; };
 		62E2A252230A72D4000848CE /* SuggestionsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsTableTableViewController.swift; sourceTree = "<group>"; };
+		85712C0524DDABB800C839B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8C0831CC63A04C24A74DEE5C /* Pods-rider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rider.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-rider/Pods-rider.debug.xcconfig"; sourceTree = "<group>"; };
 		9ECEFAC24285911139A02E6C /* Pods-rider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rider.release.xcconfig"; path = "../Pods/Target Support Files/Pods-rider/Pods-rider.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -630,7 +630,7 @@
 		62C7741F1F08EBC700E70C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				62C7741E1F08EBC700E70C8B /* Mobiler Drive.app */,
+				62C7741E1F08EBC700E70C8B /* Bora Brasil Passageiro.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -645,8 +645,8 @@
 				624D3C2E1F1B33E700811758 /* Application */,
 				62B6FDA71F70FF2200F66611 /* Main.storyboard */,
 				62B6FD9F1F70F8FD00F66611 /* background.jpg */,
-				546DFCE524A39DEF0046691F /* GoogleService-Info.plist */,
 				54E4B67F2481D4F200EC43D8 /* Assets.xcassets */,
+				85712C0524DDABB800C839B3 /* GoogleService-Info.plist */,
 				62B6FD9C1F70F70A00F66611 /* Info.plist */,
 				62972937223BB4D30084E2BB /* car.json */,
 				547353DB24AACED700EDDDD3 /* Localizable.strings */,
@@ -724,7 +724,7 @@
 			packageProductDependencies = (
 			);
 			productName = taxi;
-			productReference = 62C7741E1F08EBC700E70C8B /* Mobiler Drive.app */;
+			productReference = 62C7741E1F08EBC700E70C8B /* Bora Brasil Passageiro.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -785,8 +785,8 @@
 				62972938223BB4D30084E2BB /* car.json in Resources */,
 				547353C424AACE3100EDDDD3 /* PromotionsCollectionViewCell.xib in Resources */,
 				62B6FDAA1F70FF2200F66611 /* Main.storyboard in Resources */,
+				85712C0624DDABB800C839B3 /* GoogleService-Info.plist in Resources */,
 				62B6FDA11F70F8FD00F66611 /* background.jpg in Resources */,
-				546DFCE624A39DF00046691F /* GoogleService-Info.plist in Resources */,
 				547353D224AACEAB00EDDDD3 /* FavoriteAddressDialogViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1118,7 +1118,7 @@
 				CODE_SIGN_ENTITLEMENTS = rider/rider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 6CLNFB744W;
 				INFOPLIST_FILE = "$(SRCROOT)/rider/Info.plist";
@@ -1127,9 +1127,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobiler.rider.app;
-				PRODUCT_NAME = "Mobiler Drive";
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.passageiro;
+				PRODUCT_NAME = "Bora Brasil Passageiro";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1203,7 +1203,7 @@
 				CODE_SIGN_ENTITLEMENTS = rider/rider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 6CLNFB744W;
 				INFOPLIST_FILE = "$(SRCROOT)/rider/Info.plist";
@@ -1212,9 +1212,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobiler.rider.app;
-				PRODUCT_NAME = "Mobiler Drive";
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.passageiro;
+				PRODUCT_NAME = "Bora Brasil Passageiro";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
