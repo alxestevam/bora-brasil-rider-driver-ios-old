@@ -626,9 +626,10 @@
 			children = (
 				4CB5FC4323A79FA400F2D5BC /* Components */,
 				62F4D8BF20154900000933DA /* Models */,
+				624D3C2E1F1B33E700811758 /* Application */,
 				622BBD351F32236D00E14667 /* Networking */,
 				624D3C2F1F1B33F600811758 /* Controllers */,
-				624D3C2E1F1B33E700811758 /* Application */,
+				8503503E24E1D15C00B3EF05 /* Util */,
 				62B6FDA71F70FF2200F66611 /* Main.storyboard */,
 				62B6FD9F1F70F8FD00F66611 /* background.jpg */,
 				54E4B67F2481D4F200EC43D8 /* Assets.xcassets */,
@@ -674,6 +675,13 @@
 				4C24E20723883AC000AB2DC3 /* DTO */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8503503E24E1D15C00B3EF05 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		EA914EE38186F69D003C17C4 /* Pods */ = {
