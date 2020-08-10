@@ -272,7 +272,7 @@
 		62B6FD9C1F70F70A00F66611 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = rider/Info.plist; sourceTree = SOURCE_ROOT; };
 		62B6FD9F1F70F8FD00F66611 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = rider/background.jpg; sourceTree = SOURCE_ROOT; };
 		62B6FDA81F70FF2200F66611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = rider/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
-		62C7741E1F08EBC700E70C8B /* Bora Brasil Passageiro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bora Brasil Passageiro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		62C7741E1F08EBC700E70C8B /* BBMU Passageiro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BBMU Passageiro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62CF116121BF0CEE0020C561 /* rider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = rider.entitlements; path = rider/rider.entitlements; sourceTree = "<group>"; };
 		62D714CF209C4F5D0043ABFB /* FavoriteAddressDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAddressDialogViewController.swift; sourceTree = "<group>"; };
 		62DB4576232A438700B7722E /* FinishedServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedServiceViewController.swift; sourceTree = "<group>"; };
@@ -616,7 +616,7 @@
 		62C7741F1F08EBC700E70C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				62C7741E1F08EBC700E70C8B /* Bora Brasil Passageiro.app */,
+				62C7741E1F08EBC700E70C8B /* BBMU Passageiro.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -710,7 +710,7 @@
 			packageProductDependencies = (
 			);
 			productName = taxi;
-			productReference = 62C7741E1F08EBC700E70C8B /* Bora Brasil Passageiro.app */;
+			productReference = 62C7741E1F08EBC700E70C8B /* BBMU Passageiro.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1101,6 +1101,7 @@
 			baseConfigurationReference = 9ECEFAC24285911139A02E6C /* Pods-rider.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = rider/rider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1115,7 +1116,7 @@
 				);
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.passageiro;
-				PRODUCT_NAME = "Bora Brasil Passageiro";
+				PRODUCT_NAME = "BBMU Passageiro";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1186,6 +1187,7 @@
 			baseConfigurationReference = 8C0831CC63A04C24A74DEE5C /* Pods-rider.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = rider/rider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1200,7 +1202,7 @@
 				);
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.passageiro;
-				PRODUCT_NAME = "Bora Brasil Passageiro";
+				PRODUCT_NAME = "BBMU Passageiro";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hgh-ST-Al4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hgh-ST-Al4">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -11,7 +11,7 @@
         <!--Promotions-->
         <scene sceneID="v4M-0a-M3l">
             <objects>
-                <collectionViewController title="Promotions" id="atc-sE-38y" customClass="PromotionsCollectionViewController" customModule="Mobiler_Drive" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="Promotions" id="atc-sE-38y" customClass="PromotionsCollectionViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="6Cy-6j-DBa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
         <!--Transactions-->
         <scene sceneID="Hru-1u-TkY">
             <objects>
-                <collectionViewController storyboardIdentifier="Transactions" title="Transactions" id="Sq5-WZ-Mz0" customClass="TransactionsCollectionViewController" customModule="Mobiler_Drive" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="Transactions" title="Transactions" id="Sq5-WZ-Mz0" customClass="TransactionsCollectionViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="uNB-uI-jYa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,7 +61,7 @@
         <!--Coupons-->
         <scene sceneID="ccf-xh-7LB">
             <objects>
-                <collectionViewController storyboardIdentifier="CouponsCollectionViewController" title="Coupons" id="g48-4N-XvH" customClass="CouponsCollectionViewController" customModule="Mobiler_Drive" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="CouponsCollectionViewController" title="Coupons" id="g48-4N-XvH" customClass="CouponsCollectionViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="HM1-nB-kRe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,7 +93,7 @@
         <!--Ridy-->
         <scene sceneID="T5a-z9-I7u">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="Dee-gZ-TbI" customClass="MainViewController" customModule="Mobiler_Drive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Dee-gZ-TbI" customClass="MainViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="93Y-mY-aXb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,7 +104,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="mHj-Xs-Z6c">
                                 <rect key="frame" x="8" y="614" width="304" height="45"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGw-TV-i4G" userLabel="Confirm Pickup" customClass="ColoredButton" customModule="Mobiler_Drive" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGw-TV-i4G" userLabel="Confirm Pickup" customClass="ColoredButton" customModule="BBMU_Passageiro" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="96.5" height="45"/>
                                         <color key="backgroundColor" red="0.0" green="0.57870462940745071" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -118,7 +118,7 @@
                                             <action selector="onButtonConfirmPickupTouched:" destination="Dee-gZ-TbI" eventType="touchUpInside" id="YF7-l1-V8d"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xf-B2-cPM" userLabel="Add Destination" customClass="ColoredButton" customModule="Mobiler_Drive" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xf-B2-cPM" userLabel="Add Destination" customClass="ColoredButton" customModule="BBMU_Passageiro" customModuleProvider="target">
                                         <rect key="frame" x="103.5" y="0.0" width="97" height="45"/>
                                         <color key="backgroundColor" red="0.0" green="0.5787046294" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -132,7 +132,7 @@
                                             <action selector="onButtonAddDestinationTouched:" destination="Dee-gZ-TbI" eventType="touchUpInside" id="XcO-l2-vYg"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gk-mA-be8" customClass="ColoredButton" customModule="Mobiler_Drive" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gk-mA-be8" customClass="ColoredButton" customModule="BBMU_Passageiro" customModuleProvider="target">
                                         <rect key="frame" x="207.5" y="0.0" width="96.5" height="45"/>
                                         <color key="backgroundColor" red="0.0" green="0.5787046294" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -205,7 +205,7 @@
         <!--Travel-->
         <scene sceneID="2tJ-1S-N1b">
             <objects>
-                <viewController title="Travel" id="0Iz-QF-vFS" customClass="TravelViewController" customModule="Mobiler_Drive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Travel" id="0Iz-QF-vFS" customClass="TravelViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o5A-4b-y8H">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -214,11 +214,11 @@
                                 <rect key="frame" x="0.0" y="22" width="320" height="667"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXe-ON-VTv">
-                                <rect key="frame" x="0.0" y="364" width="320" height="303"/>
+                                <rect key="frame" x="0.0" y="340" width="320" height="327"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMt-8c-W1r">
-                                <rect key="frame" x="0.0" y="403" width="320" height="150"/>
+                                <rect key="frame" x="0.0" y="379" width="320" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dkd-x6-rVg" userLabel="Text Cost">
                                         <rect key="frame" x="187.5" y="42" width="9.5" height="24"/>
@@ -262,7 +262,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="U8K-Df-Kdy">
-                                <rect key="frame" x="16" y="415" width="304" height="133.5"/>
+                                <rect key="frame" x="16" y="391" width="304" height="133.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72h-cA-rRW">
                                         <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
@@ -303,21 +303,21 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ETF-kS-l2T">
-                                <rect key="frame" x="8" y="553" width="304" height="106"/>
+                                <rect key="frame" x="8" y="529" width="304" height="130"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ew6-hQ-6dO">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="38"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6Z-5H-pYJ" customClass="ColoredButton" customModule="Mobiler_Drive" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="148" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6Z-5H-pYJ" customClass="ColoredButton" customModule="BBMU_Passageiro" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="148" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Pay"/>
                                                 <connections>
                                                     <action selector="onWalletTapped:" destination="0Iz-QF-vFS" eventType="touchUpInside" id="6nk-Xj-jzs"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3k-hU-9yw" customClass="ColoredButton" customModule="Mobiler_Drive" customModuleProvider="target">
-                                                <rect key="frame" x="156" y="0.0" width="148" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3k-hU-9yw" customClass="ColoredButton" customModule="BBMU_Passageiro" customModuleProvider="target">
+                                                <rect key="frame" x="156" y="0.0" width="148" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Apply Coupon"/>
                                                 <connections>
@@ -327,18 +327,18 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b8b-3X-t57">
-                                        <rect key="frame" x="0.0" y="38" width="304" height="30"/>
+                                        <rect key="frame" x="0.0" y="46" width="304" height="38"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAI-5h-uDN" customClass="ColoredButton" customModule="Mobiler_Drive" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="148" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAI-5h-uDN" customClass="ColoredButton" customModule="BBMU_Passageiro" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="148" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Call"/>
                                                 <connections>
                                                     <action selector="onCallTouched:" destination="0Iz-QF-vFS" eventType="touchUpInside" id="K1d-gG-d4D"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLp-wh-UaX" customClass="ColoredButton" customModule="Mobiler_Drive" customModuleProvider="target">
-                                                <rect key="frame" x="156" y="0.0" width="148" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLp-wh-UaX" customClass="ColoredButton" customModule="BBMU_Passageiro" customModuleProvider="target">
+                                                <rect key="frame" x="156" y="0.0" width="148" height="38"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Message"/>
                                                 <connections>
@@ -347,8 +347,8 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qI-LT-UqT" customClass="ColoredButton" customModule="Mobiler_Drive" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="76" width="304" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qI-LT-UqT" customClass="ColoredButton" customModule="BBMU_Passageiro" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="304" height="38"/>
                                         <color key="backgroundColor" red="0.38823529410000002" green="0.74117647060000003" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <viewLayoutGuide key="safeArea" id="HFh-qK-2H0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -362,7 +362,7 @@
                                 </subviews>
                             </stackView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3Fo-Yx-gKc">
-                                <rect key="frame" x="62.5" y="372" width="195" height="32"/>
+                                <rect key="frame" x="62.5" y="348" width="195" height="32"/>
                                 <segments>
                                     <segment title="Driver Info"/>
                                     <segment title="Request Info"/>
@@ -426,7 +426,7 @@
         <!--Finished-->
         <scene sceneID="EUh-lu-Csm">
             <objects>
-                <viewController storyboardIdentifier="finishedViewController" title="Finished" id="7Oz-xP-CXJ" customClass="FinishedServiceViewController" customModule="Mobiler_Drive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="finishedViewController" title="Finished" id="7Oz-xP-CXJ" customClass="FinishedServiceViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KFq-LP-aoM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -445,7 +445,7 @@
         <!--Looking View Controller-->
         <scene sceneID="f4L-rL-1kw">
             <objects>
-                <viewController modalPresentationStyle="overFullScreen" id="O2R-rO-LhR" customClass="LookingViewController" customModule="Mobiler_Drive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="O2R-rO-LhR" customClass="LookingViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KxG-xF-OT3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -467,7 +467,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YnQ-Yl-MeU" customClass="ColoredButton" customModule="Mobiler_Drive" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YnQ-Yl-MeU" customClass="ColoredButton" customModule="BBMU_Passageiro" customModuleProvider="target">
                                 <rect key="frame" x="50" y="533.5" width="220" height="45"/>
                                 <color key="backgroundColor" red="0.0" green="0.5787046294" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -518,7 +518,7 @@
         <!--Trip History-->
         <scene sceneID="Ody-cO-yAE">
             <objects>
-                <collectionViewController storyboardIdentifier="TripHistory" title="Trip History" id="p2I-iQ-HlV" customClass="TripHistoryCollectionViewController" customModule="Mobiler_Drive" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="TripHistory" title="Trip History" id="p2I-iQ-HlV" customClass="TripHistoryCollectionViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="MCe-rc-ohe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -543,7 +543,7 @@
         <!--About-->
         <scene sceneID="tfJ-eY-guF">
             <objects>
-                <viewController title="About" id="BH5-mw-fUk" customClass="AboutViewController" customModule="Mobiler_Drive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="About" id="BH5-mw-fUk" customClass="AboutViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uw2-5A-P3k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -558,7 +558,7 @@
         <!--Wallet-->
         <scene sceneID="Z3S-wS-NCr">
             <objects>
-                <viewController storyboardIdentifier="Wallet" id="gOV-El-djk" customClass="WalletViewController" customModule="Mobiler_Drive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Wallet" id="gOV-El-djk" customClass="WalletViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oKG-c3-C4Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -574,7 +574,7 @@
         <!--Favorites-->
         <scene sceneID="Quo-Ne-W2I">
             <objects>
-                <collectionViewController title="Favorites" id="55n-U1-7of" customClass="FavoritesViewController" customModule="Mobiler_Drive" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="Favorites" id="55n-U1-7of" customClass="FavoritesViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="qh9-wk-n6t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -586,7 +586,7 @@
                             <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddressCell" id="XuP-lR-fGN" customClass="AddressCell" customModule="Mobiler_Drive" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddressCell" id="XuP-lR-fGN" customClass="AddressCell" customModule="BBMU_Passageiro" customModuleProvider="target">
                                 <rect key="frame" x="8.5" y="8" width="358" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -680,7 +680,7 @@
         <!--Edit Profile-->
         <scene sceneID="ctR-xa-XEf">
             <objects>
-                <viewController title="Edit Profile" id="Z2R-XF-e5Z" customClass="RiderEditProfileViewController" customModule="Mobiler_Drive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Edit Profile" id="Z2R-XF-e5Z" customClass="RiderEditProfileViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r4B-Ck-ACP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -702,7 +702,7 @@
         <!--Navigator View Controller-->
         <scene sceneID="Upp-Sg-Sy0">
             <objects>
-                <navigationController storyboardIdentifier="Main" extendedLayoutIncludesOpaqueBars="YES" id="7gT-Px-WAC" customClass="NavigatorViewController" customModule="Mobiler_Drive" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Main" extendedLayoutIncludesOpaqueBars="YES" id="7gT-Px-WAC" customClass="NavigatorViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="667"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="G66-GE-h0T">
@@ -731,7 +731,7 @@
         <!--Navigation Menu View Controller-->
         <scene sceneID="PCR-TL-0Nj">
             <objects>
-                <viewController storyboardIdentifier="NavigationMenu" id="eFh-ME-LCI" customClass="NavigationMenuViewController" customModule="Mobiler_Drive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NavigationMenu" id="eFh-ME-LCI" customClass="NavigationMenuViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1m0-gi-w2u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1082,7 +1082,7 @@
         <!--Host View Controller-->
         <scene sceneID="klT-W3-Jv2">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="fullScreen" id="Qxb-Tn-bnO" customClass="HostViewController" customModule="Mobiler_Drive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="fullScreen" id="Qxb-Tn-bnO" customClass="HostViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="One-P8-F6w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1097,11 +1097,14 @@
         <!--Splash View Controller-->
         <scene sceneID="4yh-Ik-gau">
             <objects>
-                <viewController id="Hgh-ST-Al4" customClass="SplashViewController" customModule="Mobiler_Drive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Hgh-ST-Al4" customClass="SplashViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AXb-0r-jYl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="UX7-RC-tjG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEa-fe-hJR">
                                 <rect key="frame" x="19" y="523" width="337.5" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1124,25 +1127,20 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kWy-hv-b6d">
                                 <rect key="frame" x="177.5" y="450" width="20" height="20"/>
                             </activityIndicatorView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="4Sd-nI-rDa">
-                                <rect key="frame" x="87.5" y="85" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="kTs-Xa-c6S"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.039215686274509803" green="0.039215686274509803" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="X6f-Su-Arh" firstAttribute="bottom" secondItem="UEa-fe-hJR" secondAttribute="bottom" constant="100" id="5Cr-uh-ADO"/>
+                            <constraint firstItem="UX7-RC-tjG" firstAttribute="centerY" secondItem="X6f-Su-Arh" secondAttribute="centerY" id="7yg-AQ-hNl"/>
                             <constraint firstItem="UEa-fe-hJR" firstAttribute="centerX" secondItem="X6f-Su-Arh" secondAttribute="centerX" id="C1u-wW-sOz"/>
                             <constraint firstItem="Da5-io-2Ql" firstAttribute="top" secondItem="kWy-hv-b6d" secondAttribute="bottom" constant="16" id="DJF-7n-aWV"/>
                             <constraint firstItem="kWy-hv-b6d" firstAttribute="centerX" secondItem="X6f-Su-Arh" secondAttribute="centerX" id="DN3-Ut-jDb"/>
                             <constraint firstItem="UEa-fe-hJR" firstAttribute="width" secondItem="AXb-0r-jYl" secondAttribute="width" multiplier="0.9" id="J6W-aj-wUB"/>
                             <constraint firstItem="UEa-fe-hJR" firstAttribute="top" secondItem="Da5-io-2Ql" secondAttribute="bottom" constant="16" id="Krs-Kl-fh6"/>
                             <constraint firstItem="Da5-io-2Ql" firstAttribute="centerX" secondItem="X6f-Su-Arh" secondAttribute="centerX" id="Osz-5L-C9s"/>
-                            <constraint firstItem="4Sd-nI-rDa" firstAttribute="width" secondItem="4Sd-nI-rDa" secondAttribute="height" multiplier="1:1" id="RWx-Iw-uVZ"/>
-                            <constraint firstItem="4Sd-nI-rDa" firstAttribute="centerX" secondItem="X6f-Su-Arh" secondAttribute="centerX" id="j3w-WH-CzQ"/>
-                            <constraint firstItem="4Sd-nI-rDa" firstAttribute="top" secondItem="X6f-Su-Arh" secondAttribute="top" constant="85" id="v9q-Dn-8x4"/>
+                            <constraint firstItem="UX7-RC-tjG" firstAttribute="height" secondItem="AXb-0r-jYl" secondAttribute="height" id="VYD-eA-nJD"/>
+                            <constraint firstItem="UX7-RC-tjG" firstAttribute="centerX" secondItem="X6f-Su-Arh" secondAttribute="centerX" id="Xb5-sx-kRc"/>
+                            <constraint firstItem="UX7-RC-tjG" firstAttribute="width" secondItem="AXb-0r-jYl" secondAttribute="width" id="wQK-Sq-yhO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X6f-Su-Arh"/>
                     </view>
@@ -1160,7 +1158,7 @@
         <!--Services Parent View Controller-->
         <scene sceneID="Tqj-uR-XEj">
             <objects>
-                <viewController id="SIv-2g-SO2" customClass="ServicesParentViewController" customModule="Mobiler_Drive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="SIv-2g-SO2" customClass="ServicesParentViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xkU-g7-R0z">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1186,7 +1184,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="center" reuseIdentifier="serviceCell" id="0XW-8q-3ZV" customClass="ServicesListCell" customModule="Mobiler_Drive" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="center" reuseIdentifier="serviceCell" id="0XW-8q-3ZV" customClass="ServicesListCell" customModule="BBMU_Passageiro" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="31.5" width="120" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -1347,7 +1345,7 @@
         <!--Map Search-->
         <scene sceneID="4ji-cM-5rP">
             <objects>
-                <tableViewController storyboardIdentifier="SuggestionsTableTableViewController" id="tqk-3a-c1v" customClass="SuggestionsTableTableViewController" customModule="Mobiler_Drive" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SuggestionsTableTableViewController" id="tqk-3a-c1v" customClass="SuggestionsTableTableViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KxW-6C-Zng">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1384,7 +1382,7 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czL-3Q-ofU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="1I3-t4-997" customClass="LocationManager" customModule="Mobiler_Drive" customModuleProvider="target"/>
+                <customObject id="1I3-t4-997" customClass="LocationManager" customModule="BBMU_Passageiro" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="2057" y="-966"/>
         </scene>
@@ -1396,7 +1394,7 @@
         <image name="edit" width="22" height="22"/>
         <image name="favorites" width="24" height="24"/>
         <image name="lock" width="24" height="24"/>
-        <image name="logo" width="600" height="600"/>
+        <image name="logo" width="1389" height="1389"/>
         <image name="menu" width="22" height="22"/>
         <image name="menuAbout" width="410" height="410"/>
         <image name="menuCoupons" width="480" height="480"/>

@@ -215,7 +215,7 @@
 		625661561F7264A3003F70A4 /* DriverNavigationMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverNavigationMenuViewController.swift; sourceTree = "<group>"; };
 		627B16F721A9D49500FF0953 /* driver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = driver.entitlements; path = driver/driver.entitlements; sourceTree = "<group>"; };
 		62A08DFD1F73CDED003A4F1A /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		62B6FDB41F71059900F66611 /* Bora Brasil Motorista.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bora Brasil Motorista.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		62B6FDB41F71059900F66611 /* BBMU Motorista.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BBMU Motorista.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B6FDB71F71059900F66611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62B6FDBC1F71059900F66611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		62B6FDC31F71059900F66611 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -445,7 +445,7 @@
 		62B6FDB51F71059900F66611 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				62B6FDB41F71059900F66611 /* Bora Brasil Motorista.app */,
+				62B6FDB41F71059900F66611 /* BBMU Motorista.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -612,7 +612,7 @@
 			);
 			name = driver;
 			productName = driver;
-			productReference = 62B6FDB41F71059900F66611 /* Bora Brasil Motorista.app */;
+			productReference = 62B6FDB41F71059900F66611 /* BBMU Motorista.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1041,6 +1041,7 @@
 			baseConfigurationReference = 032FFEB4F8FA8B2195FA9D9B /* Pods-driver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = driver/driver.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1054,7 +1055,7 @@
 				);
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.motorista;
-				PRODUCT_NAME = "Bora Brasil Motorista";
+				PRODUCT_NAME = "BBMU Motorista";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1064,6 +1065,7 @@
 			baseConfigurationReference = 73B2394A3DC335EC45D326D4 /* Pods-driver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = driver/driver.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1076,7 +1078,7 @@
 				);
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.motorista;
-				PRODUCT_NAME = "Bora Brasil Motorista";
+				PRODUCT_NAME = "BBMU Motorista";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

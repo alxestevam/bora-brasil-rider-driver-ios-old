@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="crY-pI-ZPa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="crY-pI-ZPa">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -11,7 +11,7 @@
         <!--Driver Main View Controller-->
         <scene sceneID="PJm-0q-Zgh">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="fullScreen" id="YbQ-Gg-9Ha" customClass="DriverMainViewController" customModule="Mobiler_Drive_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="fullScreen" id="YbQ-Gg-9Ha" customClass="DriverMainViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yNj-zS-Pwp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,7 +70,7 @@
         <!--Travel-->
         <scene sceneID="Ubx-2O-PL5">
             <objects>
-                <viewController title="Travel" id="EBP-GH-WBd" customClass="DriverTravelViewController" customModule="Mobiler_Drive_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Travel" id="EBP-GH-WBd" customClass="DriverTravelViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z6O-3g-32N">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,14 +109,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Vhg-ZX-2aV">
                                 <rect key="frame" x="8" y="553" width="304" height="106"/>
                                 <subviews>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8em-1R-9VD" customClass="ColoredButton" customModule="Mobiler_Drive_Motorista" customModuleProvider="target">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8em-1R-9VD" customClass="ColoredButton" customModule="Bora_Brasil_Motorista" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="304" height="0.0"/>
                                         <state key="normal" title="Start"/>
                                         <connections>
                                             <action selector="onStartTapped:" destination="EBP-GH-WBd" eventType="touchUpInside" id="9WK-hP-75j"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g76-hX-IDo" customClass="ColoredButton" customModule="Mobiler_Drive_Motorista" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g76-hX-IDo" customClass="ColoredButton" customModule="Bora_Brasil_Motorista" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="304" height="30"/>
                                         <state key="normal" title="Arrived"/>
                                         <connections>
@@ -126,14 +126,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ls1-gH-2nr">
                                         <rect key="frame" x="0.0" y="38" width="304" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adY-Jp-izU" customClass="ColoredButton" customModule="Mobiler_Drive_Motorista" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adY-Jp-izU" customClass="ColoredButton" customModule="Bora_Brasil_Motorista" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="148" height="30"/>
                                                 <state key="normal" title="Message"/>
                                                 <connections>
                                                     <action selector="onMessageTapped:" destination="EBP-GH-WBd" eventType="touchUpInside" id="cXT-g0-bEE"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFL-WX-AdK" customClass="ColoredButton" customModule="Mobiler_Drive_Motorista" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFL-WX-AdK" customClass="ColoredButton" customModule="Bora_Brasil_Motorista" customModuleProvider="target">
                                                 <rect key="frame" x="156" y="0.0" width="148" height="30"/>
                                                 <state key="normal" title="Call"/>
                                                 <connections>
@@ -142,14 +142,14 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6N-Ku-5ZY" customClass="ColoredButton" customModule="Mobiler_Drive_Motorista" customModuleProvider="target">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6N-Ku-5ZY" customClass="ColoredButton" customModule="Bora_Brasil_Motorista" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="304" height="0.0"/>
                                         <state key="normal" title="Finish"/>
                                         <connections>
                                             <action selector="onFinishTapped:" destination="EBP-GH-WBd" eventType="touchUpInside" id="grR-h3-vWw"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCi-0B-KI1" customClass="ColoredButton" customModule="Mobiler_Drive_Motorista" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCi-0B-KI1" customClass="ColoredButton" customModule="Bora_Brasil_Motorista" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="76" width="304" height="30"/>
                                         <state key="normal" title="Cancel"/>
                                         <connections>
@@ -207,7 +207,7 @@
         <!--About-->
         <scene sceneID="Vg9-JY-lic">
             <objects>
-                <viewController title="About" id="aV0-zB-Hmr" customClass="AboutViewController" customModule="Mobiler_Drive_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="About" id="aV0-zB-Hmr" customClass="AboutViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kTR-z2-6ac">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -222,7 +222,7 @@
         <!--Wallet-->
         <scene sceneID="Y0h-XS-QSE">
             <objects>
-                <viewController storyboardIdentifier="Wallet" id="Gpe-id-oDR" customClass="WalletViewController" customModule="Mobiler_Drive_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Wallet" id="Gpe-id-oDR" customClass="WalletViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wsL-jb-Qzy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,7 +238,7 @@
         <!--Trip History-->
         <scene sceneID="bbj-Gj-pKa">
             <objects>
-                <collectionViewController storyboardIdentifier="TripHistory" title="Trip History" id="qHH-mm-GjK" customClass="TripHistoryCollectionViewController" customModule="Mobiler_Drive_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="TripHistory" title="Trip History" id="qHH-mm-GjK" customClass="TripHistoryCollectionViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="iAc-II-AZv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -264,7 +264,7 @@
         <!--Edit Profile-->
         <scene sceneID="DsW-mB-YqY">
             <objects>
-                <viewController title="Edit Profile" id="22e-2D-wxO" customClass="EditProfileViewController" customModule="Mobiler_Drive_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Edit Profile" id="22e-2D-wxO" customClass="EditProfileViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cVU-vs-iim">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -288,7 +288,7 @@
         <!--Transactions-->
         <scene sceneID="oCw-Ma-FfR">
             <objects>
-                <collectionViewController storyboardIdentifier="Transactions" title="Transactions" id="HSB-L0-kaa" customClass="TransactionsCollectionViewController" customModule="Mobiler_Drive_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="Transactions" title="Transactions" id="HSB-L0-kaa" customClass="TransactionsCollectionViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="adk-mj-qcS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -313,7 +313,7 @@
         <!--Navigator View Controller-->
         <scene sceneID="PT2-dd-Gs9">
             <objects>
-                <navigationController storyboardIdentifier="Main" extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="fullScreen" id="wyl-qp-pQD" customClass="NavigatorViewController" customModule="Mobiler_Drive_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Main" extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="fullScreen" id="wyl-qp-pQD" customClass="NavigatorViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="667"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="vWk-7x-Peg">
@@ -338,7 +338,7 @@
         <!--Driver Navigation Menu View Controller-->
         <scene sceneID="Jev-iG-Hye">
             <objects>
-                <viewController storyboardIdentifier="NavigationMenu" id="xei-TZ-xV8" customClass="DriverNavigationMenuViewController" customModule="Mobiler_Drive_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NavigationMenu" id="xei-TZ-xV8" customClass="DriverNavigationMenuViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j0h-JI-m1M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -556,7 +556,7 @@
         <!--Host View Controller-->
         <scene sceneID="vfh-jg-8mS">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="YvC-RW-2HO" customClass="HostViewController" customModule="Mobiler_Drive_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="YvC-RW-2HO" customClass="HostViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A0L-Ab-PzT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -571,11 +571,14 @@
         <!--Splash View Controller-->
         <scene sceneID="O2f-on-Dgi">
             <objects>
-                <viewController storyboardIdentifier="SplashVC" id="crY-pI-ZPa" customClass="SplashViewController" customModule="Mobiler_Drive_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashVC" id="crY-pI-ZPa" customClass="SplashViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5kY-K2-WRi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="9bm-G3-FjS">
+                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yuw-2l-tJc">
                                 <rect key="frame" x="20.666666666666657" y="718" width="372.66666666666674" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -598,23 +601,18 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="rzd-7F-a3H">
                                 <rect key="frame" x="197" y="645" width="20" height="20"/>
                             </activityIndicatorView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="epu-Hs-jSp">
-                                <rect key="frame" x="107" y="129" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="epu-Hs-jSp" secondAttribute="height" multiplier="1:1" id="98U-TP-DYs"/>
-                                    <constraint firstAttribute="width" constant="200" id="RJ7-V6-i9q"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.039215686274509803" green="0.039215686274509803" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rzd-7F-a3H" firstAttribute="centerX" secondItem="rM2-ma-l3v" secondAttribute="centerX" id="Dgm-xA-ehH"/>
                             <constraint firstItem="3Ds-I9-j3d" firstAttribute="centerX" secondItem="rM2-ma-l3v" secondAttribute="centerX" id="FAu-TS-A1S"/>
                             <constraint firstItem="rM2-ma-l3v" firstAttribute="bottom" secondItem="Yuw-2l-tJc" secondAttribute="bottom" constant="100" id="GRM-dO-s4y"/>
+                            <constraint firstItem="9bm-G3-FjS" firstAttribute="centerY" secondItem="rM2-ma-l3v" secondAttribute="centerY" id="R3o-H6-7Tb"/>
                             <constraint firstItem="Yuw-2l-tJc" firstAttribute="centerX" secondItem="rM2-ma-l3v" secondAttribute="centerX" id="SJx-Sg-RcE"/>
-                            <constraint firstItem="epu-Hs-jSp" firstAttribute="centerX" secondItem="rM2-ma-l3v" secondAttribute="centerX" id="TGW-1W-Xeu"/>
+                            <constraint firstItem="9bm-G3-FjS" firstAttribute="centerX" secondItem="rM2-ma-l3v" secondAttribute="centerX" id="Vgs-P9-l2O"/>
                             <constraint firstItem="3Ds-I9-j3d" firstAttribute="top" secondItem="rzd-7F-a3H" secondAttribute="bottom" constant="16" id="Vpp-Mv-16A"/>
-                            <constraint firstItem="epu-Hs-jSp" firstAttribute="top" secondItem="rM2-ma-l3v" secondAttribute="top" constant="85" id="mdy-7D-dT9"/>
+                            <constraint firstItem="9bm-G3-FjS" firstAttribute="width" secondItem="5kY-K2-WRi" secondAttribute="width" id="Wif-6R-qH5"/>
+                            <constraint firstItem="9bm-G3-FjS" firstAttribute="height" secondItem="5kY-K2-WRi" secondAttribute="height" id="oFq-zK-Jf1"/>
                             <constraint firstItem="Yuw-2l-tJc" firstAttribute="width" secondItem="5kY-K2-WRi" secondAttribute="width" multiplier="0.9" id="rdL-YF-hu1"/>
                             <constraint firstItem="Yuw-2l-tJc" firstAttribute="top" secondItem="3Ds-I9-j3d" secondAttribute="bottom" constant="16" id="wnv-Kf-b0j"/>
                         </constraints>
@@ -655,7 +653,7 @@
         <image name="Nobody" width="70" height="70"/>
         <image name="background.jpg" width="640" height="1136"/>
         <image name="download" width="23" height="23"/>
-        <image name="logo" width="600" height="600"/>
+        <image name="logo" width="1389" height="1389"/>
         <image name="menu" width="22" height="22"/>
         <image name="menuAbout" width="410" height="410"/>
         <image name="menuExit" width="410" height="410"/>
