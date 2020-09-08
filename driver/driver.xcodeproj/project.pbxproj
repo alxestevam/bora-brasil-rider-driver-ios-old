@@ -105,6 +105,7 @@
 		62B6FE111F71682200F66611 /* DriverMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6FE101F71682200F66611 /* DriverMainViewController.swift */; };
 		62F12DCF22EDD96700434A05 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F12DCE22EDD96700434A05 /* ChatViewController.swift */; };
 		680C1AEE169A1469633B3949 /* Pods_driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A40C6906CC2298EF2B9CC43 /* Pods_driver.framework */; };
+		8503504424E1D45D00B3EF05 /* FirebaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503504324E1D45D00B3EF05 /* FirebaseUtil.swift */; };
 		85712C0824DDAC0200C839B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85712C0724DDAC0200C839B3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -213,7 +214,6 @@
 		62398B311F72C13C00327E77 /* RequestCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestCard.swift; sourceTree = "<group>"; };
 		625661541F726488003F70A4 /* HostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
 		625661561F7264A3003F70A4 /* DriverNavigationMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverNavigationMenuViewController.swift; sourceTree = "<group>"; };
-		627B16F721A9D49500FF0953 /* driver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = driver.entitlements; path = driver/driver.entitlements; sourceTree = "<group>"; };
 		62A08DFD1F73CDED003A4F1A /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		62B6FDB41F71059900F66611 /* BBMU Motorista.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BBMU Motorista.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62B6FDB71F71059900F66611 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +228,7 @@
 		62F12DCE22EDD96700434A05 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		73B2394A3DC335EC45D326D4 /* Pods-driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-driver.release.xcconfig"; path = "Target Support Files/Pods-driver/Pods-driver.release.xcconfig"; sourceTree = "<group>"; };
 		7A40C6906CC2298EF2B9CC43 /* Pods_driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8503504324E1D45D00B3EF05 /* FirebaseUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseUtil.swift; path = ../../../common/Util/FirebaseUtil.swift; sourceTree = "<group>"; };
 		85712C0724DDAC0200C839B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -434,7 +435,6 @@
 		62B6FDAB1F71059900F66611 = {
 			isa = PBXGroup;
 			children = (
-				627B16F721A9D49500FF0953 /* driver.entitlements */,
 				62B6FDB61F71059900F66611 /* Driver */,
 				62B6FDB51F71059900F66611 /* Products */,
 				99D1CC458A18865C3CBDF704 /* Frameworks */,
@@ -584,6 +584,7 @@
 		8503503D24E1D14900B3EF05 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				8503504324E1D45D00B3EF05 /* FirebaseUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -635,7 +636,6 @@
 				TargetAttributes = {
 					62B6FDB31F71059900F66611 = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -801,6 +801,7 @@
 				4CB0513D23A662830028DF0E /* Cancel.swift in Sources */,
 				4CB050EA23A661EA0028DF0E /* Media.swift in Sources */,
 				4CB0511223A662400028DF0E /* LoadingOverlay.swift in Sources */,
+				8503504424E1D45D00B3EF05 /* FirebaseUtil.swift in Sources */,
 				4C9F4D1523892B46005497D3 /* UpdateStatus.swift in Sources */,
 				4CB0511C23A662400028DF0E /* Error+Extensions.swift in Sources */,
 				4CB0514C23A662EF0028DF0E /* HTTPRequest.swift in Sources */,
@@ -1051,7 +1052,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = driver/driver.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 92364YLT5P;
@@ -1064,6 +1066,7 @@
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.motorista;
 				PRODUCT_NAME = "BBMU Motorista";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1075,7 +1078,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = driver/driver.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 92364YLT5P;
 				INFOPLIST_FILE = driver/Info.plist;
@@ -1087,6 +1091,7 @@
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.motorista;
 				PRODUCT_NAME = "BBMU Motorista";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

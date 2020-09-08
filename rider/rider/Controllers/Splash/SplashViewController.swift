@@ -52,11 +52,7 @@ class SplashViewController: UIViewController {
     }
     
     @IBAction func onLoginClicked(_ sender: UIButton) {
-        let auth = FUIAuth.defaultAuthUI()
-        auth?.delegate = self
-        let phoneAuth = FUIPhoneAuth(authUI: auth!)
-        auth?.providers = [phoneAuth]
-        phoneAuth.signIn(withPresenting: self, phoneNumber: nil)
+        FirebaseUtil.shared.createDefaultFUIPhoneAuth(delegate: self).signIn(withPresenting: self, phoneNumber: nil)
     }
     
     func tryLogin(firebaseToken: String) {

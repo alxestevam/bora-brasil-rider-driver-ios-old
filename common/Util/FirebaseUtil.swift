@@ -1,26 +1,22 @@
 //
-//  Config.swift
-//  Shared
+//  FirebaseUtil.swift
+//  driver
 //
-//  Created by Manly Man on 11/22/19.
-//  Copyright © 2019 Innomalist. All rights reserved.
+//  Created by Victor Baleeiro on 10/08/20.
+//  Copyright © 2020 minimal. All rights reserved.
 //
 
 import Foundation
 
-class Config {
-    static var Backend: String = "http://35.247.213.217:8080/"
+struct FirebaseUtil {
+    static let shared = FirebaseUtil()
+    private init() { }
     
-    static var Version: String {
-        get {
-            return self.Info["CFBundleVersion"] as! String
-        }
-    }
-    
-    static var Info: [String:Any] {
-        get {
-            let path = Bundle.main.path(forResource: "Info", ofType: "plist")!
-            return NSDictionary(contentsOfFile: path) as! [String: Any]
-        }
+    func createDefaultFUIPhoneAuth(delegate: FUIAuthDelegate) -> FUIPhoneAuth {
+        let auth = FUIAuth.defaultAuthUI()
+        auth?.delegate = delegate
+        let phoneAuth = FUIPhoneAuth(authUI: auth!, whitelistedCountries: ["BR"])
+        auth?.providers = [phoneAuth]
+        return phoneAuth
     }
 }
