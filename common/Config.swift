@@ -9,7 +9,9 @@
 import Foundation
 
 class Config {
-    static var Backend: String = "http://35.247.213.217:8080/"
+    //static var Backend: String = "http://192.168.0.26:8080/" // Homolog
+    static var Backend: String = "http://35.247.213.217:8080/" // Homolog
+    //static var Backend: String = "http://35.247.194.163:8080/" // Prod
     
     static var Version: String {
         get {

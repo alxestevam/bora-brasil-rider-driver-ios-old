@@ -56,7 +56,7 @@ public struct SocketNetworkDispatcher: NetworkDispatcher {
     
     public mutating func connect(namespace: SocketNamespace, token: String, notificationId: String, completionHandler: @escaping (Result<Bool, ConnectionError>) -> Void) {
         userType = namespace
-        manager = SocketManager(socketURL: URL(string: Config.Backend)!,config:[.connectParams([
+        manager = SocketManager(socketURL: URL(string: Config.Backend)!, config:[.log(true), .forceWebsockets(true), .connectParams([
             "token" : token,
             "os" : "ios",
             "ver" : Config.Version,
@@ -68,7 +68,7 @@ public struct SocketNetworkDispatcher: NetworkDispatcher {
         }
         
         socket!.on(clientEvent: .disconnect) {data, ack in
-            
+            print("socket!.on(clientEvent: .disconnect)")
         }
         
         socket!.on(clientEvent: .error) { data, ack in
