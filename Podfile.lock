@@ -158,6 +158,7 @@ PODS:
   - Starscream (3.1.1)
   - StatusAlert (1.1.1)
   - Stripe (19.2.0)
+  - SwiftyAttributes (5.1.1)
 
 DEPENDENCIES:
   - BraintreeDropIn
@@ -178,6 +179,7 @@ DEPENDENCIES:
   - Socket.IO-Client-Swift
   - StatusAlert
   - Stripe
+  - SwiftyAttributes
 
 SPEC REPOS:
   trunk:
@@ -218,6 +220,7 @@ SPEC REPOS:
     - Starscream
     - StatusAlert
     - Stripe
+    - SwiftyAttributes
 
 SPEC CHECKSUMS:
   Braintree: 586e4d274398fabe9d70ab790eefca41660b8a17
@@ -257,7 +260,8 @@ SPEC CHECKSUMS:
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   StatusAlert: a18ec3c33d36a06d4479c1f2b15ffac67aaf7ab1
   Stripe: d481c2dab9a892fd923f097f854661217f70dc7f
+  SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
 
-PODFILE CHECKSUM: 6e7e95d47c7097cc65bf55fb70b1997b35be0409
+PODFILE CHECKSUM: 8fb27b9556481dcca7b96bb4a8a163a3b9ebac99
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.9.3

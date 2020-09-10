@@ -18,6 +18,7 @@ def common_pods
   pod 'Kingfisher'
   pod 'Socket.IO-Client-Swift'
   pod 'lottie-ios'
+  pod 'SwiftyAttributes'
 end
 
 target 'rider' do

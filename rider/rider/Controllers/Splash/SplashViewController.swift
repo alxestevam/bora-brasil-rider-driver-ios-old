@@ -74,7 +74,7 @@ class SplashViewController: UIViewController {
         } else {
             indicatorLoading.isHidden = true
             textLoading.isHidden = true
-            buttonLogin.isHidden = false
+            buttonLogin.isHidden = false            
         }
     }
 }

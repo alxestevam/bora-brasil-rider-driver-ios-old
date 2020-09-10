@@ -119,6 +119,14 @@ WalletViewController
 "Name" = "Name";
 "First_Name" = "First Name";
 "Last_Name" = "Last Name";
+"Cpf" = "Cpf";
+"Cpf_Placeholder" = "000.000.000-00";
+"Error_Profile_Image" = "Envie uma foto de perfil";
+"Error_Profile_Email" = "Endereço de email invalido";
+"Error_Profile_Terms" = "Você precisa aceitar o termo de uso";
+"Error_Profile_First_Name" = "Você precisa digitar o primeiro nome";
+"Error_Profile_Last_Name" = "Você precisa digitar o sobrenome";
+"Error_Profile_Cpf" = "CPF inválido";
 
 "Additional_Info" = "Additional Info";
 
@@ -129,6 +137,8 @@ WalletViewController
 "Unspecified" = "Unspecified";
 
 "Address" = "Address";
+"Terms" = "Li e aceito o termo de uso do usuário/passageiro";
+
 
 
 /*

@@ -107,6 +107,10 @@
 		680C1AEE169A1469633B3949 /* Pods_driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A40C6906CC2298EF2B9CC43 /* Pods_driver.framework */; };
 		8503504424E1D45D00B3EF05 /* FirebaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503504324E1D45D00B3EF05 /* FirebaseUtil.swift */; };
 		85712C0824DDAC0200C839B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85712C0724DDAC0200C839B3 /* GoogleService-Info.plist */; };
+		8580FEC425095A0B00A6AC32 /* OptionalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580FEC3250959FB00A6AC32 /* OptionalString.swift */; };
+		8580FEC9250979BA00A6AC32 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580FEC8250979BA00A6AC32 /* UINavigationController.swift */; };
+		8580FECB25097CF500A6AC32 /* ValidatorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580FECA25097CF500A6AC32 /* ValidatorUtil.swift */; };
+		8580FED225099F0A00A6AC32 /* TLCustomMaskUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580FED125099F0A00A6AC32 /* TLCustomMaskUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -230,6 +234,10 @@
 		7A40C6906CC2298EF2B9CC43 /* Pods_driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8503504324E1D45D00B3EF05 /* FirebaseUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseUtil.swift; path = ../../../common/Util/FirebaseUtil.swift; sourceTree = "<group>"; };
 		85712C0724DDAC0200C839B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8580FEC3250959FB00A6AC32 /* OptionalString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalString.swift; sourceTree = "<group>"; };
+		8580FEC8250979BA00A6AC32 /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		8580FECA25097CF500A6AC32 /* ValidatorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ValidatorUtil.swift; path = ../../../common/Util/ValidatorUtil.swift; sourceTree = "<group>"; };
+		8580FED125099F0A00A6AC32 /* TLCustomMaskUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TLCustomMaskUtil.swift; path = ../../../common/Util/TLCustomMaskUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -455,6 +463,7 @@
 			children = (
 				4C6AB3E023BD1A9700FAF6FE /* cash.json */,
 				4CB050FE23A6622B0028DF0E /* Components */,
+				8580FEC02509599400A6AC32 /* Extensions */,
 				62A08DFF1F73E9BE003A4F1A /* Models */,
 				625661511F725EA2003F70A4 /* Application */,
 				62B6FE121F71708000F66611 /* Networking */,
@@ -584,9 +593,21 @@
 		8503503D24E1D14900B3EF05 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				8580FED125099F0A00A6AC32 /* TLCustomMaskUtil.swift */,
 				8503504324E1D45D00B3EF05 /* FirebaseUtil.swift */,
+				8580FECA25097CF500A6AC32 /* ValidatorUtil.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		8580FEC02509599400A6AC32 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8580FEC8250979BA00A6AC32 /* UINavigationController.swift */,
+				8580FEC3250959FB00A6AC32 /* OptionalString.swift */,
+			);
+			name = Extensions;
+			path = ../../common/Extensions;
 			sourceTree = "<group>";
 		};
 		99D1CC458A18865C3CBDF704 /* Frameworks */ = {
@@ -770,6 +791,7 @@
 				62B6FE0F1F71680F00F66611 /* NavigatorViewController.swift in Sources */,
 				4CB0511623A662400028DF0E /* UIColor+Extensions.swift in Sources */,
 				4CB0511323A662400028DF0E /* StripeRow.swift in Sources */,
+				8580FECB25097CF500A6AC32 /* ValidatorUtil.swift in Sources */,
 				4CB050FB23A662180028DF0E /* Decodable.swift in Sources */,
 				4CB050F423A661EA0028DF0E /* Driver.swift in Sources */,
 				4C3EDFA021AEB22000DECC01 /* WalletViewController.swift in Sources */,
@@ -794,6 +816,7 @@
 				4C9F4CFC23885AED005497D3 /* Login.swift in Sources */,
 				4C9F4D2923893CDE005497D3 /* RequestPayment.swift in Sources */,
 				4CB0512A23A6625D0028DF0E /* Options.swift in Sources */,
+				8580FEC425095A0B00A6AC32 /* OptionalString.swift in Sources */,
 				4C3E189D23AE12A20073FB05 /* WalletInfo.swift in Sources */,
 				4C9F4CFE23885EE2005497D3 /* Register.swift in Sources */,
 				62B6FE0D1F7167AD00F66611 /* AboutViewController.swift in Sources */,
@@ -805,6 +828,7 @@
 				4C9F4D1523892B46005497D3 /* UpdateStatus.swift in Sources */,
 				4CB0511C23A662400028DF0E /* Error+Extensions.swift in Sources */,
 				4CB0514C23A662EF0028DF0E /* HTTPRequest.swift in Sources */,
+				8580FED225099F0A00A6AC32 /* TLCustomMaskUtil.swift in Sources */,
 				4CB050EB23A661EA0028DF0E /* Transaction.swift in Sources */,
 				4CB050F123A661EA0028DF0E /* ServerError.swift in Sources */,
 				4C9F4D1923892D46005497D3 /* AcceptOrder.swift in Sources */,
@@ -815,6 +839,7 @@
 				4CB0511723A662400028DF0E /* Stack.swift in Sources */,
 				4C9F4D25238934D8005497D3 /* Finish.swift in Sources */,
 				4C9F4D27238938AD005497D3 /* GetAvailableRequests.swift in Sources */,
+				8580FEC9250979BA00A6AC32 /* UINavigationController.swift in Sources */,
 				4C6AB3DB23BD144F00FAF6FE /* WaitingForPaymentViewController.swift in Sources */,
 				4CB0513B23A662830028DF0E /* GetMessages.swift in Sources */,
 				4CB0510F23A662400028DF0E /* NSLocalizedString+Extensions.swift in Sources */,

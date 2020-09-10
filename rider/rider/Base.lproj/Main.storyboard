@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hgh-ST-Al4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hgh-ST-Al4">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -90,7 +90,7 @@
             </objects>
             <point key="canvasLocation" x="2057" y="-245"/>
         </scene>
-        <!--Ridy-->
+        <!--BoraBrasil-->
         <scene sceneID="T5a-z9-I7u">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="Dee-gZ-TbI" customClass="MainViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
@@ -173,7 +173,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HqN-xL-wtY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Ridy" largeTitleDisplayMode="never" id="WKC-Mu-F9o">
+                    <navigationItem key="navigationItem" title="BoraBrasil" largeTitleDisplayMode="never" id="WKC-Mu-F9o">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="menu" id="zd5-TF-1Lf">
                             <connections>
                                 <action selector="onMenuClicked:" destination="Dee-gZ-TbI" id="VoS-dP-rln"/>
@@ -214,11 +214,11 @@
                                 <rect key="frame" x="0.0" y="22" width="320" height="667"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXe-ON-VTv">
-                                <rect key="frame" x="0.0" y="340" width="320" height="327"/>
+                                <rect key="frame" x="0.0" y="364" width="320" height="303"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMt-8c-W1r">
-                                <rect key="frame" x="0.0" y="379" width="320" height="150"/>
+                                <rect key="frame" x="0.0" y="403" width="320" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dkd-x6-rVg" userLabel="Text Cost">
                                         <rect key="frame" x="187.5" y="42" width="9.5" height="24"/>
@@ -262,7 +262,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="U8K-Df-Kdy">
-                                <rect key="frame" x="16" y="391" width="304" height="133.5"/>
+                                <rect key="frame" x="16" y="415" width="304" height="133.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72h-cA-rRW">
                                         <rect key="frame" x="0.0" y="0.0" width="304" height="20.5"/>
@@ -303,13 +303,13 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ETF-kS-l2T">
-                                <rect key="frame" x="8" y="529" width="304" height="130"/>
+                                <rect key="frame" x="8" y="553" width="304" height="106"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ew6-hQ-6dO">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="38"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="304" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6Z-5H-pYJ" customClass="ColoredButton" customModule="BBMU_Passageiro" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="148" height="38"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="148" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Pay"/>
                                                 <connections>
@@ -317,7 +317,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3k-hU-9yw" customClass="ColoredButton" customModule="BBMU_Passageiro" customModuleProvider="target">
-                                                <rect key="frame" x="156" y="0.0" width="148" height="38"/>
+                                                <rect key="frame" x="156" y="0.0" width="148" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Apply Coupon"/>
                                                 <connections>
@@ -327,10 +327,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b8b-3X-t57">
-                                        <rect key="frame" x="0.0" y="46" width="304" height="38"/>
+                                        <rect key="frame" x="0.0" y="38" width="304" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAI-5h-uDN" customClass="ColoredButton" customModule="BBMU_Passageiro" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="148" height="38"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="148" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Call"/>
                                                 <connections>
@@ -338,7 +338,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLp-wh-UaX" customClass="ColoredButton" customModule="BBMU_Passageiro" customModuleProvider="target">
-                                                <rect key="frame" x="156" y="0.0" width="148" height="38"/>
+                                                <rect key="frame" x="156" y="0.0" width="148" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Message"/>
                                                 <connections>
@@ -348,7 +348,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qI-LT-UqT" customClass="ColoredButton" customModule="BBMU_Passageiro" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="304" height="38"/>
+                                        <rect key="frame" x="0.0" y="76" width="304" height="30"/>
                                         <color key="backgroundColor" red="0.38823529410000002" green="0.74117647060000003" blue="0.87450980389999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <viewLayoutGuide key="safeArea" id="HFh-qK-2H0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -362,7 +362,7 @@
                                 </subviews>
                             </stackView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3Fo-Yx-gKc">
-                                <rect key="frame" x="62.5" y="348" width="195" height="32"/>
+                                <rect key="frame" x="62.5" y="372" width="195" height="32"/>
                                 <segments>
                                     <segment title="Driver Info"/>
                                     <segment title="Request Info"/>
@@ -688,7 +688,7 @@
                         <viewLayoutGuide key="safeArea" id="UBb-lX-Z3U"/>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="ptF-U0-3Gn">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="lMW-jo-Nzv">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="lMW-jo-Nzv">
                             <connections>
                                 <action selector="onSaveProfileClicked:" destination="Z2R-XF-e5Z" id="Aps-sn-7rZ"/>
                             </connections>

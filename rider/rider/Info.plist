@@ -76,9 +76,11 @@
 		<dict/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Access to your current location will only be used when you hit current location button so the map would go to your current location.</string>
+	<string>$(PRODUCT_NAME) acessa sua localização para o funcionamento das corridas.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Access to photos is needed to change your profile picture.</string>
+	<string>$(PRODUCT_NAME) usa a biblioteca para a foto de perfil.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>$(PRODUCT_NAME) usa a câmera para a foto de perfil</string>
 	<key>SinglePointMode</key>
 	<false/>
 	<key>UIBackgroundModes</key>

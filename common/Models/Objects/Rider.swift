@@ -28,5 +28,6 @@ public final class Rider: Codable, SenderType {
     public var id: Int?
     public var firstName: String?
     public var media: Media?
+    public var cpf: String?
 }
 

@@ -102,7 +102,7 @@
 "W9y-W9-Pdi.text" = "ETA";
 
 /* Class = "UINavigationItem"; title = "Ridy"; ObjectID = "WKC-Mu-F9o"; */
-"WKC-Mu-F9o.title" = "Ridy";
+"WKC-Mu-F9o.title" = "Bora Brasil";
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "YnQ-Yl-MeU"; */
 "YnQ-Yl-MeU.normalTitle" = "Cancelar";
@@ -156,7 +156,7 @@
 "giN-60-q4q.text" = "Label";
 
 /* Class = "UIBarButtonItem"; title = "Done"; ObjectID = "lMW-jo-Nzv"; */
-"lMW-jo-Nzv.title" = "Pronto";
+"lMW-jo-Nzv.title" = "Salvar";
 
 /* Class = "UICollectionViewController"; title = "Trip History"; ObjectID = "p2I-iQ-HlV"; */
 "p2I-iQ-HlV.title" = "Histórico de Viagem";

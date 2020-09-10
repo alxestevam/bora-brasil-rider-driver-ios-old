@@ -120,6 +120,14 @@ WalletViewController
 "Name" = "Nome";
 "First_Name" = "Primeiro Nome";
 "Last_Name" = "Sobrenome";
+"Cpf" = "Cpf";
+"Cpf_Placeholder" = "000.000.000-00";
+"Error_Profile_Image" = "Envie uma foto de perfil";
+"Error_Profile_Email" = "Endereço de email invalido";
+"Error_Profile_Terms" = "Você precisa aceitar o termo de uso";
+"Error_Profile_First_Name" = "Você precisa digitar o primeiro nome";
+"Error_Profile_Last_Name" = "Você precisa digitar o sobrenome";
+"Error_Profile_Cpf" = "CPF inválido";
 
 "Additional_Info" = "Informações Adicionais";
 
@@ -127,9 +135,10 @@ WalletViewController
 "Select_Gender" = "Selecione seu Gênero";
 "Male" = "Masculino";
 "Female" = "Feminino";
-"Unspecified" = "Não especificado";
+"Unspecified" = "Desconhecido";
 
 "Address" = "Endereço";
+"Terms" = "Li e aceito o termo de uso do usuário/passageiro";
 
 
 /*

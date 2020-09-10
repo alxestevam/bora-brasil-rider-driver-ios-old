@@ -10,9 +10,9 @@ import UIKit
 
 class HostViewController : MenuContainerViewController {
     
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         let screenSize: CGRect = UIScreen.main.bounds
         self.transitionOptions = TransitionOptions(duration: 0.4, visibleContentWidth: screenSize.width / 6)
