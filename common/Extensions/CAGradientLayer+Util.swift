@@ -10,7 +10,7 @@ import Foundation
 
 extension CAGradientLayer {
     
-    class func navBarGradient(on view: UIView) -> UIImage? {
+    class func viewToImageGradient(on view: UIView) -> UIImage? {
         let gradient = CAGradientLayer()
         let firstColor = Color.orange.rgb_236_106_53
         let secondColor = Color.orange.rgb_255_152_0

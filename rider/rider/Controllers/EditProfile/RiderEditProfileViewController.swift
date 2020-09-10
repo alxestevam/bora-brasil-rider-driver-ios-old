@@ -30,25 +30,27 @@ class RiderEditProfileViewController: FormViewController, VCWithBackButtonHandle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationItem.rightBarButtonItem?.tintColor = .white
+        self.title = NSLocalizedString("Profile_Title", comment: "Profile's title")
+        
         if !shouldBack {
-            let textAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
             self.navigationController?.navigationBar.titleTextAttributes = textAttributes
-            self.navigationItem.rightBarButtonItem?.tintColor = .white
-            self.title = NSLocalizedString("Profile_Title", comment: "Profile's title")
-            self.navigationItem.leftBarButtonItem = nil
-            self.navigationItem.hidesBackButton = true
-            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-            self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
             
             guard
                 let navigationController = self.navigationController,
-                let gradientImage = CAGradientLayer.navBarGradient(on: navigationController.navigationBar)
+                let gradientImage = CAGradientLayer.viewToImageGradient(on: navigationController.navigationBar)
             else {
                 print("Error creating gradient color!")
                 return
             }
-            
             navigationController.navigationBar.barTintColor = UIColor(patternImage: gradientImage)
+            
+            self.navigationItem.leftBarButtonItem = nil
+            self.navigationItem.hidesBackButton = true
+            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+            self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
         }
     }
     
@@ -118,6 +120,7 @@ class RiderEditProfileViewController: FormViewController, VCWithBackButtonHandle
             <<< TextRow(){
                 $0.title = NSLocalizedString("Name", comment: "Profile Name field")
                 $0.value = rider.firstName
+                $0.cell.textField.autocapitalizationType = .words
                 $0.placeholder = NSLocalizedString("First_Name", comment: "Profile First Name Field")
             }.onChange {
                 self.rider.firstName = $0.value
@@ -125,6 +128,7 @@ class RiderEditProfileViewController: FormViewController, VCWithBackButtonHandle
             <<< TextRow(){
                 $0.title = " "
                 $0.placeholder = NSLocalizedString("Last_Name", comment: "Profile Last Name field")
+                $0.cell.textField.autocapitalizationType = .words
                 $0.value = rider.lastName
             }.onChange {
                 self.rider.lastName = $0.value
@@ -135,7 +139,10 @@ class RiderEditProfileViewController: FormViewController, VCWithBackButtonHandle
                 $0.placeholder = NSLocalizedString("Cpf_Placeholder", comment: "CPF field")
                 let formatted = atualMask.formatString(string: self.rider.cpf ?? "")
                 $0.value = formatted
-                
+                if shouldBack {
+                    $0.disabled = true
+                }
+    
             }.onChange { row in
                 row.cell.textField.text = self.atualMask.formatString(string: row.value ?? "")
                 let unmasked = self.atualMask.cleanText

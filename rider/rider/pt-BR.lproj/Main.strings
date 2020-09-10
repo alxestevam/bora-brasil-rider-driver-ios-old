@@ -9,7 +9,7 @@
 "24j-cD-dup.normalTitle" = "-";
 
 /* Class = "UIButton"; normalTitle = "Locations"; ObjectID = "2TL-AE-6i9"; */
-"2TL-AE-6i9.normalTitle" = "Locais";
+"2TL-AE-6i9.normalTitle" = "Locais Favoritos";
 
 /* Class = "UILabel"; text = "Subtitle"; ObjectID = "2se-Hv-S1o"; */
 "2se-Hv-S1o.text" = "Subtítulo";
@@ -135,7 +135,7 @@
 "dLp-wh-UaX.normalTitle" = "Mensagem";
 
 /* Class = "UIButton"; normalTitle = "Your Profile"; ObjectID = "dcx-6b-be9"; */
-"dcx-6b-be9.normalTitle" = "Seu Perfil";
+"dcx-6b-be9.normalTitle" = "Editar Perfil";
 
 /* Class = "UISegmentedControl"; eID-mT-jGo.segmentTitles[0] = "First"; ObjectID = "eID-mT-jGo"; */
 "eID-mT-jGo.segmentTitles[0]" = "Primeiro";
@@ -147,7 +147,7 @@
 "efs-jA-z6j.normalTitle" = "Sobre";
 
 /* Class = "UICollectionViewController"; title = "Coupons"; ObjectID = "g48-4N-XvH"; */
-"g48-4N-XvH.title" = "Coupons";
+"g48-4N-XvH.title" = "Cupons";
 
 /* Class = "UIButton"; normalTitle = "Wallet"; ObjectID = "gEM-5h-WdU"; */
 "gEM-5h-WdU.normalTitle" = "Carteira";
@@ -171,7 +171,7 @@
 "qnW-bA-i56.text" = "-";
 
 /* Class = "UIButton"; normalTitle = "Trip History"; ObjectID = "s6C-9y-Zn1"; */
-"s6C-9y-Zn1.normalTitle" = "Histórico de Viagem";
+"s6C-9y-Zn1.normalTitle" = "Histórico de Corridas";
 
 /* Class = "UIButton"; normalTitle = "Book for Later"; ObjectID = "vd8-M7-5It"; */
 "vd8-M7-5It.normalTitle" = "Reserve Para Mais Tarde";

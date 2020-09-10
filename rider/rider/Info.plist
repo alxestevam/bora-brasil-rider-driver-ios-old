@@ -79,8 +79,8 @@
 	<string>$(PRODUCT_NAME) acessa sua localização para o funcionamento das corridas.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>$(PRODUCT_NAME) usa a biblioteca para a foto de perfil.</string>
-    <key>NSCameraUsageDescription</key>
-    <string>$(PRODUCT_NAME) usa a câmera para a foto de perfil</string>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) usa a câmera para a foto de perfil</string>
 	<key>SinglePointMode</key>
 	<false/>
 	<key>UIBackgroundModes</key>

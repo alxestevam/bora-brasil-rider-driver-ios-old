@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="crY-pI-ZPa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="crY-pI-ZPa">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Driver Main View Controller-->
         <scene sceneID="PJm-0q-Zgh">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="fullScreen" id="YbQ-Gg-9Ha" customClass="DriverMainViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="fullScreen" id="YbQ-Gg-9Ha" customClass="DriverMainViewController" customModule="BBMU_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yNj-zS-Pwp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,6 +28,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="70o-wU-DsZ"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="70o-wU-DsZ" firstAttribute="bottom" secondItem="eF1-T9-DPD" secondAttribute="bottom" constant="8" id="AUT-3p-GP4"/>
@@ -37,7 +39,6 @@
                             <constraint firstItem="IQi-GD-8OI" firstAttribute="centerX" secondItem="70o-wU-DsZ" secondAttribute="centerX" id="laI-ec-nUS"/>
                             <constraint firstItem="IQi-GD-8OI" firstAttribute="height" secondItem="yNj-zS-Pwp" secondAttribute="height" id="rPD-hc-Lsl"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="70o-wU-DsZ"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="jU6-7B-0gO">
@@ -70,7 +71,7 @@
         <!--Travel-->
         <scene sceneID="Ubx-2O-PL5">
             <objects>
-                <viewController title="Travel" id="EBP-GH-WBd" customClass="DriverTravelViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Travel" id="EBP-GH-WBd" customClass="DriverTravelViewController" customModule="BBMU_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z6O-3g-32N">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,7 +90,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHt-ka-JNh">
-                                <rect key="frame" x="185" y="492.66666666666669" width="35" height="20.333333333333314"/>
+                                <rect key="frame" x="185.33333333333334" y="492.66666666666669" width="34.666666666666657" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -101,7 +102,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ETA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lm5-FL-fgX">
-                                <rect key="frame" x="16" y="492.66666666666669" width="29" height="20.333333333333314"/>
+                                <rect key="frame" x="16" y="492.66666666666669" width="28.666666666666671" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -109,14 +110,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Vhg-ZX-2aV">
                                 <rect key="frame" x="8" y="553" width="304" height="106"/>
                                 <subviews>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8em-1R-9VD" customClass="ColoredButton" customModule="Bora_Brasil_Motorista" customModuleProvider="target">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8em-1R-9VD" customClass="ColoredButton" customModule="BBMU_Motorista" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="304" height="0.0"/>
                                         <state key="normal" title="Start"/>
                                         <connections>
                                             <action selector="onStartTapped:" destination="EBP-GH-WBd" eventType="touchUpInside" id="9WK-hP-75j"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g76-hX-IDo" customClass="ColoredButton" customModule="Bora_Brasil_Motorista" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g76-hX-IDo" customClass="ColoredButton" customModule="BBMU_Motorista" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="304" height="30"/>
                                         <state key="normal" title="Arrived"/>
                                         <connections>
@@ -126,14 +127,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ls1-gH-2nr">
                                         <rect key="frame" x="0.0" y="38" width="304" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adY-Jp-izU" customClass="ColoredButton" customModule="Bora_Brasil_Motorista" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adY-Jp-izU" customClass="ColoredButton" customModule="BBMU_Motorista" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="148" height="30"/>
                                                 <state key="normal" title="Message"/>
                                                 <connections>
                                                     <action selector="onMessageTapped:" destination="EBP-GH-WBd" eventType="touchUpInside" id="cXT-g0-bEE"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFL-WX-AdK" customClass="ColoredButton" customModule="Bora_Brasil_Motorista" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFL-WX-AdK" customClass="ColoredButton" customModule="BBMU_Motorista" customModuleProvider="target">
                                                 <rect key="frame" x="156" y="0.0" width="148" height="30"/>
                                                 <state key="normal" title="Call"/>
                                                 <connections>
@@ -142,14 +143,14 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6N-Ku-5ZY" customClass="ColoredButton" customModule="Bora_Brasil_Motorista" customModuleProvider="target">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6N-Ku-5ZY" customClass="ColoredButton" customModule="BBMU_Motorista" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="304" height="0.0"/>
                                         <state key="normal" title="Finish"/>
                                         <connections>
                                             <action selector="onFinishTapped:" destination="EBP-GH-WBd" eventType="touchUpInside" id="grR-h3-vWw"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCi-0B-KI1" customClass="ColoredButton" customModule="Bora_Brasil_Motorista" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCi-0B-KI1" customClass="ColoredButton" customModule="BBMU_Motorista" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="76" width="304" height="30"/>
                                         <state key="normal" title="Cancel"/>
                                         <connections>
@@ -159,6 +160,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="NZM-D3-4sX"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Vhg-ZX-2aV" firstAttribute="top" secondItem="b7K-Zz-Sfb" secondAttribute="bottom" constant="12" id="3Wo-Kw-PCK"/>
@@ -184,7 +186,6 @@
                             <constraint firstItem="b7K-Zz-Sfb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PHt-ka-JNh" secondAttribute="leading" id="wGu-JN-R3x"/>
                             <constraint firstItem="PHt-ka-JNh" firstAttribute="top" secondItem="Lm5-FL-fgX" secondAttribute="top" id="zq5-wz-WFL"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="NZM-D3-4sX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Travel" id="aYR-cA-j0K"/>
                     <connections>
@@ -207,12 +208,12 @@
         <!--About-->
         <scene sceneID="Vg9-JY-lic">
             <objects>
-                <viewController title="About" id="aV0-zB-Hmr" customClass="AboutViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="About" id="aV0-zB-Hmr" customClass="AboutViewController" customModule="BBMU_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kTR-z2-6ac">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="5Na-LG-NA6"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0I5-Ro-K6W" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -222,12 +223,12 @@
         <!--Wallet-->
         <scene sceneID="Y0h-XS-QSE">
             <objects>
-                <viewController storyboardIdentifier="Wallet" id="Gpe-id-oDR" customClass="WalletViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Wallet" id="Gpe-id-oDR" customClass="WalletViewController" customModule="BBMU_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wsL-jb-Qzy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="ZdV-Vv-UOh"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Wallet" id="OHm-yx-c2N"/>
                 </viewController>
@@ -238,11 +239,11 @@
         <!--Trip History-->
         <scene sceneID="bbj-Gj-pKa">
             <objects>
-                <collectionViewController storyboardIdentifier="TripHistory" title="Trip History" id="qHH-mm-GjK" customClass="TripHistoryCollectionViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="TripHistory" title="Trip History" id="qHH-mm-GjK" customClass="TripHistoryCollectionViewController" customModule="BBMU_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="iAc-II-AZv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" sectionInsetReference="safeArea" id="I3X-qi-cKO">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -264,12 +265,12 @@
         <!--Edit Profile-->
         <scene sceneID="DsW-mB-YqY">
             <objects>
-                <viewController title="Edit Profile" id="22e-2D-wxO" customClass="EditProfileViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Edit Profile" id="22e-2D-wxO" customClass="EditProfileViewController" customModule="BBMU_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cVU-vs-iim">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="O10-AC-t0c"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Profile" id="2jw-sT-WYs">
@@ -288,11 +289,11 @@
         <!--Transactions-->
         <scene sceneID="oCw-Ma-FfR">
             <objects>
-                <collectionViewController storyboardIdentifier="Transactions" title="Transactions" id="HSB-L0-kaa" customClass="TransactionsCollectionViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="Transactions" title="Transactions" id="HSB-L0-kaa" customClass="TransactionsCollectionViewController" customModule="BBMU_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="adk-mj-qcS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" sectionInsetReference="safeArea" id="5bF-9B-7uM">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -313,7 +314,7 @@
         <!--Navigator View Controller-->
         <scene sceneID="PT2-dd-Gs9">
             <objects>
-                <navigationController storyboardIdentifier="Main" extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="fullScreen" id="wyl-qp-pQD" customClass="NavigatorViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Main" extendedLayoutIncludesOpaqueBars="YES" modalPresentationStyle="fullScreen" id="wyl-qp-pQD" customClass="NavigatorViewController" customModule="BBMU_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="667"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="vWk-7x-Peg">
@@ -338,7 +339,7 @@
         <!--Driver Navigation Menu View Controller-->
         <scene sceneID="Jev-iG-Hye">
             <objects>
-                <viewController storyboardIdentifier="NavigationMenu" id="xei-TZ-xV8" customClass="DriverNavigationMenuViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NavigationMenu" id="xei-TZ-xV8" customClass="DriverNavigationMenuViewController" customModule="BBMU_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j0h-JI-m1M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -360,7 +361,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance: -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDL-hz-0jI">
-                                <rect key="frame" x="168.66666666666666" y="194.33333333333334" width="76.666666666666657" height="20.333333333333343"/>
+                                <rect key="frame" x="169" y="194.33333333333334" width="76.333333333333314" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -369,10 +370,10 @@
                                 <rect key="frame" x="0.0" y="234.66666666666669" width="414" height="627.33333333333326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZyA-B3-N3K">
-                                        <rect key="frame" x="20" y="0.0" width="162" height="338"/>
+                                        <rect key="frame" x="20" y="0.0" width="161" height="338"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Nar-vb-OJJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="162" height="48"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="161" height="48"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuStatistics" translatesAutoresizingMaskIntoConstraints="NO" id="LLn-3O-38a">
                                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
@@ -381,8 +382,8 @@
                                                             <constraint firstAttribute="height" constant="48" id="Nnv-9E-FTT"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adL-TS-mQI">
-                                                        <rect key="frame" x="58" y="0.0" width="104" height="48"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adL-TS-mQI">
+                                                        <rect key="frame" x="58" y="0.0" width="103" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <state key="normal" title="Statistics">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -394,7 +395,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="t4a-uH-cQs">
-                                                <rect key="frame" x="0.0" y="58.000000000000028" width="162" height="48"/>
+                                                <rect key="frame" x="0.0" y="58.000000000000028" width="161" height="48"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuTravels" translatesAutoresizingMaskIntoConstraints="NO" id="aok-uR-LMb">
                                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
@@ -403,8 +404,8 @@
                                                             <constraint firstAttribute="height" constant="48" id="qV2-ST-eAw"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2W-QB-dI4">
-                                                        <rect key="frame" x="58" y="0.0" width="104" height="48"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2W-QB-dI4">
+                                                        <rect key="frame" x="58" y="0.0" width="103" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <state key="normal" title="Trips History">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -416,7 +417,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="U5r-fr-J1h">
-                                                <rect key="frame" x="0.0" y="116.00000000000003" width="162" height="48"/>
+                                                <rect key="frame" x="0.0" y="116.00000000000003" width="161" height="48"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuWallet" translatesAutoresizingMaskIntoConstraints="NO" id="WnH-6W-jHZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
@@ -425,8 +426,8 @@
                                                             <constraint firstAttribute="width" constant="48" id="REC-VH-Md7"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOs-ar-MU8">
-                                                        <rect key="frame" x="58" y="0.0" width="104" height="48"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOs-ar-MU8">
+                                                        <rect key="frame" x="58" y="0.0" width="103" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <state key="normal" title="Wallet">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -438,7 +439,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tHw-Xg-GtG">
-                                                <rect key="frame" x="0.0" y="174.00000000000003" width="162" height="48"/>
+                                                <rect key="frame" x="0.0" y="174.00000000000003" width="161" height="48"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuTransactions" translatesAutoresizingMaskIntoConstraints="NO" id="kA8-Xf-RyS">
                                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
@@ -447,8 +448,8 @@
                                                             <constraint firstAttribute="width" constant="48" id="hmf-vW-apf"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeK-ls-gXH">
-                                                        <rect key="frame" x="58" y="0.0" width="104" height="48"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeK-ls-gXH">
+                                                        <rect key="frame" x="58" y="0.0" width="103" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <state key="normal" title="Transactions">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -460,7 +461,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="x9i-FX-ofX">
-                                                <rect key="frame" x="0.0" y="232" width="162" height="48"/>
+                                                <rect key="frame" x="0.0" y="232" width="161" height="48"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuAbout" translatesAutoresizingMaskIntoConstraints="NO" id="Fqm-Hg-cWg">
                                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
@@ -469,8 +470,8 @@
                                                             <constraint firstAttribute="height" constant="48" id="fql-7q-Uc4"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ez4-Jd-Aai">
-                                                        <rect key="frame" x="58" y="0.0" width="104" height="48"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ez4-Jd-Aai">
+                                                        <rect key="frame" x="58" y="0.0" width="103" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <state key="normal" title="About">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -482,7 +483,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EVj-v7-Kv7">
-                                                <rect key="frame" x="0.0" y="290" width="162" height="48"/>
+                                                <rect key="frame" x="0.0" y="290" width="161" height="48"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuExit" translatesAutoresizingMaskIntoConstraints="NO" id="FIk-7H-Uvl">
                                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
@@ -491,8 +492,8 @@
                                                             <constraint firstAttribute="height" constant="48" id="w78-a1-7Xx"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTE-FM-mrX">
-                                                        <rect key="frame" x="58" y="0.0" width="104" height="48"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTE-FM-mrX">
+                                                        <rect key="frame" x="58" y="0.0" width="103" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <state key="normal" title="Logout">
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -514,7 +515,7 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2O1-gt-ltD">
-                                <rect key="frame" x="253" y="190.66666666666666" width="23" height="23"/>
+                                <rect key="frame" x="252.66666666666663" y="190.66666666666666" width="23" height="23"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="download"/>
                                 <connections>
@@ -522,6 +523,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="5Xv-Vz-sgg"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="n9u-E8-2tf" firstAttribute="height" secondItem="j0h-JI-m1M" secondAttribute="height" id="5tX-lz-V7l"/>
@@ -541,7 +543,6 @@
                             <constraint firstItem="k5d-ZO-3md" firstAttribute="width" secondItem="j0h-JI-m1M" secondAttribute="width" id="mVv-zE-NQL"/>
                             <constraint firstItem="k5d-ZO-3md" firstAttribute="top" secondItem="kDL-hz-0jI" secondAttribute="bottom" constant="20" id="oyU-25-IKk"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="5Xv-Vz-sgg"/>
                     </view>
                     <connections>
                         <outlet property="imageUser" destination="Hee-9h-s4F" id="V1F-8B-hgg"/>
@@ -556,12 +557,12 @@
         <!--Host View Controller-->
         <scene sceneID="vfh-jg-8mS">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="YvC-RW-2HO" customClass="HostViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="YvC-RW-2HO" customClass="HostViewController" customModule="BBMU_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A0L-Ab-PzT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="ZPy-dE-xSn"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fj2-eS-QeN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -571,7 +572,7 @@
         <!--Splash View Controller-->
         <scene sceneID="O2f-on-Dgi">
             <objects>
-                <viewController storyboardIdentifier="SplashVC" id="crY-pI-ZPa" customClass="SplashViewController" customModule="Bora_Brasil_Motorista" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashVC" id="crY-pI-ZPa" customClass="SplashViewController" customModule="BBMU_Motorista" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5kY-K2-WRi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -579,7 +580,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="9bm-G3-FjS">
                                 <rect key="frame" x="0.0" y="5" width="414" height="896"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yuw-2l-tJc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yuw-2l-tJc">
                                 <rect key="frame" x="20.666666666666657" y="718" width="372.66666666666674" height="44"/>
                                 <color key="backgroundColor" red="0.92549019607843142" green="0.41568627450980389" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -602,6 +603,7 @@
                                 <rect key="frame" x="197" y="645" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="rM2-ma-l3v"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rzd-7F-a3H" firstAttribute="centerX" secondItem="rM2-ma-l3v" secondAttribute="centerX" id="Dgm-xA-ehH"/>
@@ -616,7 +618,6 @@
                             <constraint firstItem="Yuw-2l-tJc" firstAttribute="width" secondItem="5kY-K2-WRi" secondAttribute="width" multiplier="0.9" id="rdL-YF-hu1"/>
                             <constraint firstItem="Yuw-2l-tJc" firstAttribute="top" secondItem="3Ds-I9-j3d" secondAttribute="bottom" constant="16" id="wnv-Kf-b0j"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="rM2-ma-l3v"/>
                     </view>
                     <connections>
                         <outlet property="buttonLogin" destination="Yuw-2l-tJc" id="GhX-1i-2Bp"/>
@@ -649,6 +650,26 @@
             <point key="canvasLocation" x="-164" y="1256.2218890554723"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="8em-1R-9VD">
+            <size key="intrinsicContentSize" width="34" height="30"/>
+        </designable>
+        <designable name="FFL-WX-AdK">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Q6N-Ku-5ZY">
+            <size key="intrinsicContentSize" width="41" height="30"/>
+        </designable>
+        <designable name="adY-Jp-izU">
+            <size key="intrinsicContentSize" width="62" height="30"/>
+        </designable>
+        <designable name="g76-hX-IDo">
+            <size key="intrinsicContentSize" width="50" height="30"/>
+        </designable>
+        <designable name="lCi-0B-KI1">
+            <size key="intrinsicContentSize" width="48" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Nobody" width="70" height="70"/>
         <image name="background.jpg" width="640" height="1136"/>
@@ -662,5 +683,8 @@
         <image name="menuTravels" width="410" height="410"/>
         <image name="menuWallet" width="332" height="332"/>
         <image name="save" width="22" height="22"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

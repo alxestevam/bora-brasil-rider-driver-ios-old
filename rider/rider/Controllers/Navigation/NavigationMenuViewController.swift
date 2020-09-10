@@ -10,25 +10,25 @@ import UIKit
 import Kingfisher
 
 class NavigationMenuViewController : MenuViewController {
+    
+    //MARK: Properties
     let kCellReuseIdentifier = "MenuCell"
     let menuItems = ["Main"]
-    
     @IBOutlet weak var imageUser: UIImageView!
-    
     @IBOutlet weak var labelName: UILabel!
-    
     @IBOutlet weak var labelCredit: UILabel!
     
-    override var prefersStatusBarHidden: Bool {
-        return false
-    }
     
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         imageUser.layer.cornerRadius = imageUser.frame.size.width / 2
         imageUser.clipsToBounds = true
         imageUser.layer.borderColor = UIColor.white.cgColor
         imageUser.layer.borderWidth = 3.0
+        
+        let gradientImage = CAGradientLayer.viewToImageGradient(on: self.view)
+        self.view.backgroundColor = UIColor(patternImage: gradientImage!)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -41,17 +41,21 @@ class NavigationMenuViewController : MenuViewController {
                 .scaleFactor(UIScreen.main.scale),
                 .transition(.fade(0.5)),
                 .cacheOriginalImage
-            ]) { result in
+            ], completionHandler:  { result in
                 switch result {
                 case .success(let value):
                     print("Task done for: \(value.source.url?.absoluteString ?? "")")
                 case .failure(let error):
                     print("Job failed: \(error.localizedDescription)")
                 }
-            }
+            })
         }
         labelName.text = "\(user.firstName == nil ? "" : user.firstName!) \(user.lastName == nil ? "" : user.lastName!)"
         labelCredit.text = "\(user.mobileNumber!)"
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return false
     }
     
     @IBAction func onTravelsClicked(_ sender: UIButton) {

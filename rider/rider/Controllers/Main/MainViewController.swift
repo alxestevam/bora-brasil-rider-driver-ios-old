@@ -74,10 +74,20 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
             self.presentProfileEditController()
             return
         }
-
+        
         if (media.address.isNilOrEmpty || rider.cpf.isNilOrEmpty || rider.email.isNilOrEmpty || rider.firstName.isNilOrEmpty || rider.lastName.isNilOrEmpty) {
             self.presentProfileEditController()
         }
+        
+        guard
+            let navigationController = self.navigationController,
+            let gradientImage = CAGradientLayer.viewToImageGradient(on: navigationController.navigationBar)
+        else {
+            print("Error creating gradient color!")
+            return
+        }
+        
+        configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(patternImage: gradientImage), tintColor: .white, title: "Bora Brasil", preferredLargeTitle: false)
     }
     
     func goBackFromServiceSelection() {
@@ -97,7 +107,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ServicesParentViewController,
-            segue.identifier == "segueServices" {
+           segue.identifier == "segueServices" {
             self.servicesViewController = vc
             vc.callback = self
         }
@@ -105,7 +115,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
             vc.delegate = self
         }
     }
-        
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationManager.stopUpdatingLocation()
         guard let position = manager.location else {
@@ -278,7 +288,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     
     //MARK: Action
     private func presentProfileEditController() {
-
+        
         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditProfile") as? RiderEditProfileViewController {
             let navController = UINavigationController(rootViewController: vc)
             vc.modalPresentationStyle = .fullScreen
@@ -326,16 +336,16 @@ extension MainViewController: MKMapViewDelegate {
         case driver = "driver"
     }
     
-
+    
     
     func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
         buttonConfirmPickup.isEnabled = false
         buttonAddDestination.isEnabled = false
         buttonConfirmFinalDestination.isEnabled = false
         /*if(pinAnnotation.dragState == .none) {
-            pinAnnotation.dragState = .dragging
-            pinAnnotation.setDragState(.starting, animated: true)
-        }*/
+         pinAnnotation.dragState = .dragging
+         pinAnnotation.setDragState(.starting, animated: true)
+         }*/
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -372,15 +382,15 @@ extension MainViewController: MKMapViewDelegate {
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
         
     }
-
+    
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         
         if containerServices.isHidden == false { return }
         /*if(pinAnnotation.dragState == .dragging) {
-            //pinAnnotation.dragState = .none
-            pinAnnotation.setDragState(.ending, animated: false)
-            print("End status called")
-        }*/
+         //pinAnnotation.dragState = .none
+         pinAnnotation.setDragState(.ending, animated: false)
+         print("End status called")
+         }*/
         getAddressForLatLng(location: mapView.camera.centerCoordinate)
         GetDriversLocations(location: mapView.camera.centerCoordinate).execute() { result in
             switch result {

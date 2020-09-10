@@ -16,6 +16,7 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         
     }
+    
     func connectSocket(token:String) {
         InstanceID.instanceID().instanceID { (result, error) in
             if let error = error {

@@ -125,6 +125,8 @@
 		850F3FED250A9E2100F6A4C3 /* Color+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850F3FEC250A9E2100F6A4C3 /* Color+Util.swift */; };
 		850F3FEF250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850F3FEE250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift */; };
 		85712C0624DDABB800C839B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85712C0524DDABB800C839B3 /* GoogleService-Info.plist */; };
+		857A72F4250ABF360020DB15 /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A72F3250ABF360020DB15 /* UIViewController+Util.swift */; };
+		857A72F6250AC2090020DB15 /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A72F5250AC2090020DB15 /* UIView+Util.swift */; };
 		8580FEC525095A0E00A6AC32 /* OptionalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580FEC2250959E900A6AC32 /* OptionalString.swift */; };
 		8580FEC72509770500A6AC32 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580FEC62509770500A6AC32 /* UINavigationController.swift */; };
 		8580FECD25097D0D00A6AC32 /* ValidatorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580FECC25097D0C00A6AC32 /* ValidatorUtil.swift */; };
@@ -287,6 +289,8 @@
 		850F3FEC250A9E2100F6A4C3 /* Color+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Util.swift"; sourceTree = "<group>"; };
 		850F3FEE250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Util.swift"; sourceTree = "<group>"; };
 		85712C0524DDABB800C839B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		857A72F3250ABF360020DB15 /* UIViewController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
+		857A72F5250AC2090020DB15 /* UIView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
 		8580FEC2250959E900A6AC32 /* OptionalString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalString.swift; sourceTree = "<group>"; };
 		8580FEC62509770500A6AC32 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		8580FECC25097D0C00A6AC32 /* ValidatorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidatorUtil.swift; path = ../../../common/Util/ValidatorUtil.swift; sourceTree = "<group>"; };
@@ -707,6 +711,8 @@
 				8580FEC62509770500A6AC32 /* UINavigationController.swift */,
 				850F3FEC250A9E2100F6A4C3 /* Color+Util.swift */,
 				850F3FEE250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift */,
+				857A72F3250ABF360020DB15 /* UIViewController+Util.swift */,
+				857A72F5250AC2090020DB15 /* UIView+Util.swift */,
 			);
 			name = Extensions;
 			path = ../../common/Extensions;
@@ -903,6 +909,7 @@
 				4CB5FC7B23A7A2D000F2D5BC /* PaymentGateway.swift in Sources */,
 				4CB5FC2123A79F2C00F2D5BC /* SendMessage.swift in Sources */,
 				4C215EAE238D20CB0013D720 /* UpdateProfile.swift in Sources */,
+				857A72F6250AC2090020DB15 /* UIView+Util.swift in Sources */,
 				62B6FD6E1F70F65400F66611 /* TravelViewController.swift in Sources */,
 				4CB5FC3B23A79F6B00F2D5BC /* Car.swift in Sources */,
 				4C5DEF5D23AE34B5006DF279 /* WalletInfo.swift in Sources */,
@@ -961,6 +968,7 @@
 				4CB5FC2223A79F2C00F2D5BC /* GetTransactions.swift in Sources */,
 				4C215E9C238D17950013D720 /* AddCoupon.swift in Sources */,
 				8580FECD25097D0D00A6AC32 /* ValidatorUtil.swift in Sources */,
+				857A72F4250ABF360020DB15 /* UIViewController+Util.swift in Sources */,
 				4CB5FC6D23A79FD100F2D5BC /* Error+Extensions.swift in Sources */,
 				4C9C5F1B21A7FB9F00F5353B /* TransactionsCollectionViewController.swift in Sources */,
 				4CB5FC6123A79FD100F2D5BC /* UserDefault.swift in Sources */,
@@ -1128,7 +1136,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1215,7 +1223,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
