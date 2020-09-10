@@ -12,6 +12,9 @@ import StatusAlert
 import Contacts
 
 class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRequested {
+    
+    //MARK: Properties
+    let rider = try! Rider(from: UserDefaultsConfig.user!)
     @IBOutlet weak var map: MKMapView!
     var pointsAnnotations: [MKPointAnnotation] = []
     var arrayDriversMarkers: [MKPointAnnotation] = []
@@ -30,6 +33,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     let message = NSLocalizedString("Message", comment: "")
     let allright = NSLocalizedString("Allright", comment: "")
     
+    
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonAddDestination.isHidden = true
@@ -62,6 +67,16 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
             case .failure(_):
                 break
             }
+        }
+        
+        // Verifica se dados estão incompletos para ir para edição de dados
+        guard let media = rider.media else {
+            self.presentProfileEditController()
+            return
+        }
+
+        if (media.address.isNilOrEmpty || rider.cpf.isNilOrEmpty || rider.email.isNilOrEmpty || rider.firstName.isNilOrEmpty || rider.lastName.isNilOrEmpty) {
+            self.presentProfileEditController()
         }
     }
     
@@ -258,6 +273,18 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
                 self.buttonAddDestination.isEnabled = true
                 self.buttonConfirmFinalDestination.isEnabled = true
             }
+        }
+    }
+    
+    //MARK: Action
+    private func presentProfileEditController() {
+
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EditProfile") as? RiderEditProfileViewController {
+            let navController = UINavigationController(rootViewController: vc)
+            vc.modalPresentationStyle = .fullScreen
+            navController.modalPresentationStyle = .fullScreen
+            vc.shouldBack = false
+            self.present(navController, animated:true, completion: nil)
         }
     }
 }

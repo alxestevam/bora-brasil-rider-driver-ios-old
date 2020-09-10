@@ -116,6 +116,10 @@ WalletViewController
 "Basic_Info" = "Informações Básicas";
 "Mobile_Number" = "Telefone";
 
+/*
+RiderEditProfileViewController
+*/
+"Profile_Title" = "Perfil";
 "Email" = "E-Mail";
 "Name" = "Nome";
 "First_Name" = "Primeiro Nome";
@@ -128,6 +132,7 @@ WalletViewController
 "Error_Profile_First_Name" = "Você precisa digitar o primeiro nome";
 "Error_Profile_Last_Name" = "Você precisa digitar o sobrenome";
 "Error_Profile_Cpf" = "CPF inválido";
+"Error_Must_Edit" = "Você precisa completar o cadastro";
 
 "Additional_Info" = "Informações Adicionais";
 

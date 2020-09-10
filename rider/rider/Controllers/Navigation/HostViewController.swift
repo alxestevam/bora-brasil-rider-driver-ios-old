@@ -9,14 +9,10 @@ import UIKit
 
 
 class HostViewController : MenuContainerViewController {
-
-    //MARK: Properties
-    let rider = try! Rider(from: UserDefaultsConfig.user!)
     
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         let screenSize: CGRect = UIScreen.main.bounds
         self.transitionOptions = TransitionOptions(duration: 0.4, visibleContentWidth: screenSize.width / 6)
@@ -33,16 +29,6 @@ class HostViewController : MenuContainerViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        // Verifica se dados estão incompletos para ir para edição de dados
-        guard let media = rider.media else {
-            contentViewControllers[0].performSegue(withIdentifier: "showEditProfile", sender: nil)
-            return
-        }
-
-        if (media.address.isNilOrEmpty || rider.cpf.isNilOrEmpty || rider.email.isNilOrEmpty || rider.firstName.isNilOrEmpty || rider.lastName.isNilOrEmpty) {
-            contentViewControllers[0].performSegue(withIdentifier: "showEditProfile", sender: nil)
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,6 +67,5 @@ class HostViewController : MenuContainerViewController {
         
         return contentList
     }
-
 }
 

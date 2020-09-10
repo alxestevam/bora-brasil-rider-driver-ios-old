@@ -15,6 +15,10 @@ import Fabric
 import Braintree
 import SocketIO
 
+//MARK: Global Properties
+let appD = UIApplication.shared.delegate as! AppDelegate
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     static var info : [String:Any] {

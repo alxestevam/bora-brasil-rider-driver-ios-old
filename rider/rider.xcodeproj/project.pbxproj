@@ -122,6 +122,8 @@
 		62DB4577232A438700B7722E /* FinishedServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DB4576232A438700B7722E /* FinishedServiceViewController.swift */; };
 		62E2A253230A72D4000848CE /* SuggestionsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E2A252230A72D4000848CE /* SuggestionsTableTableViewController.swift */; };
 		8503504624E1D46D00B3EF05 /* FirebaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503504524E1D46D00B3EF05 /* FirebaseUtil.swift */; };
+		850F3FED250A9E2100F6A4C3 /* Color+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850F3FEC250A9E2100F6A4C3 /* Color+Util.swift */; };
+		850F3FEF250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850F3FEE250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift */; };
 		85712C0624DDABB800C839B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85712C0524DDABB800C839B3 /* GoogleService-Info.plist */; };
 		8580FEC525095A0E00A6AC32 /* OptionalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580FEC2250959E900A6AC32 /* OptionalString.swift */; };
 		8580FEC72509770500A6AC32 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580FEC62509770500A6AC32 /* UINavigationController.swift */; };
@@ -282,6 +284,8 @@
 		62DB4576232A438700B7722E /* FinishedServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedServiceViewController.swift; sourceTree = "<group>"; };
 		62E2A252230A72D4000848CE /* SuggestionsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsTableTableViewController.swift; sourceTree = "<group>"; };
 		8503504524E1D46D00B3EF05 /* FirebaseUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseUtil.swift; path = ../../../common/Util/FirebaseUtil.swift; sourceTree = "<group>"; };
+		850F3FEC250A9E2100F6A4C3 /* Color+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Util.swift"; sourceTree = "<group>"; };
+		850F3FEE250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Util.swift"; sourceTree = "<group>"; };
 		85712C0524DDABB800C839B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8580FEC2250959E900A6AC32 /* OptionalString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalString.swift; sourceTree = "<group>"; };
 		8580FEC62509770500A6AC32 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
@@ -701,6 +705,8 @@
 			children = (
 				8580FEC2250959E900A6AC32 /* OptionalString.swift */,
 				8580FEC62509770500A6AC32 /* UINavigationController.swift */,
+				850F3FEC250A9E2100F6A4C3 /* Color+Util.swift */,
+				850F3FEE250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift */,
 			);
 			name = Extensions;
 			path = ../../common/Extensions;
@@ -924,9 +930,11 @@
 				4CB5FC2323A79F2C00F2D5BC /* Cancel.swift in Sources */,
 				4C215EC0238D3FCA0013D720 /* Login.swift in Sources */,
 				4CB5FC7D23A7A2D000F2D5BC /* Request.swift in Sources */,
+				850F3FEF250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift in Sources */,
 				4CB5FC6823A79FD100F2D5BC /* NSLocalizedString+Extensions.swift in Sources */,
 				4CB5FC4123A79F8B00F2D5BC /* CLLocationCoordinate2D.swift in Sources */,
 				625D299C204EC44000F80499 /* Address.swift in Sources */,
+				850F3FED250A9E2100F6A4C3 /* Color+Util.swift in Sources */,
 				4CB5FC1423A79F1500F2D5BC /* SocketNetworkDispatcher.swift in Sources */,
 				4CB5FC7C23A7A2D000F2D5BC /* Service.swift in Sources */,
 				4CB5FC3A23A79F6B00F2D5BC /* ChatMessage.swift in Sources */,
