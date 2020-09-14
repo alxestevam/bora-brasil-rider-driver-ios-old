@@ -556,17 +556,17 @@
             </objects>
             <point key="canvasLocation" x="1378" y="1287"/>
         </scene>
-        <!--Wallet-->
+        <!--Carteira-->
         <scene sceneID="Z3S-wS-NCr">
             <objects>
-                <viewController storyboardIdentifier="Wallet" id="gOV-El-djk" customClass="WalletViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Wallet" title="Carteira" id="gOV-El-djk" customClass="WalletViewController" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oKG-c3-C4Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="uAg-3L-Qik"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Wallet" id="vfs-fb-0uH"/>
+                    <navigationItem key="navigationItem" title="Carteira" id="vfs-fb-0uH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AXS-rZ-pk3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -723,6 +723,7 @@
                         <segue destination="g48-4N-XvH" kind="show" identifier="showCoupons" id="Y2X-RT-vFz"/>
                         <segue destination="Sq5-WZ-Mz0" kind="show" identifier="showTransactions" id="575-1y-xxm"/>
                         <segue destination="atc-sE-38y" kind="show" identifier="showPromotions" id="fRn-k9-eM2"/>
+                        <segue destination="SFn-g8-5sS" kind="show" identifier="showWalletV2" id="ihk-eE-UI4"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MYK-Vh-3A1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1380,44 +1381,106 @@
             </objects>
             <point key="canvasLocation" x="2057" y="-966"/>
         </scene>
+        <!--Carteira-->
+        <scene sceneID="yHG-LV-KzP">
+            <objects>
+                <viewController storyboardIdentifier="WalletV2" title="Carteira" id="SFn-g8-5sS" customClass="WalletViewControllerV2" customModule="BBMU_Passageiro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vyI-0D-W6F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rdb-FZ-sex">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="575"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="240" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cD0-Cm-9Ei">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="575"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellCard" rowHeight="240" id="KUQ-2t-mhp" customClass="WalletViewCardCell" customModule="BBMU_Passageiro" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="240"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KUQ-2t-mhp" id="eM6-Bq-9EF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="610-4X-Q0R">
+                                                            <rect key="frame" x="16" y="11" width="343" height="218"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        </view>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="610-4X-Q0R" firstAttribute="leading" secondItem="eM6-Bq-9EF" secondAttribute="leadingMargin" id="1Uv-nf-qBm"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="610-4X-Q0R" secondAttribute="bottom" id="EEV-KL-zeO"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="610-4X-Q0R" secondAttribute="trailing" id="lHX-1s-Y9V"/>
+                                                        <constraint firstItem="610-4X-Q0R" firstAttribute="top" secondItem="eM6-Bq-9EF" secondAttribute="topMargin" id="yeC-EX-l7V"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="viewContent" destination="610-4X-Q0R" id="W7B-yA-uQQ"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cD0-Cm-9Ei" secondAttribute="trailing" id="WxO-RD-zmr"/>
+                                    <constraint firstAttribute="bottom" secondItem="cD0-Cm-9Ei" secondAttribute="bottom" id="a1j-DU-PEl"/>
+                                    <constraint firstItem="cD0-Cm-9Ei" firstAttribute="leading" secondItem="rdb-FZ-sex" secondAttribute="leading" id="bk5-sy-3oD"/>
+                                    <constraint firstItem="cD0-Cm-9Ei" firstAttribute="top" secondItem="rdb-FZ-sex" secondAttribute="top" id="tjz-Bc-UNf"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Py7-Qg-pv1">
+                                <rect key="frame" x="0.0" y="575" width="375" height="72"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exq-LI-MnO">
+                                        <rect key="frame" x="24" y="8" width="327" height="56"/>
+                                        <color key="backgroundColor" red="0.92549019610000005" green="0.41568627450000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="presentAddCard:" destination="SFn-g8-5sS" eventType="touchUpInside" id="7EG-pU-zQ2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstItem="exq-LI-MnO" firstAttribute="leading" secondItem="Py7-Qg-pv1" secondAttribute="leading" constant="24" id="DjS-oc-W5c"/>
+                                    <constraint firstAttribute="height" constant="72" id="VUT-Re-s2T"/>
+                                    <constraint firstAttribute="trailing" secondItem="exq-LI-MnO" secondAttribute="trailing" constant="24" id="WLa-Ta-hJa"/>
+                                    <constraint firstAttribute="bottom" secondItem="exq-LI-MnO" secondAttribute="bottom" constant="8" id="jhm-op-p0G"/>
+                                    <constraint firstItem="exq-LI-MnO" firstAttribute="top" secondItem="Py7-Qg-pv1" secondAttribute="top" constant="8" id="jwM-qd-JeL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JM6-qe-L3T"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JM6-qe-L3T" firstAttribute="bottom" secondItem="Py7-Qg-pv1" secondAttribute="bottom" id="06F-36-p85"/>
+                            <constraint firstItem="Py7-Qg-pv1" firstAttribute="top" secondItem="rdb-FZ-sex" secondAttribute="bottom" id="7bI-bt-dgJ"/>
+                            <constraint firstItem="Py7-Qg-pv1" firstAttribute="leading" secondItem="JM6-qe-L3T" secondAttribute="leading" id="AMi-OW-AAk"/>
+                            <constraint firstItem="rdb-FZ-sex" firstAttribute="top" secondItem="JM6-qe-L3T" secondAttribute="top" id="Ajw-zx-z00"/>
+                            <constraint firstItem="JM6-qe-L3T" firstAttribute="trailing" secondItem="Py7-Qg-pv1" secondAttribute="trailing" id="Mn4-Z5-qC5"/>
+                            <constraint firstItem="JM6-qe-L3T" firstAttribute="trailing" secondItem="rdb-FZ-sex" secondAttribute="trailing" id="ZIt-K0-Teu"/>
+                            <constraint firstItem="rdb-FZ-sex" firstAttribute="leading" secondItem="JM6-qe-L3T" secondAttribute="leading" id="kAu-kg-ppm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Wallet" id="ZZy-bi-mYt"/>
+                    <connections>
+                        <outlet property="btnAddCard" destination="exq-LI-MnO" id="w7M-9y-7zk"/>
+                        <outlet property="tbvCards" destination="cD0-Cm-9Ei" id="F3S-FM-YdX"/>
+                        <outlet property="viewContent" destination="rdb-FZ-sex" id="XWd-Os-WZH"/>
+                        <outlet property="viewHeader" destination="Py7-Qg-pv1" id="IxZ-fx-j79"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="joc-lq-4wB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2737" y="1983"/>
+        </scene>
     </scenes>
     <designables>
-        <designable name="4gk-mA-be8">
-            <size key="intrinsicContentSize" width="133" height="33"/>
-        </designable>
-        <designable name="4qI-LT-UqT">
-            <size key="intrinsicContentSize" width="48" height="30"/>
-        </designable>
-        <designable name="4xf-B2-cPM">
-            <size key="intrinsicContentSize" width="127" height="33"/>
-        </designable>
         <designable name="9A0-V1-Tki"/>
         <designable name="NHr-4h-7Ue">
             <size key="intrinsicContentSize" width="63" height="18"/>
-        </designable>
-        <designable name="O3k-hU-9yw">
-            <size key="intrinsicContentSize" width="97" height="30"/>
-        </designable>
-        <designable name="TGw-TV-i4G">
-            <size key="intrinsicContentSize" width="137" height="33"/>
-        </designable>
-        <designable name="YnQ-Yl-MeU">
-            <size key="intrinsicContentSize" width="55" height="33"/>
-        </designable>
-        <designable name="ZAI-5h-uDN">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="bs0-ma-Cfy">
-            <size key="intrinsicContentSize" width="75" height="33"/>
-        </designable>
-        <designable name="dLp-wh-UaX">
-            <size key="intrinsicContentSize" width="62" height="30"/>
-        </designable>
-        <designable name="vd8-M7-5It">
-            <size key="intrinsicContentSize" width="113" height="33"/>
-        </designable>
-        <designable name="w6Z-5H-pYJ">
-            <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
     </designables>
     <resources>
@@ -1449,6 +1512,12 @@
         </systemColor>
         <systemColor name="systemFillColor">
             <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

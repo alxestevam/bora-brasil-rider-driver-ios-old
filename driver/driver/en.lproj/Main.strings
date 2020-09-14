@@ -30,7 +30,7 @@
 "Lm5-FL-fgX.text" = "ETA";
 
 /* Class = "UINavigationItem"; title = "Wallet"; ObjectID = "OHm-yx-c2N"; */
-"OHm-yx-c2N.title" = "Wallet";
+"OHm-yx-c2N.title" = "Carteira";
 
 /* Class = "UILabel"; text = "Cost"; ObjectID = "PHt-ka-JNh"; */
 "PHt-ka-JNh.text" = "Cost";

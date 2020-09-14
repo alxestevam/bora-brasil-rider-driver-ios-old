@@ -55,6 +55,76 @@ struct ValidatorUtil {
         
         return temp1 == d1 && temp2 == d2
     }
+    
+    func cardNumberIsValid(_ number: String) -> Bool {
+        let finalNumber = number.replacingOccurrences(of: " ", with: "")
+        let v = CreditCardValidator()
+        return finalNumber != "0000000000000000" && finalNumber != "000000000000000" && finalNumber.count >= 15 && luhnCheck(finalNumber) && v.validate(string: finalNumber)
+    }
+    
+    func expirationDateIsValid(_ date: String) -> Bool {
+        let numeros = date.compactMap({ $0.wholeNumberValue })
+        if (numeros.count == 4) {
+            if dateFromString(dateString: date, stringFormat: "MM/yy") != nil {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    func cvvIsValid(_ code: String) -> Bool {
+        let numbers = code.compactMap({ $0.wholeNumberValue })
+        return numbers.count >= 3
+    }
+    
+    func luhnCheck(_ numero: String) -> Bool {
+        var sum = 0
+        let digitStrings = numero.reversed().map { String($0) }
+        
+        for tuple in digitStrings.enumerated() {
+            if let digit = Int(tuple.element) {
+                let odd = tuple.offset % 2 == 1
+                
+                switch (odd, digit) {
+                case (true, 9):
+                    sum += 9
+                case (true, 0...8):
+                    sum += (digit * 2) % 9
+                default:
+                    sum += digit
+                }
+            } else {
+                return false
+            }
+        }
+        return sum % 10 == 0
+    }
+    
+    func dateFromString(dateString: String?, stringFormat: String!) -> Date? {
+
+        if let str = dateString {
+
+            let updatedString: String = str.replacingOccurrences(of: " 0000", with: " +0000")
+
+            let dateFormatter: DateFormatter = DateFormatter()
+            let calendar: Calendar = Calendar(identifier: .gregorian)
+            let enUSPOSIXLocale: Locale = Locale(identifier: "en_US_POSIX")
+            
+            //
+            dateFormatter.timeZone = TimeZone.current
+            dateFormatter.calendar = calendar
+            dateFormatter.dateFormat = stringFormat
+            dateFormatter.locale = enUSPOSIXLocale
+            //
+            let date: Date? = dateFormatter.date(from: updatedString)
+            //
+            return date
+
+        } else {
+            return nil
+        }
+    }
 }
 
 // MARK: Aux

@@ -124,9 +124,20 @@
 		8503504624E1D46D00B3EF05 /* FirebaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503504524E1D46D00B3EF05 /* FirebaseUtil.swift */; };
 		850F3FED250A9E2100F6A4C3 /* Color+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850F3FEC250A9E2100F6A4C3 /* Color+Util.swift */; };
 		850F3FEF250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850F3FEE250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift */; };
+		85245A34250EAD37001D236A /* WalletAddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85245A33250EAD37001D236A /* WalletAddCardViewController.swift */; };
+		85245A36250EAFFF001D236A /* UITableView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85245A35250EAFFF001D236A /* UITableView+Util.swift */; };
+		85245A3A250EB525001D236A /* GetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85245A39250EB525001D236A /* GetCard.swift */; };
+		85245A40250EBDEE001D236A /* YRPaymentCreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85245A3C250EBDEE001D236A /* YRPaymentCreditCard.swift */; };
+		85245A41250EBDEE001D236A /* YRPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85245A3D250EBDEE001D236A /* YRPayment.swift */; };
+		85245A42250EBDEE001D236A /* YRTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85245A3E250EBDEE001D236A /* YRTools.swift */; };
+		85245A47250ED8B3001D236A /* CreditCardValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85245A46250ED8B3001D236A /* CreditCardValidator.swift */; };
+		85245A49250EE7E4001D236A /* AddCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85245A48250EE7E4001D236A /* AddCard.swift */; };
+		85245A4B250EEF37001D236A /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85245A4A250EEF37001D236A /* String+Util.swift */; };
+		85245A4D250F1407001D236A /* WalletViewCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85245A4C250F1407001D236A /* WalletViewCardCell.swift */; };
 		85712C0624DDABB800C839B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85712C0524DDABB800C839B3 /* GoogleService-Info.plist */; };
 		857A72F4250ABF360020DB15 /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A72F3250ABF360020DB15 /* UIViewController+Util.swift */; };
 		857A72F6250AC2090020DB15 /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A72F5250AC2090020DB15 /* UIView+Util.swift */; };
+		857A72F8250ACE9D0020DB15 /* WalletViewControllerV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A72F7250ACE9B0020DB15 /* WalletViewControllerV2.swift */; };
 		8580FEC525095A0E00A6AC32 /* OptionalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580FEC2250959E900A6AC32 /* OptionalString.swift */; };
 		8580FEC72509770500A6AC32 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580FEC62509770500A6AC32 /* UINavigationController.swift */; };
 		8580FECD25097D0D00A6AC32 /* ValidatorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580FECC25097D0C00A6AC32 /* ValidatorUtil.swift */; };
@@ -288,9 +299,22 @@
 		8503504524E1D46D00B3EF05 /* FirebaseUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseUtil.swift; path = ../../../common/Util/FirebaseUtil.swift; sourceTree = "<group>"; };
 		850F3FEC250A9E2100F6A4C3 /* Color+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Util.swift"; sourceTree = "<group>"; };
 		850F3FEE250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Util.swift"; sourceTree = "<group>"; };
+		85245A33250EAD37001D236A /* WalletAddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletAddCardViewController.swift; sourceTree = "<group>"; };
+		85245A35250EAFFF001D236A /* UITableView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Util.swift"; sourceTree = "<group>"; };
+		85245A39250EB525001D236A /* GetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCard.swift; sourceTree = "<group>"; };
+		85245A3C250EBDEE001D236A /* YRPaymentCreditCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YRPaymentCreditCard.swift; sourceTree = "<group>"; };
+		85245A3D250EBDEE001D236A /* YRPayment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YRPayment.swift; sourceTree = "<group>"; };
+		85245A3E250EBDEE001D236A /* YRTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YRTools.swift; sourceTree = "<group>"; };
+		85245A3F250EBDEE001D236A /* YRPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRPayment.h; sourceTree = "<group>"; };
+		85245A44250EBE0C001D236A /* OCRAStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRAStd.otf; sourceTree = "<group>"; };
+		85245A46250ED8B3001D236A /* CreditCardValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardValidator.swift; sourceTree = "<group>"; };
+		85245A48250EE7E4001D236A /* AddCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCard.swift; sourceTree = "<group>"; };
+		85245A4A250EEF37001D236A /* String+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
+		85245A4C250F1407001D236A /* WalletViewCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewCardCell.swift; sourceTree = "<group>"; };
 		85712C0524DDABB800C839B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		857A72F3250ABF360020DB15 /* UIViewController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
 		857A72F5250AC2090020DB15 /* UIView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
+		857A72F7250ACE9B0020DB15 /* WalletViewControllerV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewControllerV2.swift; sourceTree = "<group>"; };
 		8580FEC2250959E900A6AC32 /* OptionalString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalString.swift; sourceTree = "<group>"; };
 		8580FEC62509770500A6AC32 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		8580FECC25097D0C00A6AC32 /* ValidatorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidatorUtil.swift; path = ../../../common/Util/ValidatorUtil.swift; sourceTree = "<group>"; };
@@ -325,6 +349,8 @@
 				4CB5FC3023A79F5900F2D5BC /* GetBraintreeClientToken.swift */,
 				4CB5FC2923A79F3500F2D5BC /* Protocols */,
 				4C215EBF238D3FCA0013D720 /* Login.swift */,
+				85245A39250EB525001D236A /* GetCard.swift */,
+				85245A48250EE7E4001D236A /* AddCard.swift */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -450,6 +476,8 @@
 		4CB5FC4323A79FA400F2D5BC /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				85245A3B250EBDD8001D236A /* YRPayment */,
+				85245A32250EA8C0001D236A /* xib */,
 				4CB5FC5E23A79FD000F2D5BC /* ColoredButton.swift */,
 				4CB5FC5423A79FCF00F2D5BC /* DashedLineView.swift */,
 				4CB5FC6023A79FD000F2D5BC /* DatePickerDialog.swift */,
@@ -518,6 +546,9 @@
 			isa = PBXGroup;
 			children = (
 				62B6FD6B1F70F63C00F66611 /* WalletViewController.swift */,
+				857A72F7250ACE9B0020DB15 /* WalletViewControllerV2.swift */,
+				85245A4C250F1407001D236A /* WalletViewCardCell.swift */,
+				85245A33250EAD37001D236A /* WalletAddCardViewController.swift */,
 			);
 			name = Wallet;
 			path = ../../../common/Controllers/Wallet;
@@ -653,6 +684,7 @@
 				85712C0524DDABB800C839B3 /* GoogleService-Info.plist */,
 				62B6FD9C1F70F70A00F66611 /* Info.plist */,
 				62972937223BB4D30084E2BB /* car.json */,
+				85245A44250EBE0C001D236A /* OCRAStd.otf */,
 				547353DB24AACED700EDDDD3 /* Localizable.strings */,
 			);
 			name = Rider;
@@ -697,11 +729,30 @@
 		8503503E24E1D15C00B3EF05 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				8580FECC25097D0C00A6AC32 /* ValidatorUtil.swift */,
+				85245A46250ED8B3001D236A /* CreditCardValidator.swift */,
 				8503504524E1D46D00B3EF05 /* FirebaseUtil.swift */,
 				8580FECF25099EFB00A6AC32 /* TLCustomMaskUtil.swift */,
+				8580FECC25097D0C00A6AC32 /* ValidatorUtil.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		85245A32250EA8C0001D236A /* xib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = xib;
+			sourceTree = "<group>";
+		};
+		85245A3B250EBDD8001D236A /* YRPayment */ = {
+			isa = PBXGroup;
+			children = (
+				85245A3F250EBDEE001D236A /* YRPayment.h */,
+				85245A3D250EBDEE001D236A /* YRPayment.swift */,
+				85245A3C250EBDEE001D236A /* YRPaymentCreditCard.swift */,
+				85245A3E250EBDEE001D236A /* YRTools.swift */,
+			);
+			path = YRPayment;
 			sourceTree = "<group>";
 		};
 		8580FEC1250959B600A6AC32 /* Extensions */ = {
@@ -713,6 +764,8 @@
 				850F3FEE250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift */,
 				857A72F3250ABF360020DB15 /* UIViewController+Util.swift */,
 				857A72F5250AC2090020DB15 /* UIView+Util.swift */,
+				85245A35250EAFFF001D236A /* UITableView+Util.swift */,
+				85245A4A250EEF37001D236A /* String+Util.swift */,
 			);
 			name = Extensions;
 			path = ../../common/Extensions;
@@ -902,6 +955,7 @@
 				4CB5FC2623A79F2C00F2D5BC /* HideHistoryItem.swift in Sources */,
 				625D29B0204F194700F80499 /* ServicesListCell.swift in Sources */,
 				4C215E9E238D1BA70013D720 /* GetCoupons.swift in Sources */,
+				85245A49250EE7E4001D236A /* AddCard.swift in Sources */,
 				622CCBBB219D734F003A4CCE /* CouponsCollectionViewController.swift in Sources */,
 				4CB5FC4C23A79FC700F2D5BC /* MenuTransitioningDelegate.swift in Sources */,
 				4CB5FC2823A79F2C00F2D5BC /* WriteComplaint.swift in Sources */,
@@ -932,10 +986,14 @@
 				4CB5FC2F23A79F4900F2D5BC /* HTTPRequest.swift in Sources */,
 				4C215EAC238D20460013D720 /* Review.swift in Sources */,
 				4CB5FC6E23A79FD100F2D5BC /* DatePickerDialog.swift in Sources */,
+				85245A3A250EB525001D236A /* GetCard.swift in Sources */,
+				85245A36250EAFFF001D236A /* UITableView+Util.swift in Sources */,
 				625D29A6204ED83600F80499 /* ServicesParentViewController.swift in Sources */,
 				62B6FD861F70F6A600F66611 /* NavigationMenuViewController.swift in Sources */,
 				4CB5FC2323A79F2C00F2D5BC /* Cancel.swift in Sources */,
 				4C215EC0238D3FCA0013D720 /* Login.swift in Sources */,
+				857A72F8250ACE9D0020DB15 /* WalletViewControllerV2.swift in Sources */,
+				85245A4B250EEF37001D236A /* String+Util.swift in Sources */,
 				4CB5FC7D23A7A2D000F2D5BC /* Request.swift in Sources */,
 				850F3FEF250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift in Sources */,
 				4CB5FC6823A79FD100F2D5BC /* NSLocalizedString+Extensions.swift in Sources */,
@@ -952,6 +1010,7 @@
 				4CB5FC1F23A79F2C00F2D5BC /* GetMessages.swift in Sources */,
 				8580FEC525095A0E00A6AC32 /* OptionalString.swift in Sources */,
 				4CB5FC2D23A79F4900F2D5BC /* URLSessionNetworkDispatcher.swift in Sources */,
+				85245A42250EBDEE001D236A /* YRTools.swift in Sources */,
 				8580FED025099EFB00A6AC32 /* TLCustomMaskUtil.swift in Sources */,
 				4CB5FC7A23A7A2D000F2D5BC /* ServiceCategory.swift in Sources */,
 				4CB5FC6923A79FD100F2D5BC /* MapsUtil.swift in Sources */,
@@ -970,10 +1029,13 @@
 				8580FECD25097D0D00A6AC32 /* ValidatorUtil.swift in Sources */,
 				857A72F4250ABF360020DB15 /* UIViewController+Util.swift in Sources */,
 				4CB5FC6D23A79FD100F2D5BC /* Error+Extensions.swift in Sources */,
+				85245A4D250F1407001D236A /* WalletViewCardCell.swift in Sources */,
 				4C9C5F1B21A7FB9F00F5353B /* TransactionsCollectionViewController.swift in Sources */,
+				85245A41250EBDEE001D236A /* YRPayment.swift in Sources */,
 				4CB5FC6123A79FD100F2D5BC /* UserDefault.swift in Sources */,
 				4C9C5F2021A80EF000F5353B /* TransactionsCollectionViewCell.swift in Sources */,
 				62B6FD7B1F70F68100F66611 /* MainViewController.swift in Sources */,
+				85245A40250EBDEE001D236A /* YRPaymentCreditCard.swift in Sources */,
 				4CE8E9D7237ED9710094B672 /* RequestDTO.swift in Sources */,
 				62E2A253230A72D4000848CE /* SuggestionsTableTableViewController.swift in Sources */,
 				62B6FD851F70F6A600F66611 /* HostViewController.swift in Sources */,
@@ -1001,6 +1063,8 @@
 				4CB5FC8023A7A2D000F2D5BC /* Transaction.swift in Sources */,
 				4CB5FC2023A79F2C00F2D5BC /* GetTravels.swift in Sources */,
 				4CB5FC4F23A79FC700F2D5BC /* Options.swift in Sources */,
+				85245A34250EAD37001D236A /* WalletAddCardViewController.swift in Sources */,
+				85245A47250ED8B3001D236A /* CreditCardValidator.swift in Sources */,
 				4C215EA8238D1F8F0013D720 /* CancelRequest.swift in Sources */,
 				62490E4D2099BD9B007F668D /* FavoritesViewController.swift in Sources */,
 				4CB5FC1323A79F1500F2D5BC /* SocketRequest.swift in Sources */,

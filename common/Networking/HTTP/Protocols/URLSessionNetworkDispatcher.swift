@@ -17,7 +17,8 @@ public struct URLSessionNetworkDispatcher: HTTPDispatcher {
             completionHandler(.failure(HTTPStatusCode.FailedToDecode))
             return
         }
-        urlRequest.httpBody = body
+        
+        if method != .get { urlRequest.httpBody = body }
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
