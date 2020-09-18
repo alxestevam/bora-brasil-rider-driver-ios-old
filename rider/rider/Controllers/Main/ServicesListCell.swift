@@ -9,6 +9,7 @@ import UIKit
 import Kingfisher
 
 class ServicesListCell: UICollectionViewCell {
+    
     @IBOutlet weak var imageIcon: UIImageView!
     @IBOutlet weak var textTitle: UILabel!
     @IBOutlet weak var textCost: UILabel!
@@ -19,7 +20,9 @@ class ServicesListCell: UICollectionViewCell {
     private var distance: Double = 0
     private var duration: Double = 0
     private var currency: String = ""
-    
+    private var fareResult: Double = 0
+    private var feeEstimationMode: FeeEstimationMode = .Dynamic
+
     override var isSelected: Bool {
         didSet {
             self.contentView.alpha = isSelected ? 1 : 0.5
@@ -31,7 +34,7 @@ class ServicesListCell: UICollectionViewCell {
         self.contentView.alpha = 0.5
     }
     
-    func initialize(service:Service, distance: Int, duration: Int, currency: String) {
+    func initialize(service: Service, distance: Int, duration: Int, currency: String) {
         self.service = service
         self.distance = Double(distance)
         self.duration = Double(duration)
@@ -44,44 +47,62 @@ class ServicesListCell: UICollectionViewCell {
         }
         buttonPlus.isHidden = true
         buttonMinus.isHidden = true
-        
+    }
+    
+    func initialize(service: Service, fareResult: Double, feeEstimationMode: FeeEstimationMode, currency: String) {
+        self.service = service
+        self.fareResult = fareResult
+        self.feeEstimationMode = feeEstimationMode
+        self.currency = currency
+        self.updatePrice()
+        textTitle.text = service.title
+        if let media = service.media, let address = media.address {
+            let path = Config.Backend + address
+            guard let urlString = path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return  }
+            let url = URL(string: urlString)
+            imageIcon.kf.setImage(with: url)
+        }
+        buttonPlus.isHidden = true
+        buttonMinus.isHidden = true
     }
     
     func updatePrice() {
-        let formatter = NumberFormatter()
-        formatter.locale = Locale.current
-        formatter.numberStyle = .currency
-        formatter.currencyCode = currency
-        var cost: Double = service.baseFare
-        if service.distanceFeeMode == .PickupToDestination {
-            cost += (distance * service.perHundredMeters / 100) + (duration * service.perMinuteDrive / 60)
-        }
-        if service.quantityMode == .Multiple {
-            cost += Double(quantity) * service.eachQuantityFee
-        }
-        switch service.feeEstimationMode {
-        case .Disabled:
-            textCost.text = "-"
-        
-        case .Static:
-            textCost.text = formatter.string(from: NSNumber(value: cost))
-            
-        case .Dynamic:
-            textCost.text = "~\(formatter.string(from: NSNumber(value: cost)) ?? "Unkown Curr")"
-            
-        case .Ranged:
-            let cMinus = cost - (cost * Double(service.rangeMinusPercent / 100))
-            let cPlus = cost + (cost * Double(service.rangePlusPercent / 100))
-            textCost.text = "\(formatter.string(from: NSNumber(value: cMinus)) ?? "Unkown Curr")~\(formatter.string(from: NSNumber(value: cPlus)) ?? "Unkown Curr")"
-            
-        case .RangedStrict:
-            let cMinus = cost - (cost * Double(service.rangeMinusPercent / 100))
-            let cPlus = cost + (cost * Double(service.rangePlusPercent / 100))
-            textCost.text = "\(formatter.string(from: NSNumber(value: cMinus)) ?? "Unkown Curr")-\(formatter.string(from: NSNumber(value: cPlus)) ?? "Unkown Curr")"
-        }
-        if service.quantityMode == .Multiple && quantity > 0 {
-            textCost.text = "\(textCost.text!) (\(quantity)x)"
-        }
+        // TODO(): Ajustar código
+
+//        let formatter = NumberFormatter()
+//        formatter.locale = Locale.current
+//        formatter.numberStyle = .currency
+//        formatter.currencyCode = currency
+//        var cost: Double = service.baseFare
+//        if service.distanceFeeMode == .PickupToDestination {
+//            cost += (distance * service.perHundredMeters / 100) + (duration * service.perMinuteDrive / 60)
+//        }
+//        if service.quantityMode == .Multiple {
+//            cost += Double(quantity) * service.eachQuantityFee
+//        }
+//        switch service.feeEstimationMode {
+//        case .Disabled:
+//            textCost.text = "-"
+//
+//        case .Static:
+//            textCost.text = formatter.string(from: NSNumber(value: cost))
+//
+//        case .Dynamic:
+//            textCost.text = "~\(formatter.string(from: NSNumber(value: cost)) ?? "Unkown Curr")"
+//
+//        case .Ranged:
+//            let cMinus = cost - (cost * Double(service.rangeMinusPercent / 100))
+//            let cPlus = cost + (cost * Double(service.rangePlusPercent / 100))
+//            textCost.text = "\(formatter.string(from: NSNumber(value: cMinus)) ?? "Unkown Curr")~\(formatter.string(from: NSNumber(value: cPlus)) ?? "Unkown Curr")"
+//
+//        case .RangedStrict:
+//            let cMinus = cost - (cost * Double(service.rangeMinusPercent / 100))
+//            let cPlus = cost + (cost * Double(service.rangePlusPercent / 100))
+//            textCost.text = "\(formatter.string(from: NSNumber(value: cMinus)) ?? "Unkown Curr")-\(formatter.string(from: NSNumber(value: cPlus)) ?? "Unkown Curr")"
+//        }
+//        if service.quantityMode == .Multiple && quantity > 0 {
+//            textCost.text = "\(textCost.text!) (\(quantity)x)"
+//        }
     }
     
     @IBAction func onButtonMinusTouched(_ sender: UIButton) {

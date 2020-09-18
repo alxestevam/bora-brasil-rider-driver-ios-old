@@ -32,6 +32,9 @@ class ServicesParentViewController: UIViewController, UICollectionViewDataSource
         let maskLayer = CAShapeLayer()
         maskLayer.path = UIBezierPath(roundedRect: view.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 10, height: 10)).cgPath
         self.view.layer.mask = maskLayer
+        
+        buttonRideLater.isHidden = true
+        buttonRideNow.backgroundColor = Color.orange.rgb_236_106_53
     }
     
     public func reload() {
@@ -61,8 +64,8 @@ class ServicesParentViewController: UIViewController, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "serviceCell", for: indexPath) as! ServicesListCell
-        cell.initialize(service: (selectedCategory?.services[indexPath.row])!, distance: self.calculateFareResult.distance, duration: self.calculateFareResult.duration, currency: self.calculateFareResult.currency)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "serviceCell", for: indexPath) as! ServicesListCell        
+        cell.initialize(service: (selectedCategory?.services[indexPath.row])!, fareResult: calculateFareResult.fareResult, feeEstimationMode: calculateFareResult.feeEstimationMode, currency: calculateFareResult.currency)
         return cell
     }
     
@@ -72,6 +75,7 @@ class ServicesParentViewController: UIViewController, UICollectionViewDataSource
         selectedService = (selectedCategory?.services[indexPath.row])!
         buttonRideNow.isEnabled = true
         buttonRideLater.isEnabled = true
+        buttonRideLater.isHidden = true
         let localized = NSLocalizedString("Request_Service", comment: "")
         let title = String(format: localized, selectedService!.title ?? "")
         buttonRideNow.setTitle(title, for: .normal)
@@ -79,30 +83,34 @@ class ServicesParentViewController: UIViewController, UICollectionViewDataSource
     
     @IBAction func onSelectServiceClicked(_ sender: UIButton) {
         if let d = callback {
+            // TODO(): Selecionar forma de pagamento
+            
             d.RideNowSelected(service: selectedService!)
         }
     }
     
     @IBAction func onBookLaterClicked(_ sender: ColoredButton) {
-        DatePickerDialog().show(NSLocalizedString("Select_Time", comment: "Select Time dialog title"), doneButtonTitle: NSLocalizedString("Done", comment: ""), cancelButtonTitle: NSLocalizedString("Cancel", comment: ""), datePickerMode: selectedService?.bookingMode == .Time ? .time : .dateAndTime) {
-            (date) -> Void in
-            if(self.selectedService?.bookingMode == .DateTimeAbosoluteHour && Calendar.current.component(.minute, from: date!) != 0) {
-                DialogBuilder.alertOnError(message: NSLocalizedString("Absolute_Hours_Acceptable", comment: "Absolute Hour Message Description"))
-                return
-            }
-            if let dt = date, let d = self.callback {
-                
-                let seconds = dt.timeIntervalSince(Date())
-                if seconds < 30 {
-                    let message = UIAlertController(title: NSLocalizedString("Problem", comment: ""), message: NSLocalizedString("Alert_Error_Passed_Time", comment: ""), preferredStyle: .alert)
-                    message.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                    self.parent!.present(message, animated: true, completion: nil)
-                    return
-                }
-                d.RideLaterSelected(service: self.selectedService!, minutesFromNow: Int(seconds / 60))
-                
-            }
-        }
+        // TODO(): Ajustar código
+
+//        DatePickerDialog().show(NSLocalizedString("Select_Time", comment: "Select Time dialog title"), doneButtonTitle: NSLocalizedString("Done", comment: ""), cancelButtonTitle: NSLocalizedString("Cancel", comment: ""), datePickerMode: selectedService?.bookingMode == .Time ? .time : .dateAndTime) {
+//            (date) -> Void in
+//            if(self.selectedService?.bookingMode == .DateTimeAbosoluteHour && Calendar.current.component(.minute, from: date!) != 0) {
+//                DialogBuilder.alertOnError(message: NSLocalizedString("Absolute_Hours_Acceptable", comment: "Absolute Hour Message Description"))
+//                return
+//            }
+//            if let dt = date, let d = self.callback {
+//
+//                let seconds = dt.timeIntervalSince(Date())
+//                if seconds < 30 {
+//                    let message = UIAlertController(title: NSLocalizedString("Problem", comment: ""), message: NSLocalizedString("Alert_Error_Passed_Time", comment: ""), preferredStyle: .alert)
+//                    message.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                    self.parent!.present(message, animated: true, completion: nil)
+//                    return
+//                }
+//                d.RideLaterSelected(service: self.selectedService!, minutesFromNow: Int(seconds / 60))
+//
+//            }
+//        }
     }
 }
 

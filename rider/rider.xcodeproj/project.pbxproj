@@ -134,6 +134,7 @@
 		85245A49250EE7E4001D236A /* AddCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85245A48250EE7E4001D236A /* AddCard.swift */; };
 		85245A4B250EEF37001D236A /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85245A4A250EEF37001D236A /* String+Util.swift */; };
 		85245A4D250F1407001D236A /* WalletViewCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85245A4C250F1407001D236A /* WalletViewCardCell.swift */; };
+		8551567925144F4F00F744CB /* CalculateFareRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551567825144F4F00F744CB /* CalculateFareRequest.swift */; };
 		85712C0624DDABB800C839B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85712C0524DDABB800C839B3 /* GoogleService-Info.plist */; };
 		857A72F4250ABF360020DB15 /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A72F3250ABF360020DB15 /* UIViewController+Util.swift */; };
 		857A72F6250AC2090020DB15 /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A72F5250AC2090020DB15 /* UIView+Util.swift */; };
@@ -311,6 +312,7 @@
 		85245A48250EE7E4001D236A /* AddCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCard.swift; sourceTree = "<group>"; };
 		85245A4A250EEF37001D236A /* String+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
 		85245A4C250F1407001D236A /* WalletViewCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewCardCell.swift; sourceTree = "<group>"; };
+		8551567825144F4F00F744CB /* CalculateFareRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateFareRequest.swift; sourceTree = "<group>"; };
 		85712C0524DDABB800C839B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		857A72F3250ABF360020DB15 /* UIViewController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
 		857A72F5250AC2090020DB15 /* UIView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
@@ -407,6 +409,7 @@
 				4CB5FC7423A7A2D000F2D5BC /* Service.swift */,
 				4CB5FC7223A7A2D000F2D5BC /* ServiceCategory.swift */,
 				4CB5FC7823A7A2D000F2D5BC /* Transaction.swift */,
+				8551567825144F4F00F744CB /* CalculateFareRequest.swift */,
 				4CB5FC7123A7A2D000F2D5BC /* Wallet.swift */,
 				4CB5FC3623A79F6B00F2D5BC /* Car.swift */,
 				4CB5FC3523A79F6B00F2D5BC /* ChatMessage.swift */,
@@ -1034,6 +1037,7 @@
 				85245A41250EBDEE001D236A /* YRPayment.swift in Sources */,
 				4CB5FC6123A79FD100F2D5BC /* UserDefault.swift in Sources */,
 				4C9C5F2021A80EF000F5353B /* TransactionsCollectionViewCell.swift in Sources */,
+				8551567925144F4F00F744CB /* CalculateFareRequest.swift in Sources */,
 				62B6FD7B1F70F68100F66611 /* MainViewController.swift in Sources */,
 				85245A40250EBDEE001D236A /* YRPaymentCreditCard.swift in Sources */,
 				4CE8E9D7237ED9710094B672 /* RequestDTO.swift in Sources */,

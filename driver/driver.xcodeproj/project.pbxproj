@@ -106,6 +106,7 @@
 		62F12DCF22EDD96700434A05 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F12DCE22EDD96700434A05 /* ChatViewController.swift */; };
 		680C1AEE169A1469633B3949 /* Pods_driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A40C6906CC2298EF2B9CC43 /* Pods_driver.framework */; };
 		8503504424E1D45D00B3EF05 /* FirebaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503504324E1D45D00B3EF05 /* FirebaseUtil.swift */; };
+		8551567725144DF300F744CB /* CalculateFareRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551567625144DF300F744CB /* CalculateFareRequest.swift */; };
 		85712C0824DDAC0200C839B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85712C0724DDAC0200C839B3 /* GoogleService-Info.plist */; };
 		8580FEC425095A0B00A6AC32 /* OptionalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580FEC3250959FB00A6AC32 /* OptionalString.swift */; };
 		8580FEC9250979BA00A6AC32 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580FEC8250979BA00A6AC32 /* UINavigationController.swift */; };
@@ -233,6 +234,7 @@
 		73B2394A3DC335EC45D326D4 /* Pods-driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-driver.release.xcconfig"; path = "Target Support Files/Pods-driver/Pods-driver.release.xcconfig"; sourceTree = "<group>"; };
 		7A40C6906CC2298EF2B9CC43 /* Pods_driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8503504324E1D45D00B3EF05 /* FirebaseUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseUtil.swift; path = ../../../common/Util/FirebaseUtil.swift; sourceTree = "<group>"; };
+		8551567625144DF300F744CB /* CalculateFareRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculateFareRequest.swift; path = ../../../rider/rider/Models/Objects/CalculateFareRequest.swift; sourceTree = "<group>"; };
 		85712C0724DDAC0200C839B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8580FEC3250959FB00A6AC32 /* OptionalString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalString.swift; sourceTree = "<group>"; };
 		8580FEC8250979BA00A6AC32 /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				4CB050E923A661EA0028DF0E /* Car.swift */,
 				4CB050DF23A661E90028DF0E /* ChatMessage.swift */,
 				4CB050E823A661E90028DF0E /* Coupon.swift */,
+				8551567625144DF300F744CB /* CalculateFareRequest.swift */,
 				4CB050E723A661E90028DF0E /* Driver.swift */,
 				4CB050DD23A661E90028DF0E /* Media.swift */,
 				4CB050E023A661E90028DF0E /* PaymentGateway.swift */,
@@ -841,6 +844,7 @@
 				4C9F4D27238938AD005497D3 /* GetAvailableRequests.swift in Sources */,
 				8580FEC9250979BA00A6AC32 /* UINavigationController.swift in Sources */,
 				4C6AB3DB23BD144F00FAF6FE /* WaitingForPaymentViewController.swift in Sources */,
+				8551567725144DF300F744CB /* CalculateFareRequest.swift in Sources */,
 				4CB0513B23A662830028DF0E /* GetMessages.swift in Sources */,
 				4CB0510F23A662400028DF0E /* NSLocalizedString+Extensions.swift in Sources */,
 				4CB0513C23A662830028DF0E /* SendMessage.swift in Sources */,

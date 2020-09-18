@@ -164,7 +164,7 @@ MainViewController
 /*
 ServicesParentViewController
 */
-"Request_Service" = "Soliciar %@ Agora";
+"Request_Service" = "SOLICITAR %@ AGORA";
 "Select Time" = "Selecione o horário";
 "Absolute_Hours_Acceptable" = "Somente horas absolutas são aceitas para este serviço";
 "Problem" = "Problema";

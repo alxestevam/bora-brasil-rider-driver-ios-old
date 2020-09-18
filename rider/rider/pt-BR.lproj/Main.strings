@@ -21,7 +21,7 @@
 "3Fo-Yx-gKc.segmentTitles[1]" = "Solicite informações";
 
 /* Class = "UIButton"; normalTitle = "Final Destination"; ObjectID = "4gk-mA-be8"; */
-"4gk-mA-be8.normalTitle" = "Destino final";
+"4gk-mA-be8.normalTitle" = "CONFIRMAR DESTINO";
 
 /* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "4qI-LT-UqT"; */
 "4qI-LT-UqT.normalTitle" = "Cancelar";
@@ -90,7 +90,7 @@
 "Sq5-WZ-Mz0.title" = "Transações";
 
 /* Class = "UIButton"; normalTitle = "Confirm Location"; ObjectID = "TGw-TV-i4G"; */
-"TGw-TV-i4G.normalTitle" = "Confirmar localização";
+"TGw-TV-i4G.normalTitle" = "CONFIRMAR ORIGEM";
 
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "UEa-fe-hJR"; */
 "UEa-fe-hJR.normalTitle" = "Entrar/Cadastrar";

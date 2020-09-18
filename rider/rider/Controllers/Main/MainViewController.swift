@@ -37,6 +37,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupLayout()
         buttonAddDestination.isHidden = true
         buttonConfirmFinalDestination.isHidden = true
         locationManager.delegate = self
@@ -90,6 +92,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(patternImage: gradientImage), tintColor: .white, title: "Bora Brasil", preferredLargeTitle: false)
     }
     
+    private func setupLayout() {
+    
+    }
+    
     func goBackFromServiceSelection() {
         LoadingOverlay.shared.hideOverlayView()
         leftBarButton.image = UIImage(named: "menu")
@@ -139,7 +145,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
             pointsAnnotations.removeLast()
             buttonConfirmPickup.isHidden = (pointsAnnotations.count != 0)
             buttonConfirmFinalDestination.isHidden = (pointsAnnotations.count == 0 || AppDelegate.singlePointMode)
-            buttonAddDestination.isHidden = (pointsAnnotations.count > (AppDelegate.maximumDestinations - 1) || AppDelegate.singlePointMode || pointsAnnotations.count == 0)
+            //buttonAddDestination.isHidden = (pointsAnnotations.count > (AppDelegate.maximumDestinations - 1) || AppDelegate.singlePointMode || pointsAnnotations.count == 0)
             leftBarButton.image = (pointsAnnotations.count == 0 ? UIImage(named: "menu") : UIImage(named: "back"))
             return
         }
@@ -243,7 +249,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         if(!AppDelegate.singlePointMode) {
             buttonConfirmPickup.isHidden = true
             buttonConfirmFinalDestination.isHidden = false
-            buttonAddDestination.isHidden = (pointsAnnotations.count > (AppDelegate.maximumDestinations - 1))
+            //buttonAddDestination.isHidden = (pointsAnnotations.count > (AppDelegate.maximumDestinations - 1))
         }
     }
     

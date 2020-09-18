@@ -69,11 +69,12 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
                 cost = cost * Double(100 - coupon.discountPercent!) / 100
                 cost = cost - Double(coupon.discountFlat!)
             }
-            if let service = Request.shared.service, (service.feeEstimationMode == .Dynamic || service.feeEstimationMode == .RangedStrict || service.feeEstimationMode == .Ranged) {
-                self.labelCost.text = "~\(MyLocale.formattedCurrency(amount: cost, currency: Request.shared.currency!))"
-            } else {
-                self.labelCost.text = MyLocale.formattedCurrency(amount: cost, currency: Request.shared.currency!)
-            }
+            // TODO(): Ajustar código
+//            if let service = Request.shared.service, (service.feeEstimationMode == .Dynamic || service.feeEstimationMode == .RangedStrict || service.feeEstimationMode == .Ranged) {
+//                self.labelCost.text = "~\(MyLocale.formattedCurrency(amount: cost, currency: Request.shared.currency!))"
+//            } else {
+//                self.labelCost.text = MyLocale.formattedCurrency(amount: cost, currency: Request.shared.currency!)
+//            }
         }
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.onEachSecond), userInfo: nil, repeats: true)
     }
@@ -279,20 +280,23 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
     }
     
     func didSelectedCoupon(_ coupon: Coupon) {
-        ApplyCoupon(code: coupon.code!).execute() { result in
-            switch result {
-            case .success(let response):
-                DialogBuilder.alertOnSuccess(message: NSLocalizedString("Done", comment: ""))
-                if let service = Request.shared.service, (service.feeEstimationMode == .Dynamic || service.feeEstimationMode == .RangedStrict || service.feeEstimationMode == .Ranged) {
-                    self.labelCost.text = "~\(MyLocale.formattedCurrency(amount: response, currency: Request.shared.currency!))"
-                } else {
-                    self.labelCost.text = MyLocale.formattedCurrency(amount: response, currency: Request.shared.currency!)
-                }
+        // TODO(): Ajustar código
+
+//        ApplyCoupon(code: coupon.code!).execute() { result in
+//            switch result {
+//            case .success(let response):
+
+//                DialogBuilder.alertOnSuccess(message: NSLocalizedString("Done", comment: ""))
+//                if let service = Request.shared.service, (service.feeEstimationMode == .Dynamic || service.feeEstimationMode == .RangedStrict || service.feeEstimationMode == .Ranged) {
+//                    self.labelCost.text = "~\(MyLocale.formattedCurrency(amount: response, currency: Request.shared.currency!))"
+//                } else {
+//                    self.labelCost.text = MyLocale.formattedCurrency(amount: response, currency: Request.shared.currency!)
+//                }
                 
-            case .failure(let error):
-                error.showAlert()
-            }
-        }
+//            case .failure(let error):
+//                error.showAlert()
+//            }
+//        }
     }
     
     enum MarkerType: String {
