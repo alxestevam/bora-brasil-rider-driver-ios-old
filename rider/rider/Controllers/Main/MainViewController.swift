@@ -13,13 +13,14 @@ import Contacts
 
 class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRequested {
     
-    //MARK: Properties
+    //MARK: - Properties
     let rider = try! Rider(from: UserDefaultsConfig.user!)
     @IBOutlet weak var map: MKMapView!
     var pointsAnnotations: [MKPointAnnotation] = []
     var arrayDriversMarkers: [MKPointAnnotation] = []
     var locationManager = CLLocationManager()
     var servicesViewController: ServicesParentViewController?
+    private var selectedService: Service?
     var pinAnnotation:MKPinAnnotationView = MKPinAnnotationView()
     
     private var searchController: UISearchController!
@@ -32,6 +33,21 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     
     let message = NSLocalizedString("Message", comment: "")
     let allright = NSLocalizedString("Allright", comment: "")
+    
+    private var originalPullUpControllerViewSize: CGSize = .zero
+    private func makePaymentMethodControllerIfNeeded() -> SelectPaymentMethodViewController {
+        let currentPullUpController = children
+            .filter({ $0 is SelectPaymentMethodViewController })
+            .first as? SelectPaymentMethodViewController
+        let pullUpController: SelectPaymentMethodViewController = currentPullUpController ?? storyboard?.instantiateViewController(withIdentifier: "SelectPaymentMethodViewController") as! SelectPaymentMethodViewController
+        pullUpController.delegate = self
+        pullUpController.initialState = .expanded
+        if originalPullUpControllerViewSize == .zero {
+            originalPullUpControllerViewSize = pullUpController.view.bounds.size
+        }
+        
+        return pullUpController
+    }
     
     
     //MARK: Lifecycle
@@ -90,6 +106,14 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         }
         
         configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(patternImage: gradientImage), tintColor: .white, title: "Bora Brasil", preferredLargeTitle: false)
+    }
+    
+    private func addPullUpController(animated: Bool) {
+        let pullUpController = makePaymentMethodControllerIfNeeded()
+        _ = pullUpController.view // call pullUpController.viewDidLoad()
+        addPullUpController(pullUpController,
+                            initialStickyPointOffset: pullUpController.initialPointOffset,
+                            animated: animated)
     }
     
     private func setupLayout() {
@@ -186,13 +210,15 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         }
     }
     
-    func RideNowSelected(service: Service) {
+    func RideNowSelected(service: Service, payType: String) {
         let locs = pointsAnnotations.map() { annotation in
             return LocationWithName(loc: annotation.coordinate, add: annotation.title!)
         }
         let feedbackGenerator = UISelectionFeedbackGenerator()
         feedbackGenerator.selectionChanged()
-        RequestService(obj: RequestDTO(locations: locs, services: [OrderedService(serviceId: service.id!, quantity: 1)])).execute() { result in
+        
+        // TODO(): Fazer calculo de duração e dist^ancia
+        RequestService(obj: RequestDTO(locations: locs, services: [OrderedService(serviceId: service.id!, quantity: 1)], intervalMinutes: 0, paymentType: payType, estimatedTravelTime: 60/60, estimatedTravelDistance: 1)).execute() { result in
             switch result {
             case .success(_):
                 self.performSegue(withIdentifier: "startLooking", sender: nil)
@@ -208,7 +234,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         let locs = pointsAnnotations.map() { annotation in
             return LocationWithName(loc: annotation.coordinate, add: annotation.title!)
         }
-        RequestService(obj: RequestDTO(locations: locs, services: [OrderedService(serviceId: 1, quantity: 1)], intervalMinutes: minutesFromNow)).execute() { result in
+        RequestService(obj: RequestDTO(locations: locs, services: [OrderedService(serviceId: 1, quantity: 1)], intervalMinutes: minutesFromNow, paymentType: "", estimatedTravelTime: 60/60, estimatedTravelDistance: 1)).execute() { result in
             switch result {
             case .success(_):
                 self.performSegue(withIdentifier: "startLooking", sender: nil)
@@ -220,10 +246,16 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         }
     }
     
+    func selectPaymentMethod(service: Service) {
+        self.containerServices.isHidden = true
+        self.selectedService = service
+        addPullUpController(animated: true)
+    }
+    
     @IBAction func onButtonConfirmPickupTouched(_ sender: ColoredButton) {
         leftBarButton.image = UIImage(named: "back")
         AddDestination()
-        if(AppDelegate.singlePointMode) {
+        if (AppDelegate.singlePointMode) {
             calculateFare()
         }
         
@@ -342,8 +374,6 @@ extension MainViewController: MKMapViewDelegate {
         case driver = "driver"
     }
     
-    
-    
     func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
         buttonConfirmPickup.isEnabled = false
         buttonAddDestination.isEnabled = false
@@ -423,18 +453,20 @@ extension MainViewController: MKMapViewDelegate {
 extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1;
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Address.lastDownloaded.count;
+        return Address.lastDownloaded.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return Address.lastDownloaded[row].title;
+        return Address.lastDownloaded[row].title
     }
 }
 
+
+//MARK: - LookingDelegate
 extension MainViewController: LookingDelegate {
     func cancel() {
         
@@ -444,3 +476,15 @@ extension MainViewController: LookingDelegate {
         self.performSegue(withIdentifier: "startTravel", sender: nil)
     }
 }
+
+
+//MARK: - SelectPaymentMethodViewControllerDelegate
+extension MainViewController: SelectPaymentMethodViewControllerDelegate {
+    
+    func paymentCardSelected(_ card: GetCardDetailResult) {
+        if let s = selectedService {
+            RideNowSelected(service: s, payType: "credit")
+        }
+    }
+}
+

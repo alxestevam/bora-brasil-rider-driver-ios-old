@@ -19,7 +19,7 @@ class WalletAddCardViewController: UIViewController {
     var onChangeBlock: ((_ object: Any?, _ isChange: Bool) -> Void)? = nil
 
     
-    //MARK: Lifecycle
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -30,7 +30,7 @@ class WalletAddCardViewController: UIViewController {
     }
     
     
-    //MARK: Setup
+    //MARK: - Setup
     private func setupLayout() {
         
     }

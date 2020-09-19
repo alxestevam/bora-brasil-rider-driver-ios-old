@@ -20,6 +20,11 @@ open class Color: UIColor {
         static let rgb_29_28_30 = UIColor(red: 0.29, green: 0.28, blue: 0.30, alpha: 1)
     }
     
+    open class green {
+        static let rgb_129_199_132 = UIColor(red: 129/255, green: 199/255, blue: 132/255, alpha: 1)
+        static let rgb_56_142_60 = UIColor(red: 56/255, green: 142/255, blue: 60/255, alpha: 1)
+    }
+    
     // MARK: Aux
     static func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()

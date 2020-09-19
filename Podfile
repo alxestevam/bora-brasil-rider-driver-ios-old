@@ -19,6 +19,7 @@ def common_pods
   pod 'Socket.IO-Client-Swift'
   pod 'lottie-ios'
   pod 'SwiftyAttributes'
+  pod 'PullUpController'
 end
 
 target 'rider' do

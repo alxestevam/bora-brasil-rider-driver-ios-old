@@ -13,6 +13,10 @@ struct RequestDTO: Codable {
     var locations: LocationWithNames
     var services: OrderedServices
     var intervalMinutes: Int = 0
+    var paymentType: String
+    var estimatedTravelTime: Int // tempo em minutos
+    var estimatedTravelDistance: Int // distancia em metros
+    var estimatedTravelPath: String = "" // valor do caminho a ser desenhado no mapa em base64
 }
 
 struct OrderedService: Codable {

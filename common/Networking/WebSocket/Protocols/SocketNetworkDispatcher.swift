@@ -199,4 +199,5 @@ public extension Notification.Name {
     static let statusReceived = Notification.Name("statusReceived")
     static let connectedAfterForeground = Notification.Name("connectedAfterForeground")
     static let connectionError = Notification.Name("connectionError")
+    static let onRejectedByAntiFraud = Notification.Name("onRejectedByAntiFraud")
 }

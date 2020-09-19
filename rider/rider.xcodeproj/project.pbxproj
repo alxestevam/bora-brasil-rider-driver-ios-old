@@ -135,6 +135,8 @@
 		85245A4B250EEF37001D236A /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85245A4A250EEF37001D236A /* String+Util.swift */; };
 		85245A4D250F1407001D236A /* WalletViewCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85245A4C250F1407001D236A /* WalletViewCardCell.swift */; };
 		8551567925144F4F00F744CB /* CalculateFareRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551567825144F4F00F744CB /* CalculateFareRequest.swift */; };
+		8551567B2514EC7700F744CB /* SelectPaymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551567A2514EC7700F744CB /* SelectPaymentMethodViewController.swift */; };
+		85515683251551C900F744CB /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85515682251551C900F744CB /* GradientButton.swift */; };
 		85712C0624DDABB800C839B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85712C0524DDABB800C839B3 /* GoogleService-Info.plist */; };
 		857A72F4250ABF360020DB15 /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A72F3250ABF360020DB15 /* UIViewController+Util.swift */; };
 		857A72F6250AC2090020DB15 /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A72F5250AC2090020DB15 /* UIView+Util.swift */; };
@@ -313,6 +315,8 @@
 		85245A4A250EEF37001D236A /* String+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
 		85245A4C250F1407001D236A /* WalletViewCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewCardCell.swift; sourceTree = "<group>"; };
 		8551567825144F4F00F744CB /* CalculateFareRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateFareRequest.swift; sourceTree = "<group>"; };
+		8551567A2514EC7700F744CB /* SelectPaymentMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodViewController.swift; sourceTree = "<group>"; };
+		85515682251551C900F744CB /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		85712C0524DDABB800C839B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		857A72F3250ABF360020DB15 /* UIViewController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
 		857A72F5250AC2090020DB15 /* UIView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
@@ -486,6 +490,7 @@
 				4CB5FC6023A79FD000F2D5BC /* DatePickerDialog.swift */,
 				4CB5FC5523A79FCF00F2D5BC /* DialogBuilder.swift */,
 				4CB5FC5F23A79FD000F2D5BC /* Error+Extensions.swift */,
+				85515682251551C900F744CB /* GradientButton.swift */,
 				4CB5FC5923A79FD000F2D5BC /* GradientView.swift */,
 				4CB5FC5723A79FCF00F2D5BC /* LoadingOverlay.swift */,
 				4CB5FC5B23A79FD000F2D5BC /* MapsUtil.swift */,
@@ -592,6 +597,7 @@
 			isa = PBXGroup;
 			children = (
 				62B6FD751F70F68100F66611 /* MainViewController.swift */,
+				8551567A2514EC7700F744CB /* SelectPaymentMethodViewController.swift */,
 				62B6FD761F70F68100F66611 /* NavigatorViewController.swift */,
 				625D29A5204ED83600F80499 /* ServicesParentViewController.swift */,
 				625D29AF204F194700F80499 /* ServicesListCell.swift */,
@@ -1000,6 +1006,7 @@
 				4CB5FC7D23A7A2D000F2D5BC /* Request.swift in Sources */,
 				850F3FEF250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift in Sources */,
 				4CB5FC6823A79FD100F2D5BC /* NSLocalizedString+Extensions.swift in Sources */,
+				85515683251551C900F744CB /* GradientButton.swift in Sources */,
 				4CB5FC4123A79F8B00F2D5BC /* CLLocationCoordinate2D.swift in Sources */,
 				625D299C204EC44000F80499 /* Address.swift in Sources */,
 				850F3FED250A9E2100F6A4C3 /* Color+Util.swift in Sources */,
@@ -1070,6 +1077,7 @@
 				85245A34250EAD37001D236A /* WalletAddCardViewController.swift in Sources */,
 				85245A47250ED8B3001D236A /* CreditCardValidator.swift in Sources */,
 				4C215EA8238D1F8F0013D720 /* CancelRequest.swift in Sources */,
+				8551567B2514EC7700F744CB /* SelectPaymentMethodViewController.swift in Sources */,
 				62490E4D2099BD9B007F668D /* FavoritesViewController.swift in Sources */,
 				4CB5FC1323A79F1500F2D5BC /* SocketRequest.swift in Sources */,
 				62B6FD701F70F66100F66611 /* RiderEditProfileViewController.swift in Sources */,

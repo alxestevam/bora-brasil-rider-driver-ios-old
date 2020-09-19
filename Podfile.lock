@@ -144,6 +144,7 @@ PODS:
   - nanopb/encode (1.30905.0)
   - PromisesObjC (1.2.9)
   - Protobuf (3.12.0)
+  - PullUpController (0.8.0)
   - Socket.IO-Client-Swift (15.2.0):
     - Starscream (~> 3.1)
   - Starscream (3.1.1)
@@ -167,6 +168,7 @@ DEPENDENCIES:
   - lottie-ios
   - MarqueeLabel/Swift
   - MessageKit
+  - PullUpController
   - Socket.IO-Client-Swift
   - StatusAlert
   - Stripe
@@ -202,6 +204,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - Protobuf
+    - PullUpController
     - Socket.IO-Client-Swift
     - Starscream
     - StatusAlert
@@ -248,12 +251,13 @@ SPEC CHECKSUMS:
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   Protobuf: 2793fcd0622a00b546c60e7cbbcc493e043e9bb9
+  PullUpController: 2f7ccaa0f35b31b47e3efbe1854c7f781552b3c7
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   StatusAlert: a18ec3c33d36a06d4479c1f2b15ffac67aaf7ab1
   Stripe: dd5bfdd5f1daed4f9ddbfb47e9449ec302f9f708
   SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
 
-PODFILE CHECKSUM: a286fa9a4bc00bcf7b0b4f7f306a1263bf22320d
+PODFILE CHECKSUM: 78e6efff2171409d1ac6df9342929cdd7065eae4
 
 COCOAPODS: 1.9.3

@@ -56,43 +56,49 @@ public enum ErrorStatus: String, Codable {
     case NoServiceInRegion = "NoServiceInRegion"
     case PINCodeRequired = "PINCodeRequired"
     case OTPCodeRequired = "OTPCodeRequired"
+    case RejectedByAntiFraud = "RejectedByAntiFraud"
+    case PaymentError = "PaymentError"
 
     var localizedDescription: String {
         switch self {
         case .DistanceCalculationFailed:
-            return NSLocalizedString("Distance Calculation Failed", comment: "Error Status")
+            return NSLocalizedString("Falha no cálculo da distância entre pontos.", comment: "Error Status")
         case .DriversUnavailable:
-            return NSLocalizedString("No Driver Available", comment: "Error Status")
+            return NSLocalizedString("Nenhum motorista próximo encontrado", comment: "Error Status")
         case .ConfirmationCodeRequired:
-            return NSLocalizedString("Confirmation Code Required", comment: "Error Status")
+            return NSLocalizedString("Código de confirmação é obrigatório", comment: "Error Status")
         case .ConfirmationCodeInvalid:
-            return NSLocalizedString("Confirmation Code is not valid", comment: "Error Status")
+            return NSLocalizedString("Código de confirmação inválido", comment: "Error Status")
         case .OrderAlreadyTaken:
-            return NSLocalizedString("Order is taken", comment: "Error Status")
+            return NSLocalizedString("Pedido já realizado", comment: "Error Status")
         case .Unknown:
-            return NSLocalizedString("Unkown error", comment: "Error Status")
+            return NSLocalizedString("Ocorreu um erro ao tentar realizar a operação. Por favor, tente novamente", comment: "Error Status")
         case .Networking:
-            return NSLocalizedString("Networking Error", comment: "Error Status")
+            return NSLocalizedString("Erro de red", comment: "Error Status")
         case .FailedEncoding:
-            return NSLocalizedString("Failed to Encode/Decode", comment: "Error Status")
+            return NSLocalizedString("Ocorreu um erro ao tentar realizar a operação. Por favor, tente novamente", comment: "Error Status")
         case .FailedToVerify:
-            return NSLocalizedString("Failed to verify", comment: "Error Status")
+            return NSLocalizedString("Falha na verificação", comment: "Error Status")
         case .RegionUnsupported:
-            return NSLocalizedString("Pickup location Region is not supported", comment: "Error Status")
+            return NSLocalizedString("A região do local de recebimento não é suportada", comment: "Error Status")
         case .NoServiceInRegion:
-            return NSLocalizedString("No service is currently available at this region", comment: "Error Status")
+            return NSLocalizedString("Nenhum serviço disponível atualmente em sua região.", comment: "Error Status")
         case .CreditInsufficient:
-            return NSLocalizedString("Credit Not sufficient for this action", comment: "Error Status")
+            return NSLocalizedString("Crédito insuficiente para esta ação.", comment: "Error Status")
         case .CouponUsed:
-            return NSLocalizedString("Coupon is already used", comment: "Error Status")
+            return NSLocalizedString("O cupom já está sendo usado.", comment: "Error Status")
         case .CouponExpired:
-            return NSLocalizedString("Coupon is expired", comment: "Error Status")
+            return NSLocalizedString("Cupom expirado.", comment: "Error Status")
         case .CouponInvalid:
-            return NSLocalizedString("Coupon is invalid", comment: "Error Status")
+            return NSLocalizedString("Cupom inválido.", comment: "Error Status")
         case .PINCodeRequired:
-            return NSLocalizedString("PIN Code Required", comment: "Error Status")
+            return NSLocalizedString("Código PIN necessário", comment: "Error Status")
         case .OTPCodeRequired:
-            return NSLocalizedString("OTP Code Required", comment: "Error Status")
+            return NSLocalizedString("OTP necessário", comment: "Error Status")
+        case .RejectedByAntiFraud:
+            return NSLocalizedString("A forma de pagamento do passageiro foi recusada.", comment: "Error Status")
+        case .PaymentError:
+            return NSLocalizedString("O seu pagamento foi rejeitado e a corrida cancelada.", comment: "Error Status")
         }
     }
 }

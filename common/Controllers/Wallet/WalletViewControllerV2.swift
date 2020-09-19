@@ -54,7 +54,7 @@ class WalletViewControllerV2: UIViewController {
         self.navigationItem.title = "Carteira"
     }
     
-    //MARK: RequestHtt
+    //MARK: - RequestHttp
     private func fetchCards() {
         
         self.wasLoaded = false

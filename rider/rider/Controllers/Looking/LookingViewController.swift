@@ -20,6 +20,7 @@ class LookingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.onDriverAccepted), name: .newDriverAccepted, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.onRejectedByAntiFraud), name: .onRejectedByAntiFraud, object: nil)
         NotificationCenter.default.addObserver(self, selector:#selector(self.onForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector:#selector(self.refreshPage), name: .connectedAfterForeground, object: nil)
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
@@ -137,6 +138,16 @@ class LookingViewController: UIViewController {
             dismiss(animated: true, completion: nil)
             self.delegate?.found()
         }
+    }
+    
+    @objc func onRejectedByAntiFraud(_ notification: Notification) {
+        DialogBuilder.alertOnError(message: "REJEITADO POR ANTIFRAUDE")
+
+//        if let travel = notification.object as? Request {
+//            Request.shared = travel
+//            dismiss(animated: true, completion: nil)
+//            self.delegate?.found()
+//        }
     }
     
 
