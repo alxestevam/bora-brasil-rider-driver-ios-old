@@ -218,7 +218,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Eureka:
-    :commit: f5651e328e099393e51b63f1abe78153cbacf90f
+    :commit: 5c54e2607632ce586010e50e91d9adcb6bb3909e
     :git: https://github.com/xmartlabs/Eureka.git
 
 SPEC CHECKSUMS:

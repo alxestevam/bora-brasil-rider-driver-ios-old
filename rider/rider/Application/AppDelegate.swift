@@ -15,6 +15,7 @@ import Fabric
 import Braintree
 import SocketIO
 
+
 //MARK: Global Properties
 let appD = UIApplication.shared.delegate as! AppDelegate
 
@@ -57,7 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        FirebaseApp.configure()
+        setupFirebase()
         self.launchOptions = launchOptions
         self.window?.tintColor = UIColor(hex: 0x0A0A32)
         BTAppSwitch.setReturnURLScheme(Bundle.main.bundleIdentifier! + ".payments")
@@ -113,6 +114,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     //MARK: Setup
     private func setupLayout() {
         
+    }
+    
+    private func setupFirebase() {
+//        var filePath: String!
+//        #if DEBUG
+//            filePath = Bundle.main.path(forResource: "GoogleService-Info-Debug", ofType: "plist")
+//        #elseif PROD || RELEASE
+//            filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist", inDirectory: "prod")
+//        #elseif STAG
+//            filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist", inDirectory: "staging")
+//        #endif
+//
+//        let options = FirebaseOptions.init(contentsOfFile: filePath)!
+//        FirebaseApp.configure(options: options)
+        FirebaseApp.configure()
     }
 }
 

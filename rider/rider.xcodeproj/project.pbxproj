@@ -137,7 +137,6 @@
 		8551567925144F4F00F744CB /* CalculateFareRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551567825144F4F00F744CB /* CalculateFareRequest.swift */; };
 		8551567B2514EC7700F744CB /* SelectPaymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551567A2514EC7700F744CB /* SelectPaymentMethodViewController.swift */; };
 		85515683251551C900F744CB /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85515682251551C900F744CB /* GradientButton.swift */; };
-		85712C0624DDABB800C839B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85712C0524DDABB800C839B3 /* GoogleService-Info.plist */; };
 		857A72F4250ABF360020DB15 /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A72F3250ABF360020DB15 /* UIViewController+Util.swift */; };
 		857A72F6250AC2090020DB15 /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A72F5250AC2090020DB15 /* UIView+Util.swift */; };
 		857A72F8250ACE9D0020DB15 /* WalletViewControllerV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A72F7250ACE9B0020DB15 /* WalletViewControllerV2.swift */; };
@@ -317,7 +316,6 @@
 		8551567825144F4F00F744CB /* CalculateFareRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateFareRequest.swift; sourceTree = "<group>"; };
 		8551567A2514EC7700F744CB /* SelectPaymentMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodViewController.swift; sourceTree = "<group>"; };
 		85515682251551C900F744CB /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
-		85712C0524DDABB800C839B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		857A72F3250ABF360020DB15 /* UIViewController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
 		857A72F5250AC2090020DB15 /* UIView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
 		857A72F7250ACE9B0020DB15 /* WalletViewControllerV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewControllerV2.swift; sourceTree = "<group>"; };
@@ -325,8 +323,12 @@
 		8580FEC62509770500A6AC32 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		8580FECC25097D0C00A6AC32 /* ValidatorUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidatorUtil.swift; path = ../../../common/Util/ValidatorUtil.swift; sourceTree = "<group>"; };
 		8580FECF25099EFB00A6AC32 /* TLCustomMaskUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TLCustomMaskUtil.swift; path = ../../../common/Util/TLCustomMaskUtil.swift; sourceTree = "<group>"; };
+		8582B4F025167DA200256963 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8582B4F125167DBC00256963 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8582B4F225167DD400256963 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8C0831CC63A04C24A74DEE5C /* Pods-rider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rider.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-rider/Pods-rider.debug.xcconfig"; sourceTree = "<group>"; };
 		9ECEFAC24285911139A02E6C /* Pods-rider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rider.release.xcconfig"; path = "../Pods/Target Support Files/Pods-rider/Pods-rider.release.xcconfig"; sourceTree = "<group>"; };
+		E59E702E47B11F894BCE461E /* Pods-rider.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rider.staging.xcconfig"; path = "../Pods/Target Support Files/Pods-rider/Pods-rider.staging.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -680,17 +682,17 @@
 		62C774201F08EBC700E70C8B /* Rider */ = {
 			isa = PBXGroup;
 			children = (
-				4CB5FC4323A79FA400F2D5BC /* Components */,
-				8580FEC1250959B600A6AC32 /* Extensions */,
-				62F4D8BF20154900000933DA /* Models */,
 				624D3C2E1F1B33E700811758 /* Application */,
-				622BBD351F32236D00E14667 /* Networking */,
+				4CB5FC4323A79FA400F2D5BC /* Components */,
 				624D3C2F1F1B33F600811758 /* Controllers */,
+				8580FEC1250959B600A6AC32 /* Extensions */,
+				85333F9E25163A49009C9B2E /* Firebase */,
+				62F4D8BF20154900000933DA /* Models */,
+				622BBD351F32236D00E14667 /* Networking */,
 				8503503E24E1D15C00B3EF05 /* Util */,
 				62B6FDA71F70FF2200F66611 /* Main.storyboard */,
 				62B6FD9F1F70F8FD00F66611 /* background.jpg */,
 				54E4B67F2481D4F200EC43D8 /* Assets.xcassets */,
-				85712C0524DDABB800C839B3 /* GoogleService-Info.plist */,
 				62B6FD9C1F70F70A00F66611 /* Info.plist */,
 				62972937223BB4D30084E2BB /* car.json */,
 				85245A44250EBE0C001D236A /* OCRAStd.otf */,
@@ -764,6 +766,40 @@
 			path = YRPayment;
 			sourceTree = "<group>";
 		};
+		85333F9E25163A49009C9B2E /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				8533406A25166CB7009C9B2E /* debug */,
+				85333FA025163A7B009C9B2E /* staging */,
+				85333FA125163A81009C9B2E /* prod */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		85333FA025163A7B009C9B2E /* staging */ = {
+			isa = PBXGroup;
+			children = (
+				8582B4F225167DD400256963 /* GoogleService-Info.plist */,
+			);
+			path = staging;
+			sourceTree = "<group>";
+		};
+		85333FA125163A81009C9B2E /* prod */ = {
+			isa = PBXGroup;
+			children = (
+				8582B4F025167DA200256963 /* GoogleService-Info.plist */,
+			);
+			path = prod;
+			sourceTree = "<group>";
+		};
+		8533406A25166CB7009C9B2E /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				8582B4F125167DBC00256963 /* GoogleService-Info.plist */,
+			);
+			path = debug;
+			sourceTree = "<group>";
+		};
 		8580FEC1250959B600A6AC32 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -785,6 +821,7 @@
 			children = (
 				8C0831CC63A04C24A74DEE5C /* Pods-rider.debug.xcconfig */,
 				9ECEFAC24285911139A02E6C /* Pods-rider.release.xcconfig */,
+				E59E702E47B11F894BCE461E /* Pods-rider.staging.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -805,14 +842,13 @@
 				62F4D8BB20153FEF000933DA /* CopyFiles */,
 				627B16F521A9C82200FF0953 /* ShellScript */,
 				6253A96421AB39E000A45287 /* Embed App Extensions */,
+				8533406B25166E0F009C9B2E /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = rider;
-			packageProductDependencies = (
-			);
 			productName = taxi;
 			productReference = 62C7741E1F08EBC700E70C8B /* Passageiro Debug.app */;
 			productType = "com.apple.product-type.application";
@@ -851,8 +887,6 @@
 				"pt-BR",
 			);
 			mainGroup = 62C774151F08EBC700E70C8B;
-			packageReferences = (
-			);
 			productRefGroup = 62C7741F1F08EBC700E70C8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -875,7 +909,6 @@
 				62972938223BB4D30084E2BB /* car.json in Resources */,
 				547353C424AACE3100EDDDD3 /* PromotionsCollectionViewCell.xib in Resources */,
 				62B6FDAA1F70FF2200F66611 /* Main.storyboard in Resources */,
-				85712C0624DDABB800C839B3 /* GoogleService-Info.plist in Resources */,
 				62B6FDA11F70F8FD00F66611 /* background.jpg in Resources */,
 				547353D224AACEAB00EDDDD3 /* FavoriteAddressDialogViewController.xib in Resources */,
 			);
@@ -897,6 +930,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 6fe7406338d93004f234b73f0f196f961b46dde3 12a9dc122c1a8d4d3895958bf28039e80f9af78053667f7c60233c04a2d2c0f2\n";
+		};
+		8533406B25166E0F009C9B2E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Name of the resource we're selectively copying\nGOOGLESERVICE_INFO_PLIST=GoogleService-Info.plist\n\n# Get references to dev and prod versions of the GoogleService-Info.plist\n# NOTE: These should only live on the file system and should NOT be part of the target (since we'll be adding them to the target manually)\nGOOGLESERVICE_INFO_DEBUG=${PROJECT_DIR}/${TARGET_NAME}/Firebase/debug/${GOOGLESERVICE_INFO_PLIST}\nGOOGLESERVICE_INFO_STAGING=${PROJECT_DIR}/${TARGET_NAME}/Firebase/staging/${GOOGLESERVICE_INFO_PLIST}\nGOOGLESERVICE_INFO_PROD=${PROJECT_DIR}/${TARGET_NAME}/Firebase/prod/${GOOGLESERVICE_INFO_PLIST}\n\n# Make sure the dev version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_DEBUG}\"\nif [ ! -f $GOOGLESERVICE_INFO_DEBUG ]\nthen\necho \"No Development GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\nexit 1\nfi\n\n# Make sure the staging version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_STAGING}\"\nif [ ! -f $GOOGLESERVICE_INFO_STAGING ]\nthen\necho \"No Staging GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\nexit 1\nfi\n\n# Make sure the prod version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_PROD}\"\nif [ ! -f $GOOGLESERVICE_INFO_PROD ]\nthen\necho \"No Production GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\nexit 1\nfi\n\n\n# Get a reference to the destination location for the GoogleService-Info.plist\nPLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\necho \"Will copy ${GOOGLESERVICE_INFO_PLIST} to final destination: ${PLIST_DESTINATION}\"\n\n# Copy over the prod GoogleService-Info.plist for Release builds\nif [ \"${CONFIGURATION}\" == \"Release\" ]\nthen\n    echo \"Using ${GOOGLESERVICE_INFO_PROD}\"\n    cp \"${GOOGLESERVICE_INFO_PROD}\" \"${PLIST_DESTINATION}\"\nelse if [ \"${CONFIGURATION}\" == \"Staging\" ]\nthen \n    echo \"Using ${GOOGLESERVICE_INFO_STAGING}\"\n    cp \"${GOOGLESERVICE_INFO_STAGING}\" \"${PLIST_DESTINATION}\"\nelse\n    echo \"Using ${GOOGLESERVICE_INFO_DEBUG}\"\n    cp \"${GOOGLESERVICE_INFO_DEBUG}\" \"${PLIST_DESTINATION}\"\nfi\nfi\n";
 		};
 		880F0E319D5388DB52400AC0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1195,7 +1245,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1214,7 +1264,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1232,16 +1282,24 @@
 				CODE_SIGN_ENTITLEMENTS = rider/rider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 92364YLT5P;
+				DEVELOPMENT_TEAM = HP5FNQKYCJ;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"COCOAPODS=1",
+					"GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1",
+					"PB_FIELD_32BIT=1",
+					"PB_NO_PACKED_STRUCTS=1",
+					"PB_ENABLE_MALLOC=1",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/rider/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.passageiro;
 				PRODUCT_NAME = "BBMU Passageiro";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PROD;
@@ -1314,21 +1372,21 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8C0831CC63A04C24A74DEE5C /* Pods-rider.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon.debug;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = rider/rider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 92364YLT5P;
+				DEVELOPMENT_TEAM = HP5FNQKYCJ;
 				INFOPLIST_FILE = "$(SRCROOT)/rider/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.passageiro.debug;
 				PRODUCT_NAME = "Passageiro Debug";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1369,7 +1427,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1388,7 +1446,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1399,23 +1457,31 @@
 		};
 		856FE8C32515A3300080E21D /* Staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9ECEFAC24285911139A02E6C /* Pods-rider.release.xcconfig */;
+			baseConfigurationReference = E59E702E47B11F894BCE461E /* Pods-rider.staging.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon.staging;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = rider/rider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 92364YLT5P;
+				DEVELOPMENT_TEAM = HP5FNQKYCJ;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"COCOAPODS=1",
+					"GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1",
+					"PB_FIELD_32BIT=1",
+					"PB_NO_PACKED_STRUCTS=1",
+					"PB_ENABLE_MALLOC=1",
+					"$(inherited)",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/rider/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.passageiro.staging;
 				PRODUCT_NAME = "Passageiro Beta";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = STAG;
