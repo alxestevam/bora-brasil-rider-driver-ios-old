@@ -10,8 +10,12 @@ import Foundation
 
 class Config {
     //static var Backend: String = "http://192.168.0.26:8080/" // Local
-    static var Backend: String = "http://35.247.213.217:8080/" // Homolog
-    //static var Backend: String = "http://35.247.194.163:8080/" // Prod
+
+    #if DEBUG || STAG
+        static var Backend: String = "http://35.247.213.217:8080/"
+    #elseif PROD || RELEASE
+        static var Backend: String = "http://35.247.194.163:8080/"
+    #endif
     
     static var Version: String {
         get {

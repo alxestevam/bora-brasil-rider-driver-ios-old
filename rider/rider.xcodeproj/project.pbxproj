@@ -295,7 +295,7 @@
 		62B6FD9C1F70F70A00F66611 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = rider/Info.plist; sourceTree = SOURCE_ROOT; };
 		62B6FD9F1F70F8FD00F66611 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = rider/background.jpg; sourceTree = SOURCE_ROOT; };
 		62B6FDA81F70FF2200F66611 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = rider/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
-		62C7741E1F08EBC700E70C8B /* BBMU Passageiro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BBMU Passageiro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		62C7741E1F08EBC700E70C8B /* Passageiro Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Passageiro Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		62D714CF209C4F5D0043ABFB /* FavoriteAddressDialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAddressDialogViewController.swift; sourceTree = "<group>"; };
 		62DB4576232A438700B7722E /* FinishedServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedServiceViewController.swift; sourceTree = "<group>"; };
 		62E2A252230A72D4000848CE /* SuggestionsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsTableTableViewController.swift; sourceTree = "<group>"; };
@@ -672,7 +672,7 @@
 		62C7741F1F08EBC700E70C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				62C7741E1F08EBC700E70C8B /* BBMU Passageiro.app */,
+				62C7741E1F08EBC700E70C8B /* Passageiro Debug.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -814,7 +814,7 @@
 			packageProductDependencies = (
 			);
 			productName = taxi;
-			productReference = 62C7741E1F08EBC700E70C8B /* BBMU Passageiro.app */;
+			productReference = 62C7741E1F08EBC700E70C8B /* Passageiro Debug.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1244,6 +1244,7 @@
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.passageiro;
 				PRODUCT_NAME = "BBMU Passageiro";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PROD;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1328,11 +1329,99 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.passageiro;
-				PRODUCT_NAME = "BBMU Passageiro";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.passageiro.debug;
+				PRODUCT_NAME = "Passageiro Debug";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
+		};
+		856FE8C22515A3300080E21D /* Staging */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Staging;
+		};
+		856FE8C32515A3300080E21D /* Staging */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9ECEFAC24285911139A02E6C /* Pods-rider.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = rider/rider.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 92364YLT5P;
+				INFOPLIST_FILE = "$(SRCROOT)/rider/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.passageiro.staging;
+				PRODUCT_NAME = "Passageiro Beta";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = STAG;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Staging;
 		};
 /* End XCBuildConfiguration section */
 
@@ -1342,6 +1431,7 @@
 			buildConfigurations = (
 				62C774311F08EBC700E70C8B /* Debug */,
 				6239230F1F3C1C6F0008570C /* Release */,
+				856FE8C22515A3300080E21D /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -1351,6 +1441,7 @@
 			buildConfigurations = (
 				62C774341F08EBC700E70C8B /* Debug */,
 				623923101F3C1C6F0008570C /* Release */,
+				856FE8C32515A3300080E21D /* Staging */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
