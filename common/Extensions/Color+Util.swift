@@ -18,6 +18,7 @@ open class Color: UIColor {
     
     open class gray {
         static let rgb_29_28_30 = UIColor(red: 0.29, green: 0.28, blue: 0.30, alpha: 1)
+        static let rgb_240_240_240 = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
     }
     
     open class green {

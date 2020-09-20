@@ -106,6 +106,13 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         }
         
         configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(patternImage: gradientImage), tintColor: .white, title: "Bora Brasil", preferredLargeTitle: false)
+        
+        
+        // TODO(): TESTE
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReviewTravelViewController") as? ReviewTravelViewController {
+            vc.modalPresentationStyle = .overFullScreen 
+            self.present(vc, animated:true, completion: nil)
+        }
     }
     
     private func addPullUpController(animated: Bool) {

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB" customClass="ReviewHeaderView" customModule="BBMU_Passageiro" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="404" height="190"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xxj-ZT-EQl">
+                    <rect key="frame" x="0.0" y="0.0" width="404" height="190"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Nobody" translatesAutoresizingMaskIntoConstraints="NO" id="ibX-AA-2Sb">
+                            <rect key="frame" x="142" y="12" width="121" height="121"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="121" id="iMJ-wQ-kYW"/>
+                                <constraint firstAttribute="width" secondItem="ibX-AA-2Sb" secondAttribute="height" multiplier="1:1" id="yvB-ur-fC3"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bora Brasil Motorista" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H93-9f-qwr">
+                            <rect key="frame" x="24" y="145" width="356" height="31.666666666666657"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="H93-9f-qwr" firstAttribute="top" secondItem="ibX-AA-2Sb" secondAttribute="bottom" constant="12" id="4k3-T3-EFS"/>
+                        <constraint firstItem="ibX-AA-2Sb" firstAttribute="width" secondItem="ibX-AA-2Sb" secondAttribute="height" multiplier="1:1" id="NZg-hq-1Ny"/>
+                        <constraint firstItem="ibX-AA-2Sb" firstAttribute="top" secondItem="Xxj-ZT-EQl" secondAttribute="top" constant="12" id="PPV-zw-a6w"/>
+                        <constraint firstItem="ibX-AA-2Sb" firstAttribute="centerX" secondItem="Xxj-ZT-EQl" secondAttribute="centerX" constant="0.5" id="SOD-d7-0Z9"/>
+                        <constraint firstAttribute="trailing" secondItem="H93-9f-qwr" secondAttribute="trailing" constant="24" id="Sr6-4y-W4D"/>
+                        <constraint firstItem="H93-9f-qwr" firstAttribute="leading" secondItem="Xxj-ZT-EQl" secondAttribute="leading" constant="24" id="ukG-lw-4bF"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Xxj-ZT-EQl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YiB-1Z-rON"/>
+                <constraint firstAttribute="bottom" secondItem="Xxj-ZT-EQl" secondAttribute="bottom" id="YsZ-sd-Et3"/>
+                <constraint firstItem="Xxj-ZT-EQl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hVU-Ag-Yqi"/>
+                <constraint firstAttribute="trailing" secondItem="Xxj-ZT-EQl" secondAttribute="trailing" id="x21-RD-rbP"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageView" destination="ibX-AA-2Sb" id="BLx-7A-gNP"/>
+                <outlet property="textLabel" destination="H93-9f-qwr" id="mVh-tJ-Qnl"/>
+                <outlet property="viewContent" destination="Xxj-ZT-EQl" id="Z4X-8t-GHa"/>
+            </connections>
+            <point key="canvasLocation" x="132.80000000000001" y="-164.03940886699507"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Nobody" width="70" height="70"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

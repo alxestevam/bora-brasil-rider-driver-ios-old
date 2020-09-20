@@ -10,7 +10,7 @@ import UIKit
 
 class WalletViewControllerV2: UIViewController {
     
-    //MARK: Properties
+    //MARK: - Properties
     @IBOutlet fileprivate weak var viewContent: UIView!
     @IBOutlet fileprivate weak var viewHeader: UIView!
     @IBOutlet fileprivate weak var tbvCards: UITableView!
