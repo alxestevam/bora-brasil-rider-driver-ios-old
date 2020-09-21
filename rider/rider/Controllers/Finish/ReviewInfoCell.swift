@@ -25,8 +25,6 @@ class ReviewInfoCell: UITableViewCell {
         super.awakeFromNib()
         
         self.setupLayout()
-        self.setupData()
-        self.setupText()
     }
     
     
@@ -35,11 +33,10 @@ class ReviewInfoCell: UITableViewCell {
         self.viewContent.backgroundColor = .white
     }
     
-    private func setupData() {
-        
-    }
-    
-    private func setupText() {
-        
+    func setupData(_ request: Request) {
+        let source = request.addresses.first ?? "Não identificado"
+        let destination = request.addresses.last ?? "Não identificado"
+        lblSource.text = source
+        lblDestination.text = destination
     }
 }

@@ -25,8 +25,6 @@ class ReviewValuesCell: UITableViewCell {
         super.awakeFromNib()
         
         self.setupLayout()
-        self.setupData()
-        self.setupText()
     }
     
     
@@ -38,11 +36,19 @@ class ReviewValuesCell: UITableViewCell {
         self.lblKm.textColor = .gray
     }
     
-    private func setupData() {
+    func setupData(_ request: Request) {
+        self.lblTotalValue.text = FormatterUtil.shared.stringFromValue(value: request.costBest ?? 0.0, monetaryFormat: true, decimalPrecision: 2)
+        self.lblPaymentType.text = request.paymentType == .credit ? "Cartão" : "Dinheiro"
         
-    }
-    
-    private func setupText() {
-        
+        let timeFormatted = Double(request.durationBest ?? 0).asString(style: .brief, allowedUnits: [.minute, .second])
+        self.lblTime.text = timeFormatted
+            
+        let doubleDistance = Double(request.distanceBest ?? 0)
+        let distanceFormatted = Measurement(value: Double(doubleDistance/1000), unit: UnitLength.kilometers)
+        let n = NumberFormatter()
+        n.maximumFractionDigits = 1
+        let m = MeasurementFormatter()
+        m.numberFormatter = n
+        self.lblKm.text = m.string(from: distanceFormatted)
     }
 }

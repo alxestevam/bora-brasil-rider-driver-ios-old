@@ -6,6 +6,10 @@
 //  Copyright © 2020 minimal. All rights reserved.
 //
 
+//MARK: - Imports
+import Kingfisher
+
+
 //MARK: - Dimensions
 private enum Dimensions {
     static let headerHeight: CGFloat = 190.0
@@ -21,7 +25,8 @@ class ReviewTravelViewController: UIViewController {
     @IBOutlet var footerbtnSendReview: GradientButton!
     @IBOutlet var footerViewContent: UIView!
     private var rider = try! Rider(from: UserDefaultsConfig.user!)
-    private var request: Request = Request()
+    var travel: Request = Request.shared
+    var onChangeBlock: ((_ object: Any?, _ isChange: Bool) -> Void)? = nil
     private var textComment: String = "" {
         didSet {
             self.validateData()
@@ -75,15 +80,28 @@ class ReviewTravelViewController: UIViewController {
         
     }
     
-    //MARK: - RequestHttp
-    private func fetchCards() {
-        
+    //MARK: - Request
+    private func sendReview() {
+        LoadingOverlay.shared.showOverlay(view: UIApplication.shared.windows.first(where: { $0.isKeyWindow }))
+        ReviewDriver(review: Review(score: self.starsInt, review: self.textComment)).execute() { result in
+            switch result {
+            case .success(_):
+                LoadingOverlay.shared.hideOverlayView()
+                DialogBuilder.alertOnSuccess(message: NSLocalizedString("Review_Sent", comment: ""))
+                Request.shared.status = .Finished
+                if let compl = self.onChangeBlock { compl(nil, true) }
+                self.dismiss(animated: true, completion: nil)
+                
+            case .failure(let error):
+                error.showAlert()
+            }
+        }
     }
     
     
     //MARK: - Action
-    @IBAction func presentAddCard(_ sender: UIButton) {
-        
+    @IBAction func sendReview(_ sender: GradientButton) {
+        self.sendReview()
     }
     
     
@@ -125,8 +143,28 @@ extension ReviewTravelViewController: UITableViewDelegate, UITableViewDataSource
         view.textLabel?.textColor = .white
         view.imageView.layer.masksToBounds = true
         view.imageView.layer.cornerRadius = view.imageView.bounds.width / 2
+        view.imageView.layer.borderColor = UIColor.white.cgColor
+        view.imageView.layer.borderWidth = 2.0
+        
         // Data
-        view.textLabel?.text = "Bora Brasil Motorista"
+        if let driverImage = travel.driver?.media?.address {
+            let processor = DownsamplingImageProcessor(size: view.imageView.intrinsicContentSize) |> RoundCornerImageProcessor(cornerRadius: view.imageView.intrinsicContentSize.width / 2)
+            let url = URL(string: Config.Backend + driverImage.replacingOccurrences(of: " ", with: "%20"))
+            view.imageView.kf.setImage(with: url, placeholder: UIImage(named: "Nobody"), options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(0.5)),
+                .cacheOriginalImage
+            ], completionHandler:  { result in
+                switch result {
+                case .success(let value):
+                    print("Task done for: \(value.source.url?.absoluteString ?? "")")
+                case .failure(let error):
+                    print("Job failed: \(error.localizedDescription)")
+                }
+            })
+        }
+        view.textLabel?.text = travel.driver?.displayName
         return view
     }
     
@@ -148,16 +186,17 @@ extension ReviewTravelViewController: UITableViewDelegate, UITableViewDataSource
             
         } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewValuesCell", for: indexPath) as! ReviewValuesCell
+            cell.setupData(travel)
             return cell
             
         } else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewInfoCell", for: indexPath) as! ReviewInfoCell
+            cell.setupData(travel)
             return cell
             
         } else {
             return UITableViewCell()
         }
-        
     }
 }
 

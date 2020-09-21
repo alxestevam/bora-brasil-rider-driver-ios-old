@@ -543,19 +543,19 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sVy-Vo-yyn">
                                                     <rect key="frame" x="8" y="87.5" width="311" height="44"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cartão" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gD-5T-Ifx">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cartão" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8gD-5T-Ifx">
                                                             <rect key="frame" x="0.0" y="0.0" width="103.5" height="44"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYr-aQ-Gw7">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 min" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jYr-aQ-Gw7">
                                                             <rect key="frame" x="103.5" y="0.0" width="104" height="44"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.6 km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pX4-M9-udX">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.6 km" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pX4-M9-udX">
                                                             <rect key="frame" x="207.5" y="0.0" width="103.5" height="44"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                             <nil key="textColor"/>
@@ -695,6 +695,9 @@
                                         <rect key="frame" x="24" y="24" width="279" height="52"/>
                                         <color key="backgroundColor" red="0.92549019610000005" green="0.41568627450000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="sendReview:" destination="FLK-q5-4bX" eventType="touchUpInside" id="Ylg-Tg-k3S"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1918,6 +1921,15 @@
         <designable name="1l1-ka-Eqn">
             <size key="intrinsicContentSize" width="46" height="30"/>
         </designable>
+        <designable name="4gk-mA-be8">
+            <size key="intrinsicContentSize" width="133" height="33"/>
+        </designable>
+        <designable name="4qI-LT-UqT">
+            <size key="intrinsicContentSize" width="48" height="30"/>
+        </designable>
+        <designable name="4xf-B2-cPM">
+            <size key="intrinsicContentSize" width="127" height="33"/>
+        </designable>
         <designable name="8Lg-ya-nCW">
             <size key="intrinsicContentSize" width="191" height="36"/>
         </designable>
@@ -1925,8 +1937,32 @@
         <designable name="NHr-4h-7Ue">
             <size key="intrinsicContentSize" width="63" height="18"/>
         </designable>
+        <designable name="O3k-hU-9yw">
+            <size key="intrinsicContentSize" width="97" height="30"/>
+        </designable>
+        <designable name="TGw-TV-i4G">
+            <size key="intrinsicContentSize" width="137" height="33"/>
+        </designable>
+        <designable name="YnQ-Yl-MeU">
+            <size key="intrinsicContentSize" width="55" height="33"/>
+        </designable>
+        <designable name="ZAI-5h-uDN">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="bs0-ma-Cfy">
+            <size key="intrinsicContentSize" width="75" height="33"/>
+        </designable>
+        <designable name="dLp-wh-UaX">
+            <size key="intrinsicContentSize" width="62" height="30"/>
+        </designable>
         <designable name="sGC-Nm-K7H">
             <size key="intrinsicContentSize" width="46" height="30"/>
+        </designable>
+        <designable name="vd8-M7-5It">
+            <size key="intrinsicContentSize" width="113" height="33"/>
+        </designable>
+        <designable name="w6Z-5H-pYJ">
+            <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="wFB-cb-R2R">
             <size key="intrinsicContentSize" width="230" height="42"/>

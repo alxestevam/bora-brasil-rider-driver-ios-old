@@ -40,6 +40,13 @@ public final class Request: Codable, Hashable {
     public var log: String?
     public var service: Service?
     public var confirmationCode: Int?
+    public var paymentType: PaymentType?
+    
+    
+    public enum PaymentType: String, Codable {
+        case credit = "credit"
+        case cash = "cash"
+    }
     
     public enum Status: String, Codable {
         case Requested = "Requested"

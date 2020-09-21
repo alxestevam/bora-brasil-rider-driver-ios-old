@@ -201,9 +201,16 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
             break
             
         case .WaitingForReview:
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewController(withIdentifier: "finishedViewController")
-            self.navigationController?.pushViewController(controller, animated: false)
+            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ReviewTravelViewController") as? ReviewTravelViewController {
+                vc.modalPresentationStyle = .overFullScreen
+                vc.onChangeBlock = {(_ object: Any?, _ isChange: Bool) -> Void in
+                    if (isChange) {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+                
+                self.present(vc, animated:true, completion: nil)
+            }
             break
             
         case .Finished:
