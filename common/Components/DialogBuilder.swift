@@ -33,6 +33,7 @@ public class DialogBuilder {
         statusAlert.title = NSLocalizedString("Error_Happened", comment: "Default title for any error occured")
         statusAlert.message = message
         statusAlert.canBePickedOrDismissed = true
+        statusAlert.alertShowingDuration = 3
         statusAlert.image = UIImage(named: "alert_error")
         if #available(iOS 13.0, *) {
             statusAlert.appearance.tintColor = UIColor.label
@@ -43,6 +44,7 @@ public class DialogBuilder {
     
     public static func alertOnSuccess(message:String) {
         let statusAlert = StatusAlert()
+        statusAlert.alertShowingDuration = 3
         statusAlert.image = UIImage(named: "alert_success")
         statusAlert.message = message
         statusAlert.canBePickedOrDismissed = true

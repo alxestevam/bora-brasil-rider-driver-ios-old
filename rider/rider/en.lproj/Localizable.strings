@@ -70,7 +70,7 @@ TravelViewController
 "Arrived" = "Chegou";
 "Soon" = "Em breve";
 "Alert_Service_Canceled" = "O serviço foi cancelado.";
-"Driver_Arrived" = "Motorista chegou";
+"Driver_Arrived" = "O motorista chegou e está esperando no seu local.";
 "Alert_Confirmation" = "Confirmation code service is enabled. Driver will need to enter  %@ to finish service.";
 
 

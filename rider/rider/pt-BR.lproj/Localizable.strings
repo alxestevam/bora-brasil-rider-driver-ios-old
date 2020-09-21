@@ -1,6 +1,6 @@
 "notification_new_message_title" = "Nova Mensagem";
 "notification_arrived_title" = "Chegou!";
-"notification_arrived_body" = "O motorista chegou";
+"notification_arrived_body" = "O motorista chegou e está esperando no seu local.";
 "notification_started_title" = "iniciado";
 "notification_started_body" = "Viagem iniciada";
 "notification_waiting_for_pay_title" = "Encerrado";
@@ -71,7 +71,7 @@ TravelViewController
 "Arrived" = "Chegou";
 "Soon" = "Em breve";
 "Alert_Service_Canceled" = "O serviço foi cancelado.";
-"Driver_Arrived" = "Motorista chegou";
+"Driver_Arrived" = "O motorista chegou e está esperando no seu local.";
 "Alert_Confirmation" = "O serviço de código de confirmação está ativado. O driver precisará digitar o %@ para concluir o serviço.";
 
 

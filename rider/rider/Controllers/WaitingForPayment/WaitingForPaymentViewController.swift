@@ -26,7 +26,7 @@ class WaitingForPaymentViewController: UIViewController {
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.view.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        //blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.backgroundView.addSubview(blurEffectView)
         animationView = AnimationView(name: "cash")
         animationView.contentMode = .scaleAspectFit
