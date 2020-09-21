@@ -486,5 +486,11 @@ extension MainViewController: SelectPaymentMethodViewControllerDelegate {
             RideNowSelected(service: s, payType: "credit")
         }
     }
+    
+    func paymentMoneySelected() {
+        if let s = selectedService {
+            RideNowSelected(service: s, payType: "cash")
+        }
+    }
 }
 

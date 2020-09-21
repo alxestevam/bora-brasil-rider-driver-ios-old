@@ -13,6 +13,7 @@ import PullUpController
 
 protocol SelectPaymentMethodViewControllerDelegate: class{
     func paymentCardSelected(_ card: GetCardDetailResult)
+    func paymentMoneySelected()
 }
 
 class SelectPaymentMethodViewController: PullUpController {
@@ -103,6 +104,7 @@ class SelectPaymentMethodViewController: PullUpController {
     }
     
     private func setupData() {
+        self.btnMoneyPay.addTarget(self, action: #selector(self.handleSelectMoney(_:)), for: .touchUpInside)
         self.fetchCards()
     }
     
@@ -132,8 +134,10 @@ class SelectPaymentMethodViewController: PullUpController {
         })
     }
     
-    @IBAction func selectMoney(_ sender: GradientButton) {
-        
+    @objc func handleSelectMoney(_ sender: GradientButton) {
+        removePullUpController(self, animated: true, completion: { _ in
+            self.delegate?.paymentMoneySelected()
+        })
     }
     
     
