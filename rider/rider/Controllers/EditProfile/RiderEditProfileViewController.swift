@@ -224,7 +224,7 @@ class RiderEditProfileViewController: FormViewController, VCWithBackButtonHandle
     }
     
     @IBAction func openUrl(_ sender: Any) {
-        if let url = URL(string: "https://meubbmu.com.br/static/media/BBMU_TERMOS_PASSAGEIRO_2020.pdf") {
+        if let url = URL(string: "https://meubbmu.com.br/static/media/BBMU_Termos_Condicoes.a4306ad8.pdf") {            
             UIApplication.shared.open(url)
         }
     }
