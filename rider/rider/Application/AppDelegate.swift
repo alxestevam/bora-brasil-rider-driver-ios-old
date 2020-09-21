@@ -12,6 +12,7 @@ import Crashlytics
 import Fabric
 @_exported import FirebaseUI
 import SocketIO
+import LanguageManager_iOS
 
 
 //MARK: Global Properties
@@ -56,7 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        setupFirebase()
+        self.setupFirebase()
+        self.setupLanguage()
         self.launchOptions = launchOptions
         self.window?.tintColor = UIColor(hex: 0x0A0A32)
         //BTAppSwitch.setReturnURLScheme(Bundle.main.bundleIdentifier! + ".payments")
@@ -115,18 +117,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     private func setupFirebase() {
-//        var filePath: String!
-//        #if DEBUG
-//            filePath = Bundle.main.path(forResource: "GoogleService-Info-Debug", ofType: "plist")
-//        #elseif PROD || RELEASE
-//            filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist", inDirectory: "prod")
-//        #elseif STAG
-//            filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist", inDirectory: "staging")
-//        #endif
-//
-//        let options = FirebaseOptions.init(contentsOfFile: filePath)!
-//        FirebaseApp.configure(options: options)
         FirebaseApp.configure()
+    }
+    
+    private func setupLanguage() {
+        UserDefaults.standard.set(["pt-br"], forKey: "AppleLanguages")
+        UserDefaults.standard.synchronize()
     }
 }
 

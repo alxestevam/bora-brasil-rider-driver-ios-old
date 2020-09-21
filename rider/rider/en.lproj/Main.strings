@@ -3,10 +3,10 @@
 "8VR-N2-JW4.title" = "Item";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "N4b-jJ-SeH"; */
-"N4b-jJ-SeH.text" = "Loading...";
+"N4b-jJ-SeH.text" = "Carregando...";
 
 /* Class = "UINavigationItem"; title = "Taxi"; ObjectID = "kva-XK-mou"; */
-"kva-XK-mou.title" = "Taxi";
+"kva-XK-mou.title" = "Bora Brasil";
 
 /* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "rK5-vU-Fgw"; */
 "rK5-vU-Fgw.title" = "Item";

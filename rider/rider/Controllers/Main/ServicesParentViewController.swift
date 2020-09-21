@@ -34,7 +34,16 @@ class ServicesParentViewController: UIViewController, UICollectionViewDataSource
         self.view.layer.mask = maskLayer
         
         buttonRideLater.isHidden = true
-        buttonRideNow.backgroundColor = Color.orange.rgb_236_106_53
+        let title = "SOLICITE AGORA"
+        buttonRideNow.setTitle(title, for: .normal)
+        self.setupButton(button: self.buttonRideNow, isEnable: false)
+    }
+    
+    private func setupButton(button: ColoredButton, isEnable: Bool) {
+        button.backgroundColor = (isEnable) ? Color.orange.rgb_255_152_0 : Color.gray.rgb_240_240_240
+        button.setTitleColor((isEnable) ? .white : .gray, for: .normal)
+        button.setTitleColor((isEnable) ? .white : .gray, for: .selected)
+        button.isEnabled = isEnable
     }
     
     public func reload() {
@@ -79,6 +88,8 @@ class ServicesParentViewController: UIViewController, UICollectionViewDataSource
         let localized = NSLocalizedString("Request_Service", comment: "")
         let title = String(format: localized, selectedService!.title ?? "")
         buttonRideNow.setTitle(title, for: .normal)
+        
+        self.setupButton(button: self.buttonRideNow, isEnable: true)
     }
     
     @IBAction func onSelectServiceClicked(_ sender: UIButton) {

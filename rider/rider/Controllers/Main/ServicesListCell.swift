@@ -22,7 +22,7 @@ class ServicesListCell: UICollectionViewCell {
     private var currency: String = ""
     private var fareResult: Double = 0
     private var feeEstimationMode: FeeEstimationMode = .Dynamic
-
+    
     override var isSelected: Bool {
         didSet {
             self.contentView.alpha = isSelected ? 1 : 0.5
@@ -67,42 +67,35 @@ class ServicesListCell: UICollectionViewCell {
     }
     
     func updatePrice() {
-        // TODO(): Ajustar código
-
-//        let formatter = NumberFormatter()
-//        formatter.locale = Locale.current
-//        formatter.numberStyle = .currency
-//        formatter.currencyCode = currency
-//        var cost: Double = service.baseFare
-//        if service.distanceFeeMode == .PickupToDestination {
-//            cost += (distance * service.perHundredMeters / 100) + (duration * service.perMinuteDrive / 60)
-//        }
-//        if service.quantityMode == .Multiple {
-//            cost += Double(quantity) * service.eachQuantityFee
-//        }
-//        switch service.feeEstimationMode {
-//        case .Disabled:
-//            textCost.text = "-"
-//
-//        case .Static:
-//            textCost.text = formatter.string(from: NSNumber(value: cost))
-//
-//        case .Dynamic:
-//            textCost.text = "~\(formatter.string(from: NSNumber(value: cost)) ?? "Unkown Curr")"
-//
-//        case .Ranged:
-//            let cMinus = cost - (cost * Double(service.rangeMinusPercent / 100))
-//            let cPlus = cost + (cost * Double(service.rangePlusPercent / 100))
-//            textCost.text = "\(formatter.string(from: NSNumber(value: cMinus)) ?? "Unkown Curr")~\(formatter.string(from: NSNumber(value: cPlus)) ?? "Unkown Curr")"
-//
-//        case .RangedStrict:
-//            let cMinus = cost - (cost * Double(service.rangeMinusPercent / 100))
-//            let cPlus = cost + (cost * Double(service.rangePlusPercent / 100))
-//            textCost.text = "\(formatter.string(from: NSNumber(value: cMinus)) ?? "Unkown Curr")-\(formatter.string(from: NSNumber(value: cPlus)) ?? "Unkown Curr")"
-//        }
-//        if service.quantityMode == .Multiple && quantity > 0 {
-//            textCost.text = "\(textCost.text!) (\(quantity)x)"
-//        }
+        
+        let cost: Double = fareResult*service.multiplicationFactor //service.baseFare
+        switch feeEstimationMode {
+        case .Disabled:
+            self.textCost.text = "-"
+            break
+        case .Static:
+            self.textCost.text = FormatterUtil.shared.stringFromValue(value: cost, monetaryFormat: true, decimalPrecision: 2)
+            break
+        case .Dynamic:
+            self.textCost.text = "~\(FormatterUtil.shared.stringFromValue(value: cost, monetaryFormat: true, decimalPrecision: 2))"
+            break
+        case .Ranged, .RangedStrict:
+            if let rangeMinusPercent = service.rangeMinusPercent, let rangePlusPercent = service.rangePlusPercent {
+                let cMinus = cost - (cost * Double(rangeMinusPercent / 100))
+                let cPlus = cost + (cost * Double(rangePlusPercent / 100))
+                self.textCost.text = "\(FormatterUtil.shared.stringFromValue(value: cMinus, monetaryFormat: true, decimalPrecision: 2))~\(FormatterUtil.shared.stringFromValue(value: cPlus, monetaryFormat: true, decimalPrecision: 2)))"
+                
+            } else {
+                self.textCost.text = "- ~ -"
+            }
+        }
+        
+        // Adicionada verificação de "minimum fee"
+        if let minimumFee = service.minimumFee {
+            if (cost < minimumFee) {
+                self.textCost.text = FormatterUtil.shared.stringFromValue(value: minimumFee, monetaryFormat: true, decimalPrecision: 2)
+            }
+        }
     }
     
     @IBAction func onButtonMinusTouched(_ sender: UIButton) {
