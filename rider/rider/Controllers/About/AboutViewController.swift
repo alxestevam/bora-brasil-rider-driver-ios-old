@@ -22,11 +22,11 @@ class AboutViewController:FormViewController {
             }
             <<< LabelRow(){
                 $0.title = NSLocalizedString("Website", comment: "")
-                $0.value = "https://mobiler.com.br"
+                $0.value = "https://www.borabrasilmobilidade.com.br/"
             }
-            <<< LabelRow(){
-                $0.title = NSLocalizedString("Phone Number", comment: "")
-                $0.value = "-"
-        }
+        //            <<< LabelRow(){
+        //                $0.title = NSLocalizedString("Phone Number", comment: "")
+        //                $0.value = "-"
+        //        }
     }
 }
