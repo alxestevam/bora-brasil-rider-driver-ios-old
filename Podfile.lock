@@ -33,6 +33,7 @@ PODS:
   - Charts (3.5.0):
     - Charts/Core (= 3.5.0)
   - Charts/Core (3.5.0)
+  - Cosmos (22.1.0)
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
   - Eureka (5.2.1)
@@ -155,6 +156,7 @@ PODS:
 DEPENDENCIES:
   - BraintreeDropIn
   - Charts
+  - Cosmos
   - Crashlytics
   - Eureka (from `https://github.com/xmartlabs/Eureka.git`, branch `xcode12`)
   - Fabric
@@ -179,6 +181,7 @@ SPEC REPOS:
     - Braintree
     - BraintreeDropIn
     - Charts
+    - Cosmos
     - Crashlytics
     - Fabric
     - Firebase
@@ -225,6 +228,7 @@ SPEC CHECKSUMS:
   Braintree: 48154e70306eb3e6c81eaa87bbc5c5988c0d2784
   BraintreeDropIn: 2cf07a9041df45ff671586042dbaf7b5d2767347
   Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
+  Cosmos: 2795b36ad4bbea1af3050d6d65576ed63875f86a
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
   Eureka: c883105488e05bc65539f583246ecf9657cabbfe
   Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
@@ -258,6 +262,6 @@ SPEC CHECKSUMS:
   Stripe: dd5bfdd5f1daed4f9ddbfb47e9449ec302f9f708
   SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
 
-PODFILE CHECKSUM: 78e6efff2171409d1ac6df9342929cdd7065eae4
+PODFILE CHECKSUM: 024933e23b177b201a47edd1bbe02bced394cc6b
 
 COCOAPODS: 1.9.3

@@ -10,7 +10,7 @@ import Foundation
 
 extension CAGradientLayer {
     
-    class func viewToImageGradient(on view: UIView, firstColor fc: UIColor = Color.orange.rgb_236_106_53, secondColor sc: UIColor = Color.orange.rgb_255_152_0) -> UIImage? {
+    class func viewToImageGradient(on view: UIView, firstColor fc: UIColor = Color.orange.rgb_255_152_0, secondColor sc: UIColor = Color.orange.rgb_236_106_53) -> UIImage? {
         let gradient = CAGradientLayer()
         let firstColor = fc
         let secondColor = sc

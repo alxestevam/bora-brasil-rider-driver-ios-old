@@ -20,6 +20,7 @@ def common_pods
   pod 'lottie-ios'
   pod 'SwiftyAttributes'
   pod 'PullUpController'
+  pod 'Cosmos'
 end
 
 target 'rider' do
