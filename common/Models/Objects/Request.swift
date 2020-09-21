@@ -15,8 +15,8 @@ public final class Request: Codable, Hashable {
     public static var shared = Request()
     
     // MARK: Properties
-    public var addresses: [String] = []
-    public var points: [CLLocationCoordinate2D] = []
+    public var addresses: [String]? = []
+    public var points: [CLLocationCoordinate2D]? = []
     public var durationReal: Int?
     public var distanceReal: Int?
     public var requestTimestamp: Double?

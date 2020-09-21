@@ -74,7 +74,7 @@ public enum ErrorStatus: String, Codable {
         case .Unknown:
             return NSLocalizedString("Ocorreu um erro ao tentar realizar a operação. Por favor, tente novamente", comment: "Error Status")
         case .Networking:
-            return NSLocalizedString("Erro de red", comment: "Error Status")
+            return NSLocalizedString("Erro de rede", comment: "Error Status")
         case .FailedEncoding:
             return NSLocalizedString("Ocorreu um erro ao tentar realizar a operação. Por favor, tente novamente", comment: "Error Status")
         case .FailedToVerify:

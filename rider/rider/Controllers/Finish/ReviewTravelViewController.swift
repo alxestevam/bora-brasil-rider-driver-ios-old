@@ -87,7 +87,7 @@ class ReviewTravelViewController: UIViewController {
             switch result {
             case .success(_):
                 LoadingOverlay.shared.hideOverlayView()
-                DialogBuilder.alertOnSuccess(message: NSLocalizedString("Review_Sent", comment: ""))
+                DialogBuilder.alertOnSuccess(message: "Avaliação enviada")
                 Request.shared.status = .Finished
                 if let compl = self.onChangeBlock { compl(nil, true) }
                 self.dismiss(animated: true, completion: nil)

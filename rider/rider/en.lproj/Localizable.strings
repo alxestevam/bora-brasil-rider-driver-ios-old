@@ -66,11 +66,11 @@ FavoritesViewController
 /*
 TravelViewController
 */
-"Not_Provided" = "Not Provided";
-"Arrived" = "Arrived";
-"Soon" = "Soon";
-"Alert_Service_Canceled" = "Service Has Been Canceled.";
-"Driver_Arrived" = "Driver Arrived";
+"Not_Provided" = "-";
+"Arrived" = "Chegou";
+"Soon" = "Em breve";
+"Alert_Service_Canceled" = "O serviço foi cancelado.";
+"Driver_Arrived" = "Motorista chegou";
 "Alert_Confirmation" = "Confirmation code service is enabled. Driver will need to enter  %@ to finish service.";
 
 

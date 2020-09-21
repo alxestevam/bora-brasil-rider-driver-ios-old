@@ -39,7 +39,7 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
         NotificationCenter.default.addObserver(self, selector: #selector(self.onServiceFinished), name: .serviceFinished, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.onTravelInfoReceived), name: .travelInfoReceived, object: nil)
         NotificationCenter.default.addObserver(self, selector:#selector(self.requestRefresh), name: .connectedAfterForeground, object: nil)
-        let notProvided = NSLocalizedString("Not_Provided", comment: "")
+        let notProvided = NSLocalizedString("-", comment: "")
         
         textDriverName.text = "\(Request.shared.driver?.firstName ?? notProvided) \(Request.shared.driver?.lastName ?? "")"
         textCarModel.text = "\(Request.shared.driver?.car?.title ?? notProvided), \(Request.shared.driver?.carColor ?? notProvided)"
@@ -102,7 +102,7 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
     
     @objc func onEachSecond() {
         let now = Date()
-        let etaInterval = Request.shared.startTimestamp != nil ? (Request.shared.startTimestamp! / 1000) + Double(Request.shared.durationBest!) : Request.shared.etaPickup! / 1000
+        let etaInterval = Request.shared.startTimestamp != nil ? (Request.shared.startTimestamp! / 1000) + Double(Request.shared.durationBest!) : Request.shared.etaPickup ?? 0 / 1000
         let etaTime = Date(timeIntervalSince1970: etaInterval)
         if etaTime <= now {
             if Request.shared.status == .Arrived {
@@ -146,16 +146,19 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
             break
             
         case .DriverAccepted:
-            pickupMarker.coordinate = travel.points[0]
-            map.addAnnotation(pickupMarker)
-            if let _location = driverLocation {
-                driverMarker.coordinate = _location
-                map.addAnnotation(driverMarker)
-                map.showAnnotations([pickupMarker, driverMarker], animated: true)
-            } else {
-                let region = MKCoordinateRegion(center: travel.points[0], latitudinalMeters: 1000, longitudinalMeters: 1000)
-                map.setRegion(region, animated: true)
+            if let points = travel.points {
+                pickupMarker.coordinate = points[0]
+                map.addAnnotation(pickupMarker)
+                if let _location = driverLocation {
+                    driverMarker.coordinate = _location
+                    map.addAnnotation(driverMarker)
+                    map.showAnnotations([pickupMarker, driverMarker], animated: true)
+                } else {
+                    let region = MKCoordinateRegion(center: points[0], latitudinalMeters: 1000, longitudinalMeters: 1000)
+                    map.setRegion(region, animated: true)
+                }
             }
+            
             break
             
         case .Arrived:
@@ -167,14 +170,16 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
             buttonMessage.isHidden = true
             buttonCancel.isHidden = true
             map.removeAnnotation(pickupMarker)
-            for (index, point) in travel.points.enumerated() {
-                if index == 0 {
-                    continue;
+            if let points = travel.points {
+                for (index, point) in points.enumerated() {
+                    if index == 0 {
+                        continue;
+                    }
+                    let p = MKPointAnnotation()
+                    p.coordinate = point
+                    destinationMarkers.append(p)
+                    map.addAnnotation(p)
                 }
-                let p = MKPointAnnotation()
-                p.coordinate = point
-                destinationMarkers.append(p)
-                map.addAnnotation(p)
             }
             if driverLocation != nil || destinationMarkers.count > 1 {
                 if(driverLocation != nil) {
@@ -187,17 +192,21 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
                     map.showAnnotations(destinationMarkers, animated: true)
                 }
             } else {
-                let region = MKCoordinateRegion(center: travel.points[1], latitudinalMeters: 1000, longitudinalMeters: 1000)
-                map.setRegion(region, animated: true)
+                if let points = travel.points {
+                    let region = MKCoordinateRegion(center: points[1], latitudinalMeters: 1000, longitudinalMeters: 1000)
+                    map.setRegion(region, animated: true)
+                }
             }
             break
             
         case .WaitingForPostPay:
-            if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Wallet") as? WalletViewController {
-                vc.amount = Request.shared.costAfterCoupon
-                vc.currency = Request.shared.currency
-                self.navigationController?.pushViewController(vc, animated: true)
+            let vc = Bundle.main.loadNibNamed("WaitingForPayment", owner: self, options: nil)?.first as! WaitingForPaymentViewController
+            vc.onChangeBlock = {(_ object: Any?, _ isChange: Bool) -> Void in
+                if (isChange) {
+                    self.refreshScreen(driverLocation: nil)
+                }
             }
+            self.present(vc, animated: true)
             break
             
         case .WaitingForReview:

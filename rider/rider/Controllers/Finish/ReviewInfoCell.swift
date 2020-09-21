@@ -34,8 +34,8 @@ class ReviewInfoCell: UITableViewCell {
     }
     
     func setupData(_ request: Request) {
-        let source = request.addresses.first ?? "Não identificado"
-        let destination = request.addresses.last ?? "Não identificado"
+        let source = request.addresses?.first ?? "Não identificado"
+        let destination = request.addresses?.last ?? "Não identificado"
         lblSource.text = source
         lblDestination.text = destination
     }

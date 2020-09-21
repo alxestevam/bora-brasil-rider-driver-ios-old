@@ -10,6 +10,7 @@ import Foundation
 
 struct CalculateFareRequest: Codable {
     var locations: Array<Dictionary<String, Double>>
-    var estimatedTravelDistance: Int = 30
-    var estimatedTravelTime: Int = 10000
+    var estimatedTravelTime: Int
+    var estimatedTravelDistance: Int
+    var estimatedTravelPath: String? = nil
 }

@@ -33,6 +33,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     
     let message = NSLocalizedString("Message", comment: "")
     let allright = NSLocalizedString("Allright", comment: "")
+    var directionsResponse: DirectionsResponse? = nil
     
     private var originalPullUpControllerViewSize: CGSize = .zero
     private func makePaymentMethodControllerIfNeeded() -> SelectPaymentMethodViewController {
@@ -117,7 +118,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     }
     
     private func setupLayout() {
-    
+        
     }
     
     func goBackFromServiceSelection() {
@@ -217,8 +218,15 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         let feedbackGenerator = UISelectionFeedbackGenerator()
         feedbackGenerator.selectionChanged()
         
-        // TODO(): Fazer calculo de duração e dist^ancia
-        RequestService(obj: RequestDTO(locations: locs, services: [OrderedService(serviceId: service.id!, quantity: 1)], intervalMinutes: 0, paymentType: payType, estimatedTravelTime: 60/60, estimatedTravelDistance: 1)).execute() { result in
+        var estimatedTravelDistance: Int = 100000
+        var estimatedTravelTime: Int = 30
+        
+        if let leg = self.directionsResponse!.routes.first?.legs.first {
+            estimatedTravelDistance = leg.distance.value
+            estimatedTravelTime = leg.duration.value/60
+        }
+        
+        RequestService(obj: RequestDTO(locations: locs, services: [OrderedService(serviceId: service.id!, quantity: 1)], intervalMinutes: 0, paymentType: payType, estimatedTravelTime: estimatedTravelTime, estimatedTravelDistance: estimatedTravelDistance)).execute() { result in
             switch result {
             case .success(_):
                 self.performSegue(withIdentifier: "startLooking", sender: nil)
@@ -234,7 +242,16 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         let locs = pointsAnnotations.map() { annotation in
             return LocationWithName(loc: annotation.coordinate, add: annotation.title!)
         }
-        RequestService(obj: RequestDTO(locations: locs, services: [OrderedService(serviceId: 1, quantity: 1)], intervalMinutes: minutesFromNow, paymentType: "", estimatedTravelTime: 60/60, estimatedTravelDistance: 1)).execute() { result in
+        
+        var estimatedTravelDistance: Int = 100000
+        var estimatedTravelTime: Int = 30
+        
+        if let leg = self.directionsResponse!.routes.first?.legs.first {
+            estimatedTravelDistance = leg.distance.value
+            estimatedTravelTime = leg.duration.value/60
+        }
+        
+        RequestService(obj: RequestDTO(locations: locs, services: [OrderedService(serviceId: 1, quantity: 1)], intervalMinutes: minutesFromNow, paymentType: "", estimatedTravelTime: estimatedTravelTime, estimatedTravelDistance: estimatedTravelDistance)).execute() { result in
             switch result {
             case .success(_):
                 self.performSegue(withIdentifier: "startLooking", sender: nil)
@@ -293,17 +310,44 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         map.showAnnotations(pointsAnnotations, animated: true)
         map.isUserInteractionEnabled = false
         let locs = pointsAnnotations.map() { return $0.coordinate }
-        CalculateFare(locations: locs).execute() { result in
-            LoadingOverlay.shared.hideOverlayView()
-            switch result {
-            case .success(let response):
-                self.servicesViewController?.calculateFareResult = response
-                self.containerServices.isHidden = false
-                self.servicesViewController?.reload()
-                
-            case .failure(let error):
-                self.goBackFromServiceSelection()
-                error.showAlert()
+        
+        let apiKey = "AIzaSyDVwl8P9fiV5vJWMbY7CtSvEJHnPV6YqHA"
+        let firstLatitude =  String(locs.first?.latitude ?? 0.0)
+        let firstLongitude = String(locs.first?.longitude ?? 0.0)
+        let secondLatitude =  String(locs[1].latitude)
+        let secondLongitude = String(locs[1].longitude)
+        let directionRequest = "origin=\(firstLatitude),\(firstLongitude)&destination=\(secondLatitude),\(secondLongitude)"
+        
+        let compl = "?region=br&\(directionRequest)&key=\(apiKey)"
+        let url = "https://maps.googleapis.com/maps/api/directions/json\(compl)"
+        
+        EasyRequest<DirectionsResponse>.get(self, path: "geocoded_waypoints", url: url) { (directions) in
+            
+            self.directionsResponse = directions
+            var estimatedTravelDistance: Int = 100000
+            var estimatedTravelTime: Int = 30
+            var points: String? = nil
+            
+            if let leg = self.directionsResponse!.routes.first?.legs.first, let route = self.directionsResponse!.routes.first {
+                estimatedTravelDistance = leg.distance.value
+                estimatedTravelTime = leg.duration.value/60
+                points = route.overviewPolyline.points
+            }
+            
+            DispatchQueue.main.async() {
+                CalculateFare(locations: locs, estimatedTravelDistance: estimatedTravelDistance, estimatedTravelTime: estimatedTravelTime, points: points).execute() { result in
+                    LoadingOverlay.shared.hideOverlayView()
+                    switch result {
+                    case .success(let response):
+                        self.servicesViewController?.calculateFareResult = response
+                        self.containerServices.isHidden = false
+                        self.servicesViewController?.reload()
+                        
+                    case .failure(let error):
+                        self.goBackFromServiceSelection()
+                        error.showAlert()
+                    }
+                }
             }
         }
     }
@@ -490,6 +534,18 @@ extension MainViewController: SelectPaymentMethodViewControllerDelegate {
     func paymentMoneySelected() {
         if let s = selectedService {
             RideNowSelected(service: s, payType: "cash")
+        }
+    }
+}
+
+
+extension MainViewController: EasyRequestDelegate {
+    
+    func onError() {
+        DispatchQueue.main.async() {
+            LoadingOverlay.shared.hideOverlayView()
+            let popup = DialogBuilder.getDialogForMessage(message: "Ocorreu um erro ao tentar buscar os dados. Por favor, tente novamente.", completion: nil)
+            self.present(popup, animated: true, completion: nil)
         }
     }
 }

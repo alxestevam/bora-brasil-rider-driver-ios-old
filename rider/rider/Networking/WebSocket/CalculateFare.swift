@@ -14,14 +14,14 @@ class CalculateFare: SocketRequest {
     typealias ResponseType = CalculateFareResult
     var params: [Any]?
     
-    init(locations: [CLLocationCoordinate2D]) {
+    init(locations: [CLLocationCoordinate2D], estimatedTravelDistance: Int = 100000, estimatedTravelTime: Int = 30, points: String? = nil) {
         let loc = locations.map() { loc in
             return [
                 "x": loc.longitude,
                 "y": loc.latitude
             ]
         }
-        self.params = [try! CalculateFareRequest(locations: loc, estimatedTravelDistance: 100000, estimatedTravelTime: 30).asDictionary()]
+        self.params = [try! CalculateFareRequest(locations: loc, estimatedTravelTime: estimatedTravelTime, estimatedTravelDistance: estimatedTravelDistance, estimatedTravelPath: points).asDictionary()]
     }
 }
 

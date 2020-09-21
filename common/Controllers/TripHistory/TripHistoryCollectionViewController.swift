@@ -109,9 +109,9 @@ class TripHistoryCollectionViewController: UICollectionViewController, UICollect
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .medium
-        cell.pickupLabel.text = travel.addresses[0]
-        if travel.addresses.count > 1 {
-            cell.destinationLabel.text = travel.addresses.last
+        cell.pickupLabel.text = travel.addresses?.first
+        if travel.addresses?.count ?? 0 > 1 {
+            cell.destinationLabel.text = travel.addresses?.last
         }
         if let startTimestamp = travel.startTimestamp {
             cell.startTimeLabel.text = dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(startTimestamp / 1000)))

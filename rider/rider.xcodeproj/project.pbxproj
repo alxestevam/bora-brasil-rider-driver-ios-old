@@ -153,6 +153,13 @@
 		8582B53225170B5100256963 /* ReviewInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8582B53125170B5100256963 /* ReviewInfoCell.swift */; };
 		8582B5342518008B00256963 /* FormatterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8582B5332518008B00256963 /* FormatterUtil.swift */; };
 		8582B536251803AA00256963 /* Double+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8582B535251803AA00256963 /* Double+Util.swift */; };
+		85B4209B251837AE0001C017 /* WaitingForPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4209A251837AE0001C017 /* WaitingForPaymentViewController.swift */; };
+		85B4209E2518389E0001C017 /* WaitingForPayment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85B4209C2518389E0001C017 /* WaitingForPayment.xib */; };
+		85B420A0251839C90001C017 /* cash.json in Resources */ = {isa = PBXBuildFile; fileRef = 85B4209F251839C90001C017 /* cash.json */; };
+		85B420A4251857120001C017 /* EasyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B420A3251857120001C017 /* EasyRequest.swift */; };
+		85B420A6251858E70001C017 /* DirectionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B420A5251858E70001C017 /* DirectionsResponse.swift */; };
+		85B420AA251869800001C017 /* RouteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B420A9251869800001C017 /* RouteBuilder.swift */; };
+		85B420AD251869DF0001C017 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B420AC251869DF0001C017 /* Route.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -344,6 +351,13 @@
 		8582B53125170B5100256963 /* ReviewInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewInfoCell.swift; sourceTree = "<group>"; };
 		8582B5332518008B00256963 /* FormatterUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FormatterUtil.swift; path = ../../../common/Util/FormatterUtil.swift; sourceTree = "<group>"; };
 		8582B535251803AA00256963 /* Double+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Util.swift"; sourceTree = "<group>"; };
+		85B4209A251837AE0001C017 /* WaitingForPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingForPaymentViewController.swift; sourceTree = "<group>"; };
+		85B4209D2518389E0001C017 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WaitingForPayment.xib; sourceTree = "<group>"; };
+		85B4209F251839C90001C017 /* cash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cash.json; sourceTree = "<group>"; };
+		85B420A3251857120001C017 /* EasyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyRequest.swift; sourceTree = "<group>"; };
+		85B420A5251858E70001C017 /* DirectionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsResponse.swift; sourceTree = "<group>"; };
+		85B420A9251869800001C017 /* RouteBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteBuilder.swift; sourceTree = "<group>"; };
+		85B420AC251869DF0001C017 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		8C0831CC63A04C24A74DEE5C /* Pods-rider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rider.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-rider/Pods-rider.debug.xcconfig"; sourceTree = "<group>"; };
 		9ECEFAC24285911139A02E6C /* Pods-rider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rider.release.xcconfig"; path = "../Pods/Target Support Files/Pods-rider/Pods-rider.release.xcconfig"; sourceTree = "<group>"; };
 		E59E702E47B11F894BCE461E /* Pods-rider.staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rider.staging.xcconfig"; path = "../Pods/Target Support Files/Pods-rider/Pods-rider.staging.xcconfig"; sourceTree = "<group>"; };
@@ -377,6 +391,7 @@
 				4C215EBF238D3FCA0013D720 /* Login.swift */,
 				85245A39250EB525001D236A /* GetCard.swift */,
 				85245A48250EE7E4001D236A /* AddCard.swift */,
+				85B420A3251857120001C017 /* EasyRequest.swift */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -443,6 +458,7 @@
 				622CCBBE219DC0B8003A4CCE /* Promotion.swift */,
 				625D2993204EC44000F80499 /* Address.swift */,
 				4C215EAB238D20460013D720 /* Review.swift */,
+				85B420A5251858E70001C017 /* DirectionsResponse.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -609,6 +625,7 @@
 				62A1C13B1F399E830031AE1F /* Splash */,
 				624D3C301F1B352C00811758 /* Main */,
 				624D3C331F1B3DEF00811758 /* TripHistory */,
+				85B42099251837730001C017 /* WaitingForPayment */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -707,10 +724,12 @@
 				85333F9E25163A49009C9B2E /* Firebase */,
 				62F4D8BF20154900000933DA /* Models */,
 				622BBD351F32236D00E14667 /* Networking */,
+				85B420AB251869C40001C017 /* Route */,
 				8503503E24E1D15C00B3EF05 /* Util */,
 				62B6FDA71F70FF2200F66611 /* Main.storyboard */,
 				62B6FD9F1F70F8FD00F66611 /* background.jpg */,
 				54E4B67F2481D4F200EC43D8 /* Assets.xcassets */,
+				85B4209F251839C90001C017 /* cash.json */,
 				62B6FD9C1F70F70A00F66611 /* Info.plist */,
 				62972937223BB4D30084E2BB /* car.json */,
 				85245A44250EBE0C001D236A /* OCRAStd.otf */,
@@ -843,6 +862,24 @@
 			path = ../../common/Extensions;
 			sourceTree = "<group>";
 		};
+		85B42099251837730001C017 /* WaitingForPayment */ = {
+			isa = PBXGroup;
+			children = (
+				85B4209C2518389E0001C017 /* WaitingForPayment.xib */,
+				85B4209A251837AE0001C017 /* WaitingForPaymentViewController.swift */,
+			);
+			path = WaitingForPayment;
+			sourceTree = "<group>";
+		};
+		85B420AB251869C40001C017 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				85B420A9251869800001C017 /* RouteBuilder.swift */,
+				85B420AC251869DF0001C017 /* Route.swift */,
+			);
+			path = Route;
+			sourceTree = "<group>";
+		};
 		EA914EE38186F69D003C17C4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -934,8 +971,10 @@
 				547353ED24ACEC5D00EDDDD3 /* TripHistoryCollectionViewCell.xib in Resources */,
 				547353D924AACED700EDDDD3 /* Localizable.strings in Resources */,
 				62972938223BB4D30084E2BB /* car.json in Resources */,
+				85B4209E2518389E0001C017 /* WaitingForPayment.xib in Resources */,
 				547353C424AACE3100EDDDD3 /* PromotionsCollectionViewCell.xib in Resources */,
 				62B6FDAA1F70FF2200F66611 /* Main.storyboard in Resources */,
+				85B420A0251839C90001C017 /* cash.json in Resources */,
 				8582B4FA2516DF8B00256963 /* ReviewHeaderView.xib in Resources */,
 				62B6FDA11F70F8FD00F66611 /* background.jpg in Resources */,
 				547353D224AACEAB00EDDDD3 /* FavoriteAddressDialogViewController.xib in Resources */,
@@ -1055,6 +1094,7 @@
 				4CB5FC3B23A79F6B00F2D5BC /* Car.swift in Sources */,
 				4C5DEF5D23AE34B5006DF279 /* WalletInfo.swift in Sources */,
 				4CB5FC7E23A7A2D000F2D5BC /* Rider.swift in Sources */,
+				85B420A6251858E70001C017 /* DirectionsResponse.swift in Sources */,
 				4CE9844B21A8244D00900570 /* PromotionsCollectionViewController.swift in Sources */,
 				62490E4F2099D680007F668D /* AddressCell.swift in Sources */,
 				4CB5FC6223A79FD100F2D5BC /* DashedLineView.swift in Sources */,
@@ -1084,6 +1124,7 @@
 				857A72F8250ACE9D0020DB15 /* WalletViewControllerV2.swift in Sources */,
 				85245A4B250EEF37001D236A /* String+Util.swift in Sources */,
 				4CB5FC7D23A7A2D000F2D5BC /* Request.swift in Sources */,
+				85B4209B251837AE0001C017 /* WaitingForPaymentViewController.swift in Sources */,
 				850F3FEF250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift in Sources */,
 				4CB5FC6823A79FD100F2D5BC /* NSLocalizedString+Extensions.swift in Sources */,
 				85515683251551C900F744CB /* GradientButton.swift in Sources */,
@@ -1136,6 +1177,7 @@
 				62B6FD851F70F6A600F66611 /* HostViewController.swift in Sources */,
 				4C817CBE22E3AE3B0007968C /* ChatViewController.swift in Sources */,
 				4C215EB8238D27FD0013D720 /* EnableVerification.swift in Sources */,
+				85B420AA251869800001C017 /* RouteBuilder.swift in Sources */,
 				4CB5FC5223A79FC700F2D5BC /* SideMenuItemOptions.swift in Sources */,
 				4CB5FC6C23A79FD100F2D5BC /* ColoredButton.swift in Sources */,
 				4CB5FC3823A79F6B00F2D5BC /* Coupon.swift in Sources */,
@@ -1161,6 +1203,8 @@
 				8582B52E251700E100256963 /* ReviewStarCell.swift in Sources */,
 				4CB5FC4F23A79FC700F2D5BC /* Options.swift in Sources */,
 				85245A34250EAD37001D236A /* WalletAddCardViewController.swift in Sources */,
+				85B420AD251869DF0001C017 /* Route.swift in Sources */,
+				85B420A4251857120001C017 /* EasyRequest.swift in Sources */,
 				85245A47250ED8B3001D236A /* CreditCardValidator.swift in Sources */,
 				4C215EA8238D1F8F0013D720 /* CancelRequest.swift in Sources */,
 				8551567B2514EC7700F744CB /* SelectPaymentMethodViewController.swift in Sources */,
@@ -1242,6 +1286,14 @@
 				5473539C24AAC73E00EDDDD3 /* pt-BR */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		85B4209C2518389E0001C017 /* WaitingForPayment.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85B4209D2518389E0001C017 /* Base */,
+			);
+			name = WaitingForPayment.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
