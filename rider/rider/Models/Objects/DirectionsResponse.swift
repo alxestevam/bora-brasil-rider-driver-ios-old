@@ -8,7 +8,7 @@ import Foundation
 // MARK: - Directions Response
 struct DirectionsResponse: Codable {
     //let geocodedWaypoints: [GeocodedWaypoint]
-    let routes: [Route]
+    let routes: [RouteResponse]
     let status: String
 
     enum CodingKeys: String, CodingKey {
@@ -30,7 +30,7 @@ struct GeocodedWaypoint: Codable {
 }
 
 // MARK: - Route
-struct Route: Codable {
+struct RouteResponse: Codable {
     //let bounds: Bounds
     //let copyrights: String
     let legs: [Leg]

@@ -22,6 +22,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     var servicesViewController: ServicesParentViewController?
     private var selectedService: Service?
     var pinAnnotation:MKPinAnnotationView = MKPinAnnotationView()
+    private var currentRoute: Route? = nil
+    private var groupedRoutes: [(startItem: MKMapItem, endItem: MKMapItem)] = []
+    
     
     private var searchController: UISearchController!
     @IBOutlet weak var buttonConfirmPickup: ColoredButton!
@@ -161,6 +164,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     }
     
     @IBAction func onMenuClicked(_ sender: UIBarButtonItem) {
+        
+        // Remove route
+        for ov in map.overlays {
+            map.removeOverlay(ov)
+        }
+        
         if(pointsAnnotations.count == 0) {
             NotificationCenter.default.post(name: .menuClicked, object: nil)
             return
@@ -285,6 +294,30 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     @IBAction func onButtonFinalDestinationTouched(_ sender: Any) {
         AddDestination()
         calculateFare()
+        
+        let locs = pointsAnnotations.map() { return $0.coordinate }
+        let origin = CLLocation.init(latitude: CLLocationDegrees.init(locs.first?.latitude ?? 0.0),
+                                     longitude: CLLocationDegrees.init(locs.first?.longitude ?? 0.0))
+        let stops = CLLocation.init(latitude: CLLocationDegrees.init(locs.last?.latitude ?? 0.0),
+                                    longitude: CLLocationDegrees.init(locs.last?.longitude ?? 0.0))
+        
+        
+        RouteBuilder.buildRoute(
+            origin: .location(origin),
+            stops: [.location(stops)],
+            within: nil
+        ) { result in
+            
+            switch result {
+            case .success(let route):
+                self.currentRoute = route
+                self.groupAndRequestDirections()
+                break
+                
+            case .failure( _):
+                break
+            }
+        }
     }
     
     func AddDestination() {
@@ -535,6 +568,78 @@ extension MainViewController: SelectPaymentMethodViewControllerDelegate {
         if let s = selectedService {
             RideNowSelected(service: s, payType: "cash")
         }
+    }
+    
+    
+    // MARK: - Helpers
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        
+        renderer.strokeColor = Color.orange.rgb_236_106_53
+        renderer.lineWidth = 3
+        
+        return renderer
+    }
+    
+    private func groupAndRequestDirections() {
+        guard let firstStop = self.currentRoute?.stops.first else {
+            return
+        }
+        
+        guard let route = self.currentRoute else {
+            return
+        }
+        
+        groupedRoutes.append((route.origin, firstStop))
+        
+        if self.currentRoute?.stops.count == 2 {
+            let secondStop = route.stops[1]
+            
+            groupedRoutes.append((firstStop, secondStop))
+            groupedRoutes.append((secondStop, route.origin))
+        }
+        
+        fetchNextRoute()
+    }
+    
+    private func fetchNextRoute() {
+        guard !groupedRoutes.isEmpty else {
+            return
+        }
+        
+        let nextGroup = groupedRoutes.removeFirst()
+        let request = MKDirections.Request()
+        
+        request.source = nextGroup.startItem
+        request.destination = nextGroup.endItem
+        
+        let directions = MKDirections(request: request)
+        
+        directions.calculate { response, error in
+            guard let mapRoute = response?.routes.first else {
+                return
+            }
+            
+            self.updateView(with: mapRoute)
+            self.fetchNextRoute()
+        }
+    }
+    
+    private func updateView(with mapRoute: MKRoute) {
+        let padding: CGFloat = 8
+        map.addOverlay(mapRoute.polyline)
+        map.setVisibleMapRect(
+            map.visibleMapRect.union(
+                mapRoute.polyline.boundingMapRect
+            ),
+            edgePadding: UIEdgeInsets(
+                top: 0,
+                left: padding,
+                bottom: padding,
+                right: padding
+            ),
+            animated: true
+        )
     }
 }
 
