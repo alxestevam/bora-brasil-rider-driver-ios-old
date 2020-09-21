@@ -65,7 +65,7 @@ class LookingViewController: UIViewController {
     func refreshUI() {
         let lookingDrivers = NSLocalizedString("Looking_Drivers", comment: "")
         let travelBookedFor = NSLocalizedString("Travel_Booked_For", comment: "")
-         let travelBooked = NSLocalizedString("Travel_Booked", comment: "")
+        let travelBooked = NSLocalizedString("Travel_Booked", comment: "")
         
         let travel = Request.shared
         if travel.status == nil {
@@ -133,33 +133,40 @@ class LookingViewController: UIViewController {
     }
     
     @objc func onDriverAccepted(_ notification: Notification) {
-        if let travel = notification.object as? Request {
-            Request.shared = travel
-            dismiss(animated: true, completion: nil)
-            self.delegate?.found()
+        if (notification.object as? Request) != nil {
+            GetCurrentRequestInfo().execute() { result in
+                switch result {
+                case .success(let response):
+                    Request.shared = response.request
+                    self.dismiss(animated: true, completion: nil)
+                    self.delegate?.found()
+                case .failure(_):
+                    break
+                }
+            }
         }
     }
     
     @objc func onRejectedByAntiFraud(_ notification: Notification) {
-        DialogBuilder.alertOnError(message: "REJEITADO POR ANTIFRAUDE")
-
-//        if let travel = notification.object as? Request {
-//            Request.shared = travel
-//            dismiss(animated: true, completion: nil)
-//            self.delegate?.found()
-//        }
+        DialogBuilder.alertOnError(message: "O seu pagamento foi rejeitado e a corrida cancelada.")
+        self.dismiss(animated: true, completion: nil)
+        //        if let travel = notification.object as? Request {
+        //            Request.shared = travel
+        //            dismiss(animated: true, completion: nil)
+        //            self.delegate?.found()
+        //        }
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
     
 }
 

@@ -5,9 +5,11 @@
 //  Copyright © 2018 minimalistic apps. All rights reserved.
 //
 
+//MARK: - Imports
+import Kingfisher
 import UIKit
-
 import MapKit
+import MarqueeLabel
 
 class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDelegate {
     @IBOutlet weak var map: MKMapView!
@@ -26,10 +28,12 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
     @IBOutlet weak var tabBar: UISegmentedControl!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var viewStatistics: UIView!
-    @IBOutlet weak var viewDriver: UIStackView!
-    @IBOutlet weak var textDriverName: UILabel!
-    @IBOutlet weak var textPlateNumber: UILabel!
-    @IBOutlet weak var textCarModel: UILabel!
+    @IBOutlet weak var viewDriver: UIView!
+    @IBOutlet weak var lblDriverName: UILabel!
+    @IBOutlet weak var lblVehicleInfo: UILabel!
+    @IBOutlet weak var lblSource: MarqueeLabel!
+    @IBOutlet weak var lblDestination: MarqueeLabel!
+    @IBOutlet var imgDriverProfile: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +43,36 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
         NotificationCenter.default.addObserver(self, selector: #selector(self.onServiceFinished), name: .serviceFinished, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.onTravelInfoReceived), name: .travelInfoReceived, object: nil)
         NotificationCenter.default.addObserver(self, selector:#selector(self.requestRefresh), name: .connectedAfterForeground, object: nil)
-        let notProvided = NSLocalizedString("-", comment: "")
         
-        textDriverName.text = "\(Request.shared.driver?.firstName ?? notProvided) \(Request.shared.driver?.lastName ?? "")"
-        textCarModel.text = "\(Request.shared.driver?.car?.title ?? notProvided), \(Request.shared.driver?.carColor ?? notProvided)"
-        textPlateNumber.text = Request.shared.driver?.carPlate ?? notProvided
+        let notProvided = " - "
+        self.lblDriverName.text = "\(Request.shared.driver?.firstName ?? notProvided) \(Request.shared.driver?.lastName ?? notProvided)"
+        let carInfo = "\(Request.shared.driver?.car?.title ?? notProvided), \(Request.shared.driver?.carColor ?? notProvided), \(Request.shared.driver?.carPlate ?? notProvided)"
+        self.lblVehicleInfo.text = carInfo
+        let source = Request.shared.addresses?.first ?? "Não identificado"
+        let destination = Request.shared.addresses?.last ?? "Não identificado"
+        self.lblSource.text = source.isEmpty ? "Não identificado" : source
+        self.lblDestination.text = destination.isEmpty ? "Não identificado" : destination
+        self.lblSource.speed = .duration(12.0)
+        self.lblDestination.speed = .duration(12.0)
+        
+        if let driverImage = Request.shared.driver?.media?.address {
+            let processor = DownsamplingImageProcessor(size: self.imgDriverProfile.intrinsicContentSize) |> RoundCornerImageProcessor(cornerRadius: self.imgDriverProfile.intrinsicContentSize.width / 2)
+            let url = URL(string: Config.Backend + driverImage.replacingOccurrences(of: " ", with: "%20"))
+            self.imgDriverProfile.kf.setImage(with: url, placeholder: UIImage(named: "Nobody"), options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(0.5)),
+                .cacheOriginalImage
+            ], completionHandler:  { result in
+                switch result {
+                case .success(let value):
+                    print("Task done for: \(value.source.url?.absoluteString ?? "")")
+                case .failure(let error):
+                    print("Job failed: \(error.localizedDescription)")
+                }
+            })
+        }
+
         tabBar.addTarget(self, action: #selector(selectedTabItem), for: .valueChanged)
         map.layoutMargins = UIEdgeInsets(top: 50, left: 0, bottom: 290, right: 0)
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
