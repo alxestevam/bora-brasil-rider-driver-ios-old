@@ -191,6 +191,9 @@ class SelectPaymentMethodViewController: PullUpController {
                     btnAction.backgroundColor = .clear
                     btnAction.layoutSubviews()
                     btnAction.layoutIfNeeded()
+                    
+                } else {
+                    self.btnAddCard.isHidden = false
                 }
                 
             case .failure(let error):

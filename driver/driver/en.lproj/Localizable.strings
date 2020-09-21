@@ -124,5 +124,5 @@ AboutViewController
 /*
 SplashViewController
 */
-" Alert_User_Info_Not_Found" = "User Info not found. Do you want to register again?";
-"Register" = "Register";
+" Alert_User_Info_Not_Found" = "Usuário não encontrado. Deseja registrar novamente?";
+"Register" = "Registro";

@@ -32,11 +32,11 @@ class SplashViewController: UIViewController {
                         switch error {
                         case .NotFound:
                             let title = NSLocalizedString("Message", comment: "Message Default Title")
-                            let dialog = UIAlertController(title: title, message: "User Info not found. Do you want to register again?", preferredStyle: .alert)
-                            dialog.addAction(UIAlertAction(title: NSLocalizedString("Register", comment: ""), style: .default) { action in
+                            let dialog = UIAlertController(title: title, message: "Usuário não encontrado. Deseja registrar novamente?", preferredStyle: .alert)
+                            dialog.addAction(UIAlertAction(title: NSLocalizedString("Registrar", comment: ""), style: .default) { action in
                                 self.onLoginClicked(self.buttonLogin)
                             })
-                            dialog.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil))
+                            dialog.addAction(UIAlertAction(title: NSLocalizedString("Cancelar", comment: ""), style: .cancel, handler: nil))
                             self.present(dialog, animated: true, completion: nil)
                             
                         default:
