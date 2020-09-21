@@ -138,7 +138,7 @@ DEPENDENCIES:
   - MarqueeLabel/Swift (~> 3.2.1)
   - MessageKit (~> 3.1.0)
   - PullUpController (~> 0.8.0)
-  - Socket.IO-Client-Swift
+  - Socket.IO-Client-Swift (~> 15.2.0)
   - StatusAlert (~> 1.1.1)
   - SwiftyAttributes (~> 5.1.1)
 
@@ -222,6 +222,6 @@ SPEC CHECKSUMS:
   StatusAlert: a18ec3c33d36a06d4479c1f2b15ffac67aaf7ab1
   SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
 
-PODFILE CHECKSUM: 8fd43096e2424ec7419d6d8c1c475bfde670ec22
+PODFILE CHECKSUM: 5b6bdce847349d87e42d09d7b47140a126c2c637
 
 COCOAPODS: 1.9.3

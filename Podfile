@@ -28,7 +28,9 @@ def common_pods
   
   # Carregamento de imagem via web http
   pod 'Kingfisher', '~> 5.14.1'
-  pod 'Socket.IO-Client-Swift'
+  
+  # Conexão via socket
+  pod 'Socket.IO-Client-Swift', '~> 15.2.0'
   
   # Animações
   pod 'lottie-ios', '~> 3.1.8'
@@ -63,7 +65,12 @@ end
 
 post_install do |installer|
   installer.pods_project.build_configurations.each do |config|
-    config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+    
+    if config.name == 'Debug'
+      
+      puts "Found config #{config.name}"
+      config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+    end
   end
 end
 
