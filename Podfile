@@ -2,38 +2,69 @@ use_frameworks!
 platform :ios, '11.0'
 workspace 'taxi'
 def common_pods
-  pod 'Firebase/Core'
-  pod 'FirebaseUI/Phone'
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Messaging'
+  
+  # Conjunto de utilidades do Firebase
+  pod 'Firebase/Core', '~> 6.29.0'
+  pod 'FirebaseUI/Phone', '~> 8.0'
+  pod 'Firebase/Analytics', '~> 6.29.0'
+  pod 'Firebase/Messaging', '~> 6.29.0'
+  
   #pod 'Eureka'
+  # Formulários
   pod 'Eureka', :git => 'https://github.com/xmartlabs/Eureka.git', :branch => 'xcode12'
-  pod 'ImageRow'
-  pod 'Fabric'
-  pod 'Crashlytics'
-  pod 'BraintreeDropIn'
-  pod 'Stripe'
-  pod 'MessageKit'
-  pod 'StatusAlert'
-  pod 'Kingfisher'
+  pod 'ImageRow', '~> 4.0.0'
+  
+  # Rastreamento de bugs
+  pod 'Fabric', '~> 1.10.2'
+  
+  # Rastreamento de bugs
+  pod 'Crashlytics', '~> 3.14.0'
+  
+  # Componente de chat
+  pod 'MessageKit', '~> 3.1.0'
+  
+  # Componente para alertas personalizados
+  pod 'StatusAlert', '~> 1.1.1'
+  
+  # Carregamento de imagem via web http
+  pod 'Kingfisher', '~> 5.14.1'
   pod 'Socket.IO-Client-Swift'
-  pod 'lottie-ios'
-  pod 'SwiftyAttributes'
-  pod 'PullUpController'
-  pod 'Cosmos'
+  
+  # Animações
+  pod 'lottie-ios', '~> 3.1.8'
+  
+  # Wrapper para atributos de String
+  pod 'SwiftyAttributes', '~> 5.1.1'
+  
+  # Componente de pullup
+  pod 'PullUpController', '~> 0.8.0'
+  
+  # Componente de review com estrelas
+  pod 'Cosmos', '~> 22.1.0'
 end
 
 target 'rider' do
   project 'rider/rider.xcodeproj'
   common_pods
-  pod 'MarqueeLabel/Swift'
+  
+  # Rolagem para Labels
+  pod 'MarqueeLabel/Swift', '~> 3.2.1'
 end
 
 target 'driver' do
   project 'driver/driver.xcodeproj'
   common_pods
-  pod 'iCarousel'
-  pod 'Charts'
+  # Componente de carrosel
+  pod 'iCarousel', '~> 1.8.3'
+  
+  # Componente de gráficos
+  pod 'Charts', '~> 3.5.0'
+end
+
+post_install do |installer|
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+  end
 end
 
 

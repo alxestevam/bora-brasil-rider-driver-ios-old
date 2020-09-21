@@ -1,35 +1,4 @@
 PODS:
-  - Braintree/Card (4.34.0):
-    - Braintree/Core
-  - Braintree/Core (4.34.0)
-  - Braintree/PaymentFlow (4.34.0):
-    - Braintree/Card
-    - Braintree/Core
-    - Braintree/PayPalOneTouch
-  - Braintree/PayPal (4.34.0):
-    - Braintree/Core
-    - Braintree/PayPalOneTouch
-  - Braintree/PayPalDataCollector (4.34.0):
-    - Braintree/Core
-    - Braintree/PayPalUtils
-  - Braintree/PayPalOneTouch (4.34.0):
-    - Braintree/Core
-    - Braintree/PayPalDataCollector
-    - Braintree/PayPalUtils
-  - Braintree/PayPalUtils (4.34.0)
-  - Braintree/UnionPay (4.34.0):
-    - Braintree/Card
-    - Braintree/Core
-  - BraintreeDropIn (8.1.1):
-    - BraintreeDropIn/DropIn (= 8.1.1)
-  - BraintreeDropIn/DropIn (8.1.1):
-    - Braintree/Card (~> 4.32)
-    - Braintree/Core (~> 4.32)
-    - Braintree/PaymentFlow (~> 4.32)
-    - Braintree/PayPal (~> 4.32)
-    - Braintree/UnionPay (~> 4.32)
-    - BraintreeDropIn/UIKit
-  - BraintreeDropIn/UIKit (8.1.1)
   - Charts (3.5.0):
     - Charts/Core (= 3.5.0)
   - Charts/Core (3.5.0)
@@ -150,36 +119,31 @@ PODS:
     - Starscream (~> 3.1)
   - Starscream (3.1.1)
   - StatusAlert (1.1.1)
-  - Stripe (19.3.0)
   - SwiftyAttributes (5.1.1)
 
 DEPENDENCIES:
-  - BraintreeDropIn
-  - Charts
-  - Cosmos
-  - Crashlytics
+  - Charts (~> 3.5.0)
+  - Cosmos (~> 22.1.0)
+  - Crashlytics (~> 3.14.0)
   - Eureka (from `https://github.com/xmartlabs/Eureka.git`, branch `xcode12`)
-  - Fabric
-  - Firebase/Analytics
-  - Firebase/Core
-  - Firebase/Messaging
-  - FirebaseUI/Phone
-  - iCarousel
-  - ImageRow
-  - Kingfisher
-  - lottie-ios
-  - MarqueeLabel/Swift
-  - MessageKit
-  - PullUpController
+  - Fabric (~> 1.10.2)
+  - Firebase/Analytics (~> 6.29.0)
+  - Firebase/Core (~> 6.29.0)
+  - Firebase/Messaging (~> 6.29.0)
+  - FirebaseUI/Phone (~> 8.0)
+  - iCarousel (~> 1.8.3)
+  - ImageRow (~> 4.0.0)
+  - Kingfisher (~> 5.14.1)
+  - lottie-ios (~> 3.1.8)
+  - MarqueeLabel/Swift (~> 3.2.1)
+  - MessageKit (~> 3.1.0)
+  - PullUpController (~> 0.8.0)
   - Socket.IO-Client-Swift
-  - StatusAlert
-  - Stripe
-  - SwiftyAttributes
+  - StatusAlert (~> 1.1.1)
+  - SwiftyAttributes (~> 5.1.1)
 
 SPEC REPOS:
   trunk:
-    - Braintree
-    - BraintreeDropIn
     - Charts
     - Cosmos
     - Crashlytics
@@ -211,7 +175,6 @@ SPEC REPOS:
     - Socket.IO-Client-Swift
     - Starscream
     - StatusAlert
-    - Stripe
     - SwiftyAttributes
 
 EXTERNAL SOURCES:
@@ -225,8 +188,6 @@ CHECKOUT OPTIONS:
     :git: https://github.com/xmartlabs/Eureka.git
 
 SPEC CHECKSUMS:
-  Braintree: 48154e70306eb3e6c81eaa87bbc5c5988c0d2784
-  BraintreeDropIn: 2cf07a9041df45ff671586042dbaf7b5d2767347
   Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
   Cosmos: 2795b36ad4bbea1af3050d6d65576ed63875f86a
   Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
@@ -259,9 +220,8 @@ SPEC CHECKSUMS:
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   StatusAlert: a18ec3c33d36a06d4479c1f2b15ffac67aaf7ab1
-  Stripe: dd5bfdd5f1daed4f9ddbfb47e9449ec302f9f708
   SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
 
-PODFILE CHECKSUM: 024933e23b177b201a47edd1bbe02bced394cc6b
+PODFILE CHECKSUM: 8fd43096e2424ec7419d6d8c1c475bfde670ec22
 
 COCOAPODS: 1.9.3

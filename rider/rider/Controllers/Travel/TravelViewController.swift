@@ -252,12 +252,12 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
     }
     
     @IBAction func onWalletTapped(_ sender: UIButton) {
-        buttonPay.isHidden = true
-        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Wallet") as? WalletViewController {
-            vc.amount = Request.shared.costAfterCoupon
-            vc.currency = Request.shared.currency
-            self.navigationController!.pushViewController(vc, animated: true)
-        }
+//        buttonPay.isHidden = true
+//        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Wallet") as? WalletViewController {
+//            vc.amount = Request.shared.costAfterCoupon
+//            vc.currency = Request.shared.currency
+//            self.navigationController!.pushViewController(vc, animated: true)
+//        }
     }
     
     @objc func onServiceStarted(_ notification: Notification) {

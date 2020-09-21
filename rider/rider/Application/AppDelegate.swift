@@ -6,13 +6,11 @@
 //
 
 import UIKit
-import Stripe
 @_exported import Firebase
 import Kingfisher
 import Crashlytics
 import Fabric
 @_exported import FirebaseUI
-import Braintree
 import SocketIO
 
 
@@ -51,9 +49,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        if url.scheme?.localizedCaseInsensitiveCompare(Bundle.main.bundleIdentifier! + ".payments") == .orderedSame {
-            return BTAppSwitch.handleOpen(url, options: options)
-        }
+//        if url.scheme?.localizedCaseInsensitiveCompare(Bundle.main.bundleIdentifier! + ".payments") == .orderedSame {
+//            return BTAppSwitch.handleOpen(url, options: options)
+//        }
         return (FUIAuth.defaultAuthUI()?.handleOpen(url, sourceApplication: nil))!
     }
     
@@ -61,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         setupFirebase()
         self.launchOptions = launchOptions
         self.window?.tintColor = UIColor(hex: 0x0A0A32)
-        BTAppSwitch.setReturnURLScheme(Bundle.main.bundleIdentifier! + ".payments")
+        //BTAppSwitch.setReturnURLScheme(Bundle.main.bundleIdentifier! + ".payments")
         Fabric.with([Crashlytics.self])
         UNUserNotificationCenter.current().delegate = self
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
