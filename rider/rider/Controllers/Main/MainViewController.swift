@@ -15,7 +15,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     
     //MARK: - Properties
     let rider = try! Rider(from: UserDefaultsConfig.user!)
-    @IBOutlet weak var map: MKMapView!
     var pointsAnnotations: [MKPointAnnotation] = []
     var arrayDriversMarkers: [MKPointAnnotation] = []
     var locationManager = CLLocationManager()
@@ -24,9 +23,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     var pinAnnotation:MKPinAnnotationView = MKPinAnnotationView()
     private var currentRoute: Route? = nil
     private var groupedRoutes: [(startItem: MKMapItem, endItem: MKMapItem)] = []
-    
-    
     private var searchController: UISearchController!
+    @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var buttonConfirmPickup: ColoredButton!
     @IBOutlet weak var buttonAddDestination: ColoredButton!
     @IBOutlet weak var buttonConfirmFinalDestination: ColoredButton!
@@ -100,16 +98,29 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         if (media.address.isNilOrEmpty || rider.cpf.isNilOrEmpty || rider.email.isNilOrEmpty || rider.firstName.isNilOrEmpty || rider.lastName.isNilOrEmpty) {
             self.presentProfileEditController()
         }
+    }
+    
+    func addMapTrackingButton(){
+        map.showsUserLocation = true
         
-        guard
-            let navigationController = self.navigationController,
-            let gradientImage = CAGradientLayer.viewToImageGradient(on: navigationController.navigationBar)
-        else {
-            print("Error creating gradient color!")
-            return
-        }
+        let button = MKUserTrackingButton(mapView: map)
+        button.layer.backgroundColor = Color.orange.rgb_236_106_53.cgColor
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.borderWidth = 0
+        button.layer.cornerRadius = 5
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = .white
+        self.view.addSubview(button)
         
-        configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(patternImage: gradientImage), tintColor: .white, title: "Bora Brasil", preferredLargeTitle: false)
+        let scale = MKScaleView(mapView: map)
+        scale.legendAlignment = .trailing
+        scale.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(scale)
+        
+        NSLayoutConstraint.activate([button.topAnchor.constraint(equalTo: self.view.topAnchor, constant: self.topbarHeight),
+                                     button.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -6),
+                                     scale.trailingAnchor.constraint(equalTo: button.leadingAnchor, constant: -6),
+                                     scale.centerYAnchor.constraint(equalTo: button.centerYAnchor)])
     }
     
     private func addPullUpController(animated: Bool) {
@@ -121,7 +132,16 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     }
     
     private func setupLayout() {
+        self.addMapTrackingButton()
+        guard
+            let navigationController = self.navigationController,
+            let gradientImage = CAGradientLayer.viewToImageGradient(on: navigationController.navigationBar)
+        else {
+            print("Error creating gradient color!")
+            return
+        }
         
+        configureNavigationBar(largeTitleColor: .white, backgoundColor: UIColor(patternImage: gradientImage), tintColor: .white, title: "Bora Brasil", preferredLargeTitle: false)
     }
     
     func goBackFromServiceSelection() {
@@ -655,3 +675,20 @@ extension MainViewController: EasyRequestDelegate {
     }
 }
 
+extension UIViewController {
+    
+    /**
+     *  Height of status bar + navigation bar (if navigation bar exist)
+     */
+    
+    var topbarHeight: CGFloat {
+        if #available(iOS 13.0, *) {
+            return (view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0) +
+                (self.navigationController?.navigationBar.frame.height ?? 0.0)
+        } else {
+            // Fallback on earlier versions
+            return UIApplication.shared.statusBarFrame.size.height +
+                (self.navigationController?.navigationBar.frame.height ?? 0.0)
+        }
+    }
+}
