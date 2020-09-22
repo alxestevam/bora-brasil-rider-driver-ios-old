@@ -37,7 +37,7 @@ class ReviewValuesCell: UITableViewCell {
     }
     
     func setupData(_ request: Request) {
-        self.lblTotalValue.text = FormatterUtil.shared.stringFromValue(value: request.costBest ?? 0.0, monetaryFormat: true, decimalPrecision: 2)
+        self.lblTotalValue.text = FormatterUtil.shared.stringFromValue(value: request.finalCostEffectively, monetaryFormat: true, decimalPrecision: 2)
         self.lblPaymentType.text = request.paymentType == .credit ? "Cartão" : "Dinheiro"
         
         let timeFormatted = Double(request.durationBest ?? 0).asString(style: .brief, allowedUnits: [.minute, .second])

@@ -93,18 +93,18 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
         } else {
             self.navigationItem.rightBarButtonItem = nil
         }
-        if var cost = Request.shared.costBest {
-            if let coupon = Request.shared.coupon {
-                cost = cost * Double(100 - coupon.discountPercent!) / 100
-                cost = cost - Double(coupon.discountFlat!)
-            }
-            // TODO(): Ajustar código
-//            if let service = Request.shared.service, (service.feeEstimationMode == .Dynamic || service.feeEstimationMode == .RangedStrict || service.feeEstimationMode == .Ranged) {
-//                self.labelCost.text = "~\(MyLocale.formattedCurrency(amount: cost, currency: Request.shared.currency!))"
-//            } else {
-//                self.labelCost.text = MyLocale.formattedCurrency(amount: cost, currency: Request.shared.currency!)
+//        if var cost = Request.shared.finalCost {
+//            if let coupon = Request.shared.coupon {
+//                cost = cost * Double(100 - coupon.discountPercent!) / 100
+//                cost = cost - Double(coupon.discountFlat!)
 //            }
-        }
+//            // TODO(): Ajustar código
+////            if let service = Request.shared.service, (service.feeEstimationMode == .Dynamic || service.feeEstimationMode == .RangedStrict || service.feeEstimationMode == .Ranged) {
+////                self.labelCost.text = "~\(MyLocale.formattedCurrency(amount: cost, currency: Request.shared.currency!))"
+////            } else {
+////                self.labelCost.text = MyLocale.formattedCurrency(amount: cost, currency: Request.shared.currency!)
+////            }
+//        }
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.onEachSecond), userInfo: nil, repeats: true)
     }
     

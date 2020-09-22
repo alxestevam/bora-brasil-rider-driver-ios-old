@@ -7,6 +7,7 @@
 import Foundation
 import CoreLocation
 
+
 public final class Request: Codable, Hashable {
     public static func == (lhs: Request, rhs: Request) -> Bool {
         return lhs.id == rhs.id
@@ -41,7 +42,19 @@ public final class Request: Codable, Hashable {
     public var service: Service?
     public var confirmationCode: Int?
     public var paymentType: PaymentType?
-    
+    public var finalCost: Double { return _finalCost ?? -1.0 }
+    private var _finalCost: Double?
+
+
+    var finalCostEffectively: Double {
+        get {
+            if finalCost >= 0.0 {
+                return finalCost
+            }
+            
+            return costBest ?? 0.0
+        }
+      }
     
     public enum PaymentType: String, Codable {
         case credit = "credit"
@@ -70,5 +83,4 @@ public final class Request: Codable, Hashable {
         hasher.combine(id)
     }
 }
-
 

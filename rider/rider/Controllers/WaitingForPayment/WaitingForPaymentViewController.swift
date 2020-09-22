@@ -54,7 +54,7 @@ class WaitingForPaymentViewController: UIViewController {
     func refreshScreen() {
         
         let request = Request.shared
-        self.lblValue.text = FormatterUtil.shared.stringFromValue(value: request.cost ?? 0.0, monetaryFormat: true, decimalPrecision: 2)
+        self.lblValue.text = FormatterUtil.shared.stringFromValue(value: request.finalCostEffectively, monetaryFormat: true, decimalPrecision: 2)
         
         switch request.status! {
         case .Finished, .WaitingForReview:
