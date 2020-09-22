@@ -54,7 +54,7 @@ class ReviewTravelViewController: UIViewController {
         self.view.backgroundColor = .clear
         self.viewContent.backgroundColor = .black
         self.viewContent.alpha = 0.3
-        self.tbvCard.backgroundColor = Color.orange.rgb_236_106_53
+        self.tbvCard.backgroundColor = .white
         self.tbvCard.clipsToBounds = true
         self.tbvCard.layer.cornerRadius = 20.0
         self.tbvCard.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
