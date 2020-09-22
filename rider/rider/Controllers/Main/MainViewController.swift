@@ -72,6 +72,19 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         searchController = UISearchController(searchResultsController: locationSearchTable)
         searchController?.searchResultsUpdater = locationSearchTable
         searchController?.hidesNavigationBarDuringPresentation = false
+        searchController?.searchBar.tintColor = .white
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white], for: .normal)
+        if #available(iOS 13.0, *) {
+            searchController?.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Buscar", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(0.5)])
+        } else {
+            // Fallback on earlier versions
+            searchController.searchBar.setPlaceholderTextColorTo(color: UIColor.white.withAlphaComponent(0.5))
+
+        }
+        searchController.searchBar.setMagnifyingGlassColorTo(color: UIColor.white)
+        searchController.searchBar.setClearButtonColorTo(color: UIColor.white)
+
         definesPresentationContext = true
         self.navigationItem.searchController = searchController
         GetCurrentRequestInfo().execute() { result in
@@ -692,3 +705,31 @@ extension UIViewController {
         }
     }
 }
+
+extension UISearchBar
+{
+
+    func setMagnifyingGlassColorTo(color: UIColor) {
+        // Search Icon
+        let textFieldInsideSearchBar = self.value(forKey: "searchField") as? UITextField
+        let glassIconView = textFieldInsideSearchBar?.leftView as? UIImageView
+        glassIconView?.image = glassIconView?.image?.withRenderingMode(.alwaysTemplate)
+        glassIconView?.tintColor = color
+    }
+
+    func setClearButtonColorTo(color: UIColor) {
+        // Clear Button
+        let textFieldInsideSearchBar = self.value(forKey: "searchField") as? UITextField
+        let crossIconView = textFieldInsideSearchBar?.value(forKey: "clearButton") as? UIButton
+        crossIconView?.setImage(crossIconView?.currentImage?.withRenderingMode(.alwaysTemplate), for: .normal)
+        crossIconView?.tintColor = color
+    }
+
+    func setPlaceholderTextColorTo(color: UIColor) {
+        let textFieldInsideSearchBar = self.value(forKey: "searchField") as? UITextField
+        textFieldInsideSearchBar?.textColor = color
+        let textFieldInsideSearchBarLabel = textFieldInsideSearchBar!.value(forKey: "placeholderLabel") as? UILabel
+        textFieldInsideSearchBarLabel?.textColor = color
+    }
+}
+
