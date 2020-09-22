@@ -103,7 +103,6 @@ PODS:
   - Kingfisher (5.14.1):
     - Kingfisher/Core (= 5.14.1)
   - Kingfisher/Core (5.14.1)
-  - LanguageManager-iOS (1.2.0)
   - lottie-ios (3.1.8)
   - MarqueeLabel/Swift (3.2.1)
   - MessageKit (3.1.0):
@@ -135,7 +134,6 @@ DEPENDENCIES:
   - iCarousel (~> 1.8.3)
   - ImageRow (~> 4.0.0)
   - Kingfisher (~> 5.14.1)
-  - LanguageManager-iOS
   - lottie-ios (~> 3.1.8)
   - MarqueeLabel/Swift (~> 3.2.1)
   - MessageKit (~> 3.1.0)
@@ -167,7 +165,6 @@ SPEC REPOS:
     - ImageRow
     - InputBarAccessoryView
     - Kingfisher
-    - LanguageManager-iOS
     - lottie-ios
     - MarqueeLabel
     - MessageKit
@@ -213,7 +210,6 @@ SPEC CHECKSUMS:
   ImageRow: e65b2e1a33f89062bf2a553a2aad61d975eb7428
   InputBarAccessoryView: 8e7fc09e9cba75e0fee5da13450e15c194806f69
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
-  LanguageManager-iOS: 516c4f088435c83cbdbddfc5179f88e4e0d39eb4
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   MarqueeLabel: 2daf039bf916937c8a4c9adfc13577cc5e51b4ce
   MessageKit: 3beb578737a5aa2bba25cc27c7b6d6faa09af5a7
@@ -226,6 +222,6 @@ SPEC CHECKSUMS:
   StatusAlert: a18ec3c33d36a06d4479c1f2b15ffac67aaf7ab1
   SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
 
-PODFILE CHECKSUM: 7ff660403ba3700fc0ec40d3454191e2d204e27f
+PODFILE CHECKSUM: 508a4fcf14ec68d56373d5d2cf2a427ccf7eef30
 
 COCOAPODS: 1.9.3

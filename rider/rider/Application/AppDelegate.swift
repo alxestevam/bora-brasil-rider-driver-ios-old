@@ -12,7 +12,6 @@ import Crashlytics
 import Fabric
 @_exported import FirebaseUI
 import SocketIO
-import LanguageManager_iOS
 
 
 //MARK: Global Properties
