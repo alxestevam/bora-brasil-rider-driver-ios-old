@@ -178,8 +178,15 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
             self.servicesViewController = vc
             vc.callback = self
         }
-        if let vc = segue.destination as? LookingViewController, segue.identifier == "startLooking" {
+        else if let vc = segue.destination as? LookingViewController, segue.identifier == "startLooking" {
             vc.delegate = self
+        }
+        else if let vc = segue.destination as? TravelViewController, segue.identifier == "startTravel" {
+            vc.onReviewBlock = {(_ object: Any?, _ isReview: Bool) -> Void in
+                if (isReview) {
+                    self.map.removeRoute()
+                }
+            }
         }
     }
     
@@ -199,9 +206,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     @IBAction func onMenuClicked(_ sender: UIBarButtonItem) {
         
         // Remove route
-        for ov in map.overlays {
-            map.removeOverlay(ov)
-        }
+        self.map.removeRoute()
         
         if(pointsAnnotations.count == 0) {
             NotificationCenter.default.post(name: .menuClicked, object: nil)
@@ -344,7 +349,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
             switch result {
             case .success(let route):
                 self.currentRoute = route
-                self.groupAndRequestDirections()
+                self.map.groupAndRequestDirections(route: self.currentRoute, groupedRoutes: self.groupedRoutes) { (result) in
+                    self.groupedRoutes = result
+                }
                 break
                 
             case .failure( _):
@@ -374,7 +381,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         self.pinAnnotation.isHidden = true
         map.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 305, right: 0)
         map.showAnnotations(pointsAnnotations, animated: true)
-        map.isUserInteractionEnabled = false
+        map.isUserInteractionEnabled = true
         let locs = pointsAnnotations.map() { return $0.coordinate }
         
         let apiKey = "AIzaSyDVwl8P9fiV5vJWMbY7CtSvEJHnPV6YqHA"
@@ -445,6 +452,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
             self.present(navController, animated:true, completion: nil)
         }
     }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        return self.map.rendererBuilder(mapView, rendererFor: overlay)
+    }
 }
 
 extension MainViewController: UISearchBarDelegate {
@@ -495,16 +506,21 @@ extension MainViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
         guard let annotation = annotation as? MKPointAnnotation else { return nil }
         let identifier: MarkerType
+        var oldCoordinate = annotation.coordinate
+        let newCoordinate = annotation.coordinate
         if(pointsAnnotations.contains(annotation)) {
             identifier = MarkerType.dropoff
         } else {
             identifier = MarkerType.driver
             
         }
+        
         var view: MKMarkerAnnotationView
         if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier.rawValue) as? MKMarkerAnnotationView {
+            oldCoordinate = dequeuedView.annotation?.coordinate ?? annotation.coordinate
             dequeuedView.annotation = annotation
             view = dequeuedView
             
@@ -528,7 +544,9 @@ extension MainViewController: MKMapViewDelegate {
             view.glyphTintColor = .clear
             view.tintColor = .clear
             view.markerTintColor = .clear
-            view.transform = (view.transform.rotated(by: -CGFloat.pi/3))
+           
+            view.transform = (view.transform.rotated(by: CGFloat(self.map.getHeadingForDirection(fromCoordinate: oldCoordinate, toCoordinate: newCoordinate))
+))
             break
 //            default:
 //                view.glyphImage = UIImage(named: "annotation_glyph_car")
@@ -614,78 +632,6 @@ extension MainViewController: SelectPaymentMethodViewControllerDelegate {
             RideNowSelected(service: s, payType: "cash")
         }
     }
-    
-    
-    // MARK: - Helpers
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        let renderer = MKPolylineRenderer(overlay: overlay)
-        
-        renderer.strokeColor = Color.orange.rgb_236_106_53
-        renderer.lineWidth = 3
-        
-        return renderer
-    }
-    
-    private func groupAndRequestDirections() {
-        guard let firstStop = self.currentRoute?.stops.first else {
-            return
-        }
-        
-        guard let route = self.currentRoute else {
-            return
-        }
-        
-        groupedRoutes.append((route.origin, firstStop))
-        
-        if self.currentRoute?.stops.count == 2 {
-            let secondStop = route.stops[1]
-            
-            groupedRoutes.append((firstStop, secondStop))
-            groupedRoutes.append((secondStop, route.origin))
-        }
-        
-        fetchNextRoute()
-    }
-    
-    private func fetchNextRoute() {
-        guard !groupedRoutes.isEmpty else {
-            return
-        }
-        
-        let nextGroup = groupedRoutes.removeFirst()
-        let request = MKDirections.Request()
-        
-        request.source = nextGroup.startItem
-        request.destination = nextGroup.endItem
-        
-        let directions = MKDirections(request: request)
-        
-        directions.calculate { response, error in
-            guard let mapRoute = response?.routes.first else {
-                return
-            }
-            
-            self.updateView(with: mapRoute)
-            self.fetchNextRoute()
-        }
-    }
-    
-    private func updateView(with mapRoute: MKRoute) {
-        let padding: CGFloat = 8
-        map.addOverlay(mapRoute.polyline)
-        map.setVisibleMapRect(
-            map.visibleMapRect.union(
-                mapRoute.polyline.boundingMapRect
-            ),
-            edgePadding: UIEdgeInsets(
-                top: 0,
-                left: padding,
-                bottom: padding,
-                right: padding
-            ),
-            animated: true
-        )
-    }
 }
 
 
@@ -718,8 +664,7 @@ extension UIViewController {
     }
 }
 
-extension UISearchBar
-{
+extension UISearchBar {
 
     func setMagnifyingGlassColorTo(color: UIColor) {
         // Search Icon
@@ -769,6 +714,4 @@ extension UIImage {
             return nil
         }
     }
-
 }
-

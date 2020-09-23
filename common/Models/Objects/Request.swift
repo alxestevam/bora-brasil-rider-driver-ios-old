@@ -42,14 +42,13 @@ public final class Request: Codable, Hashable {
     public var service: Service?
     public var confirmationCode: Int?
     public var paymentType: PaymentType?
-    public var finalCost: Double { return _finalCost ?? -1.0 }
-    private var _finalCost: Double?
+    public var finalCost: Double?
 
-
+    
     var finalCostEffectively: Double {
         get {
-            if finalCost >= 0.0 {
-                return finalCost
+            if let fc = finalCost {
+                return fc
             }
             
             return costBest ?? 0.0

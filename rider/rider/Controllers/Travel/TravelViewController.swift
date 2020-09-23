@@ -19,7 +19,10 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
     @IBOutlet weak var buttonMessage: ColoredButton!
     @IBOutlet weak var buttonCancel: ColoredButton!
     @IBOutlet weak var buttonPay: ColoredButton!
-    
+    var onReviewBlock: ((_ object: Any?, _ isReview: Bool) -> Void)? = nil
+    private var currentRoute: Route? = nil
+    private var groupedRoutes: [(startItem: MKMapItem, endItem: MKMapItem)] = []
+
     var pickupMarker = MKPointAnnotation()
     var destinationMarkers: [MKPointAnnotation] = []
     var driverMarker = MKPointAnnotation()
@@ -164,7 +167,7 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
     private func refreshScreen(travel: Request = Request.shared, driverLocation: CLLocationCoordinate2D?) {
         switch travel.status! {
         case .RiderCanceled, .DriverCanceled:
-            let title =  NSLocalizedString("Success", comment: "")
+            _ =  NSLocalizedString("Success", comment: "")
             let message =  NSLocalizedString("Alert_Service_Canceled", comment: "")
             let actionTitle =  NSLocalizedString("Allright", comment: "")
             let alert = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
@@ -185,6 +188,31 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
                 } else {
                     let region = MKCoordinateRegion(center: points[0], latitudinalMeters: 1000, longitudinalMeters: 1000)
                     map.setRegion(region, animated: true)
+                }
+                
+                let origin = CLLocation.init(latitude: driverMarker.coordinate.latitude,
+                    longitude: driverMarker.coordinate.longitude)
+                let stops = CLLocation.init(latitude: pickupMarker.coordinate.latitude,
+                                            longitude: pickupMarker.coordinate.longitude)
+                
+                
+                RouteBuilder.buildRoute(
+                    origin: .location(origin),
+                    stops: [.location(stops)],
+                    within: nil
+                ) { result in
+                    
+                    switch result {
+                    case .success(let route):
+                        self.currentRoute = route
+                        self.map.groupAndRequestDirections(route: self.currentRoute, groupedRoutes: self.groupedRoutes) { (result) in
+                            self.groupedRoutes = result
+                        }
+                        break
+                        
+                    case .failure( _):
+                        break
+                    }
                 }
             }
             
@@ -243,6 +271,7 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
                 vc.modalPresentationStyle = .overFullScreen
                 vc.onChangeBlock = {(_ object: Any?, _ isChange: Bool) -> Void in
                     if (isChange) {
+                        if let compl = self.onReviewBlock { compl(nil, true) }
                         self.navigationController?.popViewController(animated: true)
                     }
                 }
@@ -374,6 +403,10 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
             }
         }
         return view
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        return self.map.rendererBuilder(mapView, rendererFor: overlay)
     }
     
     @IBAction func onCallTouched(_ sender: UIButton) {

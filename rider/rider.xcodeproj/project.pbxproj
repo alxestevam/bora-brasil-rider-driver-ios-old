@@ -137,6 +137,7 @@
 		8551567925144F4F00F744CB /* CalculateFareRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551567825144F4F00F744CB /* CalculateFareRequest.swift */; };
 		8551567B2514EC7700F744CB /* SelectPaymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551567A2514EC7700F744CB /* SelectPaymentMethodViewController.swift */; };
 		85515683251551C900F744CB /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85515682251551C900F744CB /* GradientButton.swift */; };
+		856CB399251BBEC300F97607 /* MKMapView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856CB398251BBEC200F97607 /* MKMapView+Util.swift */; };
 		857A72F4250ABF360020DB15 /* UIViewController+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A72F3250ABF360020DB15 /* UIViewController+Util.swift */; };
 		857A72F6250AC2090020DB15 /* UIView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A72F5250AC2090020DB15 /* UIView+Util.swift */; };
 		857A72F8250ACE9D0020DB15 /* WalletViewControllerV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A72F7250ACE9B0020DB15 /* WalletViewControllerV2.swift */; };
@@ -333,6 +334,7 @@
 		8551567825144F4F00F744CB /* CalculateFareRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateFareRequest.swift; sourceTree = "<group>"; };
 		8551567A2514EC7700F744CB /* SelectPaymentMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodViewController.swift; sourceTree = "<group>"; };
 		85515682251551C900F744CB /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
+		856CB398251BBEC200F97607 /* MKMapView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Util.swift"; sourceTree = "<group>"; };
 		857A72F3250ABF360020DB15 /* UIViewController+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Util.swift"; sourceTree = "<group>"; };
 		857A72F5250AC2090020DB15 /* UIView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Util.swift"; sourceTree = "<group>"; };
 		857A72F7250ACE9B0020DB15 /* WalletViewControllerV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewControllerV2.swift; sourceTree = "<group>"; };
@@ -855,6 +857,7 @@
 				850F3FEE250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift */,
 				850F3FEC250A9E2100F6A4C3 /* Color+Util.swift */,
 				8582B535251803AA00256963 /* Double+Util.swift */,
+				856CB398251BBEC200F97607 /* MKMapView+Util.swift */,
 				8580FEC2250959E900A6AC32 /* OptionalString.swift */,
 				85245A4A250EEF37001D236A /* String+Util.swift */,
 				8580FEC62509770500A6AC32 /* UINavigationController.swift */,
@@ -1081,6 +1084,7 @@
 			files = (
 				4C215EA2238D1D1C0013D720 /* GetPromotions.swift in Sources */,
 				622CCBC0219DC0B8003A4CCE /* Promotion.swift in Sources */,
+				856CB399251BBEC300F97607 /* MKMapView+Util.swift in Sources */,
 				4C215EA4238D1D640013D720 /* CalculateFare.swift in Sources */,
 				4CB5FC5023A79FC700F2D5BC /* MenuContainerViewController.swift in Sources */,
 				4CB5FC2623A79F2C00F2D5BC /* HideHistoryItem.swift in Sources */,
