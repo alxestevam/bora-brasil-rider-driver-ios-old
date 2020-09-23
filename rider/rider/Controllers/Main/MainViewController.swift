@@ -501,26 +501,37 @@ extension MainViewController: MKMapViewDelegate {
             identifier = MarkerType.dropoff
         } else {
             identifier = MarkerType.driver
+            
         }
         var view: MKMarkerAnnotationView
         if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier.rawValue) as? MKMarkerAnnotationView {
             dequeuedView.annotation = annotation
             view = dequeuedView
+            
         } else {
             view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier.rawValue)
-            switch(identifier) {
-            case .pickup:
-                view.glyphImage = UIImage(named: "annotation_glyph_home")
-                view.markerTintColor = UIColor(hex: 0x009688)
-                break;
-                
-            case .dropoff:
-                view.markerTintColor = UIColor(hex: 0xFFA000)
-                break;
-                
-            default:
-                view.glyphImage = UIImage(named: "annotation_glyph_car")
-            }
+        }
+        
+        switch(identifier) {
+        case .pickup:
+            view.glyphImage = UIImage(named: "annotation_glyph_home")
+            view.markerTintColor = UIColor(hex: 0x009688)
+            break;
+            
+        case .dropoff:
+            view.markerTintColor = UIColor(hex: 0xFFA000)
+            break;
+            
+        case .driver:
+            view.image = UIImage(named: "car")
+            view.glyphImage = nil
+            view.glyphTintColor = .clear
+            view.tintColor = .clear
+            view.markerTintColor = .clear
+            view.transform = (view.transform.rotated(by: -CGFloat.pi/3))
+            break
+//            default:
+//                view.glyphImage = UIImage(named: "annotation_glyph_car")
         }
         return view
     }
@@ -538,6 +549,7 @@ extension MainViewController: MKMapViewDelegate {
          print("End status called")
          }*/
         getAddressForLatLng(location: mapView.camera.centerCoordinate)
+        
         GetDriversLocations(location: mapView.camera.centerCoordinate).execute() { result in
             switch result {
             case .success(let response):
@@ -731,5 +743,32 @@ extension UISearchBar
         let textFieldInsideSearchBarLabel = textFieldInsideSearchBar!.value(forKey: "placeholderLabel") as? UILabel
         textFieldInsideSearchBarLabel?.textColor = color
     }
+}
+
+extension UIImage {
+
+    func maskWithColor(color: UIColor) -> UIImage? {
+        let maskImage = cgImage!
+
+        let width = size.width
+        let height = size.height
+        let bounds = CGRect(x: 0, y: 0, width: width, height: height)
+
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
+        let context = CGContext(data: nil, width: Int(width), height: Int(height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: bitmapInfo.rawValue)!
+
+        context.clip(to: bounds, mask: maskImage)
+        context.setFillColor(color.cgColor)
+        context.fill(bounds)
+
+        if let cgImage = context.makeImage() {
+            let coloredImage = UIImage(cgImage: cgImage)
+            return coloredImage
+        } else {
+            return nil
+        }
+    }
+
 }
 
