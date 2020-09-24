@@ -43,6 +43,9 @@ def common_pods
   
   # Componente de review com estrelas
   pod 'Cosmos', '~> 22.1.0'
+  
+  # Busca de endereços do Google
+  pod 'GooglePlaces', '~> 3.9.0'
 end
 
 target 'rider' do
