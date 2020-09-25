@@ -112,7 +112,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     //MARK: Setup
     private func setupLayout() {
-        
+        #if DEBUG || STAG
+            print("DEBUG OR STAG")
+        #elseif PROD || RELEASE
+            print("PROD OR RELEASE")
+        #endif
+
     }
     
     private func setupFirebase() {
