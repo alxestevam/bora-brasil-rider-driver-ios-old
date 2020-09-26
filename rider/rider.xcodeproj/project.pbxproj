@@ -154,7 +154,6 @@
 		8582B53225170B5100256963 /* ReviewInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8582B53125170B5100256963 /* ReviewInfoCell.swift */; };
 		8582B5342518008B00256963 /* FormatterUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8582B5332518008B00256963 /* FormatterUtil.swift */; };
 		8582B536251803AA00256963 /* Double+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8582B535251803AA00256963 /* Double+Util.swift */; };
-		85A59356251D8026006F4569 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85A59355251D8026006F4569 /* GoogleService-Info.plist */; };
 		85B4209B251837AE0001C017 /* WaitingForPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B4209A251837AE0001C017 /* WaitingForPaymentViewController.swift */; };
 		85B4209E2518389E0001C017 /* WaitingForPayment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 85B4209C2518389E0001C017 /* WaitingForPayment.xib */; };
 		85B420A0251839C90001C017 /* cash.json in Resources */ = {isa = PBXBuildFile; fileRef = 85B4209F251839C90001C017 /* cash.json */; };
@@ -354,7 +353,7 @@
 		8582B53125170B5100256963 /* ReviewInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewInfoCell.swift; sourceTree = "<group>"; };
 		8582B5332518008B00256963 /* FormatterUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FormatterUtil.swift; path = ../../../common/Util/FormatterUtil.swift; sourceTree = "<group>"; };
 		8582B535251803AA00256963 /* Double+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Util.swift"; sourceTree = "<group>"; };
-		85A59355251D8026006F4569 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		85A5951F2520035D006F4569 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		85B4209A251837AE0001C017 /* WaitingForPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingForPaymentViewController.swift; sourceTree = "<group>"; };
 		85B4209D2518389E0001C017 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/WaitingForPayment.xib; sourceTree = "<group>"; };
 		85B4209F251839C90001C017 /* cash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cash.json; sourceTree = "<group>"; };
@@ -739,7 +738,6 @@
 				62B6FD9C1F70F70A00F66611 /* Info.plist */,
 				85B422D32518F7590001C017 /* Work.gpx */,
 				62972937223BB4D30084E2BB /* car.json */,
-				85A59355251D8026006F4569 /* GoogleService-Info.plist */,
 				85245A44250EBE0C001D236A /* OCRAStd.otf */,
 				547353DB24AACED700EDDDD3 /* Localizable.strings */,
 			);
@@ -840,6 +838,7 @@
 		85333FA125163A81009C9B2E /* prod */ = {
 			isa = PBXGroup;
 			children = (
+				85A5951F2520035D006F4569 /* GoogleService-Info.plist */,
 			);
 			path = prod;
 			sourceTree = "<group>";
@@ -915,6 +914,7 @@
 				62F4D8BB20153FEF000933DA /* CopyFiles */,
 				627B16F521A9C82200FF0953 /* ShellScript */,
 				6253A96421AB39E000A45287 /* Embed App Extensions */,
+				85A594CF251FFC6E006F4569 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -986,7 +986,6 @@
 				8582B4FA2516DF8B00256963 /* ReviewHeaderView.xib in Resources */,
 				62B6FDA11F70F8FD00F66611 /* background.jpg in Resources */,
 				547353D224AACEAB00EDDDD3 /* FavoriteAddressDialogViewController.xib in Resources */,
-				85A59356251D8026006F4569 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1006,6 +1005,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 6fe7406338d93004f234b73f0f196f961b46dde3 12a9dc122c1a8d4d3895958bf28039e80f9af78053667f7c60233c04a2d2c0f2\n";
+		};
+		85A594CF251FFC6E006F4569 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Name of the resource we're selectively copying\nGOOGLESERVICE_INFO_PLIST=GoogleService-Info.plist\n\n# Get references to dev and prod versions of the GoogleService-Info.plist\n# NOTE: These should only live on the file system and should NOT be part of the target (since we'll be adding them to the target manually)\nGOOGLESERVICE_INFO_DEBUG=${PROJECT_DIR}/${TARGET_NAME}/Firebase/debug/${GOOGLESERVICE_INFO_PLIST}\nGOOGLESERVICE_INFO_STAGING=${PROJECT_DIR}/${TARGET_NAME}/Firebase/staging/${GOOGLESERVICE_INFO_PLIST}\nGOOGLESERVICE_INFO_PROD=${PROJECT_DIR}/${TARGET_NAME}/Firebase/prod/${GOOGLESERVICE_INFO_PLIST}\n\n# Make sure the dev version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_DEBUG}\"\nif [ ! -f $GOOGLESERVICE_INFO_DEBUG ]\nthen\necho \"No Development GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\nexit 1\nfi\n\n# Make sure the staging version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_STAGING}\"\nif [ ! -f $GOOGLESERVICE_INFO_STAGING ]\nthen\necho \"No Staging GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\nexit 1\nfi\n\n# Make sure the prod version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_PROD}\"\nif [ ! -f $GOOGLESERVICE_INFO_PROD ]\nthen\necho \"No Production GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\nexit 1\nfi\n\n\n# Get a reference to the destination location for the GoogleService-Info.plist\nPLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\necho \"Will copy ${GOOGLESERVICE_INFO_PLIST} to final destination: ${PLIST_DESTINATION}\"\n\n# Copy over the prod GoogleService-Info.plist for Release builds\nif [ \"${CONFIGURATION}\" == \"Release\" ]\nthen\n    echo \"Using ${GOOGLESERVICE_INFO_PROD}\"\n    cp \"${GOOGLESERVICE_INFO_PROD}\" \"${PLIST_DESTINATION}\"\nelse if [ \"${CONFIGURATION}\" == \"Staging\" ]\nthen \n    echo \"Using ${GOOGLESERVICE_INFO_STAGING}\"\n    cp \"${GOOGLESERVICE_INFO_STAGING}\" \"${PLIST_DESTINATION}\"\nelse\n    echo \"Using ${GOOGLESERVICE_INFO_DEBUG}\"\n    cp \"${GOOGLESERVICE_INFO_DEBUG}\" \"${PLIST_DESTINATION}\"\nfi\nfi\n";
 		};
 		880F0E319D5388DB52400AC0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1364,7 +1380,7 @@
 				CODE_SIGN_ENTITLEMENTS = rider/rider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = HP5FNQKYCJ;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1459,7 +1475,7 @@
 				CODE_SIGN_ENTITLEMENTS = rider/rider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = HP5FNQKYCJ;
 				INFOPLIST_FILE = "$(SRCROOT)/rider/Info.plist";
@@ -1546,7 +1562,7 @@
 				CODE_SIGN_ENTITLEMENTS = rider/rider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = HP5FNQKYCJ;
 				GCC_PREPROCESSOR_DEFINITIONS = (

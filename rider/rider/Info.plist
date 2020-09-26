@@ -27,26 +27,6 @@
 			<string>Firebase</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.683637134618-su8jn1nhfh1kn7i09m4r40ogj2sh0fcc</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>Braintree</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>com.innomalist.taxi.rider.payments</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>Firebase</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
 				<string>com.googleusercontent.apps.683637134618-0ogn9klug7cpre3esd1ojlpfol3m3fb3</string>
 			</array>
 		</dict>
@@ -58,6 +38,16 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.683637134618-80hgiil47g78ggmqvcq78tkijr7cf8ft</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>Firebase Prod</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.683637134618-su8jn1nhfh1kn7i09m4r40ogj2sh0fcc</string>
 			</array>
 		</dict>
 	</array>
