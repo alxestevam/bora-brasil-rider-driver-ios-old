@@ -7,7 +7,6 @@
 
 import UIKit
 import MapKit
-
 import StatusAlert
 import Contacts
 
@@ -31,10 +30,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     @IBOutlet weak var containerServices: UIView!
     @IBOutlet weak var leftBarButton: UIBarButtonItem!
     @IBOutlet weak var buttonFavorites: UIBarButtonItem!
-    
+    var resultsViewController: GMSAutocompleteResultsViewController?
     let message = NSLocalizedString("Message", comment: "")
     let allright = NSLocalizedString("Allright", comment: "")
     var directionsResponse: DirectionsResponse? = nil
+    var selectedPlaceId: String? = nil
+    var searchingPlaces: Bool = false
     
     private var originalPullUpControllerViewSize: CGSize = .zero
     private func makePaymentMethodControllerIfNeeded() -> SelectPaymentMethodViewController {
@@ -56,6 +57,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: UIResponder.keyboardWillShowNotification, object: nil)
         setupLayout()
         buttonAddDestination.isHidden = true
         buttonConfirmFinalDestination.isHidden = true
@@ -67,11 +70,31 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         pinAnnotation.frame = CGRect(x: (self.view.frame.width / 2) - 8, y: self.view.frame.height / 2 - 8, width: 32, height: 39)
         pinAnnotation.pinTintColor = UIApplication.shared.keyWindow?.tintColor
         map.addSubview(pinAnnotation)
-        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "SuggestionsTableTableViewController") as! SuggestionsTableTableViewController
-        locationSearchTable.callback = self
-        searchController = UISearchController(searchResultsController: locationSearchTable)
-        searchController?.searchResultsUpdater = locationSearchTable
-        searchController?.hidesNavigationBarDuringPresentation = false
+        //        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "SuggestionsTableTableViewController") as! SuggestionsTableTableViewController
+        //        locationSearchTable.callback = self
+        //        searchController = UISearchController(searchResultsController: locationSearchTable)
+        //        searchController?.searchResultsUpdater = locationSearchTable
+        //        searchController?.hidesNavigationBarDuringPresentation = false
+        //        searchController?.searchBar.tintColor = .white
+        //        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        //        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white], for: .normal)
+        //        if #available(iOS 13.0, *) {
+        //            searchController?.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Buscar", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(0.5)])
+        //        } else {
+        //            // Fallback on earlier versions
+        //            searchController.searchBar.setPlaceholderTextColorTo(color: UIColor.white.withAlphaComponent(0.5))
+        //
+        //        }
+        //        searchController.searchBar.setMagnifyingGlassColorTo(color: UIColor.white)
+        //        searchController.searchBar.setClearButtonColorTo(color: UIColor.white)
+        //        definesPresentationContext = true
+        //        self.navigationItem.searchController = searchController
+        
+        
+        resultsViewController = GMSAutocompleteResultsViewController()
+        resultsViewController?.delegate = self
+        searchController = UISearchController(searchResultsController: resultsViewController)
+        searchController?.searchResultsUpdater = resultsViewController
         searchController?.searchBar.tintColor = .white
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white], for: .normal)
@@ -80,13 +103,23 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         } else {
             // Fallback on earlier versions
             searchController.searchBar.setPlaceholderTextColorTo(color: UIColor.white.withAlphaComponent(0.5))
-
+            
         }
         searchController.searchBar.setMagnifyingGlassColorTo(color: UIColor.white)
         searchController.searchBar.setClearButtonColorTo(color: UIColor.white)
-
+        searchController.searchBar.delegate = self
+        
+        // Put the search bar in the navigation bar.
+        searchController?.searchBar.sizeToFit()
+        navigationItem.titleView = searchController?.searchBar
+        
+        // When UISearchController presents the results view, present it in
+        // this view controller, not one further up the chain.
         definesPresentationContext = true
-        self.navigationItem.searchController = searchController
+        
+        // Prevent the navigation bar from being hidden when searching.
+        searchController?.hidesNavigationBarDuringPresentation = false
+        
         GetCurrentRequestInfo().execute() { result in
             switch result {
             case .success(let response):
@@ -363,7 +396,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     func AddDestination() {
         let ann = MKPointAnnotation()
         ann.coordinate = map.camera.centerCoordinate
-        ann.title = (self.navigationItem.searchController?.searchBar.text)!
+        ann.title = searchController.searchBar.text ?? ""
         pointsAnnotations.append(ann)
         map.addAnnotation(ann)
         let cameraTarget = CLLocationCoordinate2D(latitude: map.camera.centerCoordinate.latitude + 0.0015, longitude: map.camera.centerCoordinate.longitude)
@@ -428,15 +461,37 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     func getAddressForLatLng(location: CLLocationCoordinate2D) {
         let geocoder = CLGeocoder()
         let loc = CLLocation(latitude: location.latitude, longitude: location.longitude)
-        geocoder.reverseGeocodeLocation(loc) { (placemarks, error) in
-            if error == nil {
-                let firstLocation = placemarks?[0]
-                let formatter = CNPostalAddressFormatter()
-                let addressString = formatter.string(from: firstLocation!.postalAddress!)
-                self.navigationItem.searchController?.searchBar.text = addressString
-                self.buttonConfirmPickup.isEnabled = true
-                self.buttonAddDestination.isEnabled = true
-                self.buttonConfirmFinalDestination.isEnabled = true
+        
+        if let placeID = selectedPlaceId {
+                let placesClient = GMSPlacesClient.shared()
+                selectedPlaceId = nil
+                placesClient.lookUpPlaceID(placeID) { (place, error) in
+                    if let error = error {
+                        print("lookup place id query error: \(error.localizedDescription)")
+                        return
+                    }
+
+                    guard let place = place else {
+                        return
+                    }
+                    
+                    if (!self.searchingPlaces) { self.searchController.searchBar.text = place.formattedAddress }
+                    self.buttonConfirmPickup.isEnabled = true
+                    self.buttonAddDestination.isEnabled = true
+                    self.buttonConfirmFinalDestination.isEnabled = true
+                }
+            
+        } else {
+            geocoder.reverseGeocodeLocation(loc) { (placemarks, error) in
+                if error == nil {
+                    let firstLocation = placemarks?[0]
+                    let formatter = CNPostalAddressFormatter()
+                    let addressString = formatter.string(from: firstLocation!.postalAddress!)
+                    if (!self.searchingPlaces) { self.searchController.searchBar.text = addressString }
+                    self.buttonConfirmPickup.isEnabled = true
+                    self.buttonAddDestination.isEnabled = true
+                    self.buttonConfirmFinalDestination.isEnabled = true
+                }
             }
         }
     }
@@ -460,23 +515,39 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
 
 extension MainViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
+        //searchBar.resignFirstResponder()
+        print("searchBarCancelButtonClicked")
+        searchingPlaces = false
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchBar.setShowsCancelButton(true, animated: true)
+        //searchBar.setShowsCancelButton(true, animated: true)
+        print("searchBarTextDidBeginEditing")
+        searchingPlaces = true
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        searchBar.setShowsCancelButton(false, animated: true)
+        //searchBar.setShowsCancelButton(false, animated: true)
+        print("searchBarTextDidEndEditing")
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        dismiss(animated: true, completion: nil)
+        //searchBar.resignFirstResponder()
+        //dismiss(animated: true, completion: nil)
         
         // The user tapped search on the `UISearchBar` or on the keyboard. Since they didn't
         // select a row with a suggested completion, run the search with the query text in the search field.
+        
+        print("searchBarSearchButtonClicked")
+    }
+    
+    @objc func keyboardWillAppear() {
+        //Do something here
+    }
+
+    @objc func keyboardWillDisappear() {
+        //Do something here
+        searchingPlaces = false
     }
 }
 
@@ -544,12 +615,12 @@ extension MainViewController: MKMapViewDelegate {
             view.glyphTintColor = .clear
             view.tintColor = .clear
             view.markerTintColor = .clear
-           
+            
             view.transform = (view.transform.rotated(by: CGFloat(self.map.getHeadingForDirection(fromCoordinate: oldCoordinate, toCoordinate: newCoordinate))
-))
+            ))
             break
-//            default:
-//                view.glyphImage = UIImage(named: "annotation_glyph_car")
+        //            default:
+        //                view.glyphImage = UIImage(named: "annotation_glyph_car")
         }
         return view
     }
@@ -567,7 +638,6 @@ extension MainViewController: MKMapViewDelegate {
          print("End status called")
          }*/
         getAddressForLatLng(location: mapView.camera.centerCoordinate)
-        
         GetDriversLocations(location: mapView.camera.centerCoordinate).execute() { result in
             switch result {
             case .success(let response):
@@ -665,7 +735,7 @@ extension UIViewController {
 }
 
 extension UISearchBar {
-
+    
     func setMagnifyingGlassColorTo(color: UIColor) {
         // Search Icon
         let textFieldInsideSearchBar = self.value(forKey: "searchField") as? UITextField
@@ -673,7 +743,7 @@ extension UISearchBar {
         glassIconView?.image = glassIconView?.image?.withRenderingMode(.alwaysTemplate)
         glassIconView?.tintColor = color
     }
-
+    
     func setClearButtonColorTo(color: UIColor) {
         // Clear Button
         let textFieldInsideSearchBar = self.value(forKey: "searchField") as? UITextField
@@ -681,7 +751,7 @@ extension UISearchBar {
         crossIconView?.setImage(crossIconView?.currentImage?.withRenderingMode(.alwaysTemplate), for: .normal)
         crossIconView?.tintColor = color
     }
-
+    
     func setPlaceholderTextColorTo(color: UIColor) {
         let textFieldInsideSearchBar = self.value(forKey: "searchField") as? UITextField
         textFieldInsideSearchBar?.textColor = color
@@ -691,27 +761,69 @@ extension UISearchBar {
 }
 
 extension UIImage {
-
+    
     func maskWithColor(color: UIColor) -> UIImage? {
         let maskImage = cgImage!
-
+        
         let width = size.width
         let height = size.height
         let bounds = CGRect(x: 0, y: 0, width: width, height: height)
-
+        
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
         let context = CGContext(data: nil, width: Int(width), height: Int(height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: bitmapInfo.rawValue)!
-
+        
         context.clip(to: bounds, mask: maskImage)
         context.setFillColor(color.cgColor)
         context.fill(bounds)
-
+        
         if let cgImage = context.makeImage() {
             let coloredImage = UIImage(cgImage: cgImage)
             return coloredImage
         } else {
             return nil
         }
+    }
+}
+
+
+//MARK: - GMSAutocompleteViewControllerDelegate
+// Handle the user's selection.
+extension MainViewController: GMSAutocompleteResultsViewControllerDelegate {
+    
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didAutocompleteWith place: GMSPlace) {
+        
+        searchController?.isActive = false
+        // Do something with the selected place.
+        print("Place name: \(place.name ?? "")")
+        print("Place address: \(place.formattedAddress ?? "")")
+        print("Place attributions: \(place.attributions ?? NSAttributedString(string: ""))")
+        selectedPlaceId = place.placeID
+        searchController.searchBar.text = place.formattedAddress
+        searchingPlaces = false
+        self.coordinateSelected(place.coordinate)
+    }
+    
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
+                           didFailAutocompleteWithError error: Error){
+        print("Error: ", error.localizedDescription)
+    }
+    
+    // Turn the network activity indicator on and off again.
+    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+    
+    
+    func resultsController(_ resultsController: GMSAutocompleteResultsViewController, didSelect prediction: GMSAutocompletePrediction) -> Bool {
+        return true
+    }
+    
+    func coordinateSelected(_ cLLocationCoordinate2D: CLLocationCoordinate2D) {
+        self.map.setCenter(cLLocationCoordinate2D, animated: true)
     }
 }

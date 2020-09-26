@@ -6,12 +6,13 @@
 //
 
 import UIKit
-@_exported import Firebase
 import Kingfisher
 import Crashlytics
 import Fabric
-@_exported import FirebaseUI
 import SocketIO
+@_exported import Firebase
+@_exported import FirebaseUI
+@_exported import GooglePlaces
 
 
 //MARK: Global Properties
@@ -57,6 +58,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.setupFirebase()
+        self.setupGooglePlacesAPI()
         self.setupLanguage()
         self.launchOptions = launchOptions
         self.window?.tintColor = UIColor(hex: 0x0A0A32)
@@ -122,6 +124,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     private func setupFirebase() {
         FirebaseApp.configure()
+    }
+    
+    private func setupGooglePlacesAPI() {
+        GMSPlacesClient.provideAPIKey("AIzaSyCXgycKGXvt1Su0zw6ZuPNICQJHfI-4Zc4")
     }
     
     private func setupLanguage() {
