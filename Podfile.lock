@@ -74,14 +74,10 @@ PODS:
     - nanopb (~> 1.30905.0)
   - GoogleDataTransport (7.2.0):
     - nanopb (~> 1.30905.0)
-<<<<<<< HEAD
-  - GoogleUtilities/AppDelegateSwizzler (6.7.2):
-=======
   - GoogleMaps/Base (3.9.0)
   - GooglePlaces (3.9.0):
     - GoogleMaps/Base (= 3.9.0)
-  - GoogleUtilities/AppDelegateSwizzler (6.7.1):
->>>>>>> feature/BB-315-adicionar-busca-de-endereços-do-g
+  - GoogleUtilities/AppDelegateSwizzler (6.7.2):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
     - GoogleUtilities/Network
@@ -138,7 +134,7 @@ DEPENDENCIES:
   - Firebase/Core (~> 6.29.0)
   - Firebase/Messaging (~> 6.29.0)
   - FirebaseUI/Phone (~> 8.0)
-  - GooglePlaces
+  - GooglePlaces (~> 3.9.0)
   - iCarousel (~> 1.8.3)
   - ImageRow (~> 4.0.0)
   - Kingfisher (~> 5.14.1)
@@ -213,15 +209,10 @@ SPEC CHECKSUMS:
   FirebaseMessaging: 942cfe05b4f53c95ab8959395ca35c200398b2f0
   FirebaseUI: 9df84336a56f1d755ae4c37d5885c237d3084b6b
   GoogleAppMeasurement: 345d365fd105e6682bf5084783a5352a3db26820
-<<<<<<< HEAD
   GoogleDataTransport: 672fb0ce96fe7f7f31d43672fca62ad2c9c86f7b
-  GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
-=======
-  GoogleDataTransport: af0c79193dc59acd37630b4833d0dc6912ae6bd5
   GoogleMaps: 4b5346bddfe6911bb89155d43c903020170523ac
   GooglePlaces: 1634d019549b969d40fe0ccb0b9513055adebe01
-  GoogleUtilities: e121a3867449ce16b0e35ddf1797ea7a389ffdf2
->>>>>>> feature/BB-315-adicionar-busca-de-endereços-do-g
+  GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
   ImageRow: e65b2e1a33f89062bf2a553a2aad61d975eb7428
