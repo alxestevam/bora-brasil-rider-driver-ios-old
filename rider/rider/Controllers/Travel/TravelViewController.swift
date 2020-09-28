@@ -10,6 +10,7 @@ import Kingfisher
 import UIKit
 import MapKit
 import MarqueeLabel
+import Toast_Swift
 
 class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDelegate {
     @IBOutlet weak var map: MKMapView!
@@ -46,6 +47,7 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
         NotificationCenter.default.addObserver(self, selector: #selector(self.onServiceFinished), name: .serviceFinished, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.onTravelInfoReceived), name: .travelInfoReceived, object: nil)
         NotificationCenter.default.addObserver(self, selector:#selector(self.requestRefresh), name: .connectedAfterForeground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.messageReceived), name: .messageReceived, object: nil)
         
         let notProvided = " - "
         self.lblDriverName.text = "\(Request.shared.driver?.firstName ?? notProvided) \(Request.shared.driver?.lastName ?? notProvided)"
@@ -294,6 +296,15 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
             })
             self.present(alert, animated: true)
         }
+    }
+    
+    @objc func messageReceived(notification: Notification) {
+        let message: ChatMessage = notification.object as! ChatMessage
+        
+        self.view.hideAllToasts()
+        
+        // toast presented with multiple options and with a completion closure
+        self.view.makeToast(message.content, duration: 3.0, position: .center, title: "Nova mensagem recebida", image: nil, completion: nil)
     }
     
     @IBAction func onCancelTapped(_ sender: UIButton) {

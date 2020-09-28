@@ -46,6 +46,9 @@ def common_pods
   
   # Busca de endereços do Google
   pod 'GooglePlaces', '~> 3.9.0'
+  
+  # Toast view feedback
+  pod 'Toast-Swift', '~> 5.0.1'
 end
 
 target 'rider' do

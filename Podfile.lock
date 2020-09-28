@@ -123,6 +123,7 @@ PODS:
   - Starscream (3.1.1)
   - StatusAlert (1.1.1)
   - SwiftyAttributes (5.1.1)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Charts (~> 3.5.0)
@@ -145,6 +146,7 @@ DEPENDENCIES:
   - Socket.IO-Client-Swift (~> 15.2.0)
   - StatusAlert (~> 1.1.1)
   - SwiftyAttributes (~> 5.1.1)
+  - Toast-Swift (~> 5.0.1)
 
 SPEC REPOS:
   trunk:
@@ -182,6 +184,7 @@ SPEC REPOS:
     - Starscream
     - StatusAlert
     - SwiftyAttributes
+    - Toast-Swift
 
 EXTERNAL SOURCES:
   Eureka:
@@ -229,7 +232,8 @@ SPEC CHECKSUMS:
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   StatusAlert: a18ec3c33d36a06d4479c1f2b15ffac67aaf7ab1
   SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 349e86769ba9812e15b5f8c7c82a70901d670992
+PODFILE CHECKSUM: 7e3236a8b9c2ec3c3af0962e1bf92c6f8bf6ccd0
 
 COCOAPODS: 1.9.3
