@@ -10,7 +10,8 @@ import Foundation
 
 class Config {
     //static var Backend: String = "http://192.168.0.26:8080/" // Local
-
+    //34.71.176.212 dev // https://dev.meubbmu.com.br/
+    
     #if DEBUG || STAG
         static var Backend: String = "http://35.247.213.217:8080/"
     #elseif PROD || RELEASE

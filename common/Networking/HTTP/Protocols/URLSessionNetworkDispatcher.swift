@@ -26,7 +26,7 @@ public struct URLSessionNetworkDispatcher: HTTPDispatcher {
                 completionHandler(.failure(HTTPStatusCode.Networking))
                 return
             }
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+            if let httpStatus = response as? HTTPURLResponse, !(200 ... 299).contains(httpStatus.statusCode) {
                 guard let error = HTTPStatusCode(rawValue: httpStatus.statusCode) else {
                     completionHandler(.failure(HTTPStatusCode.Unknown))
                     return

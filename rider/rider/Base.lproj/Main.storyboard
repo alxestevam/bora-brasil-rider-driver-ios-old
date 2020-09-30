@@ -537,7 +537,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="327" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFB-cb-R2R" customClass="CosmosView" customModule="Cosmos">
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wFB-cb-R2R" customClass="CosmosView" customModule="Cosmos">
                                                     <rect key="frame" x="48.5" y="4" width="230" height="44.5"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
@@ -2004,9 +2004,6 @@
         </designable>
         <designable name="w6Z-5H-pYJ">
             <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="wFB-cb-R2R">
-            <size key="intrinsicContentSize" width="230" height="42"/>
         </designable>
     </designables>
     <resources>

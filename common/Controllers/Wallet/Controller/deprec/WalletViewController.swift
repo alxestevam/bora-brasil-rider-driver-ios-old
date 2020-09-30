@@ -8,6 +8,8 @@
 import UIKit
 import Eureka
 
+
+@available(*, deprecated, message: "Use WalletViewCardCellV3 instead")
 class WalletViewController: FormViewController {
 //    var paymentField: STPPaymentCardTextField?
 //    var amount: Double?

@@ -5,7 +5,7 @@ PODS:
   - Cosmos (22.1.0)
   - Crashlytics (3.14.0):
     - Fabric (~> 1.10.2)
-  - Eureka (5.2.1)
+  - Eureka (5.3.1)
   - Fabric (1.10.2)
   - Firebase/Analytics (6.29.0):
     - Firebase/Core
@@ -129,7 +129,7 @@ DEPENDENCIES:
   - Charts (~> 3.5.0)
   - Cosmos (~> 22.1.0)
   - Crashlytics (~> 3.14.0)
-  - Eureka (from `https://github.com/xmartlabs/Eureka.git`, branch `xcode12`)
+  - Eureka (~> 5.3.1)
   - Fabric (~> 1.10.2)
   - Firebase/Analytics (~> 6.29.0)
   - Firebase/Core (~> 6.29.0)
@@ -153,6 +153,7 @@ SPEC REPOS:
     - Charts
     - Cosmos
     - Crashlytics
+    - Eureka
     - Fabric
     - Firebase
     - FirebaseAnalytics
@@ -186,21 +187,11 @@ SPEC REPOS:
     - SwiftyAttributes
     - Toast-Swift
 
-EXTERNAL SOURCES:
-  Eureka:
-    :branch: xcode12
-    :git: https://github.com/xmartlabs/Eureka.git
-
-CHECKOUT OPTIONS:
-  Eureka:
-    :commit: 5c54e2607632ce586010e50e91d9adcb6bb3909e
-    :git: https://github.com/xmartlabs/Eureka.git
-
 SPEC CHECKSUMS:
   Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
   Cosmos: 2795b36ad4bbea1af3050d6d65576ed63875f86a
   Crashlytics: 9220f5bc89e7a618df411b4f639389dbfb0e03d2
-  Eureka: c883105488e05bc65539f583246ecf9657cabbfe
+  Eureka: 859877ab1e85661b6b7e810015d430e937d9cc7d
   Fabric: ea977e3cd9c20425516d3dafd3bf8c941c51223f
   Firebase: 57957c8d6eb3d8b80a560b1dc58be24724b89ff2
   FirebaseAnalytics: aa522dce9fd93002ba1554467d23ce7092323000
@@ -234,6 +225,6 @@ SPEC CHECKSUMS:
   SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 7e3236a8b9c2ec3c3af0962e1bf92c6f8bf6ccd0
+PODFILE CHECKSUM: 082abc61c243de170ddeff33213747c624e112de
 
 COCOAPODS: 1.9.3

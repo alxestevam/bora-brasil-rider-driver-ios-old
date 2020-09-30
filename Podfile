@@ -9,9 +9,8 @@ def common_pods
   pod 'Firebase/Analytics', '~> 6.29.0'
   pod 'Firebase/Messaging', '~> 6.29.0'
   
-  #pod 'Eureka'
   # Formulários
-  pod 'Eureka', :git => 'https://github.com/xmartlabs/Eureka.git', :branch => 'xcode12'
+  pod 'Eureka', '~> 5.3.1'
   pod 'ImageRow', '~> 4.0.0'
   
   # Rastreamento de bugs

@@ -134,6 +134,7 @@ class WalletAddCardViewController: UIViewController {
     
     //MARK: Action
     @IBAction func addCard(_ sender: UIButton) {
+        self.view.endEditing(true)
         addCard()
     }
     
@@ -149,17 +150,15 @@ class WalletAddCardViewController: UIViewController {
         let month = String(self.card.cardValidity[NSRange(location: 0, length: 2)])
         let year = String(self.card.cardValidity[NSRange(location: 3, length: 2)])
         AddCard(cpf: cpf, holderName: self.card.cardHolderName ?? "", expirationMonth: month, expirationYear: year, cardNumber: self.card.cardNumber ?? "", securityCode: self.card.cardCryptogram ?? "").execute() { result in
-                   
-            defer {
-                LoadingOverlay.shared.hideOverlayView()
-            }
-            
+          
             switch result {
             case .success( _):
+                LoadingOverlay.shared.hideOverlayView()
                 if let compl = self.onChangeBlock { compl(nil, true) }
                 self.dismiss(animated: true, completion: nil)
                 
             case .failure( _):
+                LoadingOverlay.shared.hideOverlayView()
                 DialogBuilder.alertOnError(message: "Ocorreu um erro ao tentar cadastrar o cartão. Por favor, verifique os dados e tente novamente.")
             }
         }

@@ -1,22 +1,39 @@
 //
-//  WalletViewCardCell.swift
+//  WalletViewCardCellV2.swift
 //  rider
 //
-//  Created by Victor Baleeiro on 13/09/20.
+//  Created by Victor Baleeiro on 30/09/20.
 //  Copyright © 2020 minimal. All rights reserved.
 //
 
 import Foundation
 import UIKit
+import Eureka
 
-class WalletViewCardCell: UITableViewCell {
+
+//MARK: - Aditional View
+open class WalletViewCardCellV2: Cell<Bool>, CellType {
     
-    //MARK: Properties
+    //MARK: - Properties
     @IBOutlet weak var viewContent: UIView!
     
     
-    //MARK: Method
-    func setupCard(_ card: GetCardDetailResult) {
+    //MARK: - Init
+    public required init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+
+    
+    //MARK: - Setup/Lifecycle
+    open func setupCell(_ card: GetCardDetailResult) {
         
         // Creating a Credit Card object
         let cardObj = YRPaymentCreditCard(type: .custom(UIImage()), isEditing: false)
@@ -39,5 +56,30 @@ class WalletViewCardCell: UITableViewCell {
         cardObj.isUserInteractionEnabled = false
         cardObj.layoutSubviews()
         cardObj.layoutIfNeeded()
+    }
+    
+    open override func setup() {
+        super.setup()
+        selectionStyle = .none
+    }
+
+    open override func update() {
+        super.update()
+    }
+}
+
+
+// MARK: WalletCardRow
+open class _WalletCardRow: Row<WalletViewCardCellV2> {
+    required public init(tag: String?) {
+        super.init(tag: tag)
+        displayValueFor = nil
+    }
+}
+
+/// Boolean row that has a UISwitch as accessoryType
+public final class WalletCardRow: _WalletCardRow, RowType {
+    required public init(tag: String?) {
+        super.init(tag: tag)
     }
 }

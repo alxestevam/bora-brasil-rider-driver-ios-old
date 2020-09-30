@@ -10,23 +10,34 @@ import Foundation
 
 open class Color: UIColor {
     
-    // Vermelho
+    // MARK: - Red
     open class orange {
         static let rgb_255_152_0 = UIColor(red: 255/255, green: 152/255, blue: 0/255, alpha: 1)
         static let rgb_236_106_53 = UIColor(red: 236/255, green: 106/255, blue: 53/255, alpha: 1)
     }
     
+    
+    // MARK: - Gray
     open class gray {
         static let rgb_29_28_30 = UIColor(red: 0.29, green: 0.28, blue: 0.30, alpha: 1)
         static let rgb_240_240_240 = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
     }
     
+    
+    // MARK: - Green
     open class green {
         static let rgb_129_199_132 = UIColor(red: 129/255, green: 199/255, blue: 132/255, alpha: 1)
         static let rgb_56_142_60 = UIColor(red: 56/255, green: 142/255, blue: 60/255, alpha: 1)
     }
     
-    // MARK: Aux
+    
+    // MARK: - Red
+    open class red {
+        static let rgb_255_0_0 = UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1)
+    }
+    
+        
+    // MARK: - Aux
     static func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
 

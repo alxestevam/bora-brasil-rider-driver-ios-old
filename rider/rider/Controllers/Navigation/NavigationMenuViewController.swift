@@ -80,10 +80,13 @@ class NavigationMenuViewController : MenuViewController {
         guard let menuContainerViewController = self.menuContainerViewController else {
             return
         }
-        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WalletV2") as? WalletViewControllerV2 {
-            (menuContainerViewController.contentViewControllers[0] as! UINavigationController).pushViewController(vc, animated: true)
-            menuContainerViewController.hideSideMenu()
-        }
+//        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WalletV2") as? WalletViewControllerV2 {
+//            (menuContainerViewController.contentViewControllers[0] as! UINavigationController).pushViewController(vc, animated: true)
+//            menuContainerViewController.hideSideMenu()
+//        }
+        let vc = WalletRouter.build()
+        (menuContainerViewController.contentViewControllers[0] as! UINavigationController).pushViewController(vc, animated: true)
+        menuContainerViewController.hideSideMenu()
     }
     
     @IBAction func onCouponsClicked(_ sender: UIButton) {

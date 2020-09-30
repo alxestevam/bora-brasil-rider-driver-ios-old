@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+@available(*, deprecated, message: "Use WalletViewControllerV3 instead")
 class WalletViewControllerV2: UIViewController {
     
     //MARK: - Properties
@@ -53,6 +55,7 @@ class WalletViewControllerV2: UIViewController {
         self.btnAddCard.setTitleColor(.white, for: .selected)
         self.navigationItem.title = "Carteira"
     }
+    
     
     //MARK: - RequestHttp
     private func fetchCards() {

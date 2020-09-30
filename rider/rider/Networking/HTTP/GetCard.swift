@@ -31,7 +31,7 @@ struct GetCardResult: Codable {
     var cards: [GetCardDetailResult]
 }
 
-struct GetCardDetailResult: Codable {
+public struct GetCardDetailResult: Codable {
     
     var cardBrand: String?
     var last4Digits: String?
