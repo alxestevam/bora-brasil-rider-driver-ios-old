@@ -89,13 +89,13 @@ class NavigationMenuViewController : MenuViewController {
         menuContainerViewController.hideSideMenu()
     }
     
-    @IBAction func onCouponsClicked(_ sender: UIButton) {
-        guard let menuContainerViewController = self.menuContainerViewController else {
-            return
-        }
-        menuContainerViewController.contentViewControllers[0].performSegue(withIdentifier: "showCoupons", sender: nil)
-        menuContainerViewController.hideSideMenu()
-    }
+//    @IBAction func onCouponsClicked(_ sender: UIButton) {
+//        guard let menuContainerViewController = self.menuContainerViewController else {
+//            return
+//        }
+//        menuContainerViewController.contentViewControllers[0].performSegue(withIdentifier: "showCoupons", sender: nil)
+//        menuContainerViewController.hideSideMenu()
+//    }
     
     @IBAction func onPromotionsClicked(_ sender: UIButton) {
         guard let menuContainerViewController = self.menuContainerViewController else {

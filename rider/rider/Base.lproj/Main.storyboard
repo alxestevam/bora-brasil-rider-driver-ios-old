@@ -537,7 +537,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="327" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wFB-cb-R2R" customClass="CosmosView" customModule="Cosmos">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFB-cb-R2R" customClass="CosmosView" customModule="Cosmos">
                                                     <rect key="frame" x="48.5" y="4" width="230" height="44.5"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
@@ -1090,7 +1090,7 @@
                                 <rect key="frame" x="0.0" y="203" width="375" height="444"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="GY2-5e-kfy">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="noP-jE-cmr">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -1214,7 +1214,7 @@
                                                     <constraint firstItem="cX1-t7-gU5" firstAttribute="centerY" secondItem="O01-3L-E4e" secondAttribute="centerY" id="zry-IN-kXl"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fk-Kk-Q5j">
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fk-Kk-Q5j">
                                                 <rect key="frame" x="0.0" y="200" width="375" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5o-6b-HKZ">
@@ -1246,7 +1246,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k8K-uu-MYm">
-                                                <rect key="frame" x="0.0" y="250" width="375" height="50"/>
+                                                <rect key="frame" x="0.0" y="200" width="375" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQM-YS-pNa">
                                                         <rect key="frame" x="72" y="8" width="103" height="34"/>
@@ -1277,7 +1277,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZbY-2d-f50">
-                                                <rect key="frame" x="0.0" y="300" width="375" height="50"/>
+                                                <rect key="frame" x="0.0" y="250" width="375" height="50"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuProfile" translatesAutoresizingMaskIntoConstraints="NO" id="r2m-Ic-ySt">
                                                         <rect key="frame" x="20" y="7" width="36" height="36"/>
@@ -1307,7 +1307,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUD-VW-sK7">
-                                                <rect key="frame" x="0.0" y="350" width="375" height="50"/>
+                                                <rect key="frame" x="0.0" y="300" width="375" height="50"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuAbout" translatesAutoresizingMaskIntoConstraints="NO" id="Cz7-Wi-Z7s">
                                                         <rect key="frame" x="20" y="7" width="36" height="36"/>
@@ -1337,7 +1337,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRu-Ij-bWh">
-                                                <rect key="frame" x="0.0" y="400" width="375" height="50"/>
+                                                <rect key="frame" x="0.0" y="350" width="375" height="50"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuExit" translatesAutoresizingMaskIntoConstraints="NO" id="3XK-2Q-ZQF">
                                                         <rect key="frame" x="20" y="7" width="36" height="36"/>
@@ -2004,6 +2004,9 @@
         </designable>
         <designable name="w6Z-5H-pYJ">
             <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="wFB-cb-R2R">
+            <size key="intrinsicContentSize" width="230" height="42"/>
         </designable>
     </designables>
     <resources>
