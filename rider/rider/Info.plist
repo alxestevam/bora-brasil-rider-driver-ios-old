@@ -6,8 +6,6 @@
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
 	<string>$(PRODUCT_NAME)</string>
-    <key>UIUserInterfaceStyle</key>
-    <string>Light</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -114,5 +112,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>
