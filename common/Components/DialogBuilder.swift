@@ -11,8 +11,20 @@ public class DialogBuilder {
     public enum ButtonOptions {
         case OK_CANCEL, RETRY_CANCEL, OK
     }
+    
     public enum DialogResult {
         case OK, CANCEL, RETRY
+    }
+    
+    public static func getDialogForMessage(title: String, message:String, buttonTitle: String, completion:((DialogResult)->Void)?) -> UIAlertController {
+        // Prepare the popup assets
+        let dialog = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        dialog.addAction(UIAlertAction(title: buttonTitle, style: .default) { action in
+            if let c = completion {
+                c(.OK)
+            }
+        })
+        return dialog
     }
     
     public static func getDialogForMessage(message:String, completion:((DialogResult)->Void)?) -> UIAlertController {

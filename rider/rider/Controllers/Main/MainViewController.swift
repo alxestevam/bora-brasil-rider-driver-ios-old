@@ -313,6 +313,12 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
                 self.goBackFromServiceSelection()
                 
             case .failure(let error):
+                if error.status == .DriversUnavailable {
+                    let popup = DialogBuilder.getDialogForMessage(title: "Desculpa", message: "No momento não temos nenhum motorista disponível na sua região", buttonTitle: "OK", completion: nil)
+                    self.present(popup, animated: true, completion: nil)
+                    return
+                }
+                
                 error.showAlert()
             }
         }
