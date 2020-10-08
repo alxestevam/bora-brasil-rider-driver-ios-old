@@ -23,7 +23,7 @@ public final class Request: Codable, Hashable {
     public var requestTimestamp: Double?
     public var expectedTimestamp: Double?
     public var currency: String?
-    public var startTimestamp: Double?
+    public var startTimestamp: UInt64?
     public var etaPickup: Double?
     public var finishTimestamp: Double?
     public var driver: Driver?
@@ -43,6 +43,8 @@ public final class Request: Codable, Hashable {
     public var confirmationCode: Int?
     public var paymentType: PaymentType?
     public var finalCost: Double?
+    public var pickupTime: Int? // tempo em minutos
+    public var recalculatedTravelTime: Int? // tempo em minutos
 
     
     var finalCostEffectively: Double {
