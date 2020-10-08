@@ -34,6 +34,13 @@ struct FormatterUtil {
             return texto
         }
     }
+    
+    func miliToDate(mili: UInt64, dateFormatString: String) -> String {
+        let date = Date(timeIntervalSince1970: TimeInterval(mili/1000))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormatString
+        return dateFormatter.string(from: date)
+    }
 }
 
 
