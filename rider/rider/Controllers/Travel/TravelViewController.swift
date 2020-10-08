@@ -14,8 +14,8 @@ import Toast_Swift
 
 class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDelegate {
     @IBOutlet weak var map: MKMapView!
-    @IBOutlet weak var labelCost: UILabel!
-    @IBOutlet weak var labelTime: UILabel!
+    @IBOutlet weak var lblEstimatedArrivalTime: UILabel!
+    @IBOutlet weak var lblCost: UILabel!
     @IBOutlet weak var buttonCall: ColoredButton!
     @IBOutlet weak var buttonMessage: ColoredButton!
     @IBOutlet weak var buttonCancel: ColoredButton!
@@ -110,10 +110,46 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
 ////                self.labelCost.text = MyLocale.formattedCurrency(amount: cost, currency: Request.shared.currency!)
 ////            }
 //        }
+        
+        self.handleTravelCost()
+        self.handleTime()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.onEachSecond), userInfo: nil, repeats: true)
     }
     
+    private func handleTravelCost() {
+        
+        let request = Request.shared
+        self.lblCost.text = FormatterUtil.shared.stringFromValue(value: request.costBest ?? 0.0, monetaryFormat: true, decimalPrecision: 2)
+    }
+    
+    private func handleTime() {
+        
+        let request = Request.shared
+        if (request.status == .DriverAccepted) {
+            let args = request.pickupTime ?? 60/60
+            self.lblEstimatedArrivalTime.text = (args < 0 ) ? "Em breve" : String(format: "%2d min", args)
+            
+        } else if (request.status == .Started) {
+            
+            let startTimestamp = request.startTimestamp ?? 0
+            let recalculatedTravelTime = request.recalculatedTravelTime ?? 0
+
+            if (startTimestamp > 0) {
+                let estimatedArrive = startTimestamp + (UInt64)(recalculatedTravelTime * 1000)
+                self.lblEstimatedArrivalTime.text = FormatterUtil.shared.miliToDate(mili: estimatedArrive, dateFormatString: "HH:mm")
+                
+            } else {
+                lblEstimatedArrivalTime.text = "Calculando..."
+            }
+        }
+    }
+    
     @objc func selectedTabItem(sender: UISegmentedControl) {
+        defer {
+            self.handleTravelCost()
+            self.handleTime()
+        }
+        
         if sender.selectedSegmentIndex == 1 {
             viewDriver.isHidden = true
             viewStatistics.isHidden = false
@@ -135,22 +171,22 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
     }
     
     @objc func onEachSecond() {
-        let now = Date()
-        let etaInterval = Request.shared.startTimestamp != nil ? (Request.shared.startTimestamp! / 1000) + Double(Request.shared.durationBest!) : Request.shared.etaPickup ?? 0 / 1000
-        let etaTime = Date(timeIntervalSince1970: etaInterval)
-        if etaTime <= now {
-            if Request.shared.status == .Arrived {
-                labelTime.text = NSLocalizedString("Arrived", comment: "Driver Arrived text instead of time.")
-            } else {
-                labelTime.text = NSLocalizedString("Soon", comment: "When driver is coming later than expected.")
-            }
-            
-        } else {
-            let formatter = DateComponentsFormatter()
-            formatter.allowedUnits = [.minute, .second]
-            formatter.unitsStyle = .short
-            labelTime.text = formatter.string(from: now, to: etaTime)
-        }
+//        let now = Date()
+//        let etaInterval = Request.shared.startTimestamp != nil ? (Request.shared.startTimestamp! / 1000) + Double(Request.shared.durationBest!) : Request.shared.etaPickup ?? 0 / 1000
+//        let etaTime = Date(timeIntervalSince1970: etaInterval)
+//        if etaTime <= now {
+//            if Request.shared.status == .Arrived {
+//                lblCost.text = NSLocalizedString("Arrived", comment: "Driver Arrived text instead of time.")
+//            } else {
+//                lblCost.text = NSLocalizedString("Soon", comment: "When driver is coming later than expected.")
+//            }
+//
+//        } else {
+//            let formatter = DateComponentsFormatter()
+//            formatter.allowedUnits = [.minute, .second]
+//            formatter.unitsStyle = .short
+//            lblCost.text = formatter.string(from: now, to: etaTime)
+//        }
     }
     
     @objc private func requestRefresh() {
@@ -167,6 +203,12 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
     }
     
     private func refreshScreen(travel: Request = Request.shared, driverLocation: CLLocationCoordinate2D?) {
+        
+        defer {
+            self.handleTravelCost()
+            self.handleTime()
+        }
+        
         switch travel.status! {
         case .RiderCanceled, .DriverCanceled:
             _ =  NSLocalizedString("Success", comment: "")

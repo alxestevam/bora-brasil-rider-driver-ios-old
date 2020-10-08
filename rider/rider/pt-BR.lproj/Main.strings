@@ -18,7 +18,7 @@
 "3Fo-Yx-gKc.segmentTitles[0]" = "Informações do Motorista";
 
 /* Class = "UISegmentedControl"; 3Fo-Yx-gKc.segmentTitles[1] = "Request Info"; ObjectID = "3Fo-Yx-gKc"; */
-"3Fo-Yx-gKc.segmentTitles[1]" = "Solicite informações";
+"3Fo-Yx-gKc.segmentTitles[1]" = "Estatísticas";
 
 /* Class = "UIButton"; normalTitle = "Final Destination"; ObjectID = "4gk-mA-be8"; */
 "4gk-mA-be8.normalTitle" = "CONFIRMAR DESTINO";
@@ -96,10 +96,10 @@
 "UEa-fe-hJR.normalTitle" = "Entrar/Cadastrar";
 
 /* Class = "UILabel"; text = "cost"; ObjectID = "Ui8-Ju-y2t"; */
-"Ui8-Ju-y2t.text" = "custo";
+"Ui8-Ju-y2t.text" = "Custo de corrida";
 
 /* Class = "UILabel"; text = "ETA"; ObjectID = "W9y-W9-Pdi"; */
-"W9y-W9-Pdi.text" = "ETA";
+"W9y-W9-Pdi.text" = "Previsão de chegada";
 
 /* Class = "UINavigationItem"; title = "Ridy"; ObjectID = "WKC-Mu-F9o"; */
 "WKC-Mu-F9o.title" = "Bora Brasil";
