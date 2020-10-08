@@ -122,6 +122,9 @@
 		62DB4577232A438700B7722E /* FinishedServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DB4576232A438700B7722E /* FinishedServiceViewController.swift */; };
 		62E2A253230A72D4000848CE /* SuggestionsTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E2A252230A72D4000848CE /* SuggestionsTableTableViewController.swift */; };
 		8503504624E1D46D00B3EF05 /* FirebaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503504524E1D46D00B3EF05 /* FirebaseUtil.swift */; };
+		8509E2BD252F96DD006C726B /* UIImage+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509E2BC252F96DD006C726B /* UIImage+Util.swift */; };
+		8509E2BF252F9A60006C726B /* UITextField+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509E2BE252F9A60006C726B /* UITextField+Util.swift */; };
+		8509E2C1252F9DAA006C726B /* UISearchBar+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509E2C0252F9DAA006C726B /* UISearchBar+Util.swift */; };
 		850F3FED250A9E2100F6A4C3 /* Color+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850F3FEC250A9E2100F6A4C3 /* Color+Util.swift */; };
 		850F3FEF250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850F3FEE250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift */; };
 		85245A34250EAD37001D236A /* WalletAddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85245A33250EAD37001D236A /* WalletAddCardViewController.swift */; };
@@ -336,6 +339,9 @@
 		62DB4576232A438700B7722E /* FinishedServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedServiceViewController.swift; sourceTree = "<group>"; };
 		62E2A252230A72D4000848CE /* SuggestionsTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionsTableTableViewController.swift; sourceTree = "<group>"; };
 		8503504524E1D46D00B3EF05 /* FirebaseUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseUtil.swift; path = ../../../common/Util/FirebaseUtil.swift; sourceTree = "<group>"; };
+		8509E2BC252F96DD006C726B /* UIImage+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Util.swift"; sourceTree = "<group>"; };
+		8509E2BE252F9A60006C726B /* UITextField+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Util.swift"; sourceTree = "<group>"; };
+		8509E2C0252F9DAA006C726B /* UISearchBar+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Util.swift"; sourceTree = "<group>"; };
 		850F3FEC250A9E2100F6A4C3 /* Color+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Util.swift"; sourceTree = "<group>"; };
 		850F3FEE250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Util.swift"; sourceTree = "<group>"; };
 		85245A33250EAD37001D236A /* WalletAddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletAddCardViewController.swift; sourceTree = "<group>"; };
@@ -902,11 +908,14 @@
 				8580FEC2250959E900A6AC32 /* OptionalString.swift */,
 				85245A4A250EEF37001D236A /* String+Util.swift */,
 				859A25B92523A4180041F644 /* String+LocalizedKey.swift */,
+				8509E2BC252F96DD006C726B /* UIImage+Util.swift */,
 				8580FEC62509770500A6AC32 /* UINavigationController.swift */,
 				859A25B72523A38D0041F644 /* UIStoryboard+Instantiate.swift */,
 				85245A35250EAFFF001D236A /* UITableView+Util.swift */,
 				857A72F3250ABF360020DB15 /* UIViewController+Util.swift */,
 				857A72F5250AC2090020DB15 /* UIView+Util.swift */,
+				8509E2BE252F9A60006C726B /* UITextField+Util.swift */,
+				8509E2C0252F9DAA006C726B /* UISearchBar+Util.swift */,
 			);
 			name = Extensions;
 			path = ../../common/Extensions;
@@ -1213,6 +1222,7 @@
 				4CB5FC4C23A79FC700F2D5BC /* MenuTransitioningDelegate.swift in Sources */,
 				4CB5FC2823A79F2C00F2D5BC /* WriteComplaint.swift in Sources */,
 				62972936223B92EC0084E2BB /* LookingViewController.swift in Sources */,
+				8509E2C1252F9DAA006C726B /* UISearchBar+Util.swift in Sources */,
 				4CB5FC7B23A7A2D000F2D5BC /* PaymentGateway.swift in Sources */,
 				4CB5FC2123A79F2C00F2D5BC /* SendMessage.swift in Sources */,
 				4C215EAE238D20CB0013D720 /* UpdateProfile.swift in Sources */,
@@ -1235,6 +1245,7 @@
 				62B6FD8B1F70F6BA00F66611 /* AppDelegate.swift in Sources */,
 				6268EB8321942B3300681982 /* CouponsCollectionViewCell.swift in Sources */,
 				8503504624E1D46D00B3EF05 /* FirebaseUtil.swift in Sources */,
+				8509E2BD252F96DD006C726B /* UIImage+Util.swift in Sources */,
 				8582B5342518008B00256963 /* FormatterUtil.swift in Sources */,
 				4CB5FC6323A79FD100F2D5BC /* DialogBuilder.swift in Sources */,
 				4CB5FC6723A79FD100F2D5BC /* GradientView.swift in Sources */,
@@ -1339,6 +1350,7 @@
 				4CB5FC2523A79F2C00F2D5BC /* AvailablePaymentMethods.swift in Sources */,
 				4CB5FC3123A79F5900F2D5BC /* GetBraintreeClientToken.swift in Sources */,
 				4C215EB6238D27DC0013D720 /* DeleteAddress.swift in Sources */,
+				8509E2BF252F9A60006C726B /* UITextField+Util.swift in Sources */,
 				4CB5FC8023A7A2D000F2D5BC /* Transaction.swift in Sources */,
 				4CB5FC2023A79F2C00F2D5BC /* GetTravels.swift in Sources */,
 				8582B52E251700E100256963 /* ReviewStarCell.swift in Sources */,
@@ -1512,7 +1524,7 @@
 				CODE_SIGN_ENTITLEMENTS = rider/rider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = HP5FNQKYCJ;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1529,7 +1541,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.10;
+				MARKETING_VERSION = 0.0.11;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.passageiro;
 				PRODUCT_NAME = "BBMU Passageiro";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PROD;
@@ -1607,7 +1619,7 @@
 				CODE_SIGN_ENTITLEMENTS = rider/rider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = HP5FNQKYCJ;
 				INFOPLIST_FILE = "$(SRCROOT)/rider/Info.plist";
@@ -1616,7 +1628,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.10;
+				MARKETING_VERSION = 0.0.11;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.passageiro.debug;
 				PRODUCT_NAME = "Passageiro Debug";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1694,7 +1706,7 @@
 				CODE_SIGN_ENTITLEMENTS = rider/rider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = HP5FNQKYCJ;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1711,7 +1723,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.10;
+				MARKETING_VERSION = 0.0.11;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.passageiro.staging;
 				PRODUCT_NAME = "Passageiro Beta";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = STAG;

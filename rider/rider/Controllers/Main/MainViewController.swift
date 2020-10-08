@@ -70,26 +70,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         pinAnnotation.frame = CGRect(x: (self.view.frame.width / 2) - 8, y: self.view.frame.height / 2 - 8, width: 32, height: 39)
         pinAnnotation.pinTintColor = UIApplication.shared.keyWindow?.tintColor
         map.addSubview(pinAnnotation)
-        //        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "SuggestionsTableTableViewController") as! SuggestionsTableTableViewController
-        //        locationSearchTable.callback = self
-        //        searchController = UISearchController(searchResultsController: locationSearchTable)
-        //        searchController?.searchResultsUpdater = locationSearchTable
-        //        searchController?.hidesNavigationBarDuringPresentation = false
-        //        searchController?.searchBar.tintColor = .white
-        //        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        //        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white], for: .normal)
-        //        if #available(iOS 13.0, *) {
-        //            searchController?.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Buscar", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(0.5)])
-        //        } else {
-        //            // Fallback on earlier versions
-        //            searchController.searchBar.setPlaceholderTextColorTo(color: UIColor.white.withAlphaComponent(0.5))
-        //
-        //        }
-        //        searchController.searchBar.setMagnifyingGlassColorTo(color: UIColor.white)
-        //        searchController.searchBar.setClearButtonColorTo(color: UIColor.white)
-        //        definesPresentationContext = true
-        //        self.navigationItem.searchController = searchController
-        
         
         resultsViewController = GMSAutocompleteResultsViewController()
         resultsViewController?.delegate = self
@@ -100,13 +80,22 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white], for: .normal)
         if #available(iOS 13.0, *) {
             searchController?.searchBar.searchTextField.attributedPlaceholder = NSAttributedString(string: "Buscar", attributes: [NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(0.5)])
+            
         } else {
+            
             // Fallback on earlier versions
             searchController.searchBar.setPlaceholderTextColorTo(color: UIColor.white.withAlphaComponent(0.5))
-            
+            if let textField = searchController.searchBar.value(forKey: "searchField") as? UITextField {
+                textField.backgroundColor = UIColor.white.withAlphaComponent(0.2)
+                let backgroundView = textField.subviews.first
+                backgroundView?.layer.cornerRadius = 8
+                backgroundView?.layer.masksToBounds = true
+                textField.setClearButton(color: .white)
+            }
         }
-        searchController.searchBar.setMagnifyingGlassColorTo(color: UIColor.white)
-        searchController.searchBar.setClearButtonColorTo(color: UIColor.white)
+        
+        searchController.searchBar.setMagnifyingGlassColorTo(color: .white)
+        searchController.searchBar.setClearButtonColorTo(color: .white)
         searchController.searchBar.delegate = self
         
         // Put the search bar in the navigation bar.
@@ -469,23 +458,23 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         let loc = CLLocation(latitude: location.latitude, longitude: location.longitude)
         
         if let placeID = selectedPlaceId {
-                let placesClient = GMSPlacesClient.shared()
-                selectedPlaceId = nil
-                placesClient.lookUpPlaceID(placeID) { (place, error) in
-                    if let error = error {
-                        print("lookup place id query error: \(error.localizedDescription)")
-                        return
-                    }
-
-                    guard let place = place else {
-                        return
-                    }
-                    
-                    if (!self.searchingPlaces) { self.searchController.searchBar.text = place.formattedAddress }
-                    self.buttonConfirmPickup.isEnabled = true
-                    self.buttonAddDestination.isEnabled = true
-                    self.buttonConfirmFinalDestination.isEnabled = true
+            let placesClient = GMSPlacesClient.shared()
+            selectedPlaceId = nil
+            placesClient.lookUpPlaceID(placeID) { (place, error) in
+                if let error = error {
+                    print("lookup place id query error: \(error.localizedDescription)")
+                    return
                 }
+                
+                guard let place = place else {
+                    return
+                }
+                
+                if (!self.searchingPlaces) { self.searchController.searchBar.text = place.formattedAddress }
+                self.buttonConfirmPickup.isEnabled = true
+                self.buttonAddDestination.isEnabled = true
+                self.buttonConfirmFinalDestination.isEnabled = true
+            }
             
         } else {
             geocoder.reverseGeocodeLocation(loc) { (placemarks, error) in
@@ -550,7 +539,7 @@ extension MainViewController: UISearchBarDelegate {
     @objc func keyboardWillAppear() {
         //Do something here
     }
-
+    
     @objc func keyboardWillDisappear() {
         //Do something here
         searchingPlaces = false
