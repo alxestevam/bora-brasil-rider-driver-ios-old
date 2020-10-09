@@ -1,22 +1,23 @@
 //
-//  SelectPaymentMethodViewController.swift
+//  SelectPaymentMethodViewControllerV2.swift
 //  rider
 //
-//  Created by Victor Baleeiro on 18/09/20.
+//  Created by Victor Baleeiro on 09/10/20.
 //  Copyright © 2020 minimal. All rights reserved.
 //
 
 import Foundation
 import UIKit
 import PullUpController
+import Eureka
 
 
-protocol SelectPaymentMethodViewControllerDelegate: class{
+protocol SelectPaymentMethodViewControllerV2Delegate: class{
     func paymentCardSelected(_ card: GetCardDetailResult)
     func paymentMoneySelected()
 }
 
-class SelectPaymentMethodViewController: PullUpController {
+class SelectPaymentMethodViewControllerV2: PullUpController {
     
     enum InitialState {
         case contracted
@@ -28,7 +29,6 @@ class SelectPaymentMethodViewController: PullUpController {
     // MARK: - IBOutlets
     @IBOutlet private weak var visualEffectView: UIVisualEffectView!
     @IBOutlet private weak var btnMoneyPay: GradientButton!
-    @IBOutlet private weak var btnAddCard: GradientButton!
     @IBOutlet private weak var searchBoxContainerView: UIView!
     @IBOutlet private weak var searchSeparatorView: UIView! {
         didSet {
@@ -37,7 +37,8 @@ class SelectPaymentMethodViewController: PullUpController {
     }
     @IBOutlet private weak var firstPreviewView: UIView!
     @IBOutlet private weak var secondPreviewView: UIView!
-    weak var delegate: SelectPaymentMethodViewControllerDelegate?
+    @IBOutlet private weak var containerSelectCardView: UIView!
+    weak var delegate: SelectPaymentMethodViewControllerV2Delegate?
     private var rider = try! Rider(from: UserDefaultsConfig.user!)
     private var cards: [GetCardDetailResult] = [GetCardDetailResult]()
     private var currentCard: GetCardDetailResult? = nil
@@ -69,7 +70,6 @@ class SelectPaymentMethodViewController: PullUpController {
         
         self.setupLayout()
         self.setupData()
-        self.setupText()
     }
     
     override func viewDidLayoutSubviews() {
@@ -98,37 +98,24 @@ class SelectPaymentMethodViewController: PullUpController {
         
         self.btnMoneyPay.firstColor = Color.green.rgb_129_199_132
         self.btnMoneyPay.secondColor = Color.green.rgb_56_142_60
-        self.btnAddCard.firstColor = Color.orange.rgb_255_152_0
-        self.btnAddCard.secondColor = Color.orange.rgb_236_106_53
-        self.btnAddCard.isHidden = true
+        
+        let controller = WalletRouter.build()
+        controller.allowDelete = false
+        controller.delegate = self
+        controller.view.frame = self.containerSelectCardView.bounds;
+        controller.willMove(toParent: self)
+        self.containerSelectCardView.addSubview(controller.view)
+        self.addChild(controller)
+        controller.didMove(toParent: self)
     }
     
     private func setupData() {
         self.btnMoneyPay.addTarget(self, action: #selector(self.handleSelectMoney(_:)), for: .touchUpInside)
-        self.fetchCards()
-    }
-    
-    private func setupText() {
-    
-        self.btnAddCard.setTitle("ADICIONAR CARTÃO", for: .normal)
-        self.btnAddCard.setTitle("ADICIONAR CARTÃO", for: .selected)
-        self.btnAddCard.setTitleColor(.white, for: .normal)
-        self.btnAddCard.setTitleColor(.white, for: .selected)
     }
     
     
     //MARK: - Action
-    @IBAction func presentAddCard(_ sender: GradientButton) {
-        let vc = WalletAddCardViewController()
-        vc.onChangeBlock = {(_ object: Any?, _ isChange: Bool) -> Void in
-            if (isChange) {
-                self.fetchCards()
-            }
-        }
-        self.present(vc, animated: true, completion: nil)
-    }
-    
-    @objc func handleSelectCard(_ sender: UIButton) {
+    @objc func handleSelectCard() {
         removePullUpController(self, animated: true, completion: { _ in
             self.delegate?.paymentCardSelected(self.currentCard!)
         })
@@ -138,69 +125,6 @@ class SelectPaymentMethodViewController: PullUpController {
         removePullUpController(self, animated: true, completion: { _ in
             self.delegate?.paymentMoneySelected()
         })
-    }
-    
-    
-    //MARK: - RequestHttp
-    private func fetchCards() {
-        
-        guard let cpf = rider.cpf else {
-            DialogBuilder.alertOnError(message: "Ocorreu um erro ao tentar buscar os dados.")
-            return
-        }
-        
-        LoadingOverlay.shared.showOverlay(view: UIApplication.shared.windows.first(where: { $0.isKeyWindow }))
-        GetCard(cpf: cpf).execute() { result in
-            defer {
-                LoadingOverlay.shared.hideOverlayView()
-            }
-            
-            switch result {
-            case .success(let response):
-                self.cards = response.cards
-                self.btnAddCard.isHidden = true
-                
-                if let card = self.cards.first {
-                    
-                    // Creating a Credit Card object
-                    self.currentCard = card
-                    let cardObj = YRPaymentCreditCard(type: .custom(UIImage()), isEditing: false)
-                    
-                    // Setting Credit Card position
-                    self.view.addSubview(cardObj)
-                    cardObj.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-                    cardObj.topAnchor.constraint(equalTo: self.btnMoneyPay.bottomAnchor, constant: 20).isActive = true
-                    cardObj.heightAnchor.constraint(equalToConstant: 160).isActive = true
-                    cardObj.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 24).isActive = true
-                
-                    // Data
-                    cardObj.cardNumber = "**** **** **** \(card.last4Digits ?? "")"
-                    cardObj.cardHolderName = card.holderName
-                    cardObj.cardValidity = (card.expirationMonth?.count == 1) ? "0\(card.expirationMonth ?? "00")/\(card.expirationYear ?? "00")" : "\(card.expirationMonth ?? "00")/\(card.expirationYear ?? "00")"
-                    
-                    // Layout
-                    let gradientImage = CAGradientLayer.viewToImageGradient(on: self.view)
-                    cardObj.backgroundColor = UIColor(patternImage: gradientImage!)
-                    cardObj.layoutSubviews()
-                    cardObj.layoutIfNeeded()
-                    
-                    let btnAction = UIButton(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width - 48, height: 160))
-                    cardObj.addSubview(btnAction)
-                    cardObj.bringSubviewToFront(btnAction)
-                    btnAction.addTarget(self, action: #selector(self.handleSelectCard(_:)), for: .touchUpInside)
-                    btnAction.backgroundColor = .clear
-                    btnAction.layoutSubviews()
-                    btnAction.layoutIfNeeded()
-                    
-                } else {
-                    self.btnAddCard.isHidden = false
-                }
-                
-            case .failure(let error):
-                print(error)
-                self.btnAddCard.isHidden = false
-            }
-        }
     }
     
     
@@ -248,18 +172,10 @@ class SelectPaymentMethodViewController: PullUpController {
 }
 
 
-extension UIViewController {
-    var hasSafeArea: Bool {
-        guard
-            #available(iOS 11.0, tvOS 11.0, *)
-        else {
-            return false
-        }
-        return UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0 > 20
+// MARK: - IBOutlets
+extension SelectPaymentMethodViewControllerV2: WalletViewControllerV3Delegate {
+    func cardSelected(_ card: GetCardDetailResult) {
+        self.currentCard = card
+        self.handleSelectCard()
     }
-}
-
-enum VerticalLocation: String {
-    case bottom
-    case top
 }

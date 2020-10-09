@@ -38,11 +38,11 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     var searchingPlaces: Bool = false
     
     private var originalPullUpControllerViewSize: CGSize = .zero
-    private func makePaymentMethodControllerIfNeeded() -> SelectPaymentMethodViewController {
+    private func makePaymentMethodControllerIfNeeded() -> SelectPaymentMethodViewControllerV2 {
         let currentPullUpController = children
-            .filter({ $0 is SelectPaymentMethodViewController })
-            .first as? SelectPaymentMethodViewController
-        let pullUpController: SelectPaymentMethodViewController = currentPullUpController ?? storyboard?.instantiateViewController(withIdentifier: "SelectPaymentMethodViewController") as! SelectPaymentMethodViewController
+            .filter({ $0 is SelectPaymentMethodViewControllerV2 })
+            .first as? SelectPaymentMethodViewControllerV2
+        let pullUpController: SelectPaymentMethodViewControllerV2 = currentPullUpController ?? storyboard?.instantiateViewController(withIdentifier: "SelectPaymentMethodViewControllerV2") as! SelectPaymentMethodViewControllerV2
         pullUpController.delegate = self
         pullUpController.initialState = .expanded
         if originalPullUpControllerViewSize == .zero {
@@ -684,7 +684,7 @@ extension MainViewController: LookingDelegate {
 
 
 //MARK: - SelectPaymentMethodViewControllerDelegate
-extension MainViewController: SelectPaymentMethodViewControllerDelegate {
+extension MainViewController: SelectPaymentMethodViewControllerV2Delegate {
     
     func paymentCardSelected(_ card: GetCardDetailResult) {
         if let s = selectedService {

@@ -126,6 +126,7 @@
 		8509E2BF252F9A60006C726B /* UITextField+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509E2BE252F9A60006C726B /* UITextField+Util.swift */; };
 		8509E2C1252F9DAA006C726B /* UISearchBar+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509E2C0252F9DAA006C726B /* UISearchBar+Util.swift */; };
 		8509E2C32530E61E006C726B /* ConnectionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509E2C22530E61D006C726B /* ConnectionUtil.swift */; };
+		8509E34425310064006C726B /* SelectPaymentMethodViewControllerV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509E34325310064006C726B /* SelectPaymentMethodViewControllerV2.swift */; };
 		850F3FED250A9E2100F6A4C3 /* Color+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850F3FEC250A9E2100F6A4C3 /* Color+Util.swift */; };
 		850F3FEF250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850F3FEE250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift */; };
 		85245A34250EAD37001D236A /* WalletAddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85245A33250EAD37001D236A /* WalletAddCardViewController.swift */; };
@@ -344,6 +345,7 @@
 		8509E2BE252F9A60006C726B /* UITextField+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Util.swift"; sourceTree = "<group>"; };
 		8509E2C0252F9DAA006C726B /* UISearchBar+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Util.swift"; sourceTree = "<group>"; };
 		8509E2C22530E61D006C726B /* ConnectionUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionUtil.swift; sourceTree = "<group>"; };
+		8509E34325310064006C726B /* SelectPaymentMethodViewControllerV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPaymentMethodViewControllerV2.swift; sourceTree = "<group>"; };
 		850F3FEC250A9E2100F6A4C3 /* Color+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Util.swift"; sourceTree = "<group>"; };
 		850F3FEE250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Util.swift"; sourceTree = "<group>"; };
 		85245A33250EAD37001D236A /* WalletAddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletAddCardViewController.swift; sourceTree = "<group>"; };
@@ -685,12 +687,7 @@
 		624D3C301F1B352C00811758 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				62B6FD751F70F68100F66611 /* MainViewController.swift */,
-				8551567A2514EC7700F744CB /* SelectPaymentMethodViewController.swift */,
-				62B6FD761F70F68100F66611 /* NavigatorViewController.swift */,
-				625D29A5204ED83600F80499 /* ServicesParentViewController.swift */,
-				625D29AF204F194700F80499 /* ServicesListCell.swift */,
-				62E2A252230A72D4000848CE /* SuggestionsTableTableViewController.swift */,
+				8509E3452531006C006C726B /* Controller */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -847,6 +844,28 @@
 				8580FECC25097D0C00A6AC32 /* ValidatorUtil.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		8509E3452531006C006C726B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				62B6FD751F70F68100F66611 /* MainViewController.swift */,
+				62B6FD761F70F68100F66611 /* NavigatorViewController.swift */,
+				625D29A5204ED83600F80499 /* ServicesParentViewController.swift */,
+				625D29AF204F194700F80499 /* ServicesListCell.swift */,
+				62E2A252230A72D4000848CE /* SuggestionsTableTableViewController.swift */,
+				8509E34325310064006C726B /* SelectPaymentMethodViewControllerV2.swift */,
+				8509E34625310076006C726B /* deprec */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8509E34625310076006C726B /* deprec */ = {
+			isa = PBXGroup;
+			children = (
+				8551567A2514EC7700F744CB /* SelectPaymentMethodViewController.swift */,
+			);
+			path = deprec;
 			sourceTree = "<group>";
 		};
 		85245A32250EA8C0001D236A /* xib */ = {
@@ -1207,6 +1226,7 @@
 				4C215E9E238D1BA70013D720 /* GetCoupons.swift in Sources */,
 				85245A49250EE7E4001D236A /* AddCard.swift in Sources */,
 				622CCBBB219D734F003A4CCE /* CouponsCollectionViewController.swift in Sources */,
+				8509E34425310064006C726B /* SelectPaymentMethodViewControllerV2.swift in Sources */,
 				4CB5FC4C23A79FC700F2D5BC /* MenuTransitioningDelegate.swift in Sources */,
 				4CB5FC2823A79F2C00F2D5BC /* WriteComplaint.swift in Sources */,
 				62972936223B92EC0084E2BB /* LookingViewController.swift in Sources */,

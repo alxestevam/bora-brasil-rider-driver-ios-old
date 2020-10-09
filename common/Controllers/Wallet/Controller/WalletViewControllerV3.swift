@@ -10,10 +10,17 @@ import UIKit
 import Eureka
 
 
+protocol WalletViewControllerV3Delegate: class{
+    func cardSelected(_ card: GetCardDetailResult)
+}
+
+
 class WalletViewControllerV3: FormViewController {
     
     //MARK: - Properties
     var router: WalletRouter!
+    weak var delegate: WalletViewControllerV3Delegate?
+    var allowDelete: Bool = true
     private var rider = try! Rider(from: UserDefaultsConfig.user!)
     private let sectionCard = Section() { section in
         var header = HeaderFooterView<UILabel>(.class)
@@ -133,11 +140,18 @@ class WalletViewControllerV3: FormViewController {
     
     //MARK: - Actions
     private func goToDetailCard(detailCard: GetCardDetailResult) {
-        self.router.presentNextController(card: detailCard, changeBlock: {(_ object: Any?, _ isChange: Bool) -> Void in
-            if (isChange) {
-                self.fetchCards()
+        if allowDelete {
+            self.router.presentNextController(card: detailCard, changeBlock: {(_ object: Any?, _ isChange: Bool) -> Void in
+                if (isChange) {
+                    self.fetchCards()
+                }
+            })
+            
+        } else {
+            if let del = delegate {
+                del.cardSelected(detailCard)
             }
-        })
+        }
     }
     
     private func presentAddCard() {
