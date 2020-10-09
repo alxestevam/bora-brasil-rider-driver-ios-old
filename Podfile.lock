@@ -3,10 +3,7 @@ PODS:
     - Charts/Core (= 3.5.0)
   - Charts/Core (3.5.0)
   - Cosmos (22.1.0)
-  - Crashlytics (3.14.0):
-    - Fabric (~> 1.10.2)
   - Eureka (5.3.1)
-  - Fabric (1.10.2)
   - Firebase/Analytics (6.29.0):
     - Firebase/Core
   - Firebase/Auth (6.29.0):
@@ -17,6 +14,9 @@ PODS:
     - FirebaseAnalytics (= 6.7.0)
   - Firebase/CoreOnly (6.29.0):
     - FirebaseCore (= 6.9.2)
+  - Firebase/Crashlytics (6.29.0):
+    - Firebase/CoreOnly
+    - FirebaseCrashlytics (~> 4.3.1)
   - Firebase/Messaging (6.29.0):
     - Firebase/CoreOnly
     - FirebaseMessaging (~> 4.6.1)
@@ -43,6 +43,12 @@ PODS:
     - GoogleUtilities/Environment (~> 6.7)
     - GoogleUtilities/Logger (~> 6.7)
     - nanopb (~> 1.30905.0)
+  - FirebaseCrashlytics (4.3.1):
+    - FirebaseCore (~> 6.8)
+    - FirebaseInstallations (~> 1.1)
+    - GoogleDataTransport (~> 7.0)
+    - nanopb (~> 1.30905.0)
+    - PromisesObjC (~> 1.2)
   - FirebaseInstallations (1.5.0):
     - FirebaseCore (~> 6.8)
     - GoogleUtilities/Environment (~> 6.7)
@@ -118,6 +124,7 @@ PODS:
   - PromisesObjC (1.2.10)
   - Protobuf (3.13.0)
   - PullUpController (0.8.0)
+  - ReachabilitySwift (5.0.0)
   - Socket.IO-Client-Swift (15.2.0):
     - Starscream (~> 3.1)
   - Starscream (3.1.1)
@@ -128,11 +135,10 @@ PODS:
 DEPENDENCIES:
   - Charts (~> 3.5.0)
   - Cosmos (~> 22.1.0)
-  - Crashlytics (~> 3.14.0)
   - Eureka (~> 5.3.1)
-  - Fabric (~> 1.10.2)
-  - Firebase/Analytics (~> 6.29.0)
+  - Firebase/Analytics
   - Firebase/Core (~> 6.29.0)
+  - Firebase/Crashlytics
   - Firebase/Messaging (~> 6.29.0)
   - FirebaseUI/Phone (~> 8.0)
   - GooglePlaces (~> 3.9.0)
@@ -143,6 +149,7 @@ DEPENDENCIES:
   - MarqueeLabel/Swift (~> 3.2.1)
   - MessageKit (~> 3.1.0)
   - PullUpController (~> 0.8.0)
+  - ReachabilitySwift (~> 5.0.0)
   - Socket.IO-Client-Swift (~> 15.2.0)
   - StatusAlert (~> 1.1.1)
   - SwiftyAttributes (~> 5.1.1)
@@ -152,14 +159,13 @@ SPEC REPOS:
   trunk:
     - Charts
     - Cosmos
-    - Crashlytics
     - Eureka
-    - Fabric
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
     - FirebaseCore
     - FirebaseCoreDiagnostics
+    - FirebaseCrashlytics
     - FirebaseInstallations
     - FirebaseInstanceID
     - FirebaseMessaging
@@ -181,6 +187,7 @@ SPEC REPOS:
     - PromisesObjC
     - Protobuf
     - PullUpController
+    - ReachabilitySwift
     - Socket.IO-Client-Swift
     - Starscream
     - StatusAlert
@@ -190,14 +197,13 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
   Cosmos: 2795b36ad4bbea1af3050d6d65576ed63875f86a
-  Crashlytics: 9220f5bc89e7a618df411b4f639389dbfb0e03d2
   Eureka: 859877ab1e85661b6b7e810015d430e937d9cc7d
-  Fabric: ea977e3cd9c20425516d3dafd3bf8c941c51223f
   Firebase: 57957c8d6eb3d8b80a560b1dc58be24724b89ff2
   FirebaseAnalytics: aa522dce9fd93002ba1554467d23ce7092323000
   FirebaseAuth: a818d73466d51db897d3bf3c0f3baa3dae7fd4c0
   FirebaseCore: 7930a1946517d94256d857f97371ed993b55f7bd
   FirebaseCoreDiagnostics: 7535fe695737f8c5b350584292a70b7f8ff0357b
+  FirebaseCrashlytics: 863c851b034baeb3116cd2c91743e37de2dcedfc
   FirebaseInstallations: 3c520c951305cbf9ca54eb891ff9e6d1fd384881
   FirebaseInstanceID: c4ad474b87787afd27d09541800620993b457d6f
   FirebaseMessaging: 942cfe05b4f53c95ab8959395ca35c200398b2f0
@@ -219,12 +225,13 @@ SPEC CHECKSUMS:
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
   Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
   PullUpController: 2f7ccaa0f35b31b47e3efbe1854c7f781552b3c7
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   StatusAlert: a18ec3c33d36a06d4479c1f2b15ffac67aaf7ab1
   SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 082abc61c243de170ddeff33213747c624e112de
+PODFILE CHECKSUM: 6150f63fd2f2947218de210d801f6535b02ee1be
 
 COCOAPODS: 1.9.3

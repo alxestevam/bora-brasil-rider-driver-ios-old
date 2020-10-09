@@ -6,18 +6,13 @@ def common_pods
   # Conjunto de utilidades do Firebase
   pod 'Firebase/Core', '~> 6.29.0'
   pod 'FirebaseUI/Phone', '~> 8.0'
-  pod 'Firebase/Analytics', '~> 6.29.0'
   pod 'Firebase/Messaging', '~> 6.29.0'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Analytics'
   
   # Formulários
   pod 'Eureka', '~> 5.3.1'
   pod 'ImageRow', '~> 4.0.0'
-  
-  # Rastreamento de bugs
-  pod 'Fabric', '~> 1.10.2'
-  
-  # Rastreamento de bugs
-  pod 'Crashlytics', '~> 3.14.0'
   
   # Componente de chat
   pod 'MessageKit', '~> 3.1.0'
@@ -48,6 +43,9 @@ def common_pods
   
   # Toast view feedback
   pod 'Toast-Swift', '~> 5.0.1'
+  
+  # Gerenciador de conexão
+  pod 'ReachabilitySwift', '~> 5.0.0'
 end
 
 target 'rider' do
