@@ -125,6 +125,7 @@
 		8509E2BD252F96DD006C726B /* UIImage+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509E2BC252F96DD006C726B /* UIImage+Util.swift */; };
 		8509E2BF252F9A60006C726B /* UITextField+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509E2BE252F9A60006C726B /* UITextField+Util.swift */; };
 		8509E2C1252F9DAA006C726B /* UISearchBar+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509E2C0252F9DAA006C726B /* UISearchBar+Util.swift */; };
+		8509E2C32530E61E006C726B /* ConnectionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8509E2C22530E61D006C726B /* ConnectionUtil.swift */; };
 		850F3FED250A9E2100F6A4C3 /* Color+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850F3FEC250A9E2100F6A4C3 /* Color+Util.swift */; };
 		850F3FEF250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850F3FEE250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift */; };
 		85245A34250EAD37001D236A /* WalletAddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85245A33250EAD37001D236A /* WalletAddCardViewController.swift */; };
@@ -342,6 +343,7 @@
 		8509E2BC252F96DD006C726B /* UIImage+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Util.swift"; sourceTree = "<group>"; };
 		8509E2BE252F9A60006C726B /* UITextField+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Util.swift"; sourceTree = "<group>"; };
 		8509E2C0252F9DAA006C726B /* UISearchBar+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Util.swift"; sourceTree = "<group>"; };
+		8509E2C22530E61D006C726B /* ConnectionUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionUtil.swift; sourceTree = "<group>"; };
 		850F3FEC250A9E2100F6A4C3 /* Color+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Util.swift"; sourceTree = "<group>"; };
 		850F3FEE250AA1FA00F6A4C3 /* CAGradientLayer+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Util.swift"; sourceTree = "<group>"; };
 		85245A33250EAD37001D236A /* WalletAddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletAddCardViewController.swift; sourceTree = "<group>"; };
@@ -836,6 +838,7 @@
 		8503503E24E1D15C00B3EF05 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				8509E2C22530E61D006C726B /* ConnectionUtil.swift */,
 				85245A46250ED8B3001D236A /* CreditCardValidator.swift */,
 				8503504524E1D46D00B3EF05 /* FirebaseUtil.swift */,
 				8582B5332518008B00256963 /* FormatterUtil.swift */,
@@ -1034,7 +1037,6 @@
 				B1C6237A49FAC84F261B79DA /* [CP] Embed Pods Frameworks */,
 				880F0E319D5388DB52400AC0 /* [CP] Copy Pods Resources */,
 				62F4D8BB20153FEF000933DA /* CopyFiles */,
-				627B16F521A9C82200FF0953 /* ShellScript */,
 				6253A96421AB39E000A45287 /* Embed App Extensions */,
 				85A594CF251FFC6E006F4569 /* ShellScript */,
 			);
@@ -1119,20 +1121,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		627B16F521A9C82200FF0953 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 6fe7406338d93004f234b73f0f196f961b46dde3 12a9dc122c1a8d4d3895958bf28039e80f9af78053667f7c60233c04a2d2c0f2\n";
-		};
 		85A594CF251FFC6E006F4569 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1254,6 +1242,7 @@
 				85B420AF25186A3A0001C017 /* RouteAnnotation.swift in Sources */,
 				4CB5FC2F23A79F4900F2D5BC /* HTTPRequest.swift in Sources */,
 				4C215EAC238D20460013D720 /* Review.swift in Sources */,
+				8509E2C32530E61E006C726B /* ConnectionUtil.swift in Sources */,
 				4CB5FC6E23A79FD100F2D5BC /* DatePickerDialog.swift in Sources */,
 				85245A3A250EB525001D236A /* GetCard.swift in Sources */,
 				85245A36250EAFFF001D236A /* UITableView+Util.swift in Sources */,

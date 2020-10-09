@@ -7,12 +7,12 @@
 
 import UIKit
 import Kingfisher
-import Crashlytics
-import Fabric
 import SocketIO
 @_exported import Firebase
 @_exported import FirebaseUI
 @_exported import GooglePlaces
+@_exported import Reachability
+@_exported import FirebaseCrashlytics
 
 
 //MARK: Global Properties
@@ -60,10 +60,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         self.setupFirebase()
         self.setupGooglePlacesAPI()
         self.setupLanguage()
+        self.setupMonitorConnection()
         self.launchOptions = launchOptions
         self.window?.tintColor = UIColor(hex: 0x0A0A32)
         //BTAppSwitch.setReturnURLScheme(Bundle.main.bundleIdentifier! + ".payments")
-        Fabric.with([Crashlytics.self])
         UNUserNotificationCenter.current().delegate = self
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: {_, _ in })
@@ -133,6 +133,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     private func setupLanguage() {
         UserDefaults.standard.set(["pt-br"], forKey: "AppleLanguages")
         UserDefaults.standard.synchronize()
+    }
+    
+    private func setupMonitorConnection() {
+        ConnectionUtil.shared.observeReachability()
     }
 }
 
