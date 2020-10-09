@@ -13,7 +13,8 @@ class ConnectionUtil {
     static let shared = ConnectionUtil()
     private var reachability: Reachability!
     private var previousState: Reachability.Connection = .unavailable
-    
+    lazy var dimmedView = UIView()
+
     
     func observeReachability() {
         
@@ -83,6 +84,18 @@ class ConnectionUtil {
     
     private func enableInteractionView(_ isEnable: Bool) {
         if let app = UIApplication.shared.delegate as? AppDelegate, let view = app.window {
+            
+            // Backdrop
+            if (!isEnable) {
+                self.dimmedView.backgroundColor = .black
+                self.dimmedView.alpha = 0.44
+                view.addSubview(dimmedView)
+                self.dimmedView.frame = view.bounds
+                
+            } else {
+                self.dimmedView.removeFromSuperview()
+            }
+            
             view.isUserInteractionEnabled = isEnable
         }
     }
