@@ -17,14 +17,14 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRm-XC-Idl">
                     <rect key="frame" x="0.0" y="0.0" width="365" height="120"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oops! Nenhum cartão registrado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQx-Pu-8Rd">
-                            <rect key="frame" x="10" y="34" width="345" height="22"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nenhum cartão registrado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQx-Pu-8Rd">
+                            <rect key="frame" x="10" y="34" width="345" height="20.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clique em Adicionar Cartão para cadastrar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcM-ml-APW">
-                            <rect key="frame" x="10" y="62" width="345" height="21"/>
+                            <rect key="frame" x="10" y="60.5" width="345" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
