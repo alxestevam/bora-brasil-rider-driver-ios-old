@@ -339,6 +339,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     }
     
     func selectPaymentMethod(service: Service) {
+        if let app = UIApplication.shared.delegate as? AppDelegate, let view = app.window {
+            LoadingOverlay.shared.showOverlay(view: view)
+        }
+        
         self.containerServices.isHidden = true
         self.selectedService = service
         addPullUpController(animated: true)
@@ -696,6 +700,10 @@ extension MainViewController: SelectPaymentMethodViewControllerV2Delegate {
         if let s = selectedService {
             RideNowSelected(service: s, payType: "cash")
         }
+    }
+    
+    func cardsLoaded() {
+        LoadingOverlay.shared.hideOverlayView()
     }
 }
 

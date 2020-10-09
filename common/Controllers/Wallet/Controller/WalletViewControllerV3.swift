@@ -12,6 +12,7 @@ import Eureka
 
 protocol WalletViewControllerV3Delegate: class{
     func cardSelected(_ card: GetCardDetailResult)
+    func cardsLoaded()
 }
 
 
@@ -120,17 +121,19 @@ class WalletViewControllerV3: FormViewController {
             return
         }
         
-        LoadingOverlay.shared.showOverlay(view: self.view)
+        let shouldLoad = (delegate == nil)
+        if (shouldLoad) { LoadingOverlay.shared.showOverlay(view: self.view) }
         GetCard(cpf: cpf).execute() { result in
             defer {
                 self.fecthingData = false
-                LoadingOverlay.shared.hideOverlayView()
+                if (shouldLoad) { LoadingOverlay.shared.hideOverlayView() }
+                if let del = self.delegate { del.cardsLoaded() }
             }
             
             switch result {
             case .success(let response):
                 self.cards = response.cards
-                
+
             case .failure(let error):
                 print(error)
             }
@@ -148,9 +151,7 @@ class WalletViewControllerV3: FormViewController {
             })
             
         } else {
-            if let del = delegate {
-                del.cardSelected(detailCard)
-            }
+            if let del = delegate { del.cardSelected(detailCard) }
         }
     }
     

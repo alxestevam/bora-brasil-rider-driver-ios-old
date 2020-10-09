@@ -15,6 +15,7 @@ import Eureka
 protocol SelectPaymentMethodViewControllerV2Delegate: class{
     func paymentCardSelected(_ card: GetCardDetailResult)
     func paymentMoneySelected()
+    func cardsLoaded()
 }
 
 class SelectPaymentMethodViewControllerV2: PullUpController {
@@ -100,8 +101,8 @@ class SelectPaymentMethodViewControllerV2: PullUpController {
         self.btnMoneyPay.secondColor = Color.green.rgb_56_142_60
         
         let controller = WalletRouter.build()
-        controller.allowDelete = false
         controller.delegate = self
+        controller.allowDelete = false
         controller.view.frame = self.containerSelectCardView.bounds;
         controller.willMove(toParent: self)
         self.containerSelectCardView.addSubview(controller.view)
@@ -125,6 +126,10 @@ class SelectPaymentMethodViewControllerV2: PullUpController {
         removePullUpController(self, animated: true, completion: { _ in
             self.delegate?.paymentMoneySelected()
         })
+    }
+    
+    @objc func handleCardsLoaded() {
+        self.delegate?.cardsLoaded()
     }
     
     
@@ -174,8 +179,13 @@ class SelectPaymentMethodViewControllerV2: PullUpController {
 
 // MARK: - IBOutlets
 extension SelectPaymentMethodViewControllerV2: WalletViewControllerV3Delegate {
+
     func cardSelected(_ card: GetCardDetailResult) {
         self.currentCard = card
         self.handleSelectCard()
+    }
+    
+    func cardsLoaded() {
+        self.handleCardsLoaded()
     }
 }
