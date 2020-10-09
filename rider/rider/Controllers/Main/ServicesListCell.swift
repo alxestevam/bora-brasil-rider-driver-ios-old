@@ -77,7 +77,7 @@ class ServicesListCell: UICollectionViewCell {
             self.textCost.text = FormatterUtil.shared.stringFromValue(value: cost, monetaryFormat: true, decimalPrecision: 2)
             break
         case .Dynamic:
-            self.textCost.text = "~\(FormatterUtil.shared.stringFromValue(value: cost, monetaryFormat: true, decimalPrecision: 2))"
+            self.textCost.text = FormatterUtil.shared.stringFromValue(value: cost, monetaryFormat: true, decimalPrecision: 2)
             break
         case .Ranged, .RangedStrict:
             if let rangeMinusPercent = service.rangeMinusPercent, let rangePlusPercent = service.rangePlusPercent {
@@ -86,7 +86,7 @@ class ServicesListCell: UICollectionViewCell {
                 self.textCost.text = "\(FormatterUtil.shared.stringFromValue(value: cMinus, monetaryFormat: true, decimalPrecision: 2))~\(FormatterUtil.shared.stringFromValue(value: cPlus, monetaryFormat: true, decimalPrecision: 2)))"
                 
             } else {
-                self.textCost.text = "- ~ -"
+                self.textCost.text = "-"
             }
         }
         
