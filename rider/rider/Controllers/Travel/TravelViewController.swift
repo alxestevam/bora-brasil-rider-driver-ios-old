@@ -12,7 +12,7 @@ import MapKit
 import MarqueeLabel
 import Toast_Swift
 
-class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDelegate {
+class TravelViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var lblEstimatedArrivalTime: UILabel!
     @IBOutlet weak var lblCost: UILabel!
@@ -23,7 +23,7 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
     var onReviewBlock: ((_ object: Any?, _ isReview: Bool) -> Void)? = nil
     private var currentRoute: Route? = nil
     private var groupedRoutes: [(startItem: MKMapItem, endItem: MKMapItem)] = []
-
+    
     var pickupMarker = MKPointAnnotation()
     var destinationMarkers: [MKPointAnnotation] = []
     var driverMarker = MKPointAnnotation()
@@ -77,7 +77,7 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
                 }
             })
         }
-
+        
         tabBar.addTarget(self, action: #selector(selectedTabItem), for: .valueChanged)
         map.layoutMargins = UIEdgeInsets(top: 50, left: 0, bottom: 290, right: 0)
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
@@ -98,22 +98,9 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
         } else {
             self.navigationItem.rightBarButtonItem = nil
         }
-//        if var cost = Request.shared.finalCost {
-//            if let coupon = Request.shared.coupon {
-//                cost = cost * Double(100 - coupon.discountPercent!) / 100
-//                cost = cost - Double(coupon.discountFlat!)
-//            }
-//            // TODO(): Ajustar código
-////            if let service = Request.shared.service, (service.feeEstimationMode == .Dynamic || service.feeEstimationMode == .RangedStrict || service.feeEstimationMode == .Ranged) {
-////                self.labelCost.text = "~\(MyLocale.formattedCurrency(amount: cost, currency: Request.shared.currency!))"
-////            } else {
-////                self.labelCost.text = MyLocale.formattedCurrency(amount: cost, currency: Request.shared.currency!)
-////            }
-//        }
         
         self.handleTravelCost()
         self.handleTime()
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.onEachSecond), userInfo: nil, repeats: true)
     }
     
     private func handleTravelCost() {
@@ -133,7 +120,7 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
             
             let startTimestamp = request.startTimestamp ?? 0
             let recalculatedTravelTime = request.recalculatedTravelTime ?? 0
-
+            
             if (startTimestamp > 0) {
                 let estimatedArrive = startTimestamp + (UInt64)(recalculatedTravelTime * 1000)
                 self.lblEstimatedArrivalTime.text = FormatterUtil.shared.miliToDate(mili: estimatedArrive, dateFormatString: "HH:mm")
@@ -170,26 +157,7 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
         self.requestRefresh()
     }
     
-    @objc func onEachSecond() {
-//        let now = Date()
-//        let etaInterval = Request.shared.startTimestamp != nil ? (Request.shared.startTimestamp! / 1000) + Double(Request.shared.durationBest!) : Request.shared.etaPickup ?? 0 / 1000
-//        let etaTime = Date(timeIntervalSince1970: etaInterval)
-//        if etaTime <= now {
-//            if Request.shared.status == .Arrived {
-//                lblCost.text = NSLocalizedString("Arrived", comment: "Driver Arrived text instead of time.")
-//            } else {
-//                lblCost.text = NSLocalizedString("Soon", comment: "When driver is coming later than expected.")
-//            }
-//
-//        } else {
-//            let formatter = DateComponentsFormatter()
-//            formatter.allowedUnits = [.minute, .second]
-//            formatter.unitsStyle = .short
-//            lblCost.text = formatter.string(from: now, to: etaTime)
-//        }
-    }
-    
-    @objc private func requestRefresh() {
+    @objc private func requestRefresh(shouldBack: Bool = true) {
         GetCurrentRequestInfo().execute() { result in
             switch result {
             case .success(let response):
@@ -197,7 +165,9 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
                 self.refreshScreen(driverLocation: response.driverLocation)
                 
             case .failure(_):
-                self.navigationController?.popViewController(animated: false)
+                if (shouldBack) {
+                    self.navigationController?.popViewController(animated: false)
+                }
             }
         }
     }
@@ -235,7 +205,7 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
                 }
                 
                 let origin = CLLocation.init(latitude: driverMarker.coordinate.latitude,
-                    longitude: driverMarker.coordinate.longitude)
+                                             longitude: driverMarker.coordinate.longitude)
                 let stops = CLLocation.init(latitude: pickupMarker.coordinate.latitude,
                                             longitude: pickupMarker.coordinate.longitude)
                 
@@ -362,15 +332,6 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
         }
     }
     
-    @IBAction func onWalletTapped(_ sender: UIButton) {
-//        buttonPay.isHidden = true
-//        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Wallet") as? WalletViewController {
-//            vc.amount = Request.shared.costAfterCoupon
-//            vc.currency = Request.shared.currency
-//            self.navigationController!.pushViewController(vc, animated: true)
-//        }
-    }
-    
     @objc func onServiceStarted(_ notification: Notification) {
         Request.shared = notification.object as! Request
         let location = driverMarker.coordinate.latitude != 0 ? driverMarker.coordinate : nil
@@ -390,40 +351,11 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
     @objc func onServiceFinished(_ notification: Notification) {
         let obj = notification.object as! [Any]
         Request.shared.status = (obj[0] as! Bool) == true ? Request.Status.WaitingForReview : Request.Status.WaitingForPostPay
-        refreshScreen(driverLocation: nil)
+        self.requestRefresh(shouldBack: false)
     }
     
     @objc func onTravelInfoReceived(_ notification: Notification) {
         refreshScreen(driverLocation: (notification.object as! CLLocationCoordinate2D))
-    }
-    
-    @IBAction func onSelectCouponClicked(_ sender: UIButton) {
-        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CouponsCollectionViewController") as? CouponsCollectionViewController
-        {
-            vc.selectMode = true
-            vc.delegate = self
-            self.navigationController!.pushViewController(vc, animated: true)
-        }
-    }
-    
-    func didSelectedCoupon(_ coupon: Coupon) {
-        // TODO(): Ajustar código
-
-//        ApplyCoupon(code: coupon.code!).execute() { result in
-//            switch result {
-//            case .success(let response):
-
-//                DialogBuilder.alertOnSuccess(message: NSLocalizedString("Done", comment: ""))
-//                if let service = Request.shared.service, (service.feeEstimationMode == .Dynamic || service.feeEstimationMode == .RangedStrict || service.feeEstimationMode == .Ranged) {
-//                    self.labelCost.text = "~\(MyLocale.formattedCurrency(amount: response, currency: Request.shared.currency!))"
-//                } else {
-//                    self.labelCost.text = MyLocale.formattedCurrency(amount: response, currency: Request.shared.currency!)
-//                }
-                
-//            case .failure(let error):
-//                error.showAlert()
-//            }
-//        }
     }
     
     enum MarkerType: String {
