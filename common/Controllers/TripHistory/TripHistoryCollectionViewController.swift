@@ -121,8 +121,51 @@ class TripHistoryCollectionViewController: UICollectionViewController, UICollect
         }
         cell.textCost.text = MyLocale.formattedCurrency(amount: travel.costAfterCoupon ?? 0, currency: travel.currency!)
         
-        cell.textStatus.text = travel.status!.rawValue.splitBefore(separator: { $0.isUppercase }).map{String($0)}.joined(separator: " ")
+        if let text = travel.status?.rawValue {
+            let textStatus = self.toPtBrStatus(text)
+            cell.textStatus.text = textStatus
+            
+        } else {
+            cell.textStatus.text = "Não identificado"
+        }
+        
         return cell
+    }
+    
+    private func toPtBrStatus(_ uSEnStatus: String) -> String {
+        
+        switch uSEnStatus {
+
+        case "Requested":
+            return "Corrida solicitada"
+        case "NotFound":
+            return "Não encontrada"
+
+        case "NoCloseFound":
+            return "Aguardando encerramento"
+
+        case "Found", "DriverAccepted", "WaitingForPrePay", "Arrived", "Started", "WaitingForPostPay", "Booked":
+            return "Em andamento"
+
+        case "DriverCanceled":
+            return "Cancelada pelo motorista"
+
+        case "RiderCanceled":
+            return "Cancelada por você"
+            
+            
+        case "WaitingForReview":
+            return "Aguardando revisão"
+
+        case "Finished":
+            return "Finalizada"
+
+        case "Expired":
+            return "Expirada"
+        
+        default:
+            return "Não identificado"
+        }
     }
 }
 
