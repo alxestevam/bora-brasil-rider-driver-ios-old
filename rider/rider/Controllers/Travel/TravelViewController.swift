@@ -236,6 +236,8 @@ class TravelViewController: UIViewController, MKMapViewDelegate {
             break
             
         case .Started:
+            DialogBuilder.alertOnSuccess(message: "Viagem iniciada")
+
             buttonMessage.isHidden = true
             buttonCancel.isHidden = true
             map.removeAnnotation(pickupMarker)
@@ -332,6 +334,7 @@ class TravelViewController: UIViewController, MKMapViewDelegate {
     
     @objc func onServiceStarted(_ notification: Notification) {
         Request.shared = notification.object as! Request
+        Request.shared.status = .Started
         let location = driverMarker.coordinate.latitude != 0 ? driverMarker.coordinate : nil
         refreshScreen(driverLocation: location)
     }
