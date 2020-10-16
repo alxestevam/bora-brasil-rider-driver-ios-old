@@ -41,6 +41,8 @@ class ReviewTextFieldCell: UITableViewCell {
     }
     
     private func setupData() {
+        self.txtComment.addDoneButtonOnKeyboard()
+        self.txtComment.autocorrectionType = .no
         self.txtComment.placeholder = "Escreva aqui o seu comentário"
         self.txtComment.autocapitalizationType = .sentences
         self.txtComment.delegate = self
