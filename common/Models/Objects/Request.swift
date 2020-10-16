@@ -57,6 +57,16 @@ public final class Request: Codable, Hashable {
         }
       }
     
+    var finalStatusEffectively: Status {
+        get {
+            if let st = status {
+                return st
+            }
+            
+            return .NotFound
+        }
+    }
+    
     public enum PaymentType: String, Codable {
         case credit = "credit"
         case cash = "cash"
@@ -78,6 +88,7 @@ public final class Request: Codable, Hashable {
         case Finished = "Finished"
         case Booked = "Booked"
         case Expired = "Expired"
+        case RejectedByAntiFraud = "RejectedByAntiFraud"
     }
     
     public func hash(into hasher: inout Hasher) {

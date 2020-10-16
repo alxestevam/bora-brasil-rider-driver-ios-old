@@ -164,7 +164,7 @@ class TripHistoryCollectionViewController: UICollectionViewController, UICollect
             return "Expirada"
         
         default:
-            return "Não identificado"
+            return "Não identificada"
         }
     }
 }

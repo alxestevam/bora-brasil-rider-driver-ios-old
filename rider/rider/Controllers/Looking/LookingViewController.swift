@@ -74,6 +74,7 @@ class LookingViewController: UIViewController {
             self.buttonCancel.isEnabled = true
             return
         }
+        
         switch(travel.status!) {
         case .DriverAccepted, .Finished, .WaitingForPostPay, .WaitingForReview, .Started, .WaitingForPrePay, .Arrived:
             self.dismiss(animated: true, completion: nil)
@@ -111,6 +112,16 @@ class LookingViewController: UIViewController {
             self.buttonCancel.isEnabled = true
             self.animationView.play()
             self.textStatus.text = "\(lookingDrivers)..."
+            
+        default:
+            let title = "Atenção"
+            let message = "Infelizmente ocorreu um erro ao verificar os dados da viagem."
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default) { action in
+                self.dismiss(animated: true, completion: nil)
+                self.delegate?.cancel()
+            })
+            self.present(alert, animated: true)
         }
     }
     
