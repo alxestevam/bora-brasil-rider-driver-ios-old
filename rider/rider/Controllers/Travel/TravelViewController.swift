@@ -12,11 +12,10 @@ import MapKit
 import MarqueeLabel
 import Toast_Swift
 
-class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDelegate {
+class TravelViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var lblEstimatedArrivalTime: UILabel!
     @IBOutlet weak var lblCost: UILabel!
-    @IBOutlet weak var buttonCall: ColoredButton!
     @IBOutlet weak var buttonMessage: ColoredButton!
     @IBOutlet weak var buttonCancel: ColoredButton!
     @IBOutlet weak var buttonPay: ColoredButton!
@@ -98,18 +97,6 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
         } else {
             self.navigationItem.rightBarButtonItem = nil
         }
-//        if var cost = Request.shared.finalCost {
-//            if let coupon = Request.shared.coupon {
-//                cost = cost * Double(100 - coupon.discountPercent!) / 100
-//                cost = cost - Double(coupon.discountFlat!)
-//            }
-//            // TODO(): Ajustar código
-////            if let service = Request.shared.service, (service.feeEstimationMode == .Dynamic || service.feeEstimationMode == .RangedStrict || service.feeEstimationMode == .Ranged) {
-////                self.labelCost.text = "~\(MyLocale.formattedCurrency(amount: cost, currency: Request.shared.currency!))"
-////            } else {
-////                self.labelCost.text = MyLocale.formattedCurrency(amount: cost, currency: Request.shared.currency!)
-////            }
-//        }
         
         self.handleTravelCost()
         self.handleTime()
@@ -267,7 +254,6 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
             break
             
         case .Started:
-            buttonCall.isHidden = true
             buttonMessage.isHidden = true
             buttonCancel.isHidden = true
             map.removeAnnotation(pickupMarker)
@@ -361,16 +347,7 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
             }
         }
     }
-    
-    @IBAction func onWalletTapped(_ sender: UIButton) {
-//        buttonPay.isHidden = true
-//        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Wallet") as? WalletViewController {
-//            vc.amount = Request.shared.costAfterCoupon
-//            vc.currency = Request.shared.currency
-//            self.navigationController!.pushViewController(vc, animated: true)
-//        }
-    }
-    
+        
     @objc func onServiceStarted(_ notification: Notification) {
         Request.shared = notification.object as! Request
         let location = driverMarker.coordinate.latitude != 0 ? driverMarker.coordinate : nil
@@ -398,32 +375,10 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
     }
     
     @IBAction func onSelectCouponClicked(_ sender: UIButton) {
-        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CouponsCollectionViewController") as? CouponsCollectionViewController
-        {
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CouponsCollectionViewController") as? CouponsCollectionViewController {
             vc.selectMode = true
-            vc.delegate = self
             self.navigationController!.pushViewController(vc, animated: true)
         }
-    }
-    
-    func didSelectedCoupon(_ coupon: Coupon) {
-        // TODO(): Ajustar código
-
-//        ApplyCoupon(code: coupon.code!).execute() { result in
-//            switch result {
-//            case .success(let response):
-
-//                DialogBuilder.alertOnSuccess(message: NSLocalizedString("Done", comment: ""))
-//                if let service = Request.shared.service, (service.feeEstimationMode == .Dynamic || service.feeEstimationMode == .RangedStrict || service.feeEstimationMode == .Ranged) {
-//                    self.labelCost.text = "~\(MyLocale.formattedCurrency(amount: response, currency: Request.shared.currency!))"
-//                } else {
-//                    self.labelCost.text = MyLocale.formattedCurrency(amount: response, currency: Request.shared.currency!)
-//                }
-                
-//            case .failure(let error):
-//                error.showAlert()
-//            }
-//        }
     }
     
     enum MarkerType: String {
@@ -461,13 +416,7 @@ class TravelViewController: UIViewController, CouponsViewDelegate, MKMapViewDele
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         return self.map.rendererBuilder(mapView, rendererFor: overlay)
     }
-    
-    @IBAction func onCallTouched(_ sender: UIButton) {
-        if let call = Request.shared.driver?.mobileNumber, let url = URL(string: "tel://\(call)"), UIApplication.shared.canOpenURL(url) {
-            UIApplication.shared.open(url)
-        }
-    }
-    
+        
     @IBAction func enableConfirmationClicked(_ sender: UIBarButtonItem) {
         EnableVerification().execute() { result in
             switch result {
