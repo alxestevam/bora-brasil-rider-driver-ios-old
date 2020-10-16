@@ -554,7 +554,6 @@
                                             <color key="backgroundColor" red="0.92549019610000005" green="0.41568627450000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="wFB-cb-R2R" firstAttribute="top" secondItem="sGb-Tz-CRy" secondAttribute="top" constant="4" id="Apk-dD-Ut6"/>
-                                                <constraint firstItem="wFB-cb-R2R" firstAttribute="leading" secondItem="sGb-Tz-CRy" secondAttribute="leadingMargin" constant="32.5" id="Vhi-Vb-b3l"/>
                                                 <constraint firstAttribute="bottom" secondItem="wFB-cb-R2R" secondAttribute="bottom" constant="16" id="aWc-mf-HfA"/>
                                                 <constraint firstItem="wFB-cb-R2R" firstAttribute="centerX" secondItem="sGb-Tz-CRy" secondAttribute="centerX" id="nTa-CZ-y7W"/>
                                             </constraints>

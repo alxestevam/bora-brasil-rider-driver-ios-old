@@ -117,7 +117,7 @@ class ReviewTravelViewController: UIViewController {
     }
     
     private func validateData() {
-        setupButton(button: self.footerbtnSendReview, isEnable: self.starsInt > 0 && !self.textComment.isEmpty)
+        setupButton(button: self.footerbtnSendReview, isEnable: self.starsInt > 0)
     }
 }
 
