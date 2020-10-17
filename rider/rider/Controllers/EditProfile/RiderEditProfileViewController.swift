@@ -173,6 +173,7 @@ class RiderEditProfileViewController: FormViewController, VCWithBackButtonHandle
                 cell.height = {100}
                 cell.textLabel?.numberOfLines = {0}()
                 cell.switchControl.onTintColor = Color.orange.rgb_255_152_0
+                row.value = self.acceptedTerms
             }.cellUpdate { cell, row in
                 
                 let attributedString = NSMutableAttributedString(string: NSLocalizedString("Terms", comment: "Profile Address field title"))
@@ -194,6 +195,7 @@ class RiderEditProfileViewController: FormViewController, VCWithBackButtonHandle
     
     private func setupData() {
         rider = try! Rider(from: UserDefaultsConfig.user!)
+        self.acceptedTerms = self.firstTime()
         atualMask.formattingPattern = "$$$.$$$.$$$-$$"
     }
     
@@ -276,6 +278,19 @@ class RiderEditProfileViewController: FormViewController, VCWithBackButtonHandle
         }
         
         return shouldBack
+    }
+    
+    private func firstTime() -> Bool {
+
+        guard let media = rider.media else {
+            return false
+        }
+        
+        if (media.address.isNilOrEmpty || rider.cpf.isNilOrEmpty || rider.email.isNilOrEmpty || rider.firstName.isNilOrEmpty || rider.lastName.isNilOrEmpty) {
+            return false
+        }
+        
+        return true
     }
 }
 
