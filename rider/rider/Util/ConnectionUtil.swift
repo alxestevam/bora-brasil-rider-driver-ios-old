@@ -12,7 +12,7 @@ class ConnectionUtil {
     
     static let shared = ConnectionUtil()
     private var reachability: Reachability!
-    private var previousState: Reachability.Connection = .unavailable
+    private var previousState: Reachability.Connection = .none
     lazy var dimmedView = UIView()
 
     
