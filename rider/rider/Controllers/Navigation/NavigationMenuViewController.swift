@@ -17,11 +17,14 @@ class NavigationMenuViewController : MenuViewController {
     @IBOutlet weak var imageUser: UIImageView!
     @IBOutlet weak var labelName: UILabel!
     @IBOutlet weak var labelCredit: UILabel!
-    
+    @IBOutlet weak var lblVersion: UILabel!
+
     
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.setupVersion()
         imageUser.layer.cornerRadius = imageUser.frame.size.width / 2
         imageUser.clipsToBounds = true
         imageUser.layer.borderColor = UIColor.white.cgColor
@@ -140,5 +143,34 @@ class NavigationMenuViewController : MenuViewController {
             self.dismiss(animated: true, completion: nil)
             menuContainerViewController.hideSideMenu()
         }
+    }
+    
+    private func setupVersion() {
+        let version = UIApplication.appVersion ?? ""
+        let build = UIApplication.appBuild
+        var environment = ""
+        
+        #if DEBUG
+            environment += "D"
+        #elseif STAG
+            environment += "S"
+        #elseif PROD || RELEASE
+            environment += "P"
+        #endif
+        
+        self.lblVersion.text = "Versão: " + version + " - " + build + " - " + environment
+        self.lblVersion.textAlignment = .left
+        self.lblVersion.textColor = .white
+        self.lblVersion.font = UIFont.systemFont(ofSize: 14)
+    }
+}
+
+extension UIApplication {
+    static var appVersion: String? {
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
+    }
+    
+    static var appBuild: String {
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? ""
     }
 }
