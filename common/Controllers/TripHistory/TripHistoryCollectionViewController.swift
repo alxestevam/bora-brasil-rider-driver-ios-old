@@ -42,35 +42,37 @@ class TripHistoryCollectionViewController: UICollectionViewController, UICollect
     @available(iOS 13.0, *)
     override func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
         return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { suggestedActions in
-            let complaint = UIAction(title: NSLocalizedString("Title_Write_Complaint", comment: ""), image: UIImage(systemName: "square.and.pencil")) { action in
-                let title = NSLocalizedString("Complaint", comment: "")
-                let message = NSLocalizedString("Message_Write_Complaint", comment: "")
+            let complaint = UIAction(title: "Reclamação", image: UIImage(systemName: "square.and.pencil")) { action in
+                let title = "Reclamação"
+                let message = "Descreva a reclamação"
                 let dialog = UIAlertController(title: title, message: message, preferredStyle: .alert)
                 dialog.addTextField() { textField in
-                    let title = NSLocalizedString("Title", comment: "")
+                    let title = "Título"
                     textField.placeholder = "\(title)..."
+                    textField.autocapitalizationType = .sentences
                 }
                 dialog.addTextField() { textField in
-                    let content = NSLocalizedString("Content", comment: "")
+                    let content = "Descrição"
                     textField.placeholder = "\(content)..."
+                    textField.autocapitalizationType = .sentences
                 }
                 dialog.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Message OK button"), style: .default) { action in
                     WriteComplaint(requestId: self.travels[indexPath.row].id!, subject: dialog.textFields![0].text!, content: dialog.textFields![1].text!).execute() { result in
                         switch result {
                         case .success(_):
-                            DialogBuilder.alertOnSuccess(message: NSLocalizedString("Complaint_Sent", comment: ""))
+                            DialogBuilder.alertOnSuccess(message: "Reclamação enviada")
                             
                         case .failure(let error):
                             error.showAlert()
                         }
                     }
                 })
-                dialog.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Message Cancel Button"), style: .cancel))
+                dialog.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
                 self.present(dialog, animated: true)
             }
 
             // Here we specify the "destructive" attribute to show that it’s destructive in nature
-            let hide = UIAction(title: NSLocalizedString("Hide_Item", comment: ""), image: UIImage(systemName: "eye.slash"), attributes: .destructive) { action in
+            let hide = UIAction(title: "Ocultar", image: UIImage(systemName: "eye.slash"), attributes: .destructive) { action in
                 HideHistoryItem(requestId: self.travels[indexPath.row].id!).execute() { result in
                     switch result {
                     case .success(_):
@@ -89,7 +91,7 @@ class TripHistoryCollectionViewController: UICollectionViewController, UICollect
             //let edit = UIMenu(title: "Write Complaint", children: [complaint])
 
             // Create our menu with both the edit menu and the share action
-            return UIMenu(title: "Options", children: buttons)
+            return UIMenu(title: "Opções", children: buttons)
         })
     }
     
@@ -152,7 +154,6 @@ class TripHistoryCollectionViewController: UICollectionViewController, UICollect
 
         case "RiderCanceled":
             return "Cancelada por você"
-            
             
         case "WaitingForReview":
             return "Aguardando revisão"

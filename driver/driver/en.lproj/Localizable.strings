@@ -60,7 +60,7 @@ TripHistoryCollectionViewController
 "Title_Write_Complaint" = "Write Complaint";
 "Complaint" = "Complaint";
 "Message_Write_Complaint" = "You can write a complaint on service provided and it will be reviewed As soon as possible.";
-"Complaint_Sent." = "Complaint Sent.";
+"Complaint_Sent." = "Reclamação enviada";
 "Hide_Item" = "Hide Item";
 
 
