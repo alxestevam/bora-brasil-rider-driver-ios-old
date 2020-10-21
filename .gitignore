@@ -2,13 +2,6 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
-<<<<<<< HEAD
-## Build generated
-build/
-DerivedData/
-
-## Various settings
-=======
 ## User settings
 xcuserdata/
 
@@ -20,7 +13,6 @@ xcuserdata/
 build/
 DerivedData/
 *.moved-aside
->>>>>>> 8ffc0faf6c46b569d694757e658c8c6e7de19923
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -29,23 +21,11 @@ DerivedData/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-<<<<<<< HEAD
-xcuserdata/
-
-## Other
-*.moved-aside
-*.xccheckout
-*.xcscmblueprint
-
-## Obj-C/Swift specific
-*.hmap
-=======
 
 ## Obj-C/Swift specific
 *.hmap
 
 ## App packaging
->>>>>>> 8ffc0faf6c46b569d694757e658c8c6e7de19923
 *.ipa
 *.dSYM.zip
 *.dSYM
@@ -59,8 +39,6 @@ playground.xcworkspace
 # Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
 # Packages/
 # Package.pins
-<<<<<<< HEAD
-=======
 # Package.resolved
 # *.xcodeproj
 #
@@ -68,7 +46,6 @@ playground.xcworkspace
 # hence it is not needed unless you have added a package configuration file to your project
 # .swiftpm
 
->>>>>>> 8ffc0faf6c46b569d694757e658c8c6e7de19923
 .build/
 
 # CocoaPods
@@ -77,28 +54,16 @@ playground.xcworkspace
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
-<<<<<<< HEAD
 Pods/
-=======
-# Pods/
 #
 # Add this line if you want to avoid checking in source code from the Xcode workspace
 # *.xcworkspace
->>>>>>> 8ffc0faf6c46b569d694757e658c8c6e7de19923
 
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
 # Carthage/Checkouts
 
-<<<<<<< HEAD
-Carthage/Build
-
-# fastlane
-#
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
-# screenshots whenever they are needed.
-=======
 Carthage/Build/
 
 # Accio dependency management
@@ -109,23 +74,11 @@ Dependencies/
 #
 # It is recommended to not store the screenshots in the git repo.
 # Instead, use fastlane to re-generate the screenshots whenever they are needed.
->>>>>>> 8ffc0faf6c46b569d694757e658c8c6e7de19923
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
 fastlane/report.xml
 fastlane/Preview.html
-<<<<<<< HEAD
-fastlane/screenshots
-fastlane/test_output
-
-.DS_Store
-
-xcshareddata/
-xcuserdata/
-
-GoogleService-Info.plist
-=======
 fastlane/screenshots/**/*.png
 fastlane/test_output
 
@@ -135,4 +88,3 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
->>>>>>> 8ffc0faf6c46b569d694757e658c8c6e7de19923
