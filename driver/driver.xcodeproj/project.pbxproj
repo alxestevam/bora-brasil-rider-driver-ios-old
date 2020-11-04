@@ -105,13 +105,10 @@
 		62B6FE111F71682200F66611 /* DriverMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B6FE101F71682200F66611 /* DriverMainViewController.swift */; };
 		62F12DCF22EDD96700434A05 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F12DCE22EDD96700434A05 /* ChatViewController.swift */; };
 		680C1AEE169A1469633B3949 /* Pods_driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A40C6906CC2298EF2B9CC43 /* Pods_driver.framework */; };
-		8503504424E1D45D00B3EF05 /* FirebaseUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8503504324E1D45D00B3EF05 /* FirebaseUtil.swift */; };
 		8551567725144DF300F744CB /* CalculateFareRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8551567625144DF300F744CB /* CalculateFareRequest.swift */; };
 		85712C0824DDAC0200C839B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 85712C0724DDAC0200C839B3 /* GoogleService-Info.plist */; };
 		8580FEC425095A0B00A6AC32 /* OptionalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580FEC3250959FB00A6AC32 /* OptionalString.swift */; };
 		8580FEC9250979BA00A6AC32 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580FEC8250979BA00A6AC32 /* UINavigationController.swift */; };
-		8580FECB25097CF500A6AC32 /* ValidatorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580FECA25097CF500A6AC32 /* ValidatorUtil.swift */; };
-		8580FED225099F0A00A6AC32 /* TLCustomMaskUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8580FED125099F0A00A6AC32 /* TLCustomMaskUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -233,13 +230,10 @@
 		62F12DCE22EDD96700434A05 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		73B2394A3DC335EC45D326D4 /* Pods-driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-driver.release.xcconfig"; path = "Target Support Files/Pods-driver/Pods-driver.release.xcconfig"; sourceTree = "<group>"; };
 		7A40C6906CC2298EF2B9CC43 /* Pods_driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8503504324E1D45D00B3EF05 /* FirebaseUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FirebaseUtil.swift; path = ../../../common/Util/FirebaseUtil.swift; sourceTree = "<group>"; };
 		8551567625144DF300F744CB /* CalculateFareRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculateFareRequest.swift; path = ../../../rider/rider/Models/Objects/CalculateFareRequest.swift; sourceTree = "<group>"; };
 		85712C0724DDAC0200C839B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8580FEC3250959FB00A6AC32 /* OptionalString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalString.swift; sourceTree = "<group>"; };
 		8580FEC8250979BA00A6AC32 /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
-		8580FECA25097CF500A6AC32 /* ValidatorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ValidatorUtil.swift; path = ../../../common/Util/ValidatorUtil.swift; sourceTree = "<group>"; };
-		8580FED125099F0A00A6AC32 /* TLCustomMaskUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TLCustomMaskUtil.swift; path = ../../../common/Util/TLCustomMaskUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -596,9 +590,6 @@
 		8503503D24E1D14900B3EF05 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				8580FED125099F0A00A6AC32 /* TLCustomMaskUtil.swift */,
-				8503504324E1D45D00B3EF05 /* FirebaseUtil.swift */,
-				8580FECA25097CF500A6AC32 /* ValidatorUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -794,7 +785,6 @@
 				62B6FE0F1F71680F00F66611 /* NavigatorViewController.swift in Sources */,
 				4CB0511623A662400028DF0E /* UIColor+Extensions.swift in Sources */,
 				4CB0511323A662400028DF0E /* StripeRow.swift in Sources */,
-				8580FECB25097CF500A6AC32 /* ValidatorUtil.swift in Sources */,
 				4CB050FB23A662180028DF0E /* Decodable.swift in Sources */,
 				4CB050F423A661EA0028DF0E /* Driver.swift in Sources */,
 				4C3EDFA021AEB22000DECC01 /* WalletViewController.swift in Sources */,
@@ -827,11 +817,9 @@
 				4CB0513D23A662830028DF0E /* Cancel.swift in Sources */,
 				4CB050EA23A661EA0028DF0E /* Media.swift in Sources */,
 				4CB0511223A662400028DF0E /* LoadingOverlay.swift in Sources */,
-				8503504424E1D45D00B3EF05 /* FirebaseUtil.swift in Sources */,
 				4C9F4D1523892B46005497D3 /* UpdateStatus.swift in Sources */,
 				4CB0511C23A662400028DF0E /* Error+Extensions.swift in Sources */,
 				4CB0514C23A662EF0028DF0E /* HTTPRequest.swift in Sources */,
-				8580FED225099F0A00A6AC32 /* TLCustomMaskUtil.swift in Sources */,
 				4CB050EB23A661EA0028DF0E /* Transaction.swift in Sources */,
 				4CB050F123A661EA0028DF0E /* ServerError.swift in Sources */,
 				4C9F4D1923892D46005497D3 /* AcceptOrder.swift in Sources */,

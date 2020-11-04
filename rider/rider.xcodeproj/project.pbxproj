@@ -574,7 +574,6 @@
 			isa = PBXGroup;
 			children = (
 				85245A3B250EBDD8001D236A /* YRPayment */,
-				85245A32250EA8C0001D236A /* xib */,
 				4CB5FC5E23A79FD000F2D5BC /* ColoredButton.swift */,
 				4CB5FC5423A79FCF00F2D5BC /* DashedLineView.swift */,
 				4CB5FC6023A79FD000F2D5BC /* DatePickerDialog.swift */,
@@ -866,13 +865,6 @@
 				8551567A2514EC7700F744CB /* SelectPaymentMethodViewController.swift */,
 			);
 			path = deprec;
-			sourceTree = "<group>";
-		};
-		85245A32250EA8C0001D236A /* xib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = xib;
 			sourceTree = "<group>";
 		};
 		85245A3B250EBDD8001D236A /* YRPayment */ = {
