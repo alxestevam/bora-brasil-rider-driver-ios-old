@@ -8,6 +8,9 @@
 import UIKit
 import Kingfisher
 import SocketIO
+import FirebaseCore
+import FirebaseInstanceID
+
 @_exported import Firebase
 @_exported import FirebaseUI
 @_exported import GooglePlaces

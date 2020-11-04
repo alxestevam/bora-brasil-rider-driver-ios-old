@@ -3,6 +3,9 @@ platform :ios, '11.0'
 workspace 'taxi'
 def common_pods
   
+  # Consumo REST
+  pod 'Alamofire', '~> 5.2'
+  
   # Conjunto de utilidades do Firebase
   pod 'Firebase/Core', '~> 6.29.0'
   pod 'FirebaseUI/Phone', '~> 8.0'

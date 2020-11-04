@@ -75,6 +75,20 @@ public final class Service: Codable, Hashable, CustomStringConvertible {
         case Multiple = "Multiple"
     }
     
+    var serviceType: ServiceType {
+        guard let title = title else { return .Gold }
+           switch title {
+           case "GOLD":
+               return .Gold
+           case "EXECUTIVE":
+               return .Executive
+           case "PREMIUM":
+               return .Premium
+           default:
+               return .Gold
+           }
+       }
+    
     public class Region: Codable {
         public var perHundredMeters: Double = 0
         public var baseFare: Double = 0
@@ -86,4 +100,10 @@ public final class Service: Codable, Hashable, CustomStringConvertible {
         public var bookingMode: BookingMode = .OnlyNow
     }
     
+}
+
+enum ServiceType : String, Codable {
+    case Gold = "GOLD"
+    case Executive = "EXECUTIVE"
+    case Premium = "PREMIUM"
 }

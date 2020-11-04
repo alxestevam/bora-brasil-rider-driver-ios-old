@@ -16,6 +16,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     let rider = try! Rider(from: UserDefaultsConfig.user!)
     var pointsAnnotations: [MKPointAnnotation] = []
     var arrayDriversMarkers: [MKPointAnnotation] = []
+    let estimateViewModel = EstimateViewModel()
     var locationManager = CLLocationManager()
     var servicesViewController: ServicesParentViewController?
     private var selectedService: Service?
@@ -406,6 +407,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
             //buttonAddDestination.isHidden = (pointsAnnotations.count > (AppDelegate.maximumDestinations - 1))
         }
     }
+
     
     func calculateFare() {
         LoadingOverlay.shared.showOverlay(view: self.view)
@@ -427,7 +429,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         let url = "https://maps.googleapis.com/maps/api/directions/json\(compl)"
         
         EasyRequest<DirectionsResponse>.get(self, path: "geocoded_waypoints", url: url) { (directions) in
-            
+   
             self.directionsResponse = directions
             var estimatedTravelDistance: Int = 100000
             var estimatedTravelTime: Int = 30
@@ -440,19 +442,25 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
             }
             
             DispatchQueue.main.async() {
-                CalculateFare(locations: locs, estimatedTravelDistance: estimatedTravelDistance, estimatedTravelTime: estimatedTravelTime, points: points).execute() { result in
-                    LoadingOverlay.shared.hideOverlayView()
-                    switch result {
-                    case .success(let response):
-                        self.servicesViewController?.calculateFareResult = response
-                        self.containerServices.isHidden = false
-                        self.servicesViewController?.reload()
+                
+                self.estimateViewModel.getEstimate(initLat: firstLatitude, initLong: firstLongitude, endLat: secondLatitude, endLong: secondLongitude, completion: { (estimate) -> Void in
+                    
+                    CalculateFare(uf: "SP", locations: locs, estimatedTravelDistance: estimatedTravelDistance, estimatedTravelTime: estimatedTravelTime, points: points).execute() { result in
                         
-                    case .failure(let error):
-                        self.goBackFromServiceSelection()
-                        error.showAlert()
+                        LoadingOverlay.shared.hideOverlayView()
+                        
+                        switch result {
+                        case .success(let response):
+                            self.servicesViewController?.calculateFareResult = response
+                            self.servicesViewController?.estimate = estimate
+                            self.containerServices.isHidden = false
+                            self.servicesViewController?.reload()
+                        case .failure(let error):
+                            self.goBackFromServiceSelection()
+                            error.showAlert()
+                        }
                     }
-                }
+                })
             }
         }
     }
