@@ -14,6 +14,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     
     //MARK: - Properties
     let rider = try! Rider(from: UserDefaultsConfig.user!)
+    private var stateCurrent = "SP"
     var pointsAnnotations: [MKPointAnnotation] = []
     var arrayDriversMarkers: [MKPointAnnotation] = []
     let estimateViewModel = EstimateViewModel()
@@ -494,6 +495,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
                     let firstLocation = placemarks?[0]
                     let formatter = CNPostalAddressFormatter()
                     let addressString = formatter.string(from: firstLocation!.postalAddress!)
+                    self.stateCurrent = firstLocation?.administrativeArea ?? "SP"
                     if (!self.searchingPlaces) { self.searchController.searchBar.text = addressString }
                     self.buttonConfirmPickup.isEnabled = true
                     self.buttonAddDestination.isEnabled = true
