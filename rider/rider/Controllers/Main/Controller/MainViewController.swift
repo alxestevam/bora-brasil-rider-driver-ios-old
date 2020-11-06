@@ -446,7 +446,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
                 
                 self.estimateViewModel.getEstimate(initLat: firstLatitude, initLong: firstLongitude, endLat: secondLatitude, endLong: secondLongitude, completion: { (estimate) -> Void in
                     
-                    CalculateFare(uf: "SP", locations: locs, estimatedTravelDistance: estimatedTravelDistance, estimatedTravelTime: estimatedTravelTime, points: points).execute() { result in
+                    CalculateFare(uf: self.stateCurrent, locations: locs, estimatedTravelDistance: estimatedTravelDistance, estimatedTravelTime: estimatedTravelTime, points: points).execute() { result in
                         
                         LoadingOverlay.shared.hideOverlayView()
                         
