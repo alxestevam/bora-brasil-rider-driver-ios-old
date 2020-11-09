@@ -14,8 +14,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     
     //MARK: - Properties
     let rider = try! Rider(from: UserDefaultsConfig.user!)
+    private var stateCurrent = "SP"
     var pointsAnnotations: [MKPointAnnotation] = []
     var arrayDriversMarkers: [MKPointAnnotation] = []
+    let estimateViewModel = EstimateViewModel()
     var locationManager = CLLocationManager()
     var servicesViewController: ServicesParentViewController?
     private var selectedService: Service?
@@ -295,7 +297,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
             estimatedTravelTime = leg.duration.value/60
         }
         
-        RequestService(obj: RequestDTO(locations: locs, services: [OrderedService(serviceId: service.id!, quantity: 1)], intervalMinutes: 0, paymentType: payType, estimatedTravelTime: estimatedTravelTime, estimatedTravelDistance: estimatedTravelDistance)).execute() { result in
+        RequestService(obj: RequestDTO(locations: locs, services: [OrderedService(serviceId: service.id!, quantity: 1)], intervalMinutes: 0, paymentType: payType, estimatedTravelTime: estimatedTravelTime, estimatedTravelDistance: estimatedTravelDistance, priceEstimate: service.priceEstimate ?? 0.0)).execute() { result in
             switch result {
             case .success(_):
                 self.performSegue(withIdentifier: "startLooking", sender: nil)
@@ -326,7 +328,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
             estimatedTravelTime = leg.duration.value/60
         }
         
-        RequestService(obj: RequestDTO(locations: locs, services: [OrderedService(serviceId: 1, quantity: 1)], intervalMinutes: minutesFromNow, paymentType: "", estimatedTravelTime: estimatedTravelTime, estimatedTravelDistance: estimatedTravelDistance)).execute() { result in
+        RequestService(obj: RequestDTO(locations: locs, services: [OrderedService(serviceId: 1, quantity: 1)], intervalMinutes: minutesFromNow, paymentType: "", estimatedTravelTime: estimatedTravelTime, estimatedTravelDistance: estimatedTravelDistance, priceEstimate: service.priceEstimate ?? 0.0)).execute() { result in
             switch result {
             case .success(_):
                 self.performSegue(withIdentifier: "startLooking", sender: nil)
@@ -339,6 +341,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     }
     
     func selectPaymentMethod(service: Service) {
+
         if let app = UIApplication.shared.delegate as? AppDelegate, let view = app.window {
             LoadingOverlay.shared.showOverlay(view: view)
         }
@@ -406,6 +409,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
             //buttonAddDestination.isHidden = (pointsAnnotations.count > (AppDelegate.maximumDestinations - 1))
         }
     }
+
     
     func calculateFare() {
         LoadingOverlay.shared.showOverlay(view: self.view)
@@ -427,7 +431,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         let url = "https://maps.googleapis.com/maps/api/directions/json\(compl)"
         
         EasyRequest<DirectionsResponse>.get(self, path: "geocoded_waypoints", url: url) { (directions) in
-            
+   
             self.directionsResponse = directions
             var estimatedTravelDistance: Int = 100000
             var estimatedTravelTime: Int = 30
@@ -440,19 +444,25 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
             }
             
             DispatchQueue.main.async() {
-                CalculateFare(locations: locs, estimatedTravelDistance: estimatedTravelDistance, estimatedTravelTime: estimatedTravelTime, points: points).execute() { result in
-                    LoadingOverlay.shared.hideOverlayView()
-                    switch result {
-                    case .success(let response):
-                        self.servicesViewController?.calculateFareResult = response
-                        self.containerServices.isHidden = false
-                        self.servicesViewController?.reload()
+                
+                self.estimateViewModel.getEstimate(initLat: firstLatitude, initLong: firstLongitude, endLat: secondLatitude, endLong: secondLongitude, completion: { (estimate) -> Void in
+                    
+                    CalculateFare(uf: self.stateCurrent, locations: locs, estimatedTravelDistance: estimatedTravelDistance, estimatedTravelTime: estimatedTravelTime, points: points).execute() { result in
                         
-                    case .failure(let error):
-                        self.goBackFromServiceSelection()
-                        error.showAlert()
+                        LoadingOverlay.shared.hideOverlayView()
+                        
+                        switch result {
+                        case .success(let response):
+                            self.servicesViewController?.calculateFareResult = response
+                            self.servicesViewController?.estimate = estimate
+                            self.containerServices.isHidden = false
+                            self.servicesViewController?.reload()
+                        case .failure(let error):
+                            self.goBackFromServiceSelection()
+                            error.showAlert()
+                        }
                     }
-                }
+                })
             }
         }
     }
@@ -486,6 +496,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
                     let firstLocation = placemarks?[0]
                     let formatter = CNPostalAddressFormatter()
                     let addressString = formatter.string(from: firstLocation!.postalAddress!)
+                    self.stateCurrent = firstLocation?.administrativeArea ?? "SP"
                     if (!self.searchingPlaces) { self.searchController.searchBar.text = addressString }
                     self.buttonConfirmPickup.isEnabled = true
                     self.buttonAddDestination.isEnabled = true

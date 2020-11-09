@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseInstanceID
 
 class SplashViewController: UIViewController {
     let defaults:UserDefaults = UserDefaults.standard

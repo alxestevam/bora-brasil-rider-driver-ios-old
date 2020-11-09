@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		024FB948D9584090E0AAC296 /* Pods_rider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 512ABDAA5C939C66CB2308D5 /* Pods_rider.framework */; };
+		4358E8C52552DB710096F40C /* EstimateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4358E8C42552DB710096F40C /* EstimateViewModel.swift */; };
+		4358E8C72552DF300096F40C /* Estimate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4358E8C62552DF300096F40C /* Estimate.swift */; };
 		4C215E9C238D17950013D720 /* AddCoupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C215E9B238D17950013D720 /* AddCoupon.swift */; };
 		4C215E9E238D1BA70013D720 /* GetCoupons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C215E9D238D1BA70013D720 /* GetCoupons.swift */; };
 		4C215EA0238D1BEC0013D720 /* ApplyCoupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C215E9F238D1BEC0013D720 /* ApplyCoupon.swift */; };
@@ -211,6 +213,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4358E8C42552DB710096F40C /* EstimateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimateViewModel.swift; sourceTree = "<group>"; };
+		4358E8C62552DF300096F40C /* Estimate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Estimate.swift; sourceTree = "<group>"; };
 		4C215E9B238D17950013D720 /* AddCoupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoupon.swift; sourceTree = "<group>"; };
 		4C215E9D238D1BA70013D720 /* GetCoupons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCoupons.swift; sourceTree = "<group>"; };
 		4C215E9F238D1BEC0013D720 /* ApplyCoupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyCoupon.swift; sourceTree = "<group>"; };
@@ -436,6 +440,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4358E8C32552DB590096F40C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4358E8C42552DB710096F40C /* EstimateViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		4C215E99238D16500013D720 /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,6 +525,7 @@
 				625D2993204EC44000F80499 /* Address.swift */,
 				4C215EAB238D20460013D720 /* Review.swift */,
 				85B420A5251858E70001C017 /* DirectionsResponse.swift */,
+				4358E8C62552DF300096F40C /* Estimate.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -765,6 +778,7 @@
 		62C774201F08EBC700E70C8B /* Rider */ = {
 			isa = PBXGroup;
 			children = (
+				4358E8C32552DB590096F40C /* ViewModel */,
 				624D3C2E1F1B33E700811758 /* Application */,
 				4CB5FC4323A79FA400F2D5BC /* Components */,
 				624D3C2F1F1B33F600811758 /* Controllers */,
@@ -1072,7 +1086,6 @@
 				TargetAttributes = {
 					62C7741D1F08EBC700E70C8B = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1223,6 +1236,7 @@
 				4CB5FC2823A79F2C00F2D5BC /* WriteComplaint.swift in Sources */,
 				62972936223B92EC0084E2BB /* LookingViewController.swift in Sources */,
 				8509E2C1252F9DAA006C726B /* UISearchBar+Util.swift in Sources */,
+				4358E8C52552DB710096F40C /* EstimateViewModel.swift in Sources */,
 				4CB5FC7B23A7A2D000F2D5BC /* PaymentGateway.swift in Sources */,
 				4CB5FC2123A79F2C00F2D5BC /* SendMessage.swift in Sources */,
 				4C215EAE238D20CB0013D720 /* UpdateProfile.swift in Sources */,
@@ -1358,6 +1372,7 @@
 				4CB5FC4F23A79FC700F2D5BC /* Options.swift in Sources */,
 				85245A34250EAD37001D236A /* WalletAddCardViewController.swift in Sources */,
 				85B420AD251869DF0001C017 /* Route.swift in Sources */,
+				4358E8C72552DF300096F40C /* Estimate.swift in Sources */,
 				85B420A4251857120001C017 /* EasyRequest.swift in Sources */,
 				859A25CF2524CE690041F644 /* WalletEmptyViewCell.swift in Sources */,
 				85245A47250ED8B3001D236A /* CreditCardValidator.swift in Sources */,
@@ -1525,9 +1540,10 @@
 				CODE_SIGN_ENTITLEMENTS = rider/rider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = HP5FNQKYCJ;
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"COCOAPODS=1",
 					"GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1",
@@ -1542,7 +1558,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.6;
+				MARKETING_VERSION = 1.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.passageiro;
 				PRODUCT_NAME = "BBMU Passageiro";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PROD;
@@ -1618,20 +1634,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon.debug;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = rider/rider.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 7;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = HP5FNQKYCJ;
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				INFOPLIST_FILE = "$(SRCROOT)/rider/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.6;
+				MARKETING_VERSION = 1.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.passageiro.debug;
 				PRODUCT_NAME = "Passageiro Debug";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1705,11 +1724,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon.staging;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = rider/rider.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 7;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = HP5FNQKYCJ;
+				"EXCLUDED_ARCHS[sdk=*]" = arm64;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"COCOAPODS=1",
 					"GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1",
@@ -1724,9 +1745,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.6;
+				MARKETING_VERSION = 1.0.7;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.borabrasil.passageiro.staging;
 				PRODUCT_NAME = "Passageiro Beta";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = STAG;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

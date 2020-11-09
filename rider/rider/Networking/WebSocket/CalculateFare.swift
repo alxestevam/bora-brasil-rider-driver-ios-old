@@ -9,19 +9,30 @@
 import UIKit
 import MapKit
 
-
 class CalculateFare: SocketRequest {
     typealias ResponseType = CalculateFareResult
     var params: [Any]?
     
-    init(locations: [CLLocationCoordinate2D], estimatedTravelDistance: Int = 100000, estimatedTravelTime: Int = 30, points: String? = nil) {
+    init(
+        uf: String,
+        locations: [CLLocationCoordinate2D],
+         estimatedTravelDistance: Int = 100000,
+         estimatedTravelTime: Int = 30,
+         points: String? = nil
+    ) {
+        
         let loc = locations.map() { loc in
             return [
                 "x": loc.longitude,
                 "y": loc.latitude
             ]
         }
-        self.params = [try! CalculateFareRequest(locations: loc, estimatedTravelTime: estimatedTravelTime, estimatedTravelDistance: estimatedTravelDistance, estimatedTravelPath: points).asDictionary()]
+        self.params = [
+            uf,
+            try! CalculateFareRequest(locations: loc,
+                                      estimatedTravelTime: estimatedTravelTime,
+                                      estimatedTravelDistance: estimatedTravelDistance,
+                                      estimatedTravelPath: points).asDictionary()]
     }
 }
 
@@ -29,6 +40,7 @@ struct CalculateFareResult: Codable {
     var categories: [ServiceCategory]
     var fareResult: Double
     var currency: String
+    var discountUF: String
     var feeEstimationMode: FeeEstimationMode
 }
 

@@ -6,9 +6,10 @@
 
 import UIKit
 
-
 class ServicesParentViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     public var calculateFareResult: CalculateFareResult!
+    public var estimate: EstimateModel!
+    public var discountUF: Double!
     public var callback: ServiceRequested?
     private var selectedCategory: ServiceCategory?
     private var selectedService: Service?
@@ -73,8 +74,9 @@ class ServicesParentViewController: UIViewController, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "serviceCell", for: indexPath) as! ServicesListCell        
-        cell.initialize(service: (selectedCategory?.services[indexPath.row])!, fareResult: calculateFareResult.fareResult, feeEstimationMode: calculateFareResult.feeEstimationMode, currency: calculateFareResult.currency)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "serviceCell", for: indexPath) as! ServicesListCell
+        
+        cell.initialize(discountUF: Double(calculateFareResult.discountUF) ?? 0.0, estimate: estimate, service: (selectedCategory?.services[indexPath.row])!, fareResult: calculateFareResult.fareResult, feeEstimationMode: calculateFareResult.feeEstimationMode, currency: calculateFareResult.currency)
         return cell
     }
     

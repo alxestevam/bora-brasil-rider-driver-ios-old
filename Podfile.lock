@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.2.2)
   - Charts (3.5.0):
     - Charts/Core (= 3.5.0)
   - Charts/Core (3.5.0)
@@ -133,6 +134,7 @@ PODS:
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.2)
   - Charts (~> 3.5.0)
   - Cosmos (~> 22.1.0)
   - Eureka (~> 5.3.1)
@@ -157,6 +159,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - Charts
     - Cosmos
     - Eureka
@@ -195,6 +198,7 @@ SPEC REPOS:
     - Toast-Swift
 
 SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
   Cosmos: 2795b36ad4bbea1af3050d6d65576ed63875f86a
   Eureka: 859877ab1e85661b6b7e810015d430e937d9cc7d
@@ -232,6 +236,6 @@ SPEC CHECKSUMS:
   SwiftyAttributes: e3e13891ddac3c62b3d7798d5c3969cea88e62bb
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 6150f63fd2f2947218de210d801f6535b02ee1be
+PODFILE CHECKSUM: 5356f75d07fe4eefa600a3ad7ce00729cf74f247
 
 COCOAPODS: 1.9.3
