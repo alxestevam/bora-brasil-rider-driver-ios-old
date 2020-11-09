@@ -109,13 +109,16 @@ class ServicesListCell: UICollectionViewCell {
         
         switch service.serviceType {
         case .Gold:
-            self.textCost.text = FormatterUtil.shared.stringFromValue(value: getValueEstimate(serviceType: service.serviceType), monetaryFormat: true, decimalPrecision: 2)
+            self.service.priceEstimate = getValueEstimate(serviceType: service.serviceType)
+            self.textCost.text = FormatterUtil.shared.stringFromValue(value: self.service.priceEstimate ?? 0.0, monetaryFormat: true, decimalPrecision: 2)
             
         case .Executive:
-            self.textCost.text = FormatterUtil.shared.stringFromValue(value: getValueEstimate(serviceType: service.serviceType), monetaryFormat: true, decimalPrecision: 2)
+            self.service.priceEstimate = getValueEstimate(serviceType: service.serviceType)
+            self.textCost.text = FormatterUtil.shared.stringFromValue(value: self.service.priceEstimate ?? 0.0, monetaryFormat: true, decimalPrecision: 2)
             
         case .Premium:
-            self.textCost.text = FormatterUtil.shared.stringFromValue(value: getValueEstimate(serviceType: service.serviceType), monetaryFormat: true, decimalPrecision: 2)
+            self.service.priceEstimate = getValueEstimate(serviceType: service.serviceType)
+            self.textCost.text = FormatterUtil.shared.stringFromValue(value: self.service.priceEstimate ?? 0.0, monetaryFormat: true, decimalPrecision: 2)
             
         default:
             self.textCost.text = FormatterUtil.shared.stringFromValue(value: cost, monetaryFormat: true, decimalPrecision: 2)

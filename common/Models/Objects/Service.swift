@@ -24,6 +24,7 @@ public final class Service: Codable, Hashable, CustomStringConvertible {
     public var rangeMinusPercent: Int? = 0
     public var minimumFee: Double?
     public var rangePlusPercent: Int? = 0
+    public var priceEstimate: Double? = 0.0
     public var id: Int?
     public var title: String?
     public var cost: Double?

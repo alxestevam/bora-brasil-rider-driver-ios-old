@@ -17,6 +17,7 @@ struct RequestDTO: Codable {
     var estimatedTravelTime: Int // tempo em minutos
     var estimatedTravelDistance: Int // distancia em metros
     var estimatedTravelPath: String = "" // valor do caminho a ser desenhado no mapa em base64
+    var priceEstimate: Double = 0.0
 }
 
 struct OrderedService: Codable {

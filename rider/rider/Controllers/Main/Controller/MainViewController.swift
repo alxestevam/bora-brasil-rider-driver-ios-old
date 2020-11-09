@@ -297,7 +297,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
             estimatedTravelTime = leg.duration.value/60
         }
         
-        RequestService(obj: RequestDTO(locations: locs, services: [OrderedService(serviceId: service.id!, quantity: 1)], intervalMinutes: 0, paymentType: payType, estimatedTravelTime: estimatedTravelTime, estimatedTravelDistance: estimatedTravelDistance)).execute() { result in
+        RequestService(obj: RequestDTO(locations: locs, services: [OrderedService(serviceId: service.id!, quantity: 1)], intervalMinutes: 0, paymentType: payType, estimatedTravelTime: estimatedTravelTime, estimatedTravelDistance: estimatedTravelDistance, priceEstimate: service.priceEstimate ?? 0.0)).execute() { result in
             switch result {
             case .success(_):
                 self.performSegue(withIdentifier: "startLooking", sender: nil)
@@ -328,7 +328,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
             estimatedTravelTime = leg.duration.value/60
         }
         
-        RequestService(obj: RequestDTO(locations: locs, services: [OrderedService(serviceId: 1, quantity: 1)], intervalMinutes: minutesFromNow, paymentType: "", estimatedTravelTime: estimatedTravelTime, estimatedTravelDistance: estimatedTravelDistance)).execute() { result in
+        RequestService(obj: RequestDTO(locations: locs, services: [OrderedService(serviceId: 1, quantity: 1)], intervalMinutes: minutesFromNow, paymentType: "", estimatedTravelTime: estimatedTravelTime, estimatedTravelDistance: estimatedTravelDistance, priceEstimate: service.priceEstimate ?? 0.0)).execute() { result in
             switch result {
             case .success(_):
                 self.performSegue(withIdentifier: "startLooking", sender: nil)
@@ -341,6 +341,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
     }
     
     func selectPaymentMethod(service: Service) {
+
         if let app = UIApplication.shared.delegate as? AppDelegate, let view = app.window {
             LoadingOverlay.shared.showOverlay(view: view)
         }
