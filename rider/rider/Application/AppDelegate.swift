@@ -130,7 +130,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     private func setupGooglePlacesAPI() {
-        GMSPlacesClient.provideAPIKey("AIzaSyCXgycKGXvt1Su0zw6ZuPNICQJHfI-4Zc4")
+        GMSPlacesClient.provideAPIKey("AIzaSyCt8N3ykkyQ1Kl0G_EPm7Qd2iTnlP479_E")
     }
     
     private func setupLanguage() {

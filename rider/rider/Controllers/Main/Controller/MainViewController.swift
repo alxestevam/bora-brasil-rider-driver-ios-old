@@ -420,7 +420,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, ServiceRe
         map.isUserInteractionEnabled = true
         let locs = pointsAnnotations.map() { return $0.coordinate }
         
-        let apiKey = "AIzaSyBls7T-AV-07Y3Bpullq-qI4evkKhonaXQ"
+        let apiKey = "AIzaSyCF3ycW_tYscKuEIcAKel7k6BXBjKC34SM"
         let firstLatitude =  String(locs.first?.latitude ?? 0.0)
         let firstLongitude = String(locs.first?.longitude ?? 0.0)
         let secondLatitude =  String(locs[1].latitude)
